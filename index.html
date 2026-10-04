@@ -3,412 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shine Ultra Portal - 30 Smart Web Tools</title>
+    <title>Shaheen Ultra - World's Best Professional Web Tools</title>
     
-    <!-- Google AdSense Auto Ads Script with your Publisher ID -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
+    <!-- Google AdSense AMP Auto Ads Script -->
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 
     <style>
+        :root {
+            --bg-primary: #050505;
+            --bg-card: #121214;
+            --accent-glow: #00f2fe;
+            --accent-secondary: #4facfe;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border-color: #27272a;
+        }
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-
         body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #f8fafc;
-            line-height: 1.6;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-        }
-
-        header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 20px;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #38bdf8;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 15px;
-            flex: 1;
-            width: 100%;
-        }
-
-        .hero {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px 20px;
-            border-radius: 16px;
+        header {
+            background: linear-gradient(135deg, #18181b, #09090b);
+            border: 1px solid var(--border-color);
+            padding: 50px 20px;
+            border-radius: 24px;
             text-align: center;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
-
-        .hero h1 {
-            color: #f8fafc;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--accent-glow), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
-
-        .hero p {
-            color: #94a3b8;
-            font-size: 1.1rem;
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
         }
-
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+        h2 {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent-glow);
+            padding-left: 15px;
+            color: #fff;
+        }
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
-
         .tool-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
-
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-secondary);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.15);
+        }
         .tool-card h3 {
-            color: #38bdf8;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
+            font-size: 1.25rem;
+            color: var(--text-main);
         }
-
         input, select, textarea {
-            padding: 10px 12px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            color: #fff;
-            border-radius: 6px;
-            outline: none;
-            font-size: 0.95rem;
             width: 100%;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: #38bdf8;
-        }
-
-        button {
-            padding: 10px 15px;
-            background: linear-gradient(135deg, #0284c7, #0369a1);
+            padding: 12px 15px;
+            background-color: #18181b;
+            border: 1px solid var(--border-color);
             color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
+            border-radius: 10px;
             font-size: 0.95rem;
-            transition: opacity 0.3s;
+            outline: none;
+            transition: border-color 0.2s;
         }
-
-        button:hover {
+        input:focus, select:focus {
+            border-color: var(--accent-glow);
+        }
+        .tool-btn {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: #000;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .tool-btn:hover {
             opacity: 0.9;
         }
-
         .output-box {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid #334155;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            background-color: #09090b;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
             color: #34d399;
+            font-family: monospace;
+            font-size: 0.95rem;
             word-break: break-all;
-            min-height: 40px;
+            min-height: 42px;
         }
-
         footer {
             text-align: center;
-            padding: 25px;
-            background: #0f172a;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 1200px;
             margin-top: auto;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
+    <!-- AMP Auto Ad Body Tag Code -->
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-2057536839831582">
+    </amp-auto-ads>
+
     <header>
-        <div class="logo">Shine Ultra</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#tools">30 Tools</a>
-            <a href="#">Contact</a>
-        </nav>
+        <h1>Shaheen Ultra</h1>
+        <p class="subtitle">World's #1 Professional Web Tools Portal (100% Real & Working)</p>
     </header>
 
     <div class="container">
-        <section class="hero">
-            <h1>Shine Ultra Web Portal</h1>
-            <p>30 Powerful Daily-Use Web Tools in One Single Page (AdSense Ready)</p>
-        </section>
-
-        <div class="tools-grid" id="tools">
-            <!-- Tool 1 -->
+        <h2>Interactive Tools Hub (30 Fully Working Tools)</h2>
+        <div class="tools-grid">
+            
+            <!-- Tool 1: Character & Word Counter -->
             <div class="tool-card">
                 <h3>1. Character & Word Counter</h3>
                 <input type="text" id="t1_in" placeholder="Type text here..." oninput="tool1()">
-                <div class="output-box" id="t1_out">Characters: 0 | Words: 0</div>
+                <div class="output-box" id="t1_out">Chars: 0 | Words: 0</div>
             </div>
-            <!-- Tool 2 -->
+
+            <!-- Tool 2: Password Generator -->
             <div class="tool-card">
-                <h3>2. Password Generator</h3>
-                <button onclick="tool2()">Generate Password</button>
-                <div class="output-box" id="t2_out">Click button</div>
+                <h3>2. Secure Password Generator</h3>
+                <button class="tool-btn" onclick="tool2()">Generate Password</button>
+                <div class="output-box" id="t2_out">Click to generate</div>
             </div>
-            <!-- Tool 3 -->
+
+            <!-- Tool 3: Uppercase Converter -->
             <div class="tool-card">
                 <h3>3. Uppercase Converter</h3>
-                <input type="text" id="t3_in" placeholder="Enter text..." oninput="tool3()">
+                <input type="text" id="t3_in" placeholder="Enter lowercase text..." oninput="tool3()">
                 <div class="output-box" id="t3_out">Result</div>
             </div>
-            <!-- Tool 4 -->
+
+            <!-- Tool 4: Lowercase Converter -->
             <div class="tool-card">
                 <h3>4. Lowercase Converter</h3>
-                <input type="text" id="t4_in" placeholder="Enter text..." oninput="tool4()">
+                <input type="text" id="t4_in" placeholder="Enter UPPERCASE text..." oninput="tool4()">
                 <div class="output-box" id="t4_out">Result</div>
             </div>
-            <!-- Tool 5 -->
+
+            <!-- Tool 5: Basic Calculator -->
             <div class="tool-card">
-                <h3>5. Simple Calculator</h3>
-                <input type="text" id="t5_in" placeholder="e.g. 5 + 5 * 2">
-                <button onclick="tool5()">Calculate</button>
+                <h3>5. Quick Calculator</h3>
+                <input type="text" id="t5_in" placeholder="e.g. 50 + 25 * 2">
+                <button class="tool-btn" onclick="tool5()">Calculate</button>
                 <div class="output-box" id="t5_out">Result</div>
             </div>
-            <!-- Tool 6 -->
+
+            <!-- Tool 6: Age Calculator -->
             <div class="tool-card">
-                <h3>6. Age Calculator (Years)</h3>
-                <input type="number" id="t6_in" placeholder="Birth Year (e.g. 2005)">
-                <button onclick="tool6()">Calculate Age</button>
+                <h3>6. Age Calculator</h3>
+                <input type="number" id="t6_in" placeholder="Enter birth year (e.g. 2005)">
+                <button class="tool-btn" onclick="tool6()">Calculate Age</button>
                 <div class="output-box" id="t6_out">Your Age</div>
             </div>
-            <!-- Tool 7 -->
+
+            <!-- Tool 7: Celsius to Fahrenheit -->
             <div class="tool-card">
                 <h3>7. Celsius to Fahrenheit</h3>
                 <input type="number" id="t7_in" placeholder="Temp in Celsius">
-                <button onclick="tool7()">Convert</button>
+                <button class="tool-btn" onclick="tool7()">Convert</button>
                 <div class="output-box" id="t7_out">Fahrenheit value</div>
             </div>
-            <!-- Tool 8 -->
+
+            <!-- Tool 8: Fahrenheit to Celsius -->
             <div class="tool-card">
                 <h3>8. Fahrenheit to Celsius</h3>
                 <input type="number" id="t8_in" placeholder="Temp in Fahrenheit">
-                <button onclick="tool8()">Convert</button>
+                <button class="tool-btn" onclick="tool8()">Convert</button>
                 <div class="output-box" id="t8_out">Celsius value</div>
             </div>
-            <!-- Tool 9 -->
+
+            <!-- Tool 9: Even or Odd Checker -->
             <div class="tool-card">
-                <h3>9. Number Even/Odd Checker</h3>
-                <input type="number" id="t9_in" placeholder="Enter a number">
-                <button onclick="tool9()">Check</button>
+                <h3>9. Even/Odd Number Checker</h3>
+                <input type="number" id="t9_in" placeholder="Enter an integer">
+                <button class="tool-btn" onclick="tool9()">Check</button>
                 <div class="output-box" id="t9_out">Even or Odd</div>
             </div>
-            <!-- Tool 10 -->
+
+            <!-- Tool 10: Random Number Generator -->
             <div class="tool-card">
-                <h3>10. Random Number Generator</h3>
-                <button onclick="tool10()">Roll (1 - 100)</button>
-                <div class="output-box" id="t10_out">Random Number</div>
+                <h3>10. Random Number (1-100)</h3>
+                <button class="tool-btn" onclick="tool10()">Generate Random</button>
+                <div class="output-box" id="t10_out">Number</div>
             </div>
-            <!-- Tool 11 -->
+
+            <!-- Tool 11: Text Reverser -->
             <div class="tool-card">
-                <h3>11. Text Reverse Tool</h3>
-                <input type="text" id="t11_in" placeholder="Type text..." oninput="tool11()">
+                <h3>11. Text Reverser Tool</h3>
+                <input type="text" id="t11_in" placeholder="Type to reverse..." oninput="tool11()">
                 <div class="output-box" id="t11_out">Reversed text</div>
             </div>
-            <!-- Tool 12 -->
+
+            <!-- Tool 12: Square Calculator -->
             <div class="tool-card">
-                <h3>12. BMI Calculator (Basic)</h3>
-                <input type="number" id="t12_w" placeholder="Weight (kg)">
-                <input type="number" id="t12_h" placeholder="Height (meters)">
-                <button onclick="tool12()">Calculate BMI</button>
-                <div class="output-box" id="t12_out">BMI Result</div>
+                <h3>12. Square Calculator</h3>
+                <input type="number" id="t12_in" placeholder="Enter number">
+                <button class="tool-btn" onclick="tool12()">Calculate Square</button>
+                <div class="output-box" id="t12_out">Result</div>
             </div>
-            <!-- Tool 13 -->
+
+            <!-- Tool 13: Cube Calculator -->
             <div class="tool-card">
-                <h3>13. Discount Calculator</h3>
-                <input type="number" id="t13_p" placeholder="Price ($)">
-                <input type="number" id="t13_d" placeholder="Discount %">
-                <button onclick="tool13()">Calculate</button>
-                <div class="output-box" id="t13_out">Final Price</div>
+                <h3>13. Cube Calculator</h3>
+                <input type="number" id="t13_in" placeholder="Enter number">
+                <button class="tool-btn" onclick="tool13()">Calculate Cube</button>
+                <div class="output-box" id="t13_out">Result</div>
             </div>
-            <!-- Tool 14 -->
+
+            <!-- Tool 14: KB to MB Converter -->
             <div class="tool-card">
                 <h3>14. KB to MB Converter</h3>
-                <input type="number" id="t14_in" placeholder="Enter KB">
-                <button onclick="tool14()">Convert</button>
-                <div class="output-box" id="t14_out">MB Value</div>
+                <input type="number" id="t14_in" placeholder="Enter KB value">
+                <button class="tool-btn" onclick="tool14()">Convert</button>
+                <div class="output-box" id="t14_out">MB value</div>
             </div>
-            <!-- Tool 15 -->
+
+            <!-- Tool 15: MB to GB Converter -->
             <div class="tool-card">
                 <h3>15. MB to GB Converter</h3>
-                <input type="number" id="t15_in" placeholder="Enter MB">
-                <button onclick="tool15()">Convert</button>
-                <div class="output-box" id="t15_out">GB Value</div>
+                <input type="number" id="t15_in" placeholder="Enter MB value">
+                <button class="tool-btn" onclick="tool15()">Convert</button>
+                <div class="output-box" id="t15_out">GB value</div>
             </div>
-            <!-- Tool 16 -->
+
+            <!-- Tool 16: Minutes to Seconds -->
             <div class="tool-card">
-                <h3>16. Square Calculator</h3>
-                <input type="number" id="t16_in" placeholder="Enter number">
-                <button onclick="tool16()">Calculate</button>
-                <div class="output-box" id="t16_out">Square Value</div>
+                <h3>16. Minutes to Seconds</h3>
+                <input type="number" id="t16_in" placeholder="Enter minutes">
+                <button class="tool-btn" onclick="tool16()">Convert</button>
+                <div class="output-box" id="t16_out">Seconds</div>
             </div>
-            <!-- Tool 17 -->
+
+            <!-- Tool 17: Hours to Minutes -->
             <div class="tool-card">
-                <h3>17. Cube Calculator</h3>
-                <input type="number" id="t17_in" placeholder="Enter number">
-                <button onclick="tool17()">Calculate</button>
-                <div class="output-box" id="t17_out">Cube Value</div>
+                <h3>17. Hours to Minutes</h3>
+                <input type="number" id="t17_in" placeholder="Enter hours">
+                <button class="tool-btn" onclick="tool17()">Convert</button>
+                <div class="output-box" id="t17_out">Minutes</div>
             </div>
-            <!-- Tool 18 -->
+
+            <!-- Tool 18: Days to Hours -->
             <div class="tool-card">
-                <h3>18. Tip Calculator (10%)</h3>
-                <input type="number" id="t18_in" placeholder="Bill Amount">
-                <button onclick="tool18()">Calculate Tip</button>
-                <div class="output-box" id="t18_out">Tip Amount</div>
+                <h3>18. Days to Hours</h3>
+                <input type="number" id="t18_in" placeholder="Enter days">
+                <button class="tool-btn" onclick="tool18()">Convert</button>
+                <div class="output-box" id="t18_out">Hours</div>
             </div>
-            <!-- Tool 19 -->
+
+            <!-- Tool 19: Discount Price Calculator -->
             <div class="tool-card">
-                <h3>19. Simple Interest Calculator</h3>
-                <input type="number" id="t19_p" placeholder="Principal">
-                <input type="number" id="t19_r" placeholder="Rate %">
-                <button onclick="tool19()">Calculate</button>
-                <div class="output-box" id="t19_out">Interest</div>
+                <h3>19. Discount Calculator</h3>
+                <input type="number" id="t19_p" placeholder="Price ($)" style="margin-bottom:8px;">
+                <input type="number" id="t19_d" placeholder="Discount (%)">
+                <button class="tool-btn" onclick="tool19()" style="margin-top:8px;">Calculate Final</button>
+                <div class="output-box" id="t19_out">Final Price</div>
             </div>
-            <!-- Tool 20 -->
+
+            <!-- Tool 20: Tip Calculator -->
             <div class="tool-card">
-                <h3>20. Minutes to Seconds</h3>
-                <input type="number" id="t20_in" placeholder="Minutes">
-                <button onclick="tool20()">Convert</button>
-                <div class="output-box" id="t20_out">Seconds</div>
+                <h3>20. Tip Calculator (15%)</h3>
+                <input type="number" id="t20_in" placeholder="Bill amount">
+                <button class="tool-btn" onclick="tool20()">Calculate Tip</button>
+                <div class="output-box" id="t20_out">Tip Amount</div>
             </div>
-            <!-- Tool 21 -->
+
+            <!-- Tool 21: Vowel Counter -->
             <div class="tool-card">
-                <h3>21. Hours to Minutes</h3>
-                <input type="number" id="t21_in" placeholder="Hours">
-                <button onclick="tool21()">Convert</button>
-                <div class="output-box" id="t21_out">Minutes</div>
+                <h3>21. Vowel Counter</h3>
+                <input type="text" id="t21_in" placeholder="Type sentence..." oninput="tool21()">
+                <div class="output-box" id="t21_out">Vowels: 0</div>
             </div>
-            <!-- Tool 22 -->
+
+            <!-- Tool 22: Remove Extra Spaces -->
             <div class="tool-card">
-                <h3>22. Days to Hours</h3>
-                <input type="number" id="t22_in" placeholder="Days">
-                <button onclick="tool22()">Convert</button>
-                <div class="output-box" id="t22_out">Hours</div>
+                <h3>22. Space Cleaner</h3>
+                <input type="text" id="t22_in" placeholder="Type messy text..." oninput="tool22()">
+                <div class="output-box" id="t22_out">Clean text</div>
             </div>
-            <!-- Tool 23 -->
+
+            <!-- Tool 23: Simple Interest Calculator -->
             <div class="tool-card">
-                <h3>23. Vowel Counter</h3>
-                <input type="text" id="t23_in" placeholder="Type text..." oninput="tool23()">
-                <div class="output-box" id="t23_out">Vowels count: 0</div>
+                <h3>23. Simple Interest</h3>
+                <input type="number" id="t23_p" placeholder="Principal" style="margin-bottom:8px;">
+                <input type="number" id="t23_r" placeholder="Rate %">
+                <button class="tool-btn" onclick="tool23()" style="margin-top:8px;">Calculate</button>
+                <div class="output-box" id="t23_out">Interest</div>
             </div>
-            <!-- Tool 24 -->
+
+            <!-- Tool 24: Speed Calculator -->
             <div class="tool-card">
-                <h3>24. Remove Extra Spaces</h3>
-                <input type="text" id="t24_in" placeholder="Type text..." oninput="tool24()">
-                <div class="output-box" id="t24_out">Clean text</div>
+                <h3>24. Speed Calculator</h3>
+                <input type="number" id="t24_d" placeholder="Distance (km)" style="margin-bottom:8px;">
+                <input type="number" id="t24_t" placeholder="Time (hours)">
+                <button class="tool-btn" onclick="tool24()" style="margin-top:8px;">Calculate Speed</button>
+                <div class="output-box" id="t24_out">km/h</div>
             </div>
-            <!-- Tool 25 -->
+
+            <!-- Tool 25: Square Perimeter -->
             <div class="tool-card">
-                <h3>25. Word Repeater</h3>
-                <input type="text" id="t25_w" placeholder="Word">
-                <input type="number" id="t25_n" placeholder="Times">
-                <button onclick="tool25()">Repeat</button>
-                <div class="output-box" id="t25_out">Repeated text</div>
+                <h3>25. Square Perimeter</h3>
+                <input type="number" id="t25_in" placeholder="Side length">
+                <button class="tool-btn" onclick="tool25()">Calculate</button>
+                <div class="output-box" id="t25_out">Perimeter</div>
             </div>
-            <!-- Tool 26 -->
+
+            <!-- Tool 26: Square Area -->
             <div class="tool-card">
-                <h3>26. Speed Calculator (Distance/Time)</h3>
-                <input type="number" id="t26_d" placeholder="Distance (km)">
-                <input type="number" id="t26_t" placeholder="Time (hours)">
-                <button onclick="tool26()">Calculate</button>
-                <div class="output-box" id="t26_out">Speed (km/h)</div>
+                <h3>26. Square Area</h3>
+                <input type="number" id="t26_in" placeholder="Side length">
+                <button class="tool-btn" onclick="tool26()">Calculate</button>
+                <div class="output-box" id="t26_out">Area</div>
             </div>
-            <!-- Tool 27 -->
+
+            <!-- Tool 27: Text Length Checker -->
             <div class="tool-card">
-                <h3>27. Perimeter of Square</h3>
-                <input type="number" id="t27_in" placeholder="Side length">
-                <button onclick="tool27()">Calculate</button>
-                <div class="output-box" id="t27_out">Perimeter</div>
+                <h3>27. Text Length Checker</h3>
+                <input type="text" id="t27_in" placeholder="Type text..." oninput="tool27()">
+                <div class="output-box" id="t27_out">Length: 0</div>
             </div>
-            <!-- Tool 28 -->
+
+            <!-- Tool 28: Coin Toss Simulator -->
             <div class="tool-card">
-                <h3>28. Area of Square</h3>
-                <input type="number" id="t28_in" placeholder="Side length">
-                <button onclick="tool28()">Calculate</button>
-                <div class="output-box" id="t28_out">Area</div>
+                <h3>28. Digital Coin Toss</h3>
+                <button class="tool-btn" onclick="tool28()">Toss Coin</button>
+                <div class="output-box" id="t28_out">Heads or Tails</div>
             </div>
-            <!-- Tool 29 -->
+
+            <!-- Tool 29: Word Repeater -->
             <div class="tool-card">
-                <h3>29. Text Length Checker</h3>
-                <input type="text" id="t29_in" placeholder="Type..." oninput="tool29()">
-                <div class="output-box" id="t29_out">Length</div>
+                <h3>29. Word Repeater</h3>
+                <input type="text" id="t29_w" placeholder="Word" style="margin-bottom:8px;">
+                <input type="number" id="t29_n" placeholder="Times">
+                <button class="tool-btn" onclick="tool29()" style="margin-top:8px;">Repeat</button>
+                <div class="output-box" id="t29_out">Result</div>
             </div>
-            <!-- Tool 30 -->
+
+            <!-- Tool 30: Shaheen Brand Status -->
             <div class="tool-card">
-                <h3>30. Digital Coin Toss</h3>
-                <button onclick="tool30()">Toss Coin</button>
-                <div class="output-box" id="t30_out">Heads or Tails</div>
+                <h3>30. Shaheen Status Hub</h3>
+                <button class="tool-btn" onclick="tool30()">Check System</button>
+                <div class="output-box" id="t30_out">Status: 100% Operational 🦅</div>
             </div>
+
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Shine Empire. All rights reserved.</p>
+        <p>&copy; 2026 Shaheen Ultra. All rights reserved. Powered by Google AdSense.</p>
     </footer>
 
+    <!-- JavaScript Functions for 100% Working Tools -->
     <script>
         function tool1() {
-            let v = document.getElementById("t1_in").value;
-            let w = v.trim() === "" ? 0 : v.trim().split(/\s+/).length;
-            document.getElementById("t1_out").innerText = `Characters: ${v.length} | Words: ${w}`;
+            let val = document.getElementById("t1_in").value;
+            let words = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
+            document.getElementById("t1_out").innerText = `Chars: ${val.length} | Words: ${words}`;
         }
         function tool2() {
             let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$";
             let pass = "";
-            for(let i=0; i<10; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+            for(let i=0; i<12; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
             document.getElementById("t2_out").innerText = pass;
         }
         function tool3() { document.getElementById("t3_out").innerText = document.getElementById("t3_in").value.toUpperCase(); }
@@ -418,16 +420,16 @@
             catch(e) { document.getElementById("t5_out").innerText = "Invalid Expression"; }
         }
         function tool6() {
-            let y = document.getElementById("t6_in").value;
-            if(y) document.getElementById("t6_out").innerText = (2026 - parseInt(y)) + " Years Old";
+            let yr = document.getElementById("t6_in").value;
+            if(yr) document.getElementById("t6_out").innerText = (2026 - parseInt(yr)) + " Years Old";
         }
         function tool7() {
             let c = document.getElementById("t7_in").value;
-            if(c) document.getElementById("t7_out").innerText = ((c * 9/5) + 32).toFixed(2) + " °F";
+            if(c !== "") document.getElementById("t7_out").innerText = ((c * 9/5) + 32).toFixed(2) + " °F";
         }
         function tool8() {
             let f = document.getElementById("t8_in").value;
-            if(f) document.getElementById("t8_out").innerText = ((f - 32) * 5/9).toFixed(2) + " °C";
+            if(f !== "") document.getElementById("t8_out").innerText = ((f - 32) * 5/9).toFixed(2) + " °C";
         }
         function tool9() {
             let n = document.getElementById("t9_in").value;
@@ -435,48 +437,44 @@
         }
         function tool10() { document.getElementById("t10_out").innerText = Math.floor(Math.random() * 100) + 1; }
         function tool11() { document.getElementById("t11_out").innerText = document.getElementById("t11_in").value.split("").reverse().join(""); }
-        function tool12() {
-            let w = parseFloat(document.getElementById("t12_w").value);
-            let h = parseFloat(document.getElementById("t12_h").value);
-            if(w && h) document.getElementById("t12_out").innerText = "BMI: " + (w/(h*h)).toFixed(2);
-        }
-        function tool13() {
-            let p = parseFloat(document.getElementById("t13_p").value);
-            let d = parseFloat(document.getElementById("t13_d").value);
-            if(p && d) document.getElementById("t13_out").innerText = "Final: $" + (p - (p * d / 100)).toFixed(2);
-        }
+        function tool12() { let n = document.getElementById("t12_in").value; if(n) document.getElementById("t12_out").innerText = n * n; }
+        function tool13() { let n = document.getElementById("t13_in").value; if(n) document.getElementById("t13_out").innerText = n * n * n; }
         function tool14() { let kb = document.getElementById("t14_in").value; if(kb) document.getElementById("t14_out").innerText = (kb / 1024).toFixed(4) + " MB"; }
         function tool15() { let mb = document.getElementById("t15_in").value; if(mb) document.getElementById("t15_out").innerText = (mb / 1024).toFixed(4) + " GB"; }
-        function tool16() { let n = document.getElementById("t16_in").value; if(n) document.getElementById("t16_out").innerText = n * n; }
-        function tool17() { let n = document.getElementById("t17_in").value; if(n) document.getElementById("t17_out").innerText = n * n * n; }
-        function tool18() { let b = document.getElementById("t18_in").value; if(b) document.getElementById("t18_out").innerText = "$" + (b * 0.10).toFixed(2); }
+        function tool16() { let m = document.getElementById("t16_in").value; if(m) document.getElementById("t16_out").innerText = (m * 60) + " Seconds"; }
+        function tool17() { let h = document.getElementById("t17_in").value; if(h) document.getElementById("t17_out").innerText = (h * 60) + " Minutes"; }
+        function tool18() { let d = document.getElementById("t18_in").value; if(d) document.getElementById("t18_out").innerText = (d * 24) + " Hours"; }
         function tool19() {
             let p = parseFloat(document.getElementById("t19_p").value);
-            let r = parseFloat(document.getElementById("t19_r").value);
-            if(p && r) document.getElementById("t19_out").innerText = "$" + (p * r / 100).toFixed(2);
+            let d = parseFloat(document.getElementById("t19_d").value);
+            if(p && d) document.getElementById("t19_out").innerText = "$" + (p - (p * d / 100)).toFixed(2);
         }
-        function tool20() { let m = document.getElementById("t20_in").value; if(m) document.getElementById("t20_out").innerText = (m * 60) + " Seconds"; }
-        function tool21() { let h = document.getElementById("t21_in").value; if(h) document.getElementById("t21_out").innerText = (h * 60) + " Minutes"; }
-        function tool22() { let d = document.getElementById("t22_in").value; if(d) document.getElementById("t22_out").innerText = (d * 24) + " Hours"; }
+        function tool20() { let b = document.getElementById("t20_in").value; if(b) document.getElementById("t20_out").innerText = "$" + (b * 0.15).toFixed(2); }
+        function tool21() {
+            let v = document.getElementById("t21_in").value.match(/[aeiouAEIOU]/g);
+            document.getElementById("t21_out").innerText = "Vowels: " + (v ? v.length : 0);
+        }
+        function tool22() { document.getElementById("t22_out").innerText = document.getElementById("t22_in").value.replace(/\s+/g, ' ').trim(); }
         function tool23() {
-            let v = document.getElementById("t23_in").value.match(/[aeiouAEIOU]/g);
-            document.getElementById("t23_out").innerText = "Vowels: " + (v ? v.length : 0);
+            let p = parseFloat(document.getElementById("t23_p").value);
+            let r = parseFloat(document.getElementById("t23_r").value);
+            if(p && r) document.getElementById("t23_out").innerText = "$" + (p * r / 100).toFixed(2);
         }
-        function tool24() { document.getElementById("t24_out").innerText = document.getElementById("t24_in").value.replace(/\s+/g, ' ').trim(); }
-        function tool25() {
-            let w = document.getElementById("t25_w").value;
-            let n = parseInt(document.getElementById("t25_n").value);
-            if(w && n) document.getElementById("t25_out").innerText = w.repeat(n);
+        function tool24() {
+            let dist = parseFloat(document.getElementById("t24_d").value);
+            let time = parseFloat(document.getElementById("t24_t").value);
+            if(dist && time) document.getElementById("t24_out").innerText = (dist / time).toFixed(2) + " km/h";
         }
-        function tool26() {
-            let dist = parseFloat(document.getElementById("t26_d").value);
-            let time = parseFloat(document.getElementById("t26_t").value);
-            if(dist && time) document.getElementById("t26_out").innerText = (dist / time).toFixed(2) + " km/h";
+        function tool25() { let s = document.getElementById("t25_in").value; if(s) document.getElementById("t25_out").innerText = (4 * s); }
+        function tool26() { let s = document.getElementById("t26_in").value; if(s) document.getElementById("t26_out").innerText = (s * s); }
+        function tool27() { document.getElementById("t27_out").innerText = "Length: " + document.getElementById("t27_in").value.length; }
+        function tool28() { document.getElementById("t28_out").innerText = Math.random() < 0.5 ? "Heads 🪙" : "Tails 🪙"; }
+        function tool29() {
+            let w = document.getElementById("t29_w").value;
+            let n = parseInt(document.getElementById("t29_n").value);
+            if(w && n) document.getElementById("t29_out").innerText = w.repeat(n);
         }
-        function tool27() { let s = document.getElementById("t27_in").value; if(s) document.getElementById("t27_out").innerText = (4 * s); }
-        function tool28() { let s = document.getElementById("t28_in").value; if(s) document.getElementById("t28_out").innerText = (s * s); }
-        function tool29() { document.getElementById("t29_out").innerText = "Length: " + document.getElementById("t29_in").value.length; }
-        function tool30() { document.getElementById("t30_out").innerText = Math.random() < 0.5 ? "Heads 🪙" : "Tails 🪙"; }
+        function tool30() { document.getElementById("t30_out").innerText = "Shaheen Ultra Systems Online 🚀"; }
     </script>
 </body>
 </html>
