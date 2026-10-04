@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ur" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaem Tools - Ultra Professional Utilities & Fitness Hub</title>
+    <title>Shaem Tools - Ultra Professional Utilities & Gym 26 Fitness Hub</title>
     
-    <!-- Google AdSense & AMP Auto Ads Script -->
+    <!-- Google AdSense & AMP Auto Ads Script Fixed -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
@@ -160,30 +160,56 @@
             border-radius: 18px;
             padding: 30px;
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
-        .avatar-box {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            animation: pulse-avatar 1.5s infinite alternate;
+        
+        #gym-onboard { display: block; }
+        #gym-workout-app { display: none; }
+
+        /* Human Animated Avatar Canvas / Box */
+        .human-anim-stage {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px auto;
+            background: #141424;
+            border: 2px solid var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
         }
-        @keyframes pulse-avatar {
-            0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--accent-glow)); }
-            100% { transform: scale(1.08); filter: drop-shadow(0 0 15px var(--accent-secondary)); }
+        .human-figure {
+            font-size: 4.5rem;
+            transition: transform 0.4s ease;
         }
+        @keyframes doPushup {
+            0% { transform: translateY(0) scaleY(1); }
+            50% { transform: translateY(20px) scaleY(0.7); }
+            100% { transform: translateY(0) scaleY(1); }
+        }
+        @keyframes doSquat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(25px) scale(0.9); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes doPlank {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(-3deg) scale(1.05); }
+            100% { transform: rotate(0deg); }
+        }
+        .anim-pushup { animation: doPushup 1s infinite ease-in-out; }
+        .anim-squat { animation: doSquat 1.2s infinite ease-in-out; }
+        .anim-plank { animation: doPlank 2s infinite ease-in-out; }
+
         .timer-display {
             font-size: 3.5rem;
             font-weight: bold;
             color: var(--accent-glow);
-            margin: 20px 0;
+            margin: 15px 0;
             font-family: monospace;
-        }
-        .gym-controls {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
         }
 
         /* About & Dropdown System */
@@ -222,9 +248,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             z-index: 100;
         }
-        .dropdown-menu.show {
-            display: block;
-        }
+        .dropdown-menu.show { display: block; }
         .dropdown-menu button {
             width: 100%;
             background: none;
@@ -236,9 +260,7 @@
             font-size: 0.9rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .dropdown-menu button:last-child {
-            border-bottom: none;
-        }
+        .dropdown-menu button:last-child { border-bottom: none; }
         .dropdown-menu button:hover {
             background: #1f1f2e;
             color: var(--accent-glow);
@@ -273,12 +295,8 @@
         .nav-item.active, .nav-item:hover {
             color: var(--accent-glow);
         }
-        .sub-view {
-            display: none;
-        }
-        .sub-view.active {
-            display: block;
-        }
+        .sub-view { display: none; }
+        .sub-view.active { display: block; }
     </style>
 </head>
 <body>
@@ -288,7 +306,7 @@
 
     <header>
         <h1>Shaem Tools</h1>
-        <p>Ultra Professional Web Utilities & Gym 26 Routine Trainer</p>
+        <p>Ultra Professional Web Utilities & Gym 26 Smart Fitness Hub</p>
     </header>
 
     <div class="container">
@@ -399,28 +417,59 @@
         <!-- 2. GYM 26 ROUTINE & FITNESS APP SECTION -->
         <div id="gym-section" class="section-content">
             <div class="gym-container">
-                <div class="avatar-box" id="avatarEmoji">🏋️‍♂️</div>
-                <h2 id="workoutTitle" style="color: var(--accent-glow); margin-bottom: 10px;">Gym 26 - Ultra Routine Trainer</h2>
-                <p id="workoutDesc" style="color: var(--text-muted); margin-bottom: 15px;">Real-time voice guided workout timer with animated trainer feedback.</p>
                 
-                <select id="exerciseSelect" onchange="changeExercise()">
-                    <option value="Push-ups">Push-ups (Chest & Triceps)</option>
-                    <option value="Squats">Squats (Legs & Core)</option>
-                    <option value="Plank">Plank Hold (Abs & Endurance)</option>
-                    <option value="Crunches">Crunches (Upper Abs)</option>
-                </select>
+                <!-- STEP 1: USER ONBOARDING (Height, Weight & Goal) -->
+                <div id="gym-onboard">
+                    <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Gym 26 - Setup Your Profile</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Provide your real body metrics for ultra-customized workout plans.</p>
+                    
+                    <label style="text-align: left; display: block; font-size: 0.85rem; color: var(--text-muted);">Real Height (e.g., 175 cm)</label>
+                    <input type="number" id="userHeight" placeholder="Height in cm (e.g. 175)">
+                    
+                    <label style="text-align: left; display: block; font-size: 0.85rem; color: var(--text-muted);">Real Weight (e.g., 70 kg)</label>
+                    <input type="number" id="userWeight" placeholder="Weight in kg (e.g. 70)">
+                    
+                    <label style="text-align: left; display: block; font-size: 0.85rem; color: var(--text-muted);">Select Your Target Fitness Goal</label>
+                    <select id="userGoal">
+                        <option value="Six Pack Abs">Six Pack Abs & Core Shred</option>
+                        <option value="Chest & Arms Mass">Chest & Arms Mass Building</option>
+                        <option value="Full Body Shredded">Full Body Shredded & Stamina</option>
+                        <option value="Fat Loss & Cardio">Fat Loss & Extreme Cardio</option>
+                    </select>
 
-                <div class="timer-display" id="timerDisplay">00:30</div>
-                
-                <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 15px;">
-                    <button class="btn" onclick="adjustTime(-10)" style="width: auto; background: #1f1f2e; color: #fff;">- 10s</button>
-                    <button class="btn" onclick="adjustTime(10)" style="width: auto; background: #1f1f2e; color: #fff;">+ 10s</button>
+                    <button class="btn" onclick="completeGymOnboarding()" style="margin-top: 15px;">Launch My Gym 26 Plan 🚀</button>
                 </div>
 
-                <div class="gym-controls">
-                    <button class="btn" onclick="startWorkout()" id="startBtn">Start Workout</button>
-                    <button class="btn" onclick="resetWorkout()" style="background: var(--danger); color: #fff;">Reset</button>
+                <!-- STEP 2: ACTIVE WORKOUT PLAYER WITH ANIMATED HUMAN & VOICE -->
+                <div id="gym-workout-app">
+                    <div class="human-anim-stage">
+                        <div class="human-figure" id="humanAvatar">🤸‍♂️</div>
+                    </div>
+
+                    <h2 id="workoutTitle" style="color: var(--accent-glow); margin-bottom: 5px;">Gym 26 - Ultra Routine</h2>
+                    <p id="profileSummary" style="color: var(--accent-secondary); font-size: 0.9rem; margin-bottom: 15px;"></p>
+                    
+                    <select id="exerciseSelect" onchange="changeExercise()">
+                        <option value="Push-ups">Push-ups (Chest & Triceps)</option>
+                        <option value="Squats">Squats (Legs & Core)</option>
+                        <option value="Plank">Plank Hold (Abs & Endurance)</option>
+                        <option value="Crunches">Crunches (Upper Abs)</option>
+                    </select>
+
+                    <div class="timer-display" id="timerDisplay">00:30</div>
+                    
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 15px;">
+                        <button class="btn" onclick="adjustTime(-10)" style="width: auto; background: #1f1f2e; color: #fff;">- 10s</button>
+                        <button class="btn" onclick="adjustTime(10)" style="width: auto; background: #1f1f2e; color: #fff;">+ 10s</button>
+                        <button class="btn" onclick="resetOnboarding()" style="width: auto; background: var(--border-color); color: #fff;">Edit Profile</button>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn" onclick="startWorkout()" id="startBtn">Start Workout</button>
+                        <button class="btn" onclick="resetWorkout()" style="background: var(--danger); color: #fff;">Reset</button>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -440,7 +489,7 @@
                 <!-- Sub View 1: About Us -->
                 <div id="sub-about" class="sub-view active">
                     <h2>About Us - Shaem Tools</h2>
-                    <p>Welcome to <strong>Shaem Tools</strong>, your ultimate destination for high-performance utilities and the advanced Gym 26 routine training app.</p>
+                    <p>Welcome to <strong>Shaem Tools</strong>, your ultimate destination for high-performance web utilities and the advanced Gym 26 routine training application.</p>
                     <p>Our platform is engineered for lightning-fast speeds, responsive layouts, and zero latency. We aim to provide real, powerful tools that make your digital and physical routine seamless.</p>
                 </div>
 
@@ -524,17 +573,46 @@
             alert('Copied to clipboard!');
         }
 
-        // Gym 26 Routine App Logic with Speech & Animation
+        // Gym 26 Onboarding & Routine Logic with Animated Human & Voice
+        let userProfile = { height: 0, weight: 0, goal: '' };
         let timeLeft = 30;
         let timerInterval = null;
         let isRunning = false;
 
         function speakText(text) {
             if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
                 let utterance = new SpeechSynthesisUtterance(text);
                 utterance.rate = 1.0;
                 window.speechSynthesis.speak(utterance);
             }
+        }
+
+        function completeGymOnboarding() {
+            let h = document.getElementById('userHeight').value;
+            let w = document.getElementById('userWeight').value;
+            let g = document.getElementById('userGoal').value;
+
+            if(!h || !w) {
+                alert('Please enter your real height and weight!');
+                return;
+            }
+
+            userProfile.height = h;
+            userProfile.weight = w;
+            userProfile.goal = g;
+
+            document.getElementById('profileSummary').innerText = `Goal: ${g} | Height: ${h}cm | Weight: ${w}kg`;
+            document.getElementById('gym-onboard').style.display = 'none';
+            document.getElementById('gym-workout-app').style.display = 'block';
+
+            speakText(`Welcome to Gym 26. Your goal is set to ${g}. Let's begin your ultra workout transformation!`);
+        }
+
+        function resetOnboarding() {
+            resetWorkout();
+            document.getElementById('gym-workout-app').style.display = 'none';
+            document.getElementById('gym-onboard').style.display = 'block';
         }
 
         function updateTimerDisplay() {
@@ -551,34 +629,52 @@
         function changeExercise() {
             let ex = document.getElementById('exerciseSelect').value;
             document.getElementById('workoutTitle').innerText = `Gym 26 - ${ex}`;
-            speakText(`Selected exercise: ${ex}. Get ready!`);
+            setHumanAnimation(ex);
+            speakText(`Selected exercise: ${ex}. Follow the animated human posture on screen!`);
             resetWorkout();
+        }
+
+        function setHumanAnimation(exercise) {
+            let avatar = document.getElementById('humanAvatar');
+            avatar.className = "human-figure";
+            if(exercise === 'Push-ups') {
+                avatar.innerText = "🏃‍♂️";
+                avatar.classList.add('anim-pushup');
+            } else if(exercise === 'Squats') {
+                avatar.innerText = "🧎‍♂️";
+                avatar.classList.add('anim-squat');
+            } else if(exercise === 'Plank') {
+                avatar.innerText = "🧘‍♂️";
+                avatar.classList.add('anim-plank');
+            } else {
+                avatar.innerText = "💪";
+                avatar.classList.add('anim-pushup');
+            }
         }
 
         function startWorkout() {
             if (isRunning) return;
+            let currentEx = document.getElementById('exerciseSelect').value;
+            setHumanAnimation(currentEx);
             isRunning = true;
             document.getElementById('startBtn').innerText = "Running...";
-            speakText("Workout started. Keep pushing!");
-
-            let emojis = ["🦾", "🔥", "⚡", "💪"];
-            let idx = 0;
+            speakText(`Workout started for ${currentEx}. Keep pushing and maintain your posture!`);
 
             timerInterval = setInterval(() => {
                 if (timeLeft > 0) {
                     timeLeft--;
                     updateTimerDisplay();
-                    document.getElementById('avatarEmoji').innerText = emojis[idx % emojis.length];
-                    idx++;
                     
-                    if(timeLeft === 10) speakText("Ten seconds remaining. Don't stop!");
+                    if(timeLeft === 20) speakText("Halfway through. Keep your form strict!");
+                    if(timeLeft === 10) speakText("Ten seconds remaining. Push harder!");
                 } else {
                     clearInterval(timerInterval);
                     isRunning = false;
                     document.getElementById('startBtn').innerText = "Start Workout";
-                    document.getElementById('avatarEmoji').innerText = "🏆";
-                    speakText("Workout completed successfully! Great job!");
-                    alert("Awesome! Workout completed!");
+                    document.getElementById('humanAvatar').innerText = "🏆";
+                    document.getElementById('humanAvatar').className = "human-figure";
+                    speakText("Fantastic job! Workout completed successfully.");
+                    alert("Awesome! Workout completed successfully!");
                 }
             }, 1000);
         }
@@ -588,7 +684,8 @@
             isRunning = false;
             timeLeft = 30;
             document.getElementById('startBtn').innerText = "Start Workout";
-            document.getElementById('avatarEmoji').innerText = "🏋️‍♂️";
+            let currentEx = document.getElementById('exerciseSelect').value;
+            setHumanAnimation(currentEx);
             updateTimerDisplay();
         }
 
