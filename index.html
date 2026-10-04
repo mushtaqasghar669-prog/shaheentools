@@ -46,16 +46,16 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease;
         }
         .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid var(--border-color);
-            border-top: 4px solid var(--accent-glow);
+            width: 70px;
+            height: 70px;
+            border: 5px solid var(--border-color);
+            border-top: 5px solid var(--accent-glow);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -66,12 +66,13 @@
         #auth-container {
             display: none;
             max-width: 420px;
-            margin: 80px auto;
+            margin: 60px auto;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
         .auth-tab {
             display: flex;
@@ -105,7 +106,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         /* Main App Wrapper */
@@ -113,10 +114,9 @@
 
         header {
             text-align: center;
-            padding: 20px;
+            padding: 22px;
             background: linear-gradient(135deg, #0e0e14, #151522);
             border-bottom: 1px solid var(--border-color);
-            position: relative;
         }
         header h1 {
             font-size: 2rem;
@@ -155,6 +155,7 @@
             font-size: 0.95rem;
             outline: none;
         }
+        input:focus, select:focus { border-color: var(--accent-secondary); }
         .btn {
             background: linear-gradient(135deg, var(--accent-secondary), var(--accent-glow));
             color: #050508;
@@ -164,7 +165,9 @@
             font-weight: 600;
             cursor: pointer;
             width: 100%;
+            transition: opacity 0.2s;
         }
+        .btn:hover { opacity: 0.9; }
         .output-box {
             margin-top: 10px;
             background: #14141f;
@@ -175,6 +178,49 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        /* Gym 26 Ultra Fitness Hub Styles */
+        .gym-hub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .human-anim-stage {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
+            background: #141424;
+            border: 2px solid var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+        .human-figure { font-size: 4rem; }
+        @keyframes pushupAnim {
+            0% { transform: translateY(0) scaleY(1); }
+            50% { transform: translateY(15px) scaleY(0.7); }
+            100% { transform: translateY(0) scaleY(1); }
+        }
+        @keyframes squatAnim {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(20px) scale(0.9); }
+            100% { transform: translateY(0); }
+        }
+        .anim-pushup { animation: pushupAnim 1s infinite ease-in-out; }
+        .anim-squat { animation: squatAnim 1.2s infinite ease-in-out; }
+        .timer-display {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--accent-glow);
+            margin: 15px 0;
+            font-family: monospace;
         }
 
         /* Profile Section with 3 Dots Menu */
@@ -264,10 +310,10 @@
     <div id="splash-screen">
         <div class="spinner"></div>
         <h2 style="color: var(--accent-glow); margin-bottom: 5px;">Shaem Tools & Gym 26</h2>
-        <p style="color: var(--text-muted);">Checking user session & initializing Firebase...</p>
+        <p style="color: var(--text-muted);">Verifying Firebase Authentication Session...</p>
     </div>
 
-    <!-- Authentication Screen (Login / Register / Forgot Password) -->
+    <!-- Authentication Screen (Google / Email / Password / Forgot Password) -->
     <div id="auth-container">
         <h2 style="color: var(--accent-glow); margin-bottom: 15px;">Welcome to Shaem Tools</h2>
         
@@ -281,7 +327,7 @@
             <input type="email" id="loginEmail" placeholder="Email Address">
             <input type="password" id="loginPass" placeholder="Password">
             <button class="btn" onclick="handleEmailLogin()">Login</button>
-            <p style="margin-top: 10px; font-size: 0.85rem;"><a href="#" onclick="handleForgotPassword()" style="color: var(--accent-secondary); text-decoration: none;">Forgot Password?</a></p>
+            <p style="margin-top: 12px; font-size: 0.85rem;"><a href="#" onclick="handleForgotPassword()" style="color: var(--accent-secondary); text-decoration: none;">Forgot Password?</a></p>
         </div>
 
         <!-- Register Form -->
@@ -301,14 +347,14 @@
         <amp-auto-ads type="adsense" data-ad-client="ca-pub-2057536839831582"></amp-auto-ads>
 
         <header>
-            <h1>Shaem Tools & Gym 26</h1>
-            <p>Ultra Professional Web Utilities & Fitness Hub</p>
+            <h1>Shaem Tools</h1>
+            <p>Ultra Professional Web Utilities & Gym 26 Fitness Hub</p>
         </header>
 
         <div class="container">
             <!-- 1. TOOLS SECTION -->
             <div id="tools-section" class="section-content active">
-                <input type="text" id="searchInput" class="search-box" placeholder="Search tools..." onkeyup="filterTools()">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search any tool..." onkeyup="filterTools()">
                 <div class="tools-grid" id="toolsGrid">
                     <div class="tool-card" data-name="password generator secure">
                         <h3>1. Secure Password Generator</h3>
@@ -338,11 +384,21 @@
 
             <!-- 2. GYM 26 FITNESS HUB SECTION -->
             <div id="gym-section" class="section-content">
-                <div class="profile-card" style="text-align: center;">
-                    <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Gym 26 Routine Tracker</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Push your limits with AI voice guidance & animated posture.</p>
-                    <div style="font-size: 3.5rem; font-weight: bold; color: var(--accent-secondary); margin: 20px 0;" id="gymTimer">00:30</div>
-                    <button class="btn" onclick="startGymTimer()">Start 30s Pushup Workout</button>
+                <div class="gym-hub-card">
+                    <div class="human-anim-stage">
+                        <div class="human-figure anim-pushup" id="gymAvatar">🏃‍♂️</div>
+                    </div>
+                    <h2 style="color: var(--accent-glow); margin-bottom: 5px;" id="gymTitle">Gym 26 - Push-ups Routine</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Follow the live animated posture & AI voice guidance.</p>
+                    
+                    <select id="gymExercise" onchange="changeGymExercise()" style="margin-bottom: 15px;">
+                        <option value="Push-ups">Push-ups (Chest & Triceps)</option>
+                        <option value="Squats">Squats (Legs & Core)</option>
+                        <option value="Plank">Plank Hold (Core & Abs)</option>
+                    </select>
+
+                    <div class="timer-display" id="gymTimer">00:30</div>
+                    <button class="btn" onclick="startGymTimer()" id="gymStartBtn">Start Workout Session</button>
                 </div>
             </div>
 
@@ -353,6 +409,7 @@
                     <div class="dropdown-container">
                         <button class="dots-btn" onclick="toggleDropdown()">⋮</button>
                         <div class="dropdown-menu" id="dropdownMenu">
+                            <button onclick="switchInfoSub('account')">My Profile</button>
                             <button onclick="switchInfoSub('about')">About Us</button>
                             <button onclick="switchInfoSub('contact')">Contact Us</button>
                             <button onclick="switchInfoSub('privacy')">Privacy Policy</button>
@@ -363,26 +420,26 @@
                     <div id="sub-account" class="sub-view active">
                         <h2 style="color: var(--accent-glow); margin-bottom: 15px;">User Profile</h2>
                         <p style="margin-bottom: 10px;"><strong>Email:</strong> <span id="userEmailDisplay">user@example.com</span></p>
-                        <p style="margin-bottom: 20px;"><strong>Status:</strong> Active Firebase Session 🚀</p>
+                        <p style="margin-bottom: 20px;"><strong>Status:</strong> Authenticated via Firebase 🚀</p>
                         <button class="btn" onclick="handleLogout()" style="background: var(--danger); color: #fff;">Logout Account</button>
                     </div>
 
                     <!-- About Us Sub-View -->
                     <div id="sub-about" class="sub-view">
                         <h2>About Us</h2>
-                        <p style="margin-top: 10px; color: var(--text-muted);">Shaem Tools & Gym 26 is engineered by Abdul Basit (Shine Empire) to deliver top-tier tools and fitness solutions with ultra-fast performance.</p>
+                        <p style="margin-top: 10px; color: var(--text-muted);">Shaem Tools & Gym 26 is engineered by Abdul Basit (Shine Empire) to deliver ultra-fast utilities and fitness routines.</p>
                     </div>
 
                     <!-- Contact Us Sub-View -->
                     <div id="sub-contact" class="sub-view">
                         <h2>Contact Us</h2>
-                        <p style="margin-top: 10px; color: var(--text-muted);">Reach out for support: support@shaemtools.vercel.app</p>
+                        <p style="margin-top: 10px; color: var(--text-muted);">Support Email: support@shaemtools.vercel.app</p>
                     </div>
 
                     <!-- Privacy Policy Sub-View -->
                     <div id="sub-privacy" class="sub-view">
                         <h2>Privacy Policy</h2>
-                        <p style="margin-top: 10px; color: var(--text-muted);">We respect your privacy and adhere to secure Google AdSense and Firebase authentication standards.</p>
+                        <p style="margin-top: 10px; color: var(--text-muted);">We follow secure Google AdSense guidelines and Firebase authorization standards.</p>
                     </div>
                 </div>
             </div>
@@ -396,28 +453,30 @@
         </nav>
     </div>
 
-    <!-- Firebase SDKs -->
+    <!-- Firebase SDK Imports & Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendPasswordResetEmail, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
+        // Your Firebase Configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",
-            authDomain: "shaheen-ultra-fb324.firebaseapp.com",
-            projectId: "shaheen-ultra-fb324",
-            storageBucket: "shaheen-ultra-fb324.firebasestorage.app",
-            messagingSenderId: "733041897568",
-            appId: "1:733041897568:web:ff56c08fada50e40a59305",
-            measurementId: "G-WTNJLPQ88E"
+          apiKey: "AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",
+          authDomain: "shaheen-ultra-fb324.firebaseapp.com",
+          projectId: "shaheen-ultra-fb324",
+          storageBucket: "shaheen-ultra-fb324.firebasestorage.app",
+          messagingSenderId: "733041897568",
+          appId: "1:733041897568:web:ff56c08fada50e40a59305",
+          measurementId: "G-WTNJLPQ88E"
         };
 
+        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const analytics = getAnalytics(app);
         const googleProvider = new GoogleAuthProvider();
 
-        // 3 to 5 Seconds Splash Loading Check
+        // 3.5 Seconds Professional Splash Screen Session Check
         window.addEventListener('load', () => {
             setTimeout(() => {
                 onAuthStateChanged(auth, (user) => {
@@ -434,10 +493,9 @@
                         }
                     }, 500);
                 });
-            }, 3500); // Exact 3.5 seconds professional delay
+            }, 3500);
         });
 
-        // Global Authentication Handlers
         window.switchAuthTab = function(tab) {
             document.querySelectorAll('.auth-tab button').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
@@ -469,7 +527,7 @@
         window.handleForgotPassword = function() {
             let email = document.getElementById('loginEmail').value;
             if(!email) {
-                alert('Please enter your email address in the login box first!');
+                alert('Please enter your email address in the login box above first!');
                 return;
             }
             sendPasswordResetEmail(auth, email)
@@ -478,14 +536,12 @@
         }
 
         window.handleLogout = function() {
-            signOut(auth).then(() => {
-                window.location.reload();
-            });
+            signOut(auth).then(() => { window.location.reload(); });
         }
     </script>
 
     <script>
-        // UI Navigation & Dropdown Controls
+        // UI & Gym Logic Controls
         function switchMainTab(tabName, element) {
             document.querySelectorAll('.section-content').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
@@ -500,15 +556,55 @@
 
         function switchInfoSub(subName) {
             document.querySelectorAll('.sub-view').forEach(sub => sub.classList.remove('active'));
-            if(subName === 'account') {
-                document.getElementById('sub-account').classList.add('active');
-            } else {
-                document.getElementById('sub-' + subName).classList.add('active');
-            }
+            document.getElementById('sub-' + subName).classList.add('active');
             document.getElementById('dropdownMenu').classList.remove('show');
         }
 
-        // Quick Utility & Gym Functions
+        // Voice Guidance for Gym 26
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                let utter = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utter);
+            }
+        }
+
+        function changeGymExercise() {
+            let ex = document.getElementById('gymExercise').value;
+            document.getElementById('gymTitle').innerText = `Gym 26 - ${ex} Routine`;
+            let avatar = document.getElementById('gymAvatar');
+            if(ex === 'Push-ups') {
+                avatar.innerText = "🏃‍♂️";
+                avatar.className = "human-figure anim-pushup";
+            } else if(ex === 'Squats') {
+                avatar.innerText = "🧎‍♂️";
+                avatar.className = "human-figure anim-squat";
+            } else {
+                avatar.innerText = "🧘‍♂️";
+                avatar.className = "human-figure";
+            }
+            speakText(`Selected ${ex}. Follow the animation.`);
+        }
+
+        function startGymTimer() {
+            let t = 30;
+            let timerEl = document.getElementById('gymTimer');
+            document.getElementById('gymStartBtn').innerText = "Workout Running...";
+            speakText("Workout started. Keep pushing!");
+            let interval = setInterval(() => {
+                t--;
+                timerEl.innerText = `00:${t < 10 ? '0' : ''}${t}`;
+                if(t <= 0) {
+                    clearInterval(interval);
+                    document.getElementById('gymStartBtn').innerText = "Start Workout Session";
+                    speakText("Fantastic! Workout completed.");
+                    alert("Workout session completed successfully!");
+                    timerEl.innerText = "00:30";
+                }
+            }, 1000);
+        }
+
+        // Tools functions
         function generatePassword() {
             let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!";
             let pass = "";
@@ -528,19 +624,6 @@
         function randColor() {
             let color = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
             document.getElementById('colorOut').querySelector('span').innerText = color;
-        }
-        function startGymTimer() {
-            let t = 30;
-            let timerEl = document.getElementById('gymTimer');
-            let interval = setInterval(() => {
-                t--;
-                timerEl.innerText = `00:${t < 10 ? '0' : ''}${t}`;
-                if(t <= 0) {
-                    clearInterval(interval);
-                    alert("Workout set completed successfully!");
-                    timerEl.innerText = "00:30";
-                }
-            }, 1000);
         }
     </script>
 </body>
