@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaheen Ultra - World's Best Professional Web Tools</title>
+    <title>Shaheen Ultra - World's Best Professional Web Tools Hub</title>
     
-    <!-- Google AdSense AMP Auto Ads Script -->
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+    <!-- Google AdSense Verification & Auto Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
     <style>
         :root {
-            --bg-primary: #050505;
-            --bg-card: #121214;
+            --bg-primary: #030305;
+            --bg-card: #0f0f13;
             --accent-glow: #00f2fe;
             --accent-secondary: #4facfe;
             --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --border-color: #27272a;
+            --text-muted: #94a3b8;
+            --border-color: #1e1e24;
+            --success: #10b981;
         }
         * {
             box-sizing: border-box;
@@ -36,23 +36,24 @@
             padding: 20px;
         }
         header {
-            background: linear-gradient(135deg, #18181b, #09090b);
+            background: linear-gradient(135deg, #0f0f13, #181822);
             border: 1px solid var(--border-color);
             padding: 50px 20px;
-            border-radius: 24px;
+            border-radius: 28px;
             text-align: center;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             background: linear-gradient(135deg, var(--accent-glow), var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            font-weight: 800;
+            margin-bottom: 12px;
+            font-weight: 850;
+            letter-spacing: -1px;
         }
         p.subtitle {
             color: var(--text-muted);
@@ -60,7 +61,7 @@
         }
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
         }
         h2 {
             margin-bottom: 25px;
@@ -71,7 +72,7 @@
         }
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 25px;
             margin-bottom: 50px;
         }
@@ -79,28 +80,33 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             padding: 25px;
-            border-radius: 18px;
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             gap: 15px;
+            position: relative;
+            overflow: hidden;
         }
         .tool-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--accent-secondary);
-            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.15);
+            box-shadow: 0 20px 35px rgba(79, 172, 254, 0.12);
         }
         .tool-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         input, select, textarea {
             width: 100%;
-            padding: 12px 15px;
-            background-color: #18181b;
+            padding: 13px 16px;
+            background-color: #16161c;
             border: 1px solid var(--border-color);
             color: #fff;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 0.95rem;
             outline: none;
             transition: border-color 0.2s;
@@ -108,29 +114,49 @@
         input:focus, select:focus {
             border-color: var(--accent-glow);
         }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
         .tool-btn {
             background: linear-gradient(135deg, #00f2fe, #4facfe);
-            color: #000;
+            color: #030305;
             border: none;
-            padding: 12px;
+            padding: 12px 18px;
             border-radius: 10px;
             font-weight: 700;
             cursor: pointer;
             transition: opacity 0.2s;
+            flex: 1;
         }
         .tool-btn:hover {
             opacity: 0.9;
         }
-        .output-box {
-            background-color: #09090b;
+        .copy-btn {
+            background: #27272a;
+            color: #fff;
             border: 1px solid var(--border-color);
-            padding: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #3f3f46;
+        }
+        .output-box {
+            background-color: #08080a;
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
             border-radius: 10px;
             color: #34d399;
             font-family: monospace;
             font-size: 0.95rem;
             word-break: break-all;
-            min-height: 42px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
         footer {
             text-align: center;
@@ -138,7 +164,7 @@
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin-top: auto;
             font-size: 0.95rem;
         }
@@ -146,251 +172,266 @@
 </head>
 <body>
 
-    <!-- AMP Auto Ad Body Tag Code -->
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-2057536839831582">
-    </amp-auto-ads>
+    <!-- AMP Auto Ad Body Code -->
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-2057536839831582"></amp-auto-ads>
 
     <header>
         <h1>Shaheen Ultra</h1>
-        <p class="subtitle">World's #1 Professional Web Tools Portal (100% Real & Working)</p>
+        <p class="subtitle">World's Ultimate Professional Web Tools Portal (32 Powerful Tools)</p>
     </header>
 
     <div class="container">
-        <h2>Interactive Tools Hub (30 Fully Working Tools)</h2>
+        <h2>Advanced Interactive Tools Hub (32 Fully Working Tools)</h2>
         <div class="tools-grid">
             
-            <!-- Tool 1: Character & Word Counter -->
+            <!-- Tool 1 -->
             <div class="tool-card">
                 <h3>1. Character & Word Counter</h3>
                 <input type="text" id="t1_in" placeholder="Type text here..." oninput="tool1()">
                 <div class="output-box" id="t1_out">Chars: 0 | Words: 0</div>
             </div>
 
-            <!-- Tool 2: Password Generator -->
+            <!-- Tool 2 -->
             <div class="tool-card">
                 <h3>2. Secure Password Generator</h3>
-                <button class="tool-btn" onclick="tool2()">Generate Password</button>
+                <div class="btn-group">
+                    <button class="tool-btn" onclick="tool2()">Generate</button>
+                    <button class="copy-btn" onclick="copyText('t2_out')">Copy</button>
+                </div>
                 <div class="output-box" id="t2_out">Click to generate</div>
             </div>
 
-            <!-- Tool 3: Uppercase Converter -->
+            <!-- Tool 3 -->
             <div class="tool-card">
-                <h3>3. Uppercase Converter</h3>
-                <input type="text" id="t3_in" placeholder="Enter lowercase text..." oninput="tool3()">
+                <h3>3. Uppercase Text Converter</h3>
+                <input type="text" id="t3_in" placeholder="Enter lowercase..." oninput="tool3()">
                 <div class="output-box" id="t3_out">Result</div>
             </div>
 
-            <!-- Tool 4: Lowercase Converter -->
+            <!-- Tool 4 -->
             <div class="tool-card">
-                <h3>4. Lowercase Converter</h3>
-                <input type="text" id="t4_in" placeholder="Enter UPPERCASE text..." oninput="tool4()">
+                <h3>4. Lowercase Text Converter</h3>
+                <input type="text" id="t4_in" placeholder="Enter UPPERCASE..." oninput="tool4()">
                 <div class="output-box" id="t4_out">Result</div>
             </div>
 
-            <!-- Tool 5: Basic Calculator -->
+            <!-- Tool 5 -->
             <div class="tool-card">
-                <h3>5. Quick Calculator</h3>
-                <input type="text" id="t5_in" placeholder="e.g. 50 + 25 * 2">
-                <button class="tool-btn" onclick="tool5()">Calculate</button>
-                <div class="output-box" id="t5_out">Result</div>
+                <h3>5. Quick Math Calculator</h3>
+                <input type="text" id="t5_in" placeholder="e.g. 100 + 25 * 2">
+                <button class="tool-btn" onclick="tool5()" style="margin-top:5px;">Calculate</button>
+                <div class="output-box" id="t5_out" style="margin-top:5px;">Result</div>
             </div>
 
-            <!-- Tool 6: Age Calculator -->
+            <!-- Tool 6 -->
             <div class="tool-card">
                 <h3>6. Age Calculator</h3>
-                <input type="number" id="t6_in" placeholder="Enter birth year (e.g. 2005)">
-                <button class="tool-btn" onclick="tool6()">Calculate Age</button>
-                <div class="output-box" id="t6_out">Your Age</div>
+                <input type="number" id="t6_in" placeholder="Birth Year (e.g. 2005)">
+                <button class="tool-btn" onclick="tool6()" style="margin-top:5px;">Check Age</button>
+                <div class="output-box" id="t6_out" style="margin-top:5px;">Your Age</div>
             </div>
 
-            <!-- Tool 7: Celsius to Fahrenheit -->
+            <!-- Tool 7 -->
             <div class="tool-card">
                 <h3>7. Celsius to Fahrenheit</h3>
                 <input type="number" id="t7_in" placeholder="Temp in Celsius">
-                <button class="tool-btn" onclick="tool7()">Convert</button>
-                <div class="output-box" id="t7_out">Fahrenheit value</div>
+                <button class="tool-btn" onclick="tool7()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t7_out" style="margin-top:5px;">Fahrenheit value</div>
             </div>
 
-            <!-- Tool 8: Fahrenheit to Celsius -->
+            <!-- Tool 8 -->
             <div class="tool-card">
                 <h3>8. Fahrenheit to Celsius</h3>
                 <input type="number" id="t8_in" placeholder="Temp in Fahrenheit">
-                <button class="tool-btn" onclick="tool8()">Convert</button>
-                <div class="output-box" id="t8_out">Celsius value</div>
+                <button class="tool-btn" onclick="tool8()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t8_out" style="margin-top:5px;">Celsius value</div>
             </div>
 
-            <!-- Tool 9: Even or Odd Checker -->
+            <!-- Tool 9 -->
             <div class="tool-card">
-                <h3>9. Even/Odd Number Checker</h3>
-                <input type="number" id="t9_in" placeholder="Enter an integer">
-                <button class="tool-btn" onclick="tool9()">Check</button>
-                <div class="output-box" id="t9_out">Even or Odd</div>
+                <h3>9. Even / Odd Number Checker</h3>
+                <input type="number" id="t9_in" placeholder="Enter integer">
+                <button class="tool-btn" onclick="tool9()" style="margin-top:5px;">Check</button>
+                <div class="output-box" id="t9_out" style="margin-top:5px;">Even or Odd</div>
             </div>
 
-            <!-- Tool 10: Random Number Generator -->
+            <!-- Tool 10 -->
             <div class="tool-card">
                 <h3>10. Random Number (1-100)</h3>
                 <button class="tool-btn" onclick="tool10()">Generate Random</button>
                 <div class="output-box" id="t10_out">Number</div>
             </div>
 
-            <!-- Tool 11: Text Reverser -->
+            <!-- Tool 11 -->
             <div class="tool-card">
                 <h3>11. Text Reverser Tool</h3>
                 <input type="text" id="t11_in" placeholder="Type to reverse..." oninput="tool11()">
                 <div class="output-box" id="t11_out">Reversed text</div>
             </div>
 
-            <!-- Tool 12: Square Calculator -->
+            <!-- Tool 12 -->
             <div class="tool-card">
                 <h3>12. Square Calculator</h3>
                 <input type="number" id="t12_in" placeholder="Enter number">
-                <button class="tool-btn" onclick="tool12()">Calculate Square</button>
-                <div class="output-box" id="t12_out">Result</div>
+                <button class="tool-btn" onclick="tool12()" style="margin-top:5px;">Calculate</button>
+                <div class="output-box" id="t12_out" style="margin-top:5px;">Result</div>
             </div>
 
-            <!-- Tool 13: Cube Calculator -->
+            <!-- Tool 13 -->
             <div class="tool-card">
                 <h3>13. Cube Calculator</h3>
                 <input type="number" id="t13_in" placeholder="Enter number">
-                <button class="tool-btn" onclick="tool13()">Calculate Cube</button>
-                <div class="output-box" id="t13_out">Result</div>
+                <button class="tool-btn" onclick="tool13()" style="margin-top:5px;">Calculate</button>
+                <div class="output-box" id="t13_out" style="margin-top:5px;">Result</div>
             </div>
 
-            <!-- Tool 14: KB to MB Converter -->
+            <!-- Tool 14 -->
             <div class="tool-card">
                 <h3>14. KB to MB Converter</h3>
-                <input type="number" id="t14_in" placeholder="Enter KB value">
-                <button class="tool-btn" onclick="tool14()">Convert</button>
-                <div class="output-box" id="t14_out">MB value</div>
+                <input type="number" id="t14_in" placeholder="Enter KB">
+                <button class="tool-btn" onclick="tool14()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t14_out" style="margin-top:5px;">MB value</div>
             </div>
 
-            <!-- Tool 15: MB to GB Converter -->
+            <!-- Tool 15 -->
             <div class="tool-card">
                 <h3>15. MB to GB Converter</h3>
-                <input type="number" id="t15_in" placeholder="Enter MB value">
-                <button class="tool-btn" onclick="tool15()">Convert</button>
-                <div class="output-box" id="t15_out">GB value</div>
+                <input type="number" id="t15_in" placeholder="Enter MB">
+                <button class="tool-btn" onclick="tool15()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t15_out" style="margin-top:5px;">GB value</div>
             </div>
 
-            <!-- Tool 16: Minutes to Seconds -->
+            <!-- Tool 16 -->
             <div class="tool-card">
                 <h3>16. Minutes to Seconds</h3>
                 <input type="number" id="t16_in" placeholder="Enter minutes">
-                <button class="tool-btn" onclick="tool16()">Convert</button>
-                <div class="output-box" id="t16_out">Seconds</div>
+                <button class="tool-btn" onclick="tool16()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t16_out" style="margin-top:5px;">Seconds</div>
             </div>
 
-            <!-- Tool 17: Hours to Minutes -->
+            <!-- Tool 17 -->
             <div class="tool-card">
                 <h3>17. Hours to Minutes</h3>
                 <input type="number" id="t17_in" placeholder="Enter hours">
-                <button class="tool-btn" onclick="tool17()">Convert</button>
-                <div class="output-box" id="t17_out">Minutes</div>
+                <button class="tool-btn" onclick="tool17()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t17_out" style="margin-top:5px;">Minutes</div>
             </div>
 
-            <!-- Tool 18: Days to Hours -->
+            <!-- Tool 18 -->
             <div class="tool-card">
                 <h3>18. Days to Hours</h3>
                 <input type="number" id="t18_in" placeholder="Enter days">
-                <button class="tool-btn" onclick="tool18()">Convert</button>
-                <div class="output-box" id="t18_out">Hours</div>
+                <button class="tool-btn" onclick="tool18()" style="margin-top:5px;">Convert</button>
+                <div class="output-box" id="t18_out" style="margin-top:5px;">Hours</div>
             </div>
 
-            <!-- Tool 19: Discount Price Calculator -->
+            <!-- Tool 19 -->
             <div class="tool-card">
                 <h3>19. Discount Calculator</h3>
-                <input type="number" id="t19_p" placeholder="Price ($)" style="margin-bottom:8px;">
+                <input type="number" id="t19_p" placeholder="Price ($)" style="margin-bottom:6px;">
                 <input type="number" id="t19_d" placeholder="Discount (%)">
-                <button class="tool-btn" onclick="tool19()" style="margin-top:8px;">Calculate Final</button>
-                <div class="output-box" id="t19_out">Final Price</div>
+                <button class="tool-btn" onclick="tool19()" style="margin-top:6px;">Calculate</button>
+                <div class="output-box" id="t19_out" style="margin-top:6px;">Final Price</div>
             </div>
 
-            <!-- Tool 20: Tip Calculator -->
+            <!-- Tool 20 -->
             <div class="tool-card">
                 <h3>20. Tip Calculator (15%)</h3>
                 <input type="number" id="t20_in" placeholder="Bill amount">
-                <button class="tool-btn" onclick="tool20()">Calculate Tip</button>
-                <div class="output-box" id="t20_out">Tip Amount</div>
+                <button class="tool-btn" onclick="tool20()" style="margin-top:5px;">Calculate Tip</button>
+                <div class="output-box" id="t20_out" style="margin-top:5px;">Tip Amount</div>
             </div>
 
-            <!-- Tool 21: Vowel Counter -->
+            <!-- Tool 21 -->
             <div class="tool-card">
                 <h3>21. Vowel Counter</h3>
                 <input type="text" id="t21_in" placeholder="Type sentence..." oninput="tool21()">
                 <div class="output-box" id="t21_out">Vowels: 0</div>
             </div>
 
-            <!-- Tool 22: Remove Extra Spaces -->
+            <!-- Tool 22 -->
             <div class="tool-card">
-                <h3>22. Space Cleaner</h3>
+                <h3>22. Extra Space Cleaner</h3>
                 <input type="text" id="t22_in" placeholder="Type messy text..." oninput="tool22()">
                 <div class="output-box" id="t22_out">Clean text</div>
             </div>
 
-            <!-- Tool 23: Simple Interest Calculator -->
+            <!-- Tool 23 -->
             <div class="tool-card">
-                <h3>23. Simple Interest</h3>
-                <input type="number" id="t23_p" placeholder="Principal" style="margin-bottom:8px;">
+                <h3>23. Simple Interest Calculator</h3>
+                <input type="number" id="t23_p" placeholder="Principal" style="margin-bottom:6px;">
                 <input type="number" id="t23_r" placeholder="Rate %">
-                <button class="tool-btn" onclick="tool23()" style="margin-top:8px;">Calculate</button>
-                <div class="output-box" id="t23_out">Interest</div>
+                <button class="tool-btn" onclick="tool23()" style="margin-top:6px;">Calculate</button>
+                <div class="output-box" id="t23_out" style="margin-top:6px;">Interest</div>
             </div>
 
-            <!-- Tool 24: Speed Calculator -->
+            <!-- Tool 24 -->
             <div class="tool-card">
                 <h3>24. Speed Calculator</h3>
-                <input type="number" id="t24_d" placeholder="Distance (km)" style="margin-bottom:8px;">
+                <input type="number" id="t24_d" placeholder="Distance (km)" style="margin-bottom:6px;">
                 <input type="number" id="t24_t" placeholder="Time (hours)">
-                <button class="tool-btn" onclick="tool24()" style="margin-top:8px;">Calculate Speed</button>
-                <div class="output-box" id="t24_out">km/h</div>
+                <button class="tool-btn" onclick="tool24()" style="margin-top:6px;">Calculate Speed</button>
+                <div class="output-box" id="t24_out" style="margin-top:6px;">km/h</div>
             </div>
 
-            <!-- Tool 25: Square Perimeter -->
+            <!-- Tool 25 -->
             <div class="tool-card">
                 <h3>25. Square Perimeter</h3>
                 <input type="number" id="t25_in" placeholder="Side length">
-                <button class="tool-btn" onclick="tool25()">Calculate</button>
-                <div class="output-box" id="t25_out">Perimeter</div>
+                <button class="tool-btn" onclick="tool25()" style="margin-top:5px;">Calculate</button>
+                <div class="output-box" id="t25_out" style="margin-top:5px;">Perimeter</div>
             </div>
 
-            <!-- Tool 26: Square Area -->
+            <!-- Tool 26 -->
             <div class="tool-card">
                 <h3>26. Square Area</h3>
                 <input type="number" id="t26_in" placeholder="Side length">
-                <button class="tool-btn" onclick="tool26()">Calculate</button>
-                <div class="output-box" id="t26_out">Area</div>
+                <button class="tool-btn" onclick="tool26()" style="margin-top:5px;">Calculate</button>
+                <div class="output-box" id="t26_out" style="margin-top:5px;">Area</div>
             </div>
 
-            <!-- Tool 27: Text Length Checker -->
+            <!-- Tool 27 -->
             <div class="tool-card">
                 <h3>27. Text Length Checker</h3>
                 <input type="text" id="t27_in" placeholder="Type text..." oninput="tool27()">
                 <div class="output-box" id="t27_out">Length: 0</div>
             </div>
 
-            <!-- Tool 28: Coin Toss Simulator -->
+            <!-- Tool 28 -->
             <div class="tool-card">
                 <h3>28. Digital Coin Toss</h3>
                 <button class="tool-btn" onclick="tool28()">Toss Coin</button>
                 <div class="output-box" id="t28_out">Heads or Tails</div>
             </div>
 
-            <!-- Tool 29: Word Repeater -->
+            <!-- Tool 29 -->
             <div class="tool-card">
                 <h3>29. Word Repeater</h3>
-                <input type="text" id="t29_w" placeholder="Word" style="margin-bottom:8px;">
+                <input type="text" id="t29_w" placeholder="Word" style="margin-bottom:6px;">
                 <input type="number" id="t29_n" placeholder="Times">
-                <button class="tool-btn" onclick="tool29()" style="margin-top:8px;">Repeat</button>
-                <div class="output-box" id="t29_out">Result</div>
+                <button class="tool-btn" onclick="tool29()" style="margin-top:6px;">Repeat</button>
+                <div class="output-box" id="t29_out" style="margin-top:6px;">Result</div>
             </div>
 
-            <!-- Tool 30: Shaheen Brand Status -->
+            <!-- Tool 30 -->
             <div class="tool-card">
-                <h3>30. Shaheen Status Hub</h3>
-                <button class="tool-btn" onclick="tool30()">Check System</button>
-                <div class="output-box" id="t30_out">Status: 100% Operational 🦅</div>
+                <h3>30. Binary Text Encoder</h3>
+                <input type="text" id="t30_in" placeholder="Type text..." oninput="tool30()">
+                <div class="output-box" id="t30_out">Binary result</div>
+            </div>
+
+            <!-- Tool 31 -->
+            <div class="tool-card">
+                <h3>31. Base64 Encoder</h3>
+                <input type="text" id="t31_in" placeholder="Type text..." oninput="tool31()">
+                <div class="output-box" id="t31_out">Encoded string</div>
+            </div>
+
+            <!-- Tool 32 -->
+            <div class="tool-card">
+                <h3>32. Shaheen System Status</h3>
+                <button class="tool-btn" onclick="tool32()">Check System</button>
+                <div class="output-box" id="t32_out">Status: 100% Operational 🦅</div>
             </div>
 
         </div>
@@ -400,8 +441,14 @@
         <p>&copy; 2026 Shaheen Ultra. All rights reserved. Powered by Google AdSense.</p>
     </footer>
 
-    <!-- JavaScript Functions for 100% Working Tools -->
+    <!-- JavaScript Functions & Clipboard Utility -->
     <script>
+        function copyText(elementId) {
+            let text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard!");
+            });
+        }
         function tool1() {
             let val = document.getElementById("t1_in").value;
             let words = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
@@ -474,7 +521,20 @@
             let n = parseInt(document.getElementById("t29_n").value);
             if(w && n) document.getElementById("t29_out").innerText = w.repeat(n);
         }
-        function tool30() { document.getElementById("t30_out").innerText = "Shaheen Ultra Systems Online 🚀"; }
+        function tool30() {
+            let str = document.getElementById("t30_in").value;
+            let res = str.split('').map(char => char.charCodeAt(0).toString(2)).join(' ');
+            document.getElementById("t30_out").innerText = res;
+        }
+        function tool31() {
+            let str = document.getElementById("t31_in").value;
+            try {
+                document.getElementById("t31_out").innerText = btoa(str);
+            } catch(e) {
+                document.getElementById("t31_out").innerText = "Error encoding";
+            }
+        }
+        function tool32() { document.getElementById("t32_out").innerText = "Shaheen Ultra Systems Online 🚀"; }
     </script>
 </body>
 </html>
