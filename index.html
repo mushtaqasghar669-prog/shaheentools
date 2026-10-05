@@ -1,300 +1,265 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="gu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaem Ultra Ecosystem - Autonomous AI & Gym 26 Hub</title>
+    <title>Shaheen Ultra Ecosystem - Premium AI Tools & Gym 26</title>
     <style>
         :root {
-            --bg-main: #07070e;
-            --bg-card: #12121c;
-            --accent-glow: #6366f1;
-            --accent-secondary: #ec4899;
-            --text-main: #ffffff;
+            --bg-color: #0f111a;
+            --card-bg: #1a1d2d;
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: #272738;
+            --border: #2e324d;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; padding-bottom: 50px; }
+        body { background: var(--bg-color); color: var(--text-main); line-height: 1.6; }
         
-        header { background: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 10px; }
-        .logo { font-size: 1.25rem; font-weight: bold; background: linear-gradient(45deg, var(--accent-glow), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        nav { display: flex; flex-wrap: wrap; gap: 15px; }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
-        nav a:hover { color: var(--accent-glow); }
+        /* Navbar */
+        header { background: var(--card-bg); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav gap { display: flex; gap: 20px; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .section-box { display: none; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .section-box.active { display: block; }
+        /* Container & Sections */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section { display: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .section.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        h1, h2 { margin-bottom: 15px; color: var(--text-main); }
+        p { color: var(--text-muted); margin-bottom: 20px; }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #141622; border: 1px solid var(--border); padding: 20px; border-radius: 10px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); }
         
-        h1, h2 { margin-bottom: 15px; color: var(--text-main); font-weight: 700; }
-        p { color: var(--text-muted); margin-bottom: 15px; font-size: 0.95rem; }
+        /* Forms & Buttons */
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; background: var(--bg-color); border: 1px solid var(--border); color: white; border-radius: 6px; outline: none; }
+        button { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1rem; transition: 0.3s; }
+        button:hover { opacity: 0.9; transform: scale(0.98); }
 
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card-item { background: #0b0b14; border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; cursor: pointer; transition: 0.3s; }
-        .card-item:hover { border-color: var(--accent-glow); transform: translateY(-3px); }
-        .card-item h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-main); }
-        .card-item p { font-size: 0.88rem; }
+        /* Gym 26 Specific UI */
+        .gym-ui { background: var(--bg-color); border: 2px solid var(--primary); padding: 30px; border-radius: 12px; text-align: center; }
+        .timer { font-size: 4rem; font-weight: bold; color: var(--secondary); margin: 20px 0; font-variant-numeric: tabular-nums; }
+        .exercise-name { font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+        .progress-bar { width: 100%; height: 8px; background: var(--border); border-radius: 4px; margin: 20px 0; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 1s linear; }
 
-        input, textarea, select { width: 100%; padding: 14px; background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main); border-radius: 8px; margin-bottom: 15px; outline: none; font-size: 0.95rem; }
-        button { background: linear-gradient(45deg, var(--accent-glow), var(--accent-secondary)); color: white; border: none; padding: 14px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; font-size: 1rem; }
-        button:hover { opacity: 0.9; }
-
-        /* Autonomous Gym 26 Animation Arena */
-        .gym-arena { background: #0b0b14; border: 2px solid var(--accent-glow); border-radius: 16px; padding: 30px; text-align: center; margin-top: 20px; }
-        .avatar-box { font-size: 4.5rem; margin: 20px 0; display: inline-block; animation: moveAvatar 1.2s infinite ease-in-out; }
-        @keyframes moveAvatar {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(15px) scale(0.92); }
-        }
-        .auto-timer { font-size: 3rem; font-weight: bold; color: var(--accent-secondary); margin: 15px 0; }
-        .instruction-box { background: #141422; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); margin-top: 15px; font-size: 1.1rem; color: #38bdf8; font-weight: 600; }
-
-        footer { text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-        footer a { color: var(--accent-glow); text-decoration: none; margin: 0 10px; cursor: pointer; }
+        /* Results Box */
+        .result-box { margin-top: 15px; padding: 15px; background: rgba(99, 102, 241, 0.1); border-left: 4px solid var(--primary); border-radius: 4px; font-weight: bold; display: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">⚡ Shaem Ultra Ecosystem</div>
+        <div class="logo">⚡ Shaheen Ultra</div>
         <nav>
-            <a onclick="showSection('home')">Home</a>
-            <a onclick="showSection('gym26')">💪 Gym 26 Autonomous AI</a>
-            <a onclick="showSection('toolsHub')">AdSense Tools</a>
-            <a onclick="showSection('blog')">Guides & Blog</a>
-            <a onclick="showSection('about')">About Us</a>
-            <a onclick="showSection('contact')">Contact</a>
+            <a onclick="switchTab('tools')">Tools</a>
+            <a onclick="switchTab('gym26')">Gym 26 AI</a>
+            <a onclick="switchTab('blog')">AdSense Guides</a>
         </nav>
     </header>
 
     <div class="container">
-
-        <!-- 1. HOME SECTION -->
-        <div id="home" class="section-box active">
-            <h1>Welcome to Shaem Ultra Autonomous Ecosystem</h1>
-            <p>Featuring our flagship **Gym 26 Autonomous AI Body Builder** which automatically configures your physique goals, complete with live voice guidance, dynamic animated posture training, and full Google AdSense optimized utilities.</p>
-            <div class="grid-cards">
-                <div class="card-item" onclick="showSection('gym26')">
-                    <h3>💪 Gym 26 Autonomous AI Trainer</h3>
-                    <p>Let AI build your custom body schedule, auto-switch routines, and talk to you with live voice instructions.</p>
-                </div>
-                <div class="card-item" onclick="showSection('toolsHub')">
-                    <h3>🛠️ High-CPC AdSense Financial & Tech Tools</h3>
-                    <p>High-value automated calculators built strictly to satisfy AdSense traffic and value rules.</p>
-                </div>
-                <div class="card-item" onclick="showSection('blog')">
-                    <h3>📚 Expert AdSense Policy Guides</h3>
-                    <p>In-depth analytical articles ensuring high monetization eligibility.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. GYM 26 AUTONOMOUS AI BODY BUILDER -->
-        <div id="gym26" class="section-box">
-            <h2>🏋 Gym 26 Autonomous AI Body Builder</h2>
-            <p>Enter your details below. Our AI engine will automatically generate your custom body transformation plan, control the timer, and speak out instructions dynamically without manual selection!</p>
+        
+        <!-- 1. WORKING TOOLS SECTION -->
+        <div id="tools" class="section active">
+            <h2>🛠️ Shaheen Premium Web Tools</h2>
+            <p>100% working, AdSense-friendly tools for daily utility.</p>
             
-            <div style="background: #0b0b14; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
-                <input type="text" id="userNameBody" placeholder="Your Name (e.g. Abdulbasit)">
+            <div class="grid">
+                <!-- BMI Calculator -->
+                <div class="card">
+                    <h3>BMI Calculator</h3>
+                    <p style="font-size: 0.85rem;">Check your Body Mass Index.</p>
+                    <input type="number" id="bmiW" placeholder="Weight (kg)">
+                    <input type="number" id="bmiH" placeholder="Height (cm)">
+                    <button onclick="calcBMI()">Calculate</button>
+                    <div id="bmiResult" class="result-box"></div>
+                </div>
+
+                <!-- Password Generator -->
+                <div class="card">
+                    <h3>Secure Password</h3>
+                    <p style="font-size: 0.85rem;">Generate unbreakable passwords.</p>
+                    <input type="number" id="passLen" placeholder="Length (e.g. 12)" value="12">
+                    <button onclick="genPassword()">Generate</button>
+                    <div id="passResult" class="result-box" style="word-break: break-all;"></div>
+                </div>
+
+                <!-- Word Counter -->
+                <div class="card">
+                    <h3>Word & Char Counter</h3>
+                    <p style="font-size: 0.85rem;">Essential for SEO and writing.</p>
+                    <input type="text" id="textInput" placeholder="Type or paste text here...">
+                    <button onclick="countWords()">Count</button>
+                    <div id="wordResult" class="result-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. GYM 26 AUTONOMOUS AI SECTION -->
+        <div id="gym26" class="section">
+            <h2>🏋️‍♂️ Gym 26 Autonomous Body Builder</h2>
+            <p>Start the AI. It will automatically build your routine, track time, and guide you with precise voice instructions. No manual selection needed.</p>
+            
+            <div id="gymSetup" class="card">
+                <input type="text" id="userName" placeholder="Enter your name (e.g. Abdul Basit)">
                 <select id="userGoal">
-                    <option value="muscle">Goal: Full Body Muscle Hypertrophy & Bulk</option>
-                    <option value="fatloss">Goal: Extreme Fat Loss & Core Shredding</option>
-                    <option value="stamina">Goal: Athletic Stamina & Cardiovascular Strength</option>
+                    <option value="muscle">Muscle Building</option>
+                    <option value="fatloss">Fat Loss & Shredding</option>
                 </select>
-                <button onclick="startAutonomousGym()">Generate & Start Autonomous Gym 26 AI</button>
+                <button onclick="startGymAI()">Start AI Workout</button>
             </div>
 
-            <div class="gym-arena" id="gymArenaBox" style="display:none;">
-                <div id="aiAvatar" class="avatar-box">🤖</div>
-                <div class="auto-timer" id="autoTimerDisplay">00:45</div>
-                <div class="instruction-box" id="aiInstructionText">AI is initializing your customized routine...</div>
-                <button onclick="stopAutonomousGym()" style="margin-top: 20px; background: #ef4444; width: auto; padding: 10px 25px;">Stop Autonomous Session</button>
-            </div>
-        </div>
-
-        <!-- 3. ADSENSE COMPLIANT HIGH-CPC TOOLS -->
-        <div id="toolsHub" class="section-box">
-            <h2>🛠️ AdSense Compliant Financial & Utility Hub</h2>
-            <p>Professional utility tools designed to provide authentic visitor engagement, maximizing AdSense approval rates.</p>
-            <div class="grid-cards">
-                <div class="card-item" onclick="runUtility('tax')">
-                    <h3>1. Global Tax & VAT Estimator</h3>
-                    <p>Calculate enterprise tax liabilities and net earnings instantly.</p>
-                </div>
-                <div class="card-item" onclick="runUtility('cpc')">
-                    <h3>2. High-CPC Ad Revenue Calculator</h3>
-                    <p>Estimate monthly ad earnings based on traffic impressions.</p>
-                </div>
-                <div class="card-item" onclick="runUtility('roi')">
-                    <h3>3. SaaS ROI & Growth Calculator</h3>
-                    <p>Analyze startup return on investment and user acquisition costs.</p>
-                </div>
-            </div>
-            <div id="utilityResultBox" style="margin-top: 20px; background: #0b0b14; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); display:none;">
-                <h3 style="color: var(--accent-glow); margin-bottom: 10px;">📊 Computation Results</h3>
-                <p id="utilityOutputText" style="color: #fff; font-size: 1.05rem;"></p>
+            <div id="gymArena" class="gym-ui" style="display: none;">
+                <div class="exercise-name" id="exName">Get Ready!</div>
+                <p id="exDesc" style="color: var(--primary);">System Initializing...</p>
+                <div class="timer" id="timerDisplay">00:00</div>
+                <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+                <button onclick="stopGymAI()" style="background: #ef4444; width: 50%; margin-top: 10px;">End Session</button>
             </div>
         </div>
 
-        <!-- 4. BLOG & GUIDES (AdSense Mandatory Content) -->
-        <div id="blog" class="section-box">
-            <h2>📚 Authoritative Guides & Financial Insights</h2>
-            <p>Comprehensive long-form articles written to fulfill Google AdSense high-quality content guidelines.</p>
-            <div class="grid-cards">
-                <div class="card-item" onclick="alert('Full article loaded successfully.')">
-                    <h3>Building High-Performance Autonomous Web Apps in 2026</h3>
-                    <p>An exhaustive architectural breakdown of integrating browser speech synthesis and automated routines...</p>
+        <!-- 3. ADSENSE CONTENT SECTION -->
+        <div id="blog" class="section">
+            <h2>📚 AdSense & Policies</h2>
+            <p>High-quality content to ensure full compliance with Google AdSense terms.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Privacy Policy</h3>
+                    <p>We respect user data. This application uses local browser resources to run tools. No personal fitness data from Gym 26 is sent to external servers.</p>
                 </div>
-                <div class="card-item" onclick="alert('Full article loaded successfully.')">
-                    <h3>Maximizing AdSense RPM through Utility-Driven Ecosystems</h3>
-                    <p>Strategies for optimizing user retention and engagement on modern multi-tool web portals...</p>
+                <div class="card">
+                    <h3>Terms of Service</h3>
+                    <p>By using Shaheen Ultra tools, you agree to our fair use policy. The calculators provide estimates and should not replace professional financial or medical advice.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- 5. ABOUT US -->
-        <div id="about" class="section-box">
-            <h2>💎 About Shaem Ultra Ecosystem</h2>
-            <p>Engineered by Shaheen Team and Abdulbasit. Providing next-gen web utilities, autonomous AI routines, and strict adherence to web compliance standards.</p>
-        </div>
-
-        <!-- 6. CONTACT US -->
-        <div id="contact" class="section-box">
-            <h2>📞 Contact Support</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea rows="3" placeholder="Your Inquiry..."></textarea>
-            <button onclick="alert('Inquiry sent successfully!')">Submit Message</button>
-        </div>
-
-        <!-- 7. PRIVACY POLICY (AdSense Mandatory) -->
-        <div id="privacy" class="section-box">
-            <h2>🔒 Privacy Policy</h2>
-            <p>Shaem Ultra Ecosystem values your privacy. We utilize standard cookies and third-party networks like Google AdSense to deliver relevant ads based on user preferences.</p>
-        </div>
-
-        <!-- 8. TERMS & CONDITIONS (AdSense Mandatory) -->
-        <div id="terms" class="section-box">
-            <h2>📄 Terms & Conditions</h2>
-            <p>By accessing our automated fitness and utility platform, you agree to comply with our usage terms and data policies.</p>
         </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Shaem Ultra Ecosystem. All Rights Reserved.</p>
-        <div style="margin-top: 10px;">
-            <a onclick="showSection('privacy')">Privacy Policy</a> | 
-            <a onclick="showSection('terms')">Terms & Conditions</a> | 
-            <a onclick="showSection('contact')">Contact Us</a>
-        </div>
-    </footer>
-
     <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section-box').forEach(box => {
-                box.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-            window.scrollTo(0, 0);
+        // --- NAVIGATION ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
         }
 
-        // Voice Assistant Engine (Text to Speech)
-        function speakVoice(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); // Stop previous voice
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.rate = 1.0;
-                utterance.pitch = 1.0;
-                window.speechSynthesis.speak(utterance);
-            }
+        // --- TOOLS LOGIC ---
+        function calcBMI() {
+            let w = document.getElementById('bmiW').value;
+            let h = document.getElementById('bmiH').value / 100;
+            let res = document.getElementById('bmiResult');
+            if(w > 0 && h > 0) {
+                let bmi = (w / (h * h)).toFixed(1);
+                let status = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal" : "Overweight";
+                res.innerHTML = `Your BMI: ${bmi} (${status})`;
+                res.style.display = "block";
+            } else { alert("Please enter valid numbers."); }
         }
 
-        // Autonomous Gym 26 Engine
-        let autoTimerInterval;
-        function startAutonomousGym() {
-            const name = document.getElementById('userNameBody').value || "User";
-            const goal = document.getElementById('userGoal').value;
-            
-            document.getElementById('gymArenaBox').style.display = 'block';
-            
-            let routines = [];
-            if(goal === 'muscle') {
-                routines = [
-                    { name: "Heavy Push-ups", duration: 15, emoji: "🏋️‍♂️", audio: "Welcome " + name + "! Let's build solid muscle. Start heavy push-ups now." },
-                    { name: "Deep Squats", duration: 15, emoji: "🦵", audio: "Great job! Now automatically transitioning to deep squats for lower body mass." },
-                    { name: "Core Planks", duration: 15, emoji: "⚡", audio: "Final stretch! Hold core planks to lock in muscle growth." }
-                ];
-            } else if(goal === 'fatloss') {
-                routines = [
-                    { name: "High Intensity Jumping Jacks", duration: 15, emoji: "🏃‍♂️", audio: "Welcome " + name + "! Fat loss mode activated. Begin jumping jacks!" },
-                    { name: "Mountain Climbers", duration: 15, emoji: "🔥", audio: "Keep pushing! Transitioning to mountain climbers to burn calories." },
-                    { name: "Burpees", duration: 15, emoji: "⚡", audio: "Final phase! Finish strong with fast burpees." }
-                ];
-            } else {
-                routines = [
-                    { name: "Cardio Stretches", duration: 15, emoji: "🤸‍♂️", audio: "Welcome " + name + "! Starting athletic stamina warm-up." },
-                    { name: "Dynamic Lunges", duration: 15, emoji: "🏃", audio: "Switching automatically to dynamic lunges." },
-                    { name: "Endurance Jumps", duration: 15, emoji: "🚀", audio: "Final endurance push! Keep going." }
-                ];
-            }
+        function genPassword() {
+            let len = document.getElementById('passLen').value || 12;
+            let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+            let pass = "";
+            for(let i=0; i<len; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+            let res = document.getElementById('passResult');
+            res.innerHTML = `Password: ${pass}`;
+            res.style.display = "block";
+        }
 
-            let currentStep = 0;
+        function countWords() {
+            let txt = document.getElementById('textInput').value.trim();
+            let words = txt ? txt.split(/\s+/).length : 0;
+            let chars = txt.length;
+            let res = document.getElementById('wordResult');
+            res.innerHTML = `Words: ${words} | Characters: ${chars}`;
+            res.style.display = "block";
+        }
+
+        // --- GYM 26 AUTONOMOUS AI LOGIC ---
+        let gymTimer;
+        let ttsSynth = window.speechSynthesis;
+
+        const muscleRoutine = [
+            { name: "Warmup Stretches", time: 10, desc: "Loosen up your body." },
+            { name: "Push-ups", time: 20, desc: "Chest down, straight back." },
+            { name: "Rest", time: 10, desc: "Catch your breath." },
+            { name: "Squats", time: 20, desc: "Go deep, keep chest up." }
+        ];
+
+        const fatlossRoutine = [
+            { name: "Jumping Jacks", time: 20, desc: "Keep a fast pace!" },
+            { name: "Rest", time: 10, desc: "Breathe in deeply." },
+            { name: "Mountain Climbers", time: 20, desc: "Drive your knees." }
+        ];
+
+        function speak(text) {
+            if(ttsSynth.speaking) ttsSynth.cancel();
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 1;
+            ttsSynth.speak(utterance);
+        }
+
+        function startGymAI() {
+            let name = document.getElementById('userName').value || "User";
+            let goal = document.getElementById('userGoal').value;
+            let routine = goal === 'muscle' ? muscleRoutine : fatlossRoutine;
             
-            function runRoutineStep() {
-                if(currentStep >= routines.length) {
-                    document.getElementById('aiInstructionText').innerText = "🎉 Gym 26 Autonomous Session Completed Successfully!";
-                    document.getElementById('aiAvatar.innerText') = "🏆";
-                    speakVoice("Fantastic job! Your autonomous Gym 26 workout is fully completed.");
+            document.getElementById('gymSetup').style.display = 'none';
+            document.getElementById('gymArena').style.display = 'block';
+            
+            speak(`Welcome ${name}. Starting your ${goal} workout now.`);
+            
+            let step = 0;
+
+            function runStep() {
+                if(step >= routine.length) {
+                    document.getElementById('exName').innerText = "Workout Complete!";
+                    document.getElementById('exDesc').innerText = "Great job!";
+                    document.getElementById('timerDisplay').innerText = "00:00";
+                    document.getElementById('progFill').style.width = "100%";
+                    speak(`Excellent work ${name}. Workout finished.`);
                     return;
                 }
 
-                let currentRoutine = routines[currentStep];
-                document.getElementById('aiAvatar').innerText = currentRoutine.emoji;
-                document.getElementById('aiInstructionText').innerText = "🔥 Automated Task: " + currentRoutine.name;
-                speakVoice(currentRoutine.audio);
+                let current = routine[step];
+                document.getElementById('exName').innerText = current.name;
+                document.getElementById('exDesc').innerText = current.desc;
+                speak(`${current.name}. ${current.desc}`);
 
-                let timeLeft = currentRoutine.duration;
-                clearInterval(autoTimerInterval);
+                let timeLeft = current.time;
+                let totalTime = current.time;
 
-                autoTimerInterval = setInterval(() => {
-                    let mins = Math.floor(timeLeft / 60);
-                    let secs = timeLeft % 60;
-                    document.getElementById('autoTimerDisplay').innerText = 
-                        (mins < 10 ? "0" + mins : mins) + ":" + (secs < 10 ? "0" + secs : secs);
-
+                clearInterval(gymTimer);
+                gymTimer = setInterval(() => {
+                    document.getElementById('timerDisplay').innerText = `00:${timeLeft < 10 ? '0'+timeLeft : timeLeft}`;
+                    document.getElementById('progFill').style.width = `${((totalTime - timeLeft) / totalTime) * 100}%`;
+                    
                     if(timeLeft <= 0) {
-                        clearInterval(autoTimerInterval);
-                        currentStep++;
-                        setTimeout(runRoutineStep, 1000); // Next routine step
+                        clearInterval(gymTimer);
+                        step++;
+                        setTimeout(runStep, 1000); // 1 sec pause between exercises
                     }
                     timeLeft--;
                 }, 1000);
             }
 
-            runRoutineStep();
+            // Start first step after a short delay
+            setTimeout(runStep, 2000);
         }
 
-        function stopAutonomousGym() {
-            clearInterval(autoTimerInterval);
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            document.getElementById('gymArenaBox').style.display = 'none';
-        }
-
-        // Utility Calculator for AdSense Value
-        function runUtility(type) {
-            const resBox = document.getElementById('utilityResultBox');
-            const resText = document.getElementById('utilityOutputText');
-            resBox.style.display = 'block';
-
-            if(type === 'tax') {
-                resText.innerHTML = "💡 Estimated Tax & VAT Compliance Score: <strong>98.4% (Optimized for High-CPC AdSense Standards)</strong>.";
-            } else if(type === 'cpc') {
-                resText.innerHTML = "💰 Estimated AdSense Revenue per 10,000 Visitors: <strong>$45.00 - $120.00 (High-Tier Region)</strong>.";
-            } else {
-                resText.innerHTML = "📈 SaaS ROI Efficiency Index: <strong>3.4x Projected Annual Growth Rate</strong>.";
-            }
+        function stopGymAI() {
+            clearInterval(gymTimer);
+            ttsSynth.cancel();
+            document.getElementById('gymSetup').style.display = 'block';
+            document.getElementById('gymArena').style.display = 'none';
         }
     </script>
 </body>
