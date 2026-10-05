@@ -1,316 +1,384 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080c18">
-<meta name="description" content="Shaheen Tools — 2,000 free browser tools plus a guided Gym 2026 experience with animated coaching, voice guidance, progress and streaks.">
-<meta name="robots" content="index,follow">
-<meta name="google-adsense-account" content="ca-pub-2057536839831582">
-<title>Shaheen Tools — 2,000 Free Tools</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import {getAnalytics,isSupported} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
-const firebaseConfig={apiKey:"AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",authDomain:"shaheen-ultra-fb324.firebaseapp.com",projectId:"shaheen-ultra-fb324",storageBucket:"shaheen-ultra-fb324.firebasestorage.app",messagingSenderId:"733041897568",appId:"1:733041897568:web:ff56c08fada50e40a59305",measurementId:"G-WTNJLPQ88E"};
-try{const app=initializeApp(firebaseConfig);isSupported().then(ok=>ok&&getAnalytics(app)).catch(()=>{});}catch(e){}
-</script>
-<style>
-:root{--bg:#070a12;--panel:#101626;--panel2:#151d31;--text:#f7f9ff;--muted:#aab4ca;--line:#28334e;--brand:#7658ff;--mint:#28d7ad;--gold:#ffc95a;--red:#ff7180;--shadow:0 20px 70px #0007;--r:22px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% -5%,#25175c 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}.hidden{display:none!important}
-.top{position:sticky;top:0;z-index:50;background:#080c18d9;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff10}.topin{max-width:1280px;margin:auto;padding:12px 16px;display:flex;gap:12px;align-items:center}
-.logo{display:flex;align-items:center;gap:9px;font-weight:900;white-space:nowrap}.mark{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),#b278ff);box-shadow:0 10px 30px #7658ff55}
-.search{flex:1;position:relative}.search input{width:100%;background:#0d1322;border:1px solid var(--line);color:var(--text);border-radius:15px;padding:12px 14px 12px 42px;outline:0}.search i{position:absolute;left:14px;top:9px;color:var(--muted);font-style:normal;font-size:20px}.icon{width:43px;height:43px;border-radius:13px;border:1px solid var(--line);background:#101729;color:#fff}
-main{max-width:1280px;margin:auto;padding:22px 16px 100px}.hero{display:grid;grid-template-columns:1.45fr .8fr;gap:16px}.card,.heroCard{background:linear-gradient(145deg,#ffffff08,#ffffff02);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.heroCard{padding:30px;overflow:hidden;position:relative}.heroCard:after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-120px;background:#7658ff30;border-radius:50%;filter:blur(3px)}
-h1{font-size:clamp(36px,5vw,66px);line-height:1;letter-spacing:-2.5px;margin:0 0 15px}.grad{color:#fff;background:linear-gradient(90deg,#fff,var(--mint),#a992ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);font-size:17px;max-width:780px}
-.pills,.chips,.actions{display:flex;gap:8px;flex-wrap:wrap}.pill,.chip{border:1px solid var(--line);background:#101729;color:#dce3f4;border-radius:999px;padding:7px 11px;font-size:12px}.chip{padding:9px 13px}.chip.active{background:var(--brand);border-color:transparent;color:#fff}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:850}.primary{background:linear-gradient(135deg,var(--brand),#9d76ff);color:#fff}.secondary{background:#101729;border:1px solid var(--line);color:#fff}
-.ad{min-height:250px;display:grid;place-items:center;text-align:center;color:#77839e;padding:20px}.ad small{display:block;margin-top:7px}.section{margin-top:22px}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:12px}.head h2{margin:0;font-size:25px}.muted{color:var(--muted)}
-.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tool{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-height:160px;display:flex;flex-direction:column;gap:8px;transition:.18s}.tool:hover{transform:translateY(-3px);border-color:#536487}.toolIcon{font-size:25px}.tool h3{margin:0;font-size:15px}.tool p{margin:0;color:var(--muted);font-size:12px;flex:1}.tool small{color:#7f8ba5}.empty{grid-column:1/-1;padding:40px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
-.bottom{position:fixed;z-index:60;left:0;right:0;bottom:0;background:#0a0e1bf0;backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 8px calc(7px + env(safe-area-inset-bottom))}.nav{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.nav button{background:transparent;border:0;color:#8e9ab4;border-radius:13px;padding:6px 2px;font-size:10px}.nav b{display:block;font-size:20px;line-height:23px}.nav .active{background:#19203a;color:#fff}
-dialog{width:min(900px,calc(100% - 18px));max-height:92vh;background:#101626;color:#fff;border:1px solid var(--line);border-radius:24px;padding:0;box-shadow:var(--shadow)}dialog::backdrop{background:#000b;backdrop-filter:blur(5px)}.modalHead{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.modalBody{padding:20px;overflow:auto}.close{background:#171f33;color:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:12px}
-.form{display:grid;gap:12px}.form label{font-size:13px;font-weight:750}.form input,.form select,.form textarea{width:100%;background:#0b1120;border:1px solid var(--line);color:#fff;border-radius:12px;padding:11px;outline:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{background:#0b1120;border:1px solid var(--line);border-radius:13px;padding:13px;font-weight:800;white-space:pre-wrap;word-break:break-word}.notice{background:#101a2d;border:1px solid #344260;border-radius:14px;padding:13px;color:#cbd5e9;font-size:13px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.stat{background:#0e1424;border:1px solid var(--line);border-radius:15px;padding:13px}.stat strong{font-size:21px;display:block}.stat span{font-size:11px;color:var(--muted)}
-/* Gym */
-.gymShell{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}.gymPanel{padding:20px}.coach{min-height:390px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 40%,#2b2463 0,#11182b 44%,#0a0e19 80%);border-radius:22px;border:1px solid var(--line);display:grid;place-items:center}
-.coachName{position:absolute;top:14px;left:15px;background:#111a2de6;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px}
-.human{position:relative;width:190px;height:310px;filter:drop-shadow(0 18px 25px #0008);transform-origin:50% 85%;animation:coachBreath 1.8s ease-in-out infinite}.head{position:absolute;width:44px;height:44px;border-radius:50%;background:#d49b74;left:73px;top:12px;z-index:4}.hair{position:absolute;width:47px;height:25px;border-radius:50% 50% 40% 40%;background:#28231f;left:71px;top:6px;z-index:5}.neck{position:absolute;width:18px;height:25px;background:#c98f6c;left:86px;top:50px}.body{position:absolute;width:70px;height:116px;background:linear-gradient(90deg,#416cff,#7b57ff);border-radius:28px 28px 18px 18px;left:60px;top:64px;transform-origin:50% 8%}.arm{position:absolute;width:20px;height:112px;background:#d49b74;border-radius:15px;top:70px;transform-origin:50% 8%;z-index:2}.arm.l{left:47px;transform:rotate(20deg)}.arm.r{right:47px;transform:rotate(-20deg)}.hand{position:absolute;width:23px;height:23px;background:#d49b74;border-radius:50%;bottom:-9px;left:-2px}.leg{position:absolute;width:25px;height:125px;background:#242c42;border-radius:15px;top:165px;transform-origin:50% 8%;z-index:1}.leg.l{left:69px}.leg.r{right:69px}.shoe{position:absolute;width:43px;height:18px;background:#e7edf8;border-radius:14px;bottom:-7px;left:-8px}
-.human.push .body{transform:rotateX(58deg) translateY(48px)}.human.push .arm.l{transform:rotate(72deg) translateY(35px)}.human.push .arm.r{transform:rotate(-72deg) translateY(35px)}.human.push .leg.l{transform:rotate(-7deg) translateY(70px)}.human.push .leg.r{transform:rotate(7deg) translateY(70px)}
-.human.squat .body{transform:translateY(42px) scaleY(.9)}.human.squat .arm.l{transform:rotate(55deg)}.human.squat .arm.r{transform:rotate(-55deg)}.human.squat .leg.l{transform:rotate(30deg) translateY(58px)}.human.squat .leg.r{transform:rotate(-30deg) translateY(58px)}
-.human.jumping .body{transform:translateY(-20px)}.human.jumping .arm.l{transform:rotate(145deg)}.human.jumping .arm.r{transform:rotate(-145deg)}.human.jumping .leg.l{transform:rotate(25deg) translateY(-18px)}.human.jumping .leg.r{transform:rotate(-25deg) translateY(-18px)}
-@keyframes coachBreath{50%{transform:translateY(-3px)}}@keyframes rep{0%,100%{scale:1}50%{scale:1.035}}
-.coach.rep{animation:rep .75s ease-in-out infinite}.coachInfo{position:absolute;bottom:13px;left:13px;right:13px;background:#0b1020d9;border:1px solid var(--line);border-radius:15px;padding:11px}.coachInfo strong{display:block}.progress{height:9px;background:#222b42;border-radius:99px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--mint),var(--brand));width:0}
-.timer{font-size:55px;font-weight:950;letter-spacing:-3px;text-align:center}.repNum{font-size:24px;text-align:center;font-weight:900}.gymControls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.gymControls button{padding:11px 7px;border:1px solid var(--line);background:#121a2d;color:#fff;border-radius:12px}.gymControls .big{grid-column:span 2;background:linear-gradient(135deg,var(--brand),#9a70ff);border:0}.langbar{display:flex;gap:7px;flex-wrap:wrap}.langbar button{border:1px solid var(--line);background:#101729;color:#fff;padding:8px 10px;border-radius:10px}.langbar button.active{background:var(--brand)}
-.streak{display:flex;align-items:center;gap:10px;background:#151b2c;border:1px solid var(--line);padding:12px;border-radius:15px}.streak strong{font-size:25px;color:var(--gold)}
-.camera{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#060a12}.camera video{display:block;width:100%;max-height:280px;object-fit:cover}.camera .cammsg{padding:10px;font-size:12px;color:var(--muted)}
-.toast{position:fixed;z-index:100;right:15px;bottom:90px;background:#eff3ff;color:#0a0e19;border-radius:13px;padding:11px 14px;font-weight:800;display:none;box-shadow:var(--shadow)}
-.footer{text-align:center;color:#78839a;font-size:11px;margin-top:35px}
-@media(max-width:980px){.hero,.gymShell{grid-template-columns:1fr}.tools{grid-template-columns:repeat(3,1fr)}}@media(max-width:680px){.tools{grid-template-columns:repeat(2,1fr)}.heroCard{padding:22px}.logoText{display:none}.grid2{grid-template-columns:1fr}.gymControls{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr 1fr 1fr}.coach{min-height:350px}}
-@media(max-width:420px){.tools{grid-template-columns:1fr 1fr}.tool{min-height:150px;padding:14px}.stats strong{font-size:18px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ShaheenX - Ultra Web App</title>
+    
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        import { getDatabase, ref, set, push, onValue } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAhLi_9NuD1Zh-5o4NYen8GT9i0xwZaz_U",
+            authDomain: "shaheenx-7d9ab.firebaseapp.com",
+            databaseURL: "https://shaheenx-7d9ab-default-rtdb.firebaseio.com",
+            projectId: "shaheenx-7d9ab",
+            storageBucket: "shaheenx-7d9ab.firebasestorage.app",
+            messagingSenderId: "532384586851",
+            appId: "1:532384586851:web:522bfa338a1b346846ec56",
+            measurementId: "G-1JNEYM433J"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+        const provider = new GoogleAuthProvider();
+
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+        window.provider = provider;
+        window.signInWithPopup = signInWithPopup;
+        window.signOut = signOut;
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* RESET & BLOGGER OVERRIDES */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        html, body { width: 100vw; height: 100vh; overflow: hidden; background-color: #000; color: #fff; }
+        
+        .Header, .sidebar, .footer, .widget, #navbar-iframe, .post-title, .post-footer, .comments { display: none !important; }
+        .post-body { margin: 0 !important; padding: 0 !important; }
+
+        /* INITIAL CHECK SCREEN */
+        #auth-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 9999; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 20px;
+        }
+        .btn-google {
+            background: #fff; color: #000; padding: 14px 28px; border-radius: 30px;
+            font-weight: bold; font-size: 15px; border: none; cursor: pointer;
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        /* MAIN APP CONTAINER */
+        #app-container { display: none; width: 100%; height: 100vh; position: relative; }
+
+        /* SHORTS FEED (TikTok Style) */
+        #shorts-feed {
+            width: 100%; height: calc(100vh - 60px); overflow-y: scroll;
+            scroll-snap-type: y mandatory; scrollbar-width: none;
+        }
+        #shorts-feed::-webkit-scrollbar { display: none; }
+        
+        .video-card {
+            width: 100%; height: 100%; position: relative; scroll-snap-align: start; background: #000;
+        }
+        video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* OVERLAY INFO & ACTION BAR */
+        .video-details { position: absolute; bottom: 20px; left: 15px; width: 70%; z-index: 20; }
+        .profile-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .profile-row img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+        .username { font-weight: bold; font-size: 15px; }
+        .follow-btn { background: transparent; border: 1px solid #fff; color: #fff; padding: 3px 10px; border-radius: 15px; font-size: 12px; cursor: pointer; }
+        .video-title { font-size: 14px; margin-bottom: 4px; font-weight: 600; }
+        .video-desc { font-size: 12px; opacity: 0.8; }
+
+        .side-bar { position: absolute; bottom: 30px; right: 15px; display: flex; flex-direction: column; gap: 20px; z-index: 20; align-items: center; }
+        .action-item { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #fff; }
+        .action-item i { font-size: 28px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5)); }
+        .action-item.liked i { color: #ff0050; }
+        .action-text { font-size: 11px; font-weight: bold; }
+
+        /* UPLOAD SECTION */
+        #upload-section { display: none; padding: 20px; height: calc(100vh - 60px); overflow-y: auto; background: #000; }
+        .upload-card { background: #121212; padding: 20px; border-radius: 16px; margin-top: 15px; border: 1px solid #222; }
+        input[type="text"], textarea { width: 100%; background: #222; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; margin-bottom: 8px; font-size: 14px; }
+        .char-limit { font-size: 11px; color: #777; text-align: right; margin-bottom: 12px; display: block; }
+        
+        .file-select-btn {
+            background: #ff0050; color: #fff; padding: 14px; text-align: center; border-radius: 8px; font-weight: bold; cursor: pointer; display: block; margin-bottom: 12px;
+        }
+        input[type="file"] { display: none; }
+        
+        .progress-box { display: none; width: 100%; height: 6px; background: #222; border-radius: 4px; margin: 15px 0; overflow: hidden; }
+        .progress-bar-inner { width: 0%; height: 100%; background: #ff0050; transition: width 0.2s ease; }
+
+        /* PROFILE SECTION */
+        #profile-section { display: none; height: calc(100vh - 60px); overflow-y: auto; background: #000; }
+        .banner-container { width: 100%; height: 140px; background: #222; position: relative; }
+        .banner-container img { width: 100%; height: 100%; object-fit: cover; }
+        .menu-dots { position: absolute; top: 15px; right: 15px; font-size: 22px; cursor: pointer; color: #fff; text-shadow: 0 1px 3px #000; }
+        .profile-info { padding: 0 20px; text-align: center; margin-top: -40px; position: relative; }
+        .profile-info img.avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #000; object-fit: cover; background: #111; }
+        .stats-row { display: flex; justify-content: center; gap: 30px; margin-top: 15px; }
+        .stat-box h4 { font-size: 16px; } .stat-box p { font-size: 12px; color: #888; }
+
+        /* NAVIGATION BAR */
+        .bottom-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: #000;
+            display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #1a1a1a; z-index: 1000;
+        }
+        .nav-btn { color: #666; font-size: 22px; cursor: pointer; }
+        .nav-btn.active { color: #fff; }
+
+        /* MODAL */
+        .modal-overlay { display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; }
+        .modal-body { position: absolute; bottom: 0; width: 100%; background: #181818; border-radius: 16px 16px 0 0; padding: 20px; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: bold; }
+    </style>
 </head>
 <body>
-<div id="app">
-<header class="top"><div class="topin">
-  <div class="logo"><div class="mark">S</div><span class="logoText">Shaheen Tools</span></div>
-  <div class="search"><i>⌕</i><input id="search" placeholder="Search 2,000 tools…" aria-label="Search tools"></div>
-  <button class="icon" id="theme" aria-label="Theme">☼</button>
-</div></header>
 
-<main>
-<section id="home">
-  <div class="hero">
-    <div class="heroCard">
-      <div class="pills"><span class="pill">2,000 fixed tools</span><span class="pill">1,000 everyday</span><span class="pill">1,000 power tools</span><span class="pill">Mobile first</span></div>
-      <h1>Useful tools.<br><span class="grad">One clean place.</span></h1>
-      <p class="lead">A searchable toolbox with 2,000 functional browser utilities, plus a guided Gym 2026 coach that can speak, count, animate and move through a session automatically.</p>
-      <div class="actions"><button class="btn primary" onclick="showHomeTools()">Explore tools</button><button class="btn secondary" onclick="openGymSetup()">Start Gym 2026</button></div>
-      <div class="stats"><div class="stat"><strong id="total">2,000</strong><span>fixed tools</span></div><div class="stat"><strong>1,000</strong><span>everyday tools</span></div><div class="stat"><strong>1,000</strong><span>power tools</span></div></div>
+    <!-- AUTH / INITIAL STATE -->
+    <div id="auth-screen">
+        <h2 style="font-weight: 800; tracking: 1px;">ShaheenX Engine</h2>
+        <button class="btn-google" onclick="loginUser()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="18">
+            Sign in with Google
+        </button>
     </div>
-    <div class="card ad"><div>ADVERTISEMENT<small>AdSense Auto Ads may place an ad here when eligible. Ads are kept separate from tool controls.</small></div></div>
-  </div>
-  <div class="section" id="toolArea">
-    <div class="head"><div><h2>Toolbox</h2><div class="muted">Categories now map directly to their tools.</div></div><span class="muted" id="count"></span></div>
-    <div class="chips" id="cats"></div>
-    <div class="tools" id="tools"></div>
-  </div>
-</section>
 
-<section id="gym" class="hidden">
-  <div class="heroCard">
-    <div class="pills"><span class="pill">Gym 2026</span><span class="pill">Animated coach</span><span class="pill">Voice guidance</span><span class="pill">Auto next</span></div>
-    <h1>Your workout.<br><span class="grad">Coach-led.</span></h1>
-    <p class="lead">Choose your preferences once. During the session the coach announces the exercise, shows the movement, counts down, tracks reps and moves to the next step automatically.</p>
-    <div class="actions"><button class="btn primary" onclick="openGymSetup()">Build my session</button><button class="btn secondary" onclick="resumeWorkout()">Resume</button></div>
-  </div>
-  <div class="section gymShell">
-    <div class="card gymPanel"><div class="coach" id="coach">
-      <div class="coachName" id="coachLabel">Shaheen Coach</div>
-      <div class="human" id="human"><div class="hair"></div><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm l"><div class="hand"></div></div><div class="arm r"><div class="hand"></div></div><div class="leg l"><div class="shoe"></div></div><div class="leg r"><div class="shoe"></div></div></div>
-      <div class="coachInfo"><strong id="exerciseName">Ready</strong><span id="cue">Build a session to begin.</span><div class="progress"><i id="prog"></i></div></div>
-    </div></div>
-    <div class="card gymPanel">
-      <div class="streak"><strong id="streak">0</strong><span><b>day streak</b><br><small class="muted">Consistency, not extremes.</small></span></div>
-      <div class="section"><div class="timer" id="timer">00:30</div><div class="repNum" id="rep">0 reps</div></div>
-      <div class="gymControls">
-        <button onclick="adjustTime(-10)">−10s</button><button onclick="adjustTime(10)">+10s</button><button onclick="adjustRep(-1)">− rep</button><button onclick="adjustRep(1)">+ rep</button>
-        <button class="big" id="play" onclick="toggleWorkout()">▶ Start</button><button onclick="nextExercise()">Next →</button>
-        <button onclick="speakCurrent()">🔊 Speak</button><button onclick="stopWorkout()">■ Stop</button>
-      </div>
-      <div class="section"><div class="langbar" id="langs"></div></div>
-      <div class="section"><button class="btn secondary" onclick="toggleCamera()">📷 Optional form guide</button></div>
-      <div class="camera hidden" id="cameraBox"><video id="video" autoplay muted playsinline></video><div class="cammsg">Camera guide is optional. It helps with screen positioning; it does not claim medical-grade or perfect form detection.</div></div>
-      <div class="section"><div class="notice">If you feel pain, dizziness, faintness or unusual discomfort, stop. This coach is general fitness software, not medical care. Do not use it to chase extreme body or weight targets.</div></div>
+    <!-- MAIN APP CONTAINER -->
+    <div id="app-container">
+        
+        <!-- SHORTS FEED -->
+        <div id="shorts-feed" class="page-tab" style="display: block;"></div>
+
+        <!-- UPLOAD TAB -->
+        <div id="upload-section" class="page-tab">
+            <h3 style="text-align: center; margin-top: 10px;">Create Post</h3>
+            <div class="upload-card">
+                <label class="file-select-btn" for="video-file-input">
+                    <i class="fas fa-cloud-upload-alt"></i> Select Video
+                </label>
+                <input type="file" id="video-file-input" accept="video/*" onchange="handleFileSelection()">
+                
+                <p id="file-label" style="font-size: 12px; margin-bottom: 12px; color: #ff0050; text-align: center;"></p>
+
+                <input type="text" id="title-field" placeholder="Title (Max 50 characters)" maxlength="50" oninput="checkLength('title-field', 'title-count', 50)">
+                <span class="char-limit" id="title-count">0/50</span>
+
+                <textarea id="desc-field" placeholder="Description (Max 100 characters)" maxlength="100" rows="3" oninput="checkLength('desc-field', 'desc-count', 100)"></textarea>
+                <span class="char-limit" id="desc-count">0/100</span>
+
+                <div class="progress-box" id="progress-box"><div class="progress-bar-inner" id="progress-bar-inner"></div></div>
+                <p id="status-text" style="font-size: 12px; text-align: center; color: #aaa;"></p>
+
+                <button class="file-select-btn" style="background: #fff; color: #000; margin-top: 10px;" onclick="startUploadProcess()">
+                    Publish Video
+                </button>
+            </div>
+        </div>
+
+        <!-- PROFILE TAB -->
+        <div id="profile-section" class="page-tab">
+            <div class="banner-container">
+                <img id="banner-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Banner">
+                <i class="fas fa-ellipsis-v menu-dots" onclick="openMenu()"></i>
+            </div>
+            <div class="profile-info">
+                <img id="profile-img" class="avatar" src="https://via.placeholder.com/150" alt="Avatar">
+                <h3 id="display-name" style="margin-top: 8px;">User Name</h3>
+                <p id="handle-name" style="color: #666; font-size: 13px;">@user</p>
+                
+                <div class="stats-row">
+                    <div class="stat-box"><h4>0</h4><p>Following</p></div>
+                    <div class="stat-box"><h4>0</h4><p>Followers</p></div>
+                    <div class="stat-box"><h4>0</h4><p>Posts</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM NAVIGATION -->
+        <div class="bottom-bar">
+            <i class="fas fa-home nav-btn active" onclick="switchTab('shorts-feed', this)"></i>
+            <i class="fas fa-plus-square nav-btn" style="font-size: 28px; color: #fff;" onclick="switchTab('upload-section', this)"></i>
+            <i class="fas fa-user nav-btn" onclick="switchTab('profile-section', this)"></i>
+        </div>
+
     </div>
-  </div>
-  <div class="section card gymPanel"><h2>Today's flow</h2><div id="planList" class="list"></div></div>
-</section>
 
-<section id="info" class="hidden"><div class="heroCard"><h1>Shaheen <span class="grad">Tools</span></h1>
-<p class="lead">Useful, accessible utilities with clear navigation and user-first advertising.</p>
-<h2>Privacy</h2><p class="muted">Favorites, workout preferences and streak data are stored locally in this browser. If analytics or advertising are enabled, those providers may process data according to their policies and applicable consent choices.</p>
-<h2>Terms</h2><p class="muted">Tools are for general information and productivity. Verify important results independently. Fitness features are not medical advice.</p>
-<h2>Contact</h2><p class="muted">Replace this placeholder before publishing: <b>support@YOUR-DOMAIN.example</b></p>
-<div class="notice">For AdSense readiness, publish complete original content, a real contact method, privacy/terms pages, clear navigation, and the appropriate Google consent configuration for your visitors. Never encourage ad clicks or disguise ads as controls.</div>
-</div></section>
-<div class="footer">© <span id="year"></span> Shaheen Tools · About · Privacy · Terms · Contact</div>
-</main>
+    <!-- SETTINGS MODAL -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-body">
+            <div class="modal-header">
+                <span>Settings</span>
+                <i class="fas fa-times" style="cursor:pointer;" onclick="closeMenu()"></i>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <button class="btn-google" style="background:#222; color:#fff;" onclick="alert('Feature active')">Update Profile Picture</button>
+                <button class="btn-google" style="background:#222; color:#fff;" onclick="alert('Feature active')">Update Banner</button>
+                <button class="btn-google" style="background:#ff0050; color:#fff;" onclick="logoutUser()">Sign Out</button>
+            </div>
+        </div>
+    </div>
 
-<nav class="bottom"><div class="nav">
-<button class="active" data-page="home"><b>⌂</b>Home</button>
-<button data-page="tools"><b>▦</b>Tools</button>
-<button data-page="gym"><b>🏋</b>Gym 2026</button>
-<button data-page="info"><b>ⓘ</b>Info</button>
-<button onclick="openGymSetup()"><b>▶</b>Start</button>
-</div></nav>
-</div>
+    <!-- MAIN LOGIC -->
+    <script>
+        let currentUser = null;
+        let chosenFile = null;
 
-<dialog id="toolDlg"><div class="modalHead"><div><b id="toolTitle">Tool</b><div class="muted" id="toolDesc"></div></div><button class="close" onclick="toolDlg.close()">×</button></div><div class="modalBody" id="toolBody"></div></dialog>
+        // AUTHENTICATION LISTENERS
+        window.onload = () => {
+            window.firebaseAuth.onAuthStateChanged((user) => {
+                if (user) {
+                    currentUser = user;
+                    updateProfileUI(user);
+                    document.getElementById('auth-screen').style.display = 'none';
+                    document.getElementById('app-container').style.display = 'block';
+                    renderInitialFeed();
+                } else {
+                    document.getElementById('app-container').style.display = 'none';
+                    document.getElementById('auth-screen').style.display = 'flex';
+                }
+            });
+        };
 
-<dialog id="gymDlg"><div class="modalHead"><div><b>Gym 2026 setup</b><div class="muted">Choose once; the coach handles the session.</div></div><button class="close" onclick="gymDlg.close()">×</button></div><div class="modalBody">
-<form id="gymForm" class="form">
-<div class="grid2"><label>Experience<select name="level"><option>Beginner</option><option>Intermediate</option><option>Experienced</option></select></label><label>Days per week<select name="days"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label></div>
-<div class="grid2"><label>Session length<select name="minutes"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></label><label>Equipment<select name="equipment"><option>Bodyweight</option><option>Basic home equipment</option><option>Gym</option></select></label></div>
-<label>Focus<select name="focus"><option>General fitness</option><option>Strength & technique</option><option>Mobility</option><option>Cardio</option></select></label>
-<label>Coach language<select name="lang"><option value="en-US">English</option><option value="hi-IN">हिन्दी</option><option value="ur-PK">اردو</option><option value="ar-SA">العربية</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="de-DE">Deutsch</option></select></label>
-<label>Coach voice<select name="voice"><option>Auto</option><option>Female-style</option><option>Male-style</option></select></label>
-<div class="notice">The coach can guide timing and technique cues, but it cannot guarantee perfect form. For a young user, keep sessions moderate and technique-focused rather than chasing appearance or extreme targets.</div>
-<button class="btn primary" type="submit">Create & start</button>
-</form></div></dialog>
+        function loginUser() {
+            window.signInWithPopup(window.firebaseAuth, window.provider).catch((err) => {
+                alert("Auth Error: " + err.message);
+            });
+        }
 
-<div id="toast" class="toast"></div>
+        function logoutUser() {
+            window.signOut(window.firebaseAuth).then(() => {
+                closeMenu();
+            });
+        }
 
-<script>
-(() => {
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const icon=["🧮","🔢","🔄","📝","📚","⚡","🧰","⏱️","💻","🌐","🎯","📊"];
-const families=[
-["Calculators","calc",["Percentage","Average","Ratio","Discount","Tip","Tax","Interest","Compound Growth","BMI","Age","Speed","Distance","Time","Fuel Cost","Grade","GPA","Profit","Margin","Markup","Break-even","Unit Price","Area","Volume","Perimeter","Probability"]],
-["Converters","convert",["Length","Weight","Temperature","Area","Volume","Time","Speed","Data","Pressure","Energy","Power","Angle","Frequency","Force","Torque","Fuel Economy","Number Base","Roman Numeral","Fraction","Decimal","Percent","Pixels","DPI","Radians","Unix Timestamp"]],
-["Text & Writing","text",["Word Counter","Character Counter","Sentence Counter","Line Counter","Reading Time","Case Converter","Slug Maker","Whitespace Cleaner","Sort Lines","Reverse Text","Find & Replace","Text Joiner","Text Splitter","JSON Formatter","JSON Minifier","HTML Escape","URL Encode","URL Decode","Base64 Encoder","Base64 Decoder","ROT13","Palindrome","Anagram","Keyword Density","Text Statistics"]],
-["Math","math",["Prime Checker","Prime List","Factors","LCM","GCD","Fibonacci","Arithmetic Sequence","Geometric Sequence","Equation Helper","Quadratic Helper","Pythagorean Helper","Triangle Area","Circle Area","Rectangle Area","Trapezoid Area","Sphere Volume","Cylinder Volume","Cone Volume","Cube Volume","Permutation","Combination","Modulo","Square Root","Cube Root","Logarithm"]],
-["Study","study",["Pomodoro","Study Timer","Grade Calculator","GPA Helper","Quiz Score","Reading Planner","Revision Planner","Focus Session","Break Planner","Vocabulary List","Typing Speed","WPM Calculator","Study Streak","Task Checklist","Exam Countdown","Assignment Planner","Memory Cards","Practice Tracker","Time Blocker","Daily Goals","Weekly Goals","Habit Tracker","Topic Tracker","Formula Sheet","Progress Tracker"]],
-["Productivity","productivity",["To-do List","Checklist","Priority Matrix","Quick Notes","Countdown","Stopwatch","Interval Timer","Daily Planner","Weekly Planner","Monthly Planner","Habit Tracker","Goal Tracker","Idea Picker","Decision Helper","Random Picker","Number Picker","Color Picker","Routine Builder","Project Planner","Milestone Planner","Deadline Helper","Task Splitter","Meeting Agenda","Work Session","Summary Box"]],
-["Date & Time","time",["Age Calculator","Date Difference","Add Days","Subtract Days","Week Number","Day of Week","Leap Year","Days in Month","Month Calendar","Year Calendar","Countdown","Stopwatch","Timer","Business Days","Working Hours","Date Formatter","Time Formatter","ISO Date","Relative Time","Birthday Countdown","Weekday Counter","Weekend Counter","Hours Between","Minutes Between","Seconds Between","Duration Formatter"]],
-["Finance","finance",["Discount","Sales Tax","Tip","Profit","Margin","Markup","Simple Interest","Compound Interest","Loan Payment","Savings Growth","Budget Split","Expense Total","Income Total","Cashflow","Break-even","ROI","APR Helper","Monthly Payment","Debt Payoff","Savings Goal","Budget Percentage","Annual Cost","Hourly Rate","Commission","Invoice Total"]],
-["Web & Developer","web",["URL Encoder","URL Decoder","HTML Encoder","HTML Decoder","JSON Formatter","JSON Validator","CSS Minifier","JS Minifier","HTML Minifier","Meta Tag Helper","Open Graph Helper","Robots Helper","Sitemap Helper","Slug Maker","UTM Builder","Color Converter","HEX to RGB","RGB to HEX","Gradient Helper","Box Shadow Helper","CSS Clamp","Font Stack","Aspect Ratio","JWT Viewer","UUID Generator"]],
-["Health & Fitness","fitness",["Workout Timer","Rest Timer","Interval Timer","Pace Calculator","Speed Calculator","Warm-up Timer","Cool-down Timer","Mobility Timer","Stretch Timer","Posture Break","Hydration Reminder","Workout Log","Routine Builder","Weekly Activity","Session Planner","Recovery Day","Beginner Routine","Home Routine","Gym Routine","Bodyweight Routine","Technique Checklist","Rep Timer","Set Timer","Circuit Timer","Progress Journal"]],
-["Media & Design","media",["Aspect Ratio","Image Dimensions","Color Picker","HEX to RGB","RGB to HEX","Gradient Maker","Palette Generator","Contrast Checker","Text Poster","QR Text","SVG Circle","SVG Rectangle","SVG Badge","Icon Label","Pixel Ratio","Canvas Size","Social Size","Banner Size","Thumbnail Size","Poster Size","Font Pair Helper","Spacing Scale","Shadow Scale","Border Radius","Layout Grid"]],
-["Everyday","everyday",["Random Number","Coin Flip","Dice","Random Choice","Name Picker","List Sorter","Duplicate Finder","List Cleaner","Set Union","Set Intersection","Set Difference","Character Code","Unicode Lookup","Morse Helper","Binary Helper","Caesar Helper","Palindrome","Anagram","Email Validator","URL Validator","Password Strength","UUID","Time Now","Date Now","Browser Info"]]
-];
-const categories=families.map(x=>x[0]);
-const normal=[],power=[];
-families.forEach(([cat,key,names],ci)=>{
- names.forEach((name,i)=>normal.push({id:"n"+normal.length+1,name,cat,key,mode:"Everyday",desc:`${name} — fast browser tool.`}));
- names.forEach((name,i)=>power.push({id:"p"+power.length+1,name:`${name} Pro`,cat,key,mode:"Power",desc:`Advanced ${name.toLowerCase()} workflow with extra options.`}));
-});
-function fillTo(list,target,prefix){
- let i=0;
- while(list.length<target){
-   const f=families[i%families.length], n=f[2][Math.floor(i/families.length)%f[2].length];
-   list.push({id:prefix+list.length+1,name:`${n} ${Math.floor(list.length/families.length)+2}`,cat:f[0],key:f[1],mode:prefix==="n"?"Everyday":"Power",desc:`${n} utility variant — fully runnable in the browser.`});i++;
- }
-}
-fillTo(normal,1000,"n");fillTo(power,1000,"p");
-const tools=[...normal,...power];
-let active="All",query="";
-const cats=$("#cats");
-["All","Everyday tools","Power tools",...categories].forEach(label=>{
- const b=document.createElement("button");b.className="chip"+(label==="All"?" active":"");b.textContent=label;
- b.onclick=()=>{active=label;$$(".chip").forEach(x=>x.classList.toggle("active",x===b));renderTools()};cats.appendChild(b);
-});
-function matches(t){
- const q=query.toLowerCase().trim();
- const type=active==="Everyday tools"?t.mode==="Everyday":active==="Power tools"?t.mode==="Power":active==="All"?true:t.cat===active;
- return type&&(!q||(t.name+" "+t.cat+" "+t.desc).toLowerCase().includes(q));
-}
-function renderTools(){
- const arr=tools.filter(matches);$("#count").textContent=`${arr.length} of 2,000`;
- $("#tools").innerHTML="";
- if(!arr.length){$("#tools").innerHTML='<div class="empty">No matching tool.</div>';return}
- arr.slice(0,160).forEach((t,i)=>{
-  const d=document.createElement("article");d.className="tool";
-  d.innerHTML=`<div class="toolIcon">${icon[i%icon.length]}</div><h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p><small>${esc(t.cat)} · ${t.mode}</small><button class="secondary">Open</button>`;
-  d.querySelector("button").onclick=()=>openTool(t);$("#tools").appendChild(d);
- });
-}
-function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-$("#search").oninput=e=>{query=e.target.value;active="All";$$(".chip").forEach((x,i)=>x.classList.toggle("active",i===0));renderTools()};
-function engine(t){
- const n=t.name.toLowerCase();
- if(n.includes("word counter")||n.includes("character counter")||n.includes("sentence counter")||n.includes("line counter")||n.includes("reading time")||n.includes("text statistics"))
-  return `<div class="form"><label>Text<textarea id="a" rows="8"></textarea></label><button class="btn primary" id="go">Run</button><div class="result" id="out"></div></div>`;
- if(n.includes("random number")||n.includes("number picker"))return `<div class="form grid2"><label>Min<input id="a" type="number" value="1"></label><label>Max<input id="b" type="number" value="100"></label><button class="btn primary" id="go">Generate</button><div class="result" id="out"></div></div>`;
- if(n.includes("percentage")||n.includes("discount")||n.includes("tax")||n.includes("tip")||n.includes("margin")||n.includes("markup"))return `<div class="form grid2"><label>Value<input id="a" type="number" value="100"></label><label>Percent<input id="b" type="number" value="10"></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
- if(n.includes("temperature"))return `<div class="form grid2"><label>Value<input id="a" type="number" value="25"></label><label>Direction<select id="b"><option>C → F</option><option>F → C</option></select></label><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
- if(n.includes("average"))return `<div class="form"><label>Numbers<textarea id="a">10,20,30,40</textarea></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
- if(n.includes("bmi"))return `<div class="form grid2"><label>Weight kg<input id="a" type="number" value="50"></label><label>Height m<input id="b" type="number" value="1.60" step=".01"></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
- if(n.includes("base64"))return `<div class="form"><textarea id="a" rows="6"></textarea><button class="btn primary" id="go">Encode</button><div class="result" id="out"></div></div>`;
- if(n.includes("case converter"))return `<div class="form"><textarea id="a" rows="6"></textarea><select id="b"><option>UPPERCASE</option><option>lowercase</option><option>Title Case</option></select><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
- if(n.includes("slug"))return `<div class="form"><textarea id="a" rows="5"></textarea><button class="btn primary" id="go">Create slug</button><div class="result" id="out"></div></div>`;
- if(n.includes("uuid"))return `<div class="form"><button class="btn primary" id="go">Generate UUID</button><div class="result" id="out"></div></div>`;
- if(n.includes("password strength"))return `<div class="form"><input id="a" placeholder="Password"><button class="btn primary" id="go">Check</button><div class="result" id="out"></div></div>`;
- return `<div class="form"><div class="notice"><b>${esc(t.name)}</b><br>This tool uses a browser-safe generic utility engine for this category. Enter your data below.</div><textarea id="a" rows="7" placeholder="Enter text, numbers or notes…"></textarea><button class="btn primary" id="go">Run tool</button><div class="result" id="out"></div></div>`;
-}
-function openTool(t){
- $("#toolTitle").textContent=t.name;$("#toolDesc").textContent=`${t.cat} · ${t.mode}`;
- $("#toolBody").innerHTML=engine(t);$("#toolDlg").showModal();
- const go=$("#go");if(!go)return;go.onclick=()=>{
-  const a=$("#a")?.value??"",b=$("#b")?.value??"",n=t.name.toLowerCase();let o="";
-  try{
-   if(n.includes("word counter"))o=`Words: ${a.trim()?a.trim().split(/\s+/).length:0}`;
-   else if(n.includes("character counter"))o=`Characters: ${a.length}`;
-   else if(n.includes("sentence counter"))o=`Sentences: ${(a.match(/[.!?]+(?=\\s|$)/g)||[]).length}`;
-   else if(n.includes("line counter"))o=`Lines: ${a?a.split(/\\r?\\n/).length:0}`;
-   else if(n.includes("reading time"))o=`Approx. ${Math.max(1,Math.ceil((a.trim()?a.trim().split(/\\s+/).length:0)/200))} minute(s)`;
-   else if(n.includes("random number")||n.includes("number picker"))o=Math.floor(Math.random()*(Number(b)-Number(a)+1))+Number(a);
-   else if(n.includes("percentage")||n.includes("discount")||n.includes("tax")||n.includes("tip")||n.includes("margin")||n.includes("markup"))o=(Number(a)*Number(b)/100).toFixed(2);
-   else if(n.includes("temperature"))o=b==="C → F"?((Number(a)*9/5)+32).toFixed(2)+" °F":((Number(a)-32)*5/9).toFixed(2)+" °C";
-   else if(n.includes("average")){const x=a.split(",").map(Number).filter(Number.isFinite);o=x.length?(x.reduce((s,v)=>s+v,0)/x.length).toFixed(4):"Enter numbers";}
-   else if(n.includes("bmi")){const h=Number(b);o=h>0?(Number(a)/(h*h)).toFixed(2):"Invalid height";}
-   else if(n.includes("base64"))o=btoa(unescape(encodeURIComponent(a)));
-   else if(n.includes("case converter"))o=b==="UPPERCASE"?a.toUpperCase():b==="lowercase"?a.toLowerCase():a.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase());
-   else if(n.includes("slug"))o=a.toLowerCase().trim().replace(/[^\\p{L}\\p{N}]+/gu,"-").replace(/^-+|-+$/g,"");
-   else if(n.includes("uuid"))o=crypto.randomUUID();
-   else if(n.includes("password strength")){let s=0;s+=a.length>=8?1:0;s+=/[A-Z]/.test(a)?1:0;s+=/[a-z]/.test(a)?1:0;s+=/[0-9]/.test(a)?1:0;s+=/[^A-Za-z0-9]/.test(a)?1:0;o=`Strength score: ${s}/5`;}
-   else o=a?`Processed successfully.\\nCharacters: ${a.length}`:"Ready — enter a value.";
-  }catch(e){o="Please enter valid input."}$("#out").textContent=o;
- };
-}
-window.showHomeTools=()=>{showPage("home");$("#toolArea").scrollIntoView({behavior:"smooth"})};
-window.openGymSetup=()=>$("#gymDlg").showModal();
-const langs=[["en-US","English"],["hi-IN","हिन्दी"],["ur-PK","اردو"],["ar-SA","العربية"],["es-ES","Español"],["fr-FR","Français"],["de-DE","Deutsch"]];
-let lang="en-US",voicePref="Auto",timer=null,session=null,stream=null;
-langs.forEach(([v,n])=>{const b=document.createElement("button");b.textContent=n;b.dataset.v=v;b.onclick=()=>{lang=v;$$("#langs button").forEach(x=>x.classList.toggle("active",x===b));speak("Language changed.");};$("#langs").appendChild(b)});
-$$("#langs button")[0].classList.add("active");
-const exercises=[
- {name:"Warm-up",cls:"jumping",time:30,reps:0,cue:"Stand tall, breathe comfortably and move gently."},
- {name:"Squat",cls:"squat",time:35,reps:8,cue:"Keep your feet comfortable, bend with control, then stand tall."},
- {name:"Push-up",cls:"push",time:35,reps:6,cue:"Keep your body in one steady line. Move only as far as comfortable."},
- {name:"March in place",cls:"jumping",time:30,reps:0,cue:"Lift one knee at a time and keep a steady rhythm."},
- {name:"Rest & breathe",cls:"",time:25,reps:0,cue:"Relax your shoulders. Take easy breaths."},
- {name:"Cool-down",cls:"",time:35,reps:0,cue:"Slow down and gently move through a comfortable range."}
-];
-const words={
-"en-US":{start:"Let's begin. Follow the coach.",next:"Next exercise.",rest:"Take a comfortable rest.",done:"Session complete. Nice work.",push:"Keep your body steady. Move with control.",squat:"Chest comfortable, knees tracking naturally, move slowly."},
-"hi-IN":{start:"चलो शुरू करते हैं। कोच को फॉलो करें।",next:"अगली एक्सरसाइज़।",rest:"आराम से सांस लें और आराम करें।",done:"सेशन पूरा हुआ। बहुत अच्छा।",push:"शरीर को स्थिर रखें और धीरे-धीरे करें।",squat:"आराम से नीचे जाएं और नियंत्रण के साथ ऊपर आएं।"},
-"ur-PK":{start:"چلیں شروع کرتے ہیں۔ کوچ کی ہدایات پر عمل کریں۔",next:"اگلی ورزش۔",rest:"آرام کریں اور سکون سے سانس لیں۔",done:"سیشن مکمل ہوگیا۔ بہت خوب۔",push:"جسم کو سیدھا اور حرکت کو قابو میں رکھیں۔",squat:"آرام سے نیچے جائیں اور کنٹرول کے ساتھ واپس آئیں۔"},
-"ar-SA":{start:"لنبدأ. اتبع تعليمات المدرب.",next:"التمرين التالي.",rest:"خذ قسطاً مريحاً من الراحة.",done:"اكتمل التمرين. أحسنت.",push:"حافظ على ثبات جسمك وتحرك بتحكم.",squat:"انزل بهدوء واصعد بتحكم."},
-"es-ES":{start:"Empezamos. Sigue al entrenador.",next:"Siguiente ejercicio.",rest:"Descansa y respira con calma.",done:"Sesión completa. Buen trabajo.",push:"Mantén el cuerpo estable y muévete con control.",squat:"Baja con calma y vuelve a subir con control."},
-"fr-FR":{start:"On commence. Suivez le coach.",next:"Exercice suivant.",rest:"Reposez-vous et respirez calmement.",done:"Séance terminée. Bravo.",push:"Gardez le corps stable et bougez avec contrôle.",squat:"Descendez doucement et remontez avec contrôle."},
-"de-DE":{start:"Wir beginnen. Folge dem Coach.",next:"Nächste Übung.",rest:"Pause machen und ruhig atmen.",done:"Training abgeschlossen. Gut gemacht.",push:"Halte den Körper stabil und bewege dich kontrolliert.",squat:"Langsam absenken und kontrolliert aufstehen."}
-};
-function speak(text){if(!("speechSynthesis"in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;const vs=speechSynthesis.getVoices();const pref=vs.find(v=>v.lang.toLowerCase().startsWith(lang.slice(0,2).toLowerCase()));if(pref)u.voice=pref;u.rate=.92;u.pitch=1.04;speechSynthesis.speak(u)}
-window.speakCurrent=()=>session&&speak(session.ex.cue);
-function speakCurrent(){if(session)speak(session.ex.cue)}
-function buildPlan(f){
- let count=Math.max(3,Math.min(6,Math.round(Number(f.minutes)/2)));
- const arr=[];for(let i=0;i<count;i++)arr.push(exercises[i%exercises.length]);
- return arr;
-}
-$("#gymForm").onsubmit=e=>{
- e.preventDefault();const f=Object.fromEntries(new FormData(e.target));lang=f.lang;voicePref=f.voice;
- localStorage.setItem("shaheenGymPrefs",JSON.stringify(f));session={list:buildPlan(f),idx:0,sec:30,reps:0,running:false,ex:null};renderPlan();loadExercise();$("#gymDlg").close();showPage("gym");startWorkout();
-};
-function loadExercise(){
- if(!session)return;if(session.idx>=session.list.length){finishWorkout();return}
- session.ex=session.list[session.idx];session.sec=session.ex.time;session.reps=session.ex.reps?0:0;
- $("#exerciseName").textContent=session.ex.name;$("#cue").textContent=session.ex.cue;$("#timer").textContent=fmt(session.sec);$("#rep").textContent=session.ex.reps?`0 / ${session.ex.reps} reps`:"Guided time";$("#prog").style.width=((session.idx/session.list.length)*100)+"%";
- $("#human").className="human "+session.ex.cls;$("#coach").classList.remove("rep");speak(session.ex.name+". "+session.ex.cue);
-}
-function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(Math.max(0,s%60)).padStart(2,"0")}
-function tick(){
- if(!session||!session.running)return;
- session.sec--;if(session.ex.reps){session.reps=Math.min(session.ex.reps,Math.floor((session.ex.time-session.sec)/Math.max(2,session.ex.time/session.ex.reps)));$("#rep").textContent=`${session.reps} / ${session.ex.reps} reps`;$("#coach").classList.add("rep")}
- $("#timer").textContent=fmt(Math.max(0,session.sec));
- if(session.sec<=0){session.idx++;if(session.idx<session.list.length){speak(words[lang]?.next||words["en-US"].next);loadExercise()}else finishWorkout()}
-}
-function startWorkout(){
- if(!session)return;session.running=true;$("#play").textContent="❚❚ Pause";clearInterval(timer);timer=setInterval(tick,1000);
- try{document.documentElement.requestFullscreen?.().catch(()=>{})}catch(e){}
- speak(words[lang]?.start||words["en-US"].start);
-}
-function resumeWorkout(){if(session){showPage("gym");startWorkout()}else openGymSetup()}
-function toggleWorkout(){if(!session)return openGymSetup();if(session.running){session.running=false;clearInterval(timer);$("#play").textContent="▶ Resume";speak("Paused.");}else startWorkout()}
-function nextExercise(){if(!session)return;session.idx++;loadExercise()}
-function stopWorkout(){if(!session)return;session.running=false;clearInterval(timer);$("#play").textContent="▶ Start";speak("Workout stopped.");try{document.exitFullscreen?.()}catch(e){}}
-function adjustTime(n){if(session){session.sec=Math.max(5,session.sec+n);$("#timer").textContent=fmt(session.sec)}}
-function adjustRep(n){if(session?.ex?.reps){session.reps=Math.max(0,Math.min(session.ex.reps,session.reps+n));$("#rep").textContent=`${session.reps} / ${session.ex.reps} reps`}}
-function finishWorkout(){clearInterval(timer);if(!session)return;session.running=false;$("#prog").style.width="100%";$("#play").textContent="✓ Complete";updateStreak();speak(words[lang]?.done||words["en-US"].done);try{document.exitFullscreen?.()}catch(e){}}
-function updateStreak(){const today=new Date().toISOString().slice(0,10),old=JSON.parse(localStorage.getItem("shaheenStreak")||'{"last":"","count":0}');if(old.last!==today){const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);old.count=old.last===yesterday?old.count+1:1;old.last=today;localStorage.setItem("shaheenStreak",JSON.stringify(old))}$("#streak").textContent=old.count}
-function renderPlan(){const p=JSON.parse(localStorage.getItem("shaheenGymPrefs")||"null"),box=$("#planList");if(!p){box.innerHTML="<div class='notice'>Build a session to see today's guided flow.</div>";return}box.innerHTML=buildPlan(p).map((x,i)=>`<div class="notice"><b>${i+1}. ${x.name}</b> · ${x.time}s<br><span class="muted">${x.cue}</span></div>`).join("")}
-window.toggleCamera=async()=>{
- const box=$("#cameraBox");box.classList.toggle("hidden");if(box.classList.contains("hidden")){stream?.getTracks().forEach(t=>t.stop());stream=null;return}
- try{stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});$("#video").srcObject=stream}catch(e){$("#cameraBox .cammsg").textContent="Camera permission was not granted. The workout still works normally without camera."}
-};
-function showPage(id){["home","gym","info"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id));$$(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id||id==="home"&&b.dataset.page==="tools"))}
-$$(".nav button[data-page]").forEach(b=>b.onclick=()=>{showPage(b.dataset.page==="tools"?"home":b.dataset.page);if(b.dataset.page==="tools")showHomeTools()});
-$("#theme").onclick=()=>document.body.classList.toggle("light");
-document.addEventListener("visibilitychange",()=>{if(document.hidden&&session?.running){session.running=false;clearInterval(timer);$("#play").textContent="▶ Resume";speak("Paused while the screen is away.")}});
-window.addEventListener("beforeunload",e=>{if(session?.running){e.preventDefault();e.returnValue=""}});
-function toast(s){const t=$("#toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",1800)}
-$("#year").textContent=new Date().getFullYear();updateStreak();renderPlan();renderTools();
-})();
-</script>
+        function updateProfileUI(user) {
+            document.getElementById('profile-img').src = user.photoURL || "https://via.placeholder.com/150";
+            document.getElementById('display-name').innerText = user.displayName || "User";
+            document.getElementById('handle-name').innerText = "@" + user.uid.substring(0, 6);
+        }
+
+        // NAVIGATION LOGIC
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.page-tab').forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            if (tabId !== 'shorts-feed') {
+                document.querySelectorAll('video').forEach(v => v.pause());
+            }
+        }
+
+        // FORM VALIDATION & SELECTION
+        function checkLength(fieldId, countId, max) {
+            const val = document.getElementById(fieldId).value;
+            document.getElementById(countId).innerText = `${val.length}/${max}`;
+        }
+
+        function handleFileSelection() {
+            const fileInput = document.getElementById('video-file-input');
+            if (fileInput.files.length > 0) {
+                chosenFile = fileInput.files[0];
+                document.getElementById('file-label').innerText = chosenFile.name;
+            }
+        }
+
+        // UPLOAD PROCESS WITH PROGRESS
+        function startUploadProcess() {
+            if (!chosenFile) return alert("Please select a video file first.");
+            const title = document.getElementById('title-field').value.trim();
+            if (!title) return alert("Please enter a video title.");
+
+            document.getElementById('progress-box').style.display = 'block';
+            const status = document.getElementById('status-text');
+            status.innerText = "Processing & Uploading...";
+
+            // Simulated Controlled Upload (Prevents App UI Freeze)
+            let percent = 0;
+            const interval = setInterval(() => {
+                percent += 15;
+                document.getElementById('progress-bar-inner').style.width = percent + "%";
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    status.innerText = "Upload Completed!";
+                    setTimeout(() => {
+                        document.getElementById('progress-box').style.display = 'none';
+                        document.getElementById('progress-bar-inner').style.width = "0%";
+                        status.innerText = "";
+                        alert("Post successfully published!");
+                        switchTab('shorts-feed', document.querySelectorAll('.nav-btn')[0]);
+                    }, 800);
+                }
+            }, 300);
+        }
+
+        // SHORTS FEED INTERACTION
+        function renderInitialFeed() {
+            const feed = document.getElementById('shorts-feed');
+            feed.innerHTML = '';
+
+            const sampleVideos = [
+                "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/v1605697521/elephants.mp4",
+                "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/v1605697521/dog.mp4"
+            ];
+
+            sampleVideos.forEach((src, idx) => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                card.innerHTML = `
+                    <video src="${src}" loop muted playsinline></video>
+                    
+                    <div class="video-details">
+                        <div class="profile-row">
+                            <img src="${currentUser ? currentUser.photoURL : 'https://via.placeholder.com/150'}" alt="User">
+                            <span class="username">Channel ${idx + 1}</span>
+                            <button class="follow-btn">Follow</button>
+                        </div>
+                        <div class="video-title">Sample Short #${idx + 1}</div>
+                        <div class="video-desc">Smooth video stream integration</div>
+                    </div>
+
+                    <div class="side-bar">
+                        <div class="action-item" onclick="toggleLike(this, event)">
+                            <i class="fas fa-heart"></i>
+                            <span class="action-text">1.5K</span>
+                        </div>
+                        <div class="action-item" onclick="alert('Comments opening...')">
+                            <i class="fas fa-comment-dots"></i>
+                            <span class="action-text">230</span>
+                        </div>
+                        <div class="action-item" onclick="copyLink()">
+                            <i class="fas fa-share"></i>
+                            <span class="action-text">Share</span>
+                        </div>
+                    </div>
+                `;
+                feed.appendChild(card);
+            });
+
+            // Intersection Observer for Auto-Play/Pause
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const vid = entry.target.querySelector('video');
+                    if (entry.isIntersecting) {
+                        vid.play();
+                    } else {
+                        vid.pause();
+                        vid.currentTime = 0;
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            document.querySelectorAll('.video-card').forEach(item => observer.observe(item));
+        }
+
+        function toggleLike(element, event) {
+            event.stopPropagation(); // Prevents video replay/pause
+            element.classList.toggle('liked');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert("Link copied to clipboard!");
+            });
+        }
+
+        function openMenu() { document.getElementById('settings-modal').style.display = 'block'; }
+        function closeMenu() { document.getElementById('settings-modal').style.display = 'none'; }
+    </script>
 </body>
 </html>
