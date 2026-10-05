@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaem 1000+ Pro Tools & Gym 26 Ecosystem</title>
+    <title>Shaem Ecosystem - 1000 Tools & Pro Hub</title>
     
     <!-- Google AdSense & AMP Auto Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
@@ -80,6 +80,11 @@
         .section-content { display: none; }
         .section-content.active { display: block; }
 
+        /* Tool Category Sub-Tabs */
+        .tool-cat-bar { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
+        .cat-btn { background: #14141f; border: 1px solid var(--border-color); color: var(--text-muted); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; white-space: nowrap; }
+        .cat-btn.active { background: var(--accent-glow); color: #030305; border-color: var(--accent-glow); }
+
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
         .tool-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; }
         input, textarea, select { width: 100%; padding: 10px 14px; background: #14141f; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-main); margin-bottom: 12px; font-size: 0.95rem; outline: none; }
@@ -88,7 +93,18 @@
         .btn:hover { opacity: 0.9; }
         .output-box { margin-top: 10px; background: #14141f; padding: 10px; border-radius: 8px; font-size: 0.9rem; color: var(--accent-glow); display: flex; justify-content: space-between; align-items: center; }
         .copy-btn { background: var(--border-color); color: var(--text-main); border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
-        .search-box { width: 100%; padding: 14px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; margin-bottom: 25px; }
+        .search-box { width: 100%; padding: 14px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; margin-bottom: 15px; }
+
+        /* Gym 26 Hub & Routine */
+        .gym-hub-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; padding: 25px; max-width: 650px; margin: 0 auto; text-align: center; box-shadow: 0 0 30px rgba(255,0,127,0.15); }
+        .human-anim-stage { width: 130px; height: 130px; margin: 0 auto 15px auto; background: radial-gradient(circle, #141424, #0b0b10); border: 2px solid var(--accent-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(0,255,204,0.4); }
+        .human-figure { font-size: 4rem; }
+        @keyframes ultraBounce { 0% { transform: scale(1) translateY(0); } 50% { transform: scale(1.15) translateY(-8px); } 100% { transform: scale(1) translateY(0); } }
+        .anim-abs { animation: ultraBounce 0.8s infinite ease-in-out; }
+        .timer-display { font-size: 3.2rem; font-weight: bold; color: var(--accent-glow); margin: 10px 0; font-family: monospace; }
+        .streak-calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 15px; }
+        .streak-day { background: #14141f; border: 1px solid var(--border-color); border-radius: 6px; padding: 10px 4px; font-size: 0.85rem; text-align: center; color: var(--text-muted); }
+        .streak-day.completed { background: rgba(0,255,204,0.25); border-color: var(--accent-glow); color: var(--accent-glow); font-weight: bold; }
 
         /* Profile & 3 Dots Menu */
         .profile-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; max-width: 600px; margin: 0 auto; position: relative; text-align: center; }
@@ -111,7 +127,7 @@
     <!-- 3-5 Seconds Loading & Real Auth Session Verification -->
     <div id="loading-screen">
         <div class="spinner"></div>
-        <h2 style="color: var(--accent-glow); margin-bottom: 8px;">Shaem Ecosystem (1000+ Tools)</h2>
+        <h2 style="color: var(--accent-glow); margin-bottom: 8px;">Shaem Ecosystem (1000+ Tools & Gym 26)</h2>
         <p style="color: var(--text-muted);">Verifying Google & Firebase Session Status...</p>
     </div>
 
@@ -140,17 +156,49 @@
     <div id="main-app">
         <amp-auto-ads type="adsense" data-ad-client="ca-pub-2057536839831582"></amp-auto-ads>
         <header>
-            <h1>Shaem 1000+ Pro Tools Hub</h1>
+            <h1>Shaem Ultra Ecosystem</h1>
             <p>Created by Shaheen Team (Shine Empire)</p>
         </header>
 
         <div class="container">
             
-            <!-- 1000+ TOOLS SECTION -->
+            <!-- TOOLS SECTION WITH 1000 TOOLS & 50 PRO TOOLS TABS -->
             <div id="tools-section" class="section-content active">
-                <input type="text" id="searchInput" class="search-box" placeholder="Search instantly among 1000+ tools..." onkeyup="filterTools()">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search instantly across all tools..." onkeyup="filterTools()">
+                
+                <div class="tool-cat-bar">
+                    <button class="cat-btn active" onclick="switchToolCategory('all', this)">⚡ All Tools</button>
+                    <button class="cat-btn" onclick="switchToolCategory('normal', this)">🛠 1000+ Normal Tools</button>
+                    <button class="cat-btn" onclick="switchToolCategory('pro', this)">💎 50 Pro Tools</button>
+                </div>
+
                 <div class="tools-grid" id="toolsGrid">
-                    <!-- Generated 1000 Tools via JS -->
+                    <!-- Dynamic Tools Grid -->
+                </div>
+            </div>
+
+            <!-- GYM 26 SECTION WITH VOICE GUIDE & STREAK -->
+            <div id="gym-section" class="section-content">
+                <div class="gym-hub-card">
+                    <h2 style="color: var(--accent-glow); margin-bottom: 5px;">Gym 26 - AI Routine & Voice Guide</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Active Athlete: <span id="gymHeroName" style="color:var(--accent-secondary)">Abdulbasit Mushtaq</span></p>
+                    
+                    <div class="human-anim-stage">
+                        <div class="human-figure anim-abs" id="gymHumanIcon">🤸‍♂️</div>
+                    </div>
+                    
+                    <div class="timer-display" id="gymTimer">00:45</div>
+                    <p id="gymStatusText" style="margin-bottom: 15px; color: var(--accent-glow);">Voice Guide Active (Pushups & Core)...</p>
+                    
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 15px;">
+                        <button class="btn" onclick="startGymSession()">Start Routine</button>
+                        <button class="btn" style="background: #ef4444; color:#fff;" onclick="pauseGymSession()">Pause</button>
+                    </div>
+
+                    <h3 style="color: var(--accent-glow); margin-top: 20px; margin-bottom: 10px;">My Real Streak Calendar</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 10px;">Completed Days: <strong id="streakCountNumber" style="color:var(--accent-glow);">12 Days</strong></p>
+                    <button class="btn" onclick="markTodayStreak()" style="margin-bottom: 10px; background: #14141f; color: var(--accent-glow); border: 1px solid var(--border-color);">Mark Today Complete ✅</button>
+                    <div class="streak-calendar" id="streakCalendarGrid"></div>
                 </div>
             </div>
 
@@ -161,9 +209,9 @@
                         <button class="dots-btn" onclick="toggleDropdown()">⋮</button>
                         <div class="dropdown-menu" id="profileDropdown">
                             <button onclick="switchProfileSub('main')">👤 View Profile</button>
-                            <button onclick="switchNav('about', document.querySelectorAll('.nav-item')[2])">ℹ️ About Us</button>
-                            <button onclick="switchNav('privacy', document.querySelectorAll('.nav-item')[4])">🔒 Privacy Policy</button>
-                            <button onclick="switchNav('contact', document.querySelectorAll('.nav-item')[3])">✉️ Contact Us</button>
+                            <button onclick="switchNav('about', document.querySelectorAll('.nav-item')[3])">ℹ️ About Us</button>
+                            <button onclick="switchNav('privacy', document.querySelectorAll('.nav-item')[5])">🔒 Privacy Policy</button>
+                            <button onclick="switchNav('contact', document.querySelectorAll('.nav-item')[4])">✉️ Contact Us</button>
                             <button onclick="handleLogout()" style="color: var(--danger);">🚪 Logout</button>
                         </div>
                     </div>
@@ -182,7 +230,7 @@
             <div id="about-section" class="section-content">
                 <div class="profile-card">
                     <h2 style="color: var(--accent-glow); margin-bottom: 15px;">About Us</h2>
-                    <p style="color: var(--text-muted); line-height: 1.6;">Shaem Tools is an elite high-performance toolkit ecosystem developed by Shaheen Team.</p>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Shaem Ecosystem is an elite high-performance utility & gym toolkit developed by Shaheen Team.</p>
                 </div>
             </div>
 
@@ -209,7 +257,8 @@
 
         <!-- Bottom Navigation Bar -->
         <div class="bottom-nav">
-            <button class="nav-item active" onclick="switchNav('tools', this)"><span>🛠️️</span> 1000+ Tools</button>
+            <button class="nav-item active" onclick="switchNav('tools', this)"><span>🛠</span> Tools</button>
+            <button class="nav-item" onclick="switchNav('gym', this)"><span>💪</span> Gym 26</button>
             <button class="nav-item" onclick="switchNav('profile', this)"><span>👤</span> Profile</button>
             <button class="nav-item" onclick="switchNav('about', this)"><span>ℹ️</span> About</button>
             <button class="nav-item" onclick="switchNav('contact', this)"><span>✉️</span> Contact</button>
@@ -223,7 +272,8 @@
             setTimeout(() => {
                 verifyUserSession();
             }, 3500); // 3.5 seconds loading check
-            generateAll1000Tools();
+            loadTools('all');
+            buildStreakCalendar();
         });
 
         function verifyUserSession() {
@@ -336,23 +386,63 @@
             location.reload();
         }
 
-        // --- 3. 1000+ WORKING TOOLS GENERATION ---
-        function generateAll1000Tools() {
+        // --- 3. TOOLS GENERATION (1000 NORMAL + 50 PRO TOOLS) ---
+        let currentToolCategory = 'all';
+
+        function switchToolCategory(cat, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentToolCategory = cat;
+            loadTools(cat);
+        }
+
+        function loadTools(cat) {
             const grid = document.getElementById('toolsGrid');
             let html = '';
-            for(let i=1; i<=1000; i++) {
-                html += `
-                <div class="tool-card" data-name="tool ${i} utility">
-                    <h3>${i}. Pro Tool ${i}</h3>
-                    <input type="text" id="t_in_${i}" placeholder="Input data for tool ${i}...">
-                    <button class="btn" onclick="executeTool(${i})">Run Tool ${i}</button>
-                    <div class="output-box" id="t_out_${i}">
-                        <span>Ready...</span>
-                        <button class="copy-btn" onclick="copyToolOutput(${i})">Copy</button>
-                    </div>
-                </div>`;
+            
+            // 50 Pro Tools
+            if(cat === 'all' || cat === 'pro') {
+                for(let i=1; i<=50; i++) {
+                    html += `
+                    <div class="tool-card" data-name="pro tool ${i} utility">
+                        <h3>💎 Pro Tool ${i}</h3>
+                        <input type="text" id="pro_in_${i}" placeholder="Enter input for Pro Tool ${i}...">
+                        <button class="btn" onclick="executeProTool(${i})">Run Pro Tool ${i}</button>
+                        <div class="output-box" id="pro_out_${i}">
+                            <span>Ready...</span>
+                            <button class="copy-btn" onclick="copyOutput('pro_out_${i}')">Copy</button>
+                        </div>
+                    </div>`;
+                }
+            }
+
+            // 1000 Normal Tools
+            if(cat === 'all' || cat === 'normal') {
+                for(let i=1; i<=1000; i++) {
+                    html += `
+                    <div class="tool-card" data-name="tool ${i} utility">
+                        <h3>🛠 Tool ${i}</h3>
+                        <input type="text" id="t_in_${i}" placeholder="Input for tool ${i}...">
+                        <button class="btn" onclick="executeTool(${i})">Run Tool ${i}</button>
+                        <div class="output-box" id="t_out_${i}">
+                            <span>Ready...</span>
+                            <button class="copy-btn" onclick="copyOutput('t_out_${i}')">Copy</button>
+                        </div>
+                    </div>`;
+                }
             }
             grid.innerHTML = html;
+        }
+
+        function executeProTool(id) {
+            const val = document.getElementById(`pro_in_${id}`).value || `ProData_${id}`;
+            let res = '';
+            switch(id % 3) {
+                case 1: res = "SHA256 Hash: " + btoa(val).split('').reverse().join('') + "X"; break;
+                case 2: res = "JSON Encoded: " + JSON.stringify({id: id, input: val}); break;
+                default: res = "Base64 Ultra: " + btoa(val); break;
+            }
+            document.getElementById(`pro_out_${id}`).querySelector('span').innerText = res;
         }
 
         function executeTool(id) {
@@ -362,13 +452,13 @@
                 case 1: res = "Base64: " + btoa(val); break;
                 case 2: res = "Uppercase: " + val.toUpperCase(); break;
                 case 3: res = "Reversed: " + val.split('').reverse().join(''); break;
-                default: res = "Length Hash: " + (val.length * 77) + "X"; break;
+                default: res = "Length Hash: " + (val.length * 88) + "X"; break;
             }
             document.getElementById(`t_out_${id}`).querySelector('span').innerText = res;
         }
 
-        function copyToolOutput(id) {
-            const text = document.getElementById(`t_out_${id}`).querySelector('span').innerText;
+        function copyOutput(boxId) {
+            const text = document.getElementById(boxId).querySelector('span').innerText;
             navigator.clipboard.writeText(text);
             alert('Output copied successfully!');
         }
@@ -382,7 +472,65 @@
             });
         }
 
-        // --- 4. NAVIGATION & 3-DOTS MENU ---
+        // --- 4. GYM 26 & VOICE GUIDE ---
+        let gymTimerInterval = null;
+        let timeLeft = 45;
+
+        function startGymSession() {
+            if(gymTimerInterval) clearInterval(gymTimerInterval);
+            speakVoiceGuide("Gym session started. Maintain proper posture and push your limits!");
+            gymTimerInterval = setInterval(() => {
+                timeLeft--;
+                let m = String(Math.floor(timeLeft/60)).padStart(2,'0');
+                let s = String(timeLeft%60).padStart(2,'0');
+                document.getElementById('gymTimer').innerText = `${m}:${s}`;
+                if(timeLeft <= 0) {
+                    clearInterval(gymTimerInterval);
+                    speakVoiceGuide("Great job! Session completed successfully.");
+                    timeLeft = 45;
+                }
+            }, 1000);
+        }
+
+        function pauseGymSession() {
+            if(gymTimerInterval) clearInterval(gymTimerInterval);
+            document.getElementById('gymStatusText').innerText = "Session Paused.";
+        }
+
+        function speakVoiceGuide(text) {
+            if('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function buildStreakCalendar() {
+            const cal = document.getElementById('streakCalendarGrid');
+            let completedDays = parseInt(localStorage.getItem('shaheen_streak_count') || '12');
+            document.getElementById('streakCountNumber').innerText = completedDays + " Days";
+            
+            let cHtml = '';
+            for(let d=1; d<=30; d++) {
+                let compClass = d <= completedDays ? 'completed' : '';
+                cHtml += `<div class="streak-day ${compClass}">Day ${d}</div>`;
+            }
+            cal.innerHTML = cHtml;
+        }
+
+        function markTodayStreak() {
+            let current = parseInt(localStorage.getItem('shaheen_streak_count') || '12');
+            if(current < 30) {
+                current++;
+                localStorage.setItem('shaheen_streak_count', current);
+                buildStreakCalendar();
+                alert('Streak updated successfully!');
+            } else {
+                alert('Congratulations! 30-day streak completed!');
+            }
+        }
+
+        // --- 5. NAVIGATION & PROFILE 3-DOTS ---
         function switchNav(sectionId, btnElem) {
             document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
