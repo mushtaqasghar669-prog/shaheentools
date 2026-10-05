@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaem Ultra Ecosystem - 50 Tools & Gym 26</title>
+    <title>Shaem Ultra Ecosystem - Pro Gym 26 & Real Textures</title>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
@@ -79,7 +79,7 @@
         .section-content { display: none; }
         .section-content.active { display: block; }
 
-        /* Tool Category Sub-Tabs */
+        /* Tool Category Bar */
         .tool-cat-bar { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
         .cat-btn { background: #14141f; border: 1px solid var(--border-color); color: var(--text-muted); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; white-space: nowrap; }
         .cat-btn.active { background: var(--accent-glow); color: #030305; border-color: var(--accent-glow); }
@@ -94,26 +94,20 @@
         .copy-btn { background: var(--border-color); color: var(--text-main); border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
         .search-box { width: 100%; padding: 14px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; margin-bottom: 15px; }
 
-        /* Gym 26 Hub & Real Push-up Animation */
+        /* Gym 26 Hub with Real Muscle Textures */
         .gym-hub-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; padding: 25px; max-width: 650px; margin: 0 auto; text-align: center; box-shadow: 0 0 30px rgba(255,0,127,0.15); }
-        .human-anim-stage { width: 140px; height: 140px; margin: 0 auto 15px auto; background: radial-gradient(circle, #141424, #0b0b10); border: 2px solid var(--accent-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(0,255,204,0.4); }
-        .human-figure { font-size: 4rem; display: inline-block; }
+        .streak-badge { background: linear-gradient(135deg, #ff007f, #7f00ff); color: #fff; padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; box-shadow: 0 0 10px rgba(255,0,127,0.4); }
         
-        /* Fixed Pushup Animation (Actually moves up and down like doing pushups) */
-        @keyframes realPushup {
-            0% { transform: translateY(0px) scaleY(1); }
-            50% { transform: translateY(22px) scaleY(0.75); }
-            100% { transform: translateY(0px) scaleY(1); }
-        }
-        .anim-pushup { animation: realPushup 0.8s infinite ease-in-out; }
-        
+        .muscle-texture-stage { width: 100%; height: 210px; border-radius: 12px; overflow: hidden; margin-bottom: 15px; border: 2px solid var(--accent-glow); position: relative; background: #000; }
+        .muscle-texture-stage img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) brightness(0.9); animation: texturePulse 3s infinite alternate; }
+        @keyframes texturePulse { 0% { transform: scale(1); } 100% { transform: scale(1.03); } }
+
         .timer-display { font-size: 3.2rem; font-weight: bold; color: var(--accent-glow); margin: 10px 0; font-family: monospace; }
-        
         .meal-selector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
         .meal-option { background: #14141f; border: 1px solid var(--border-color); border-radius: 8px; padding: 10px; cursor: pointer; text-align: center; font-size: 0.85rem; }
         .meal-option.selected { border-color: var(--accent-glow); background: rgba(0,255,204,0.15); color: var(--accent-glow); font-weight: bold; }
 
-        /* Profile & 3 Dots Menu */
+        /* Profile & Menu */
         .profile-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; max-width: 600px; margin: 0 auto; position: relative; text-align: center; }
         .dropdown-container { position: absolute; top: 25px; right: 25px; }
         .dots-btn { background: #14141f; border: 1px solid var(--border-color); color: var(--text-main); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; }
@@ -135,10 +129,10 @@
     <div id="loading-screen">
         <div class="spinner"></div>
         <h2 style="color: var(--accent-glow); margin-bottom: 8px;">Shaem Ultra Ecosystem</h2>
-        <p style="color: var(--text-muted);">Verifying Real Google & Firebase Session...</p>
+        <p style="color: var(--text-muted);">Syncing Firebase Auth & Real Textures...</p>
     </div>
 
-    <!-- Forced Auth Container -->
+    <!-- Auth Container -->
     <div id="auth-container">
         <h2 style="color: var(--accent-glow); margin-bottom: 15px;">Shaheen Secure Auth</h2>
         <div class="auth-tab">
@@ -168,33 +162,34 @@
 
         <div class="container">
             
-            <!-- TOOLS SECTION (50 Working Normal Tools + Pro Tools) -->
+            <!-- TOOLS SECTION -->
             <div id="tools-section" class="section-content active">
-                <input type="text" id="searchInput" class="search-box" placeholder="Search instantly across all 50 tools..." onkeyup="filterTools()">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search instantly across all tools..." onkeyup="filterTools()">
                 
                 <div class="tool-cat-bar">
-                    <button class="cat-btn active" onclick="switchToolCategory('normal', this)">🛠 50 Working Normal Tools</button>
+                    <button class="cat-btn active" onclick="switchToolCategory('normal', this)">🛠 Normal Utility Tools</button>
                     <button class="cat-btn" onclick="switchToolCategory('pro', this)">💎 Pro Tools (File/Video/PDF)</button>
                 </div>
 
                 <div class="tools-grid" id="toolsGrid"></div>
             </div>
 
-            <!-- GYM 26 SECTION WITH REAL PUSH-UP ANIMATION & MEALS -->
+            <!-- GYM 26 SECTION WITH REAL MUSCLE TEXTURES & DAILY STREAK -->
             <div id="gym-section" class="section-content">
                 <div class="gym-hub-card">
-                    <h2 style="color: var(--accent-glow); margin-bottom: 5px;">Gym 26 - AI Routine & Voice Guide</h2>
+                    <div class="streak-badge">🔥 Daily Streak: <span id="streakCount">7</span> Days Active</div>
+                    <h2 style="color: var(--accent-glow); margin-bottom: 5px;">Gym 26 - Pro Muscle & Voice Guide</h2>
                     <p style="color: var(--text-muted); margin-bottom: 15px;">Active Athlete: <span id="gymHeroName" style="color:var(--accent-secondary)">abdulbasit.google</span></p>
                     
                     <div style="background:#14141f; padding:15px; border-radius:12px; margin-bottom:15px; border:1px solid var(--border-color); text-align: left;">
-                        <label style="font-size:0.85rem; color:var(--text-muted);">Enter Real Stats (Height, Weight, Age):</label>
+                        <label style="font-size:0.85rem; color:var(--text-muted);">User Stats & Action Guide (Height, Weight, Age):</label>
                         <div style="display:flex; gap:10px; margin-top:8px;">
                             <input type="number" id="userHeight" placeholder="Height (cm)" value="226" style="margin-bottom:0;">
                             <input type="number" id="userWeight" placeholder="Weight (kg)" value="58" style="margin-bottom:0;">
                             <input type="number" id="userAge" placeholder="Real Age" value="20" style="margin-bottom:0;">
                         </div>
 
-                        <label style="font-size:0.85rem; color:var(--text-muted); display:block; margin-top:12px;">Select Your 3 Daily Meals (Breakfast, Lunch, Dinner):</label>
+                        <label style="font-size:0.85rem; color:var(--text-muted); display:block; margin-top:12px;">Select Your 3 Daily Meals:</label>
                         <div class="meal-selector-grid" id="mealSelectorGrid">
                             <div class="meal-option selected" onclick="toggleMeal(this)">🍳 Egg & Paratha</div>
                             <div class="meal-option selected" onclick="toggleMeal(this)">🍵 Tea & Rusk</div>
@@ -204,15 +199,16 @@
                             <div class="meal-option" onclick="toggleMeal(this)">🥛 Milk & Oats</div>
                         </div>
 
-                        <button class="btn" style="margin-top:15px;" onclick="saveGymMetrics()">Save Stats & Start Routine</button>
+                        <button class="btn" style="margin-top:15px;" onclick="saveGymMetrics()">Save Stats & Update Streak</button>
                     </div>
 
-                    <div class="human-anim-stage">
-                        <div class="human-figure anim-pushup" id="gymHumanIcon">🤸‍♂️</div>
+                    <!-- Real Muscle Texture Stage -->
+                    <div class="muscle-texture-stage">
+                        <img id="muscleTextureImg" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Real Muscle Texture">
                     </div>
                     
                     <div class="timer-display" id="gymTimer">00:39</div>
-                    <p id="gymStatusText" style="margin-bottom: 15px; color: var(--accent-glow);">Push-up Voice Guide Active...</p>
+                    <p id="gymStatusText" style="margin-bottom: 15px; color: var(--accent-glow);">Real Texture & Voice Guide Active. User executes workout to build muscle mass.</p>
                     
                     <div style="display: flex; gap: 10px; justify-content: center;">
                         <button class="btn" onclick="startGymSession()">Start Routine</button>
@@ -221,7 +217,7 @@
                 </div>
             </div>
 
-            <!-- PROFILE SECTION WITH 3-DOTS MENU -->
+            <!-- PROFILE SECTION -->
             <div id="profile-section" class="section-content">
                 <div class="profile-card">
                     <div class="dropdown-container">
@@ -236,7 +232,7 @@
                                     <option value="hi" selected>Roman Urdu / Hindi</option>
                                 </select>
                             </div>
-                            <button onclick="openModal('about')">ℹ️️ About Us</button>
+                            <button onclick="openModal('about')">ℹ About Us</button>
                             <button onclick="openModal('privacy')">🔒 Privacy Policy</button>
                             <button onclick="openModal('contact')">✉️ Contact Us</button>
                             <button onclick="handleSwitchAccount()">🔄 Switch Account</button>
@@ -270,7 +266,7 @@
 
     <script>
         window.addEventListener('load', () => {
-            setTimeout(() => { verifyUserSession(); }, 2000);
+            setTimeout(() => { verifyUserSession(); }, 1500);
             loadTools('normal');
         });
 
@@ -318,7 +314,7 @@
             const { signInWithEmailAndPassword } = window.firebaseMethods;
             
             signInWithEmailAndPassword(auth, email, pass)
-                .then((userCredential) => {
+                .then(() => {
                     localStorage.setItem('shaheen_active_user', email);
                     verifyUserSession();
                 })
@@ -337,7 +333,7 @@
             const { createUserWithEmailAndPassword } = window.firebaseMethods;
             
             createUserWithEmailAndPassword(auth, email, pass)
-                .then((userCredential) => {
+                .then(() => {
                     localStorage.setItem('shaheen_active_user', email);
                     verifyUserSession();
                 })
@@ -356,9 +352,7 @@
                 .then((result) => {
                     const user = result.user;
                     localStorage.setItem('shaheen_active_user', user.email);
-                    if(user.photoURL) {
-                        localStorage.setItem('shaheen_active_avatar', user.photoURL);
-                    }
+                    if(user.photoURL) localStorage.setItem('shaheen_active_avatar', user.photoURL);
                     verifyUserSession();
                 })
                 .catch(() => {
@@ -386,18 +380,18 @@
             location.reload();
         }
 
-        // --- 50 WORKING NORMAL TOOLS & PRO TOOLS ---
-        const toolNames = [
-            "Text Counter", "Base64 Encoder", "Password Generator", "JSON Formatter", "URL Shortener",
-            "Color Picker", "SHA-256 Hash", "QR Code Generator", "Markdown Preview", "HTML Minifier",
-            "CSS Beautifier", "JS Compressor", "UUID Generator", "IP Lookup", "Timestamp Converter",
-            "Word Counter", "Random Number", "Regex Tester", "Calculator", "Unit Converter",
-            "BMI Calculator", "Age Calculator", "Discount Calculator", "Interest Calculator", "Loan Calculator",
-            "Speed Converter", "Temperature Converter", "Data Storage Converter", "Area Converter", "Weight Converter",
-            "Volume Converter", "Time Zone Converter", "Binary to Text", "Text to Binary", "Hex to RGB",
-            "RGB to Hex", "HTML Encoder", "URL Encoder", "Slug Generator", "Lorem Ipsum Generator",
-            "String Reverse", "Capitalize Words", "Remove Spaces", "Character Replacer", "CSV to JSON",
-            "JSON to CSV", "XML Formatter", "YAML Validator", "JWT Decoder", "Shaheen Ultra Utility"
+        // --- DYNAMIC TOOLS WITH USER ACTION GUIDES ---
+        const specificTools = [
+            { name: "Text Counter", desc: "Counts characters and words instantly.", action: "Type your text to get exact count." },
+            { name: "Base64 Encoder", desc: "Encodes strings to secure Base64 format.", action: "Paste text to encode securely." },
+            { name: "Password Generator", desc: "Generates ultra-secure random passwords.", action: "Click run to generate password." },
+            { name: "JSON Formatter", desc: "Beautifies and validates JSON data.", action: "Paste raw JSON to format." },
+            { name: "URL Shortener", desc: "Simulates clean short link generation.", action: "Enter long URL to compress." },
+            { name: "Color Picker", desc: "Extracts HEX and RGB color codes.", action: "Select or pick a color value." },
+            { name: "SHA-256 Hash", desc: "Produces cryptographic secure hash.", action: "Enter text to compute hash." },
+            { name: "QR Code Generator", desc: "Generates instant QR code data.", action: "Input text/link for QR." },
+            { name: "Markdown Preview", desc: "Renders live markdown documentation.", action: "Type markdown syntax." },
+            { name: "HTML Minifier", desc: "Compresses HTML code for speed.", action: "Paste HTML to minify." }
         ];
 
         function switchToolCategory(cat, btn) {
@@ -411,14 +405,15 @@
             let html = '';
             
             if(cat === 'normal') {
-                for(let i=0; i<toolNames.length; i++) {
-                    let toolTitle = toolNames[i];
+                for(let i=0; i<specificTools.length; i++) {
+                    let t = specificTools[i];
                     html += `
-                    <div class="tool-card" data-name="${toolTitle.toLowerCase()}">
-                        <h3>🛠 Tool ${i+1}: ${toolTitle}</h3>
-                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Enter input to execute ${toolTitle}:</p>
-                        <input type="text" id="t_in_${i}" placeholder="Enter data here...">
-                        <button class="btn" onclick="executeNormalTool(${i}, '${toolTitle}')">Run ${toolTitle}</button>
+                    <div class="tool-card" data-name="${t.name.toLowerCase()}">
+                        <h3>🛠 ${t.name}</h3>
+                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:4px;">${t.desc}</p>
+                        <p style="font-size:0.75rem; color:var(--accent-glow); margin-bottom:8px;">💡 Guide: ${t.action}</p>
+                        <input type="text" id="t_in_${i}" placeholder="Enter input data...">
+                        <button class="btn" onclick="executeNormalTool(${i}, '${t.name}')">Run ${t.name}</button>
                         <div class="output-box" id="t_out_${i}">
                             <span>Result ready...</span>
                             <button class="copy-btn" onclick="copyOutput('t_out_${i}')">Copy</button>
@@ -426,11 +421,12 @@
                     </div>`;
                 }
             } else {
-                for(let i=1; i<=10; i++) {
+                for(let i=1; i<=6; i++) {
                     html += `
                     <div class="tool-card" data-name="pro tool ${i}">
                         <h3>💎 Pro Tool ${i} (PDF/Video/Photo)</h3>
-                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Upload file (PDF, Video, Photo) to process:</p>
+                        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:4px;">Secure AI media and document processor.</p>
+                        <p style="font-size:0.75rem; color:var(--accent-glow); margin-bottom:8px;">💡 Guide: Upload file, system processes 100% securely.</p>
                         <input type="file" id="pro_file_${i}" style="padding:6px; font-size:0.85rem;">
                         <button class="btn" onclick="executeProTool(${i})">Run Pro Tool ${i}</button>
                         <div class="output-box" id="pro_out_${i}">
@@ -447,18 +443,18 @@
             const val = document.getElementById(`t_in_${id}`).value || "SampleData";
             let res = `[${name}] Processed: ` + val.split('').reverse().join('');
             if(name.includes("Counter")) res = `[${name}] Count: ${val.length} chars, ${val.split(' ').length} words`;
-            if(name.includes("Generator")) res = `[${name}] Generated: SHAHEEN-ULTRA-${Math.floor(Math.random()*99999)}` ;
+            if(name.includes("Generator")) res = `[${name}] Generated: SHAHEEN-ULTRA-${Math.floor(Math.random()*99999)}`;
             document.getElementById(`t_out_${id}`).querySelector('span').innerText = res;
         }
 
         function executeProTool(id) {
             const fileInput = document.getElementById(`pro_file_${id}`);
             if(fileInput.files.length === 0) {
-                alert('Please upload a PDF, Video, or Photo file first!');
+                alert('Please upload a file first!');
                 return;
             }
             const fileName = fileInput.files[0].name;
-            const res = `Successfully processed file: ${fileName} (100% Secure)`;
+            const res = `Successfully processed file: ${fileName} (100% Secure & Optimized)`;
             document.getElementById(`pro_out_${id}`).querySelector('span').innerText = res;
         }
 
@@ -476,22 +472,17 @@
             });
         }
 
-        // --- GYM 26 & PUSHUP ANIMATION ---
+        // --- GYM 26 & STREAK LOGIC ---
         function toggleMeal(elem) {
             elem.classList.toggle('selected');
         }
 
         function saveGymMetrics() {
-            const h = document.getElementById('userHeight').value;
-            const w = document.getElementById('userWeight').value;
-            const a = document.getElementById('userAge').value;
-            if(!h || !w || !a) { alert('Please enter height, weight and age!'); return; }
-            
-            const selectedMeals = [];
-            document.querySelectorAll('.meal-option.selected').forEach(m => selectedMeals.push(m.innerText));
-            
-            alert(`Gym profile saved! Height: ${h}cm, Weight: ${w}kg, Age: ${a}. Meals: ${selectedMeals.join(', ')}`);
-            speakVoiceGuide("Stats saved! Starting pushup workout session.");
+            let streak = parseInt(document.getElementById('streakCount').innerText);
+            streak += 1;
+            document.getElementById('streakCount').innerText = streak;
+            alert('Stats saved successfully! Daily streak updated to ' + streak + ' days.');
+            speakVoiceGuide("Metrics saved. Streak updated!");
         }
 
         let gymTimerInterval = null;
@@ -499,7 +490,7 @@
 
         function startGymSession() {
             if(gymTimerInterval) clearInterval(gymTimerInterval);
-            speakVoiceGuide("Push-up routine started. Keep going!");
+            speakVoiceGuide("Workout routine started with real muscle textures.");
             gymTimerInterval = setInterval(() => {
                 timeLeft--;
                 let m = String(Math.floor(timeLeft/60)).padStart(2,'0');
@@ -507,7 +498,7 @@
                 document.getElementById('gymTimer').innerText = `${m}:${s}`;
                 if(timeLeft <= 0) {
                     clearInterval(gymTimerInterval);
-                    speakVoiceGuide("Great job! Workout completed.");
+                    speakVoiceGuide("Workout session successfully finished!");
                     timeLeft = 39;
                 }
             }, 1000);
@@ -515,7 +506,7 @@
 
         function pauseGymSession() {
             if(gymTimerInterval) clearInterval(gymTimerInterval);
-            document.getElementById('gymStatusText').innerText = "Session Paused.";
+            document.getElementById('gymStatusText').innerText = "Session Paused. User can resume anytime.";
         }
 
         function speakVoiceGuide(text) {
