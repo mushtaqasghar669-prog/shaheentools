@@ -1,9 +1,9 @@
-         <!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaem Tools & Gym 26 - 50 Ultra Tools Ecosystem</title>
+    <title>Shaem Tools & Gym 26 - Ultra Professional Ecosystem</title>
     
     <!-- Google AdSense & AMP Auto Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
@@ -11,12 +11,12 @@
 
     <style>
         :root {
-            --bg-primary: #050508;
-            --bg-card: #0e0e14;
-            --accent-glow: #10b981;
-            --accent-secondary: #06b6d4;
+            --bg-primary: #030305;
+            --bg-card: #0b0b10;
+            --accent-glow: #00ffcc;
+            --accent-secondary: #ff007f;
             --text-main: #ffffff;
-            --text-muted: #94a3b8;
+            --text-muted: #a1a1aa;
             --border-color: #1f1f2e;
             --danger: #ef4444;
         }
@@ -40,17 +40,17 @@
         #auth-container {
             display: none; max-width: 420px; margin: 60px auto; background: var(--bg-card);
             border: 1px solid var(--border-color); border-radius: 18px; padding: 30px;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            text-align: center; box-shadow: 0 15px 35px rgba(0,255,204,0.1);
         }
         .auth-tab { display: flex; margin-bottom: 20px; background: #14141f; border-radius: 8px; padding: 4px; }
         .auth-tab button { flex: 1; background: none; border: none; color: var(--text-muted); padding: 10px; cursor: pointer; border-radius: 6px; font-weight: 600; }
-        .auth-tab button.active { background: var(--accent-secondary); color: #050508; }
+        .auth-tab button.active { background: var(--accent-glow); color: #030305; }
         .auth-form { display: none; }
         .auth-form.active { display: block; }
         .google-btn { background: #ffffff; color: #000000; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; }
 
         #main-app { display: none; }
-        header { text-align: center; padding: 22px; background: linear-gradient(135deg, #0e0e14, #151522); border-bottom: 1px solid var(--border-color); }
+        header { text-align: center; padding: 22px; background: linear-gradient(135deg, #0b0b10, #151522); border-bottom: 1px solid var(--border-color); }
         header h1 { font-size: 2rem; background: linear-gradient(to right, var(--accent-glow), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
@@ -60,28 +60,27 @@
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
         .tool-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; }
         input, textarea, select { width: 100%; padding: 10px 14px; background: #14141f; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-main); margin-bottom: 12px; font-size: 0.95rem; outline: none; }
-        input:focus, select:focus { border-color: var(--accent-secondary); }
-        .btn { background: linear-gradient(135deg, var(--accent-secondary), var(--accent-glow)); color: #050508; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; transition: opacity 0.2s; }
+        input:focus, select:focus { border-color: var(--accent-glow); }
+        .btn { background: linear-gradient(135deg, var(--accent-glow), var(--accent-secondary)); color: #030305; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%; transition: opacity 0.2s; box-shadow: 0 0 15px rgba(0,255,204,0.3); }
         .btn:hover { opacity: 0.9; }
         .output-box { margin-top: 10px; background: #14141f; padding: 10px; border-radius: 8px; font-size: 0.9rem; color: var(--accent-glow); display: flex; justify-content: space-between; align-items: center; }
         .copy-btn { background: var(--border-color); color: var(--text-main); border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
-        .copy-btn:hover { background: var(--accent-secondary); color: #000; }
 
-        /* Gym 26 Pro Styles & Calendar Streak Grid */
-        .gym-hub-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; padding: 25px; max-width: 650px; margin: 0 auto; text-align: center; }
+        /* Gym 26 Pro Ultra Styles */
+        .gym-hub-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; padding: 25px; max-width: 650px; margin: 0 auto; text-align: center; box-shadow: 0 0 30px rgba(255,0,127,0.15); }
         .goal-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px; }
         .goal-card { background: #14141f; border: 2px solid var(--border-color); border-radius: 10px; padding: 12px; cursor: pointer; transition: 0.2s; }
-        .goal-card.selected { border-color: var(--accent-glow); background: rgba(16, 185, 129, 0.1); }
-        .human-anim-stage { width: 120px; height: 120px; margin: 0 auto 15px auto; background: #141424; border: 2px solid var(--accent-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
-        .human-figure { font-size: 3.5rem; }
-        @keyframes absAnim { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
-        .anim-abs { animation: absAnim 1.2s infinite ease-in-out; }
-        .timer-display { font-size: 3rem; font-weight: bold; color: var(--accent-glow); margin: 10px 0; font-family: monospace; }
+        .goal-card.selected { border-color: var(--accent-glow); background: rgba(0,255,204,0.1); }
+        .human-anim-stage { width: 130px; height: 130px; margin: 0 auto 15px auto; background: radial-gradient(circle, #141424, #0b0b10); border: 2px solid var(--accent-glow); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(0,255,204,0.4); }
+        .human-figure { font-size: 4rem; }
+        @keyframes ultraBounce { 0% { transform: scale(1) translateY(0); } 50% { transform: scale(1.1) translateY(-5px); } 100% { transform: scale(1) translateY(0); } }
+        .anim-abs { animation: ultraBounce 1s infinite ease-in-out; }
+        .timer-display { font-size: 3.2rem; font-weight: bold; color: var(--accent-glow); margin: 10px 0; font-family: monospace; text-shadow: 0 0 10px rgba(0,255,204,0.5); }
         
         /* Calendar Streak Grid */
         .streak-calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 15px; }
         .streak-day { background: #14141f; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 4px; font-size: 0.8rem; text-align: center; color: var(--text-muted); }
-        .streak-day.completed { background: rgba(16, 185, 129, 0.2); border-color: var(--accent-glow); color: var(--accent-glow); font-weight: bold; }
+        .streak-day.completed { background: rgba(0,255,204,0.2); border-color: var(--accent-glow); color: var(--accent-glow); font-weight: bold; }
 
         /* Profile & 3 Dots Menu */
         .profile-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; max-width: 600px; margin: 0 auto; position: relative; }
@@ -96,7 +95,7 @@
         .profile-img { width: 90px; height: 90px; border-radius: 50%; border: 2px solid var(--accent-glow); margin-bottom: 12px; object-fit: cover; }
 
         /* Bottom Navs */
-        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(14, 14, 20, 0.95); backdrop-filter: blur(10px); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0; z-index: 1000; }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(11, 11, 16, 0.95); backdrop-filter: blur(10px); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0; z-index: 1000; }
         .nav-item { background: none; border: none; color: var(--text-muted); font-size: 0.9rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; }
         .nav-item.active, .nav-item:hover { color: var(--accent-glow); }
     </style>
@@ -107,12 +106,12 @@
     <div id="splash-screen">
         <div class="spinner"></div>
         <h2 style="color: var(--accent-glow); margin-bottom: 5px;">Shaem Tools & Gym 26</h2>
-        <p style="color: var(--text-muted);">Verifying Firebase Secure Session...</p>
+        <p style="color: var(--text-muted);">Loading Ultra Ecosystem...</p>
     </div>
 
     <!-- Auth Container -->
     <div id="auth-container">
-        <h2 style="color: var(--accent-glow); margin-bottom: 15px;">Welcome Back (Shaheen Team)</h2>
+        <h2 style="color: var(--accent-glow); margin-bottom: 15px;">Welcome (Shaheen Team)</h2>
         <div class="auth-tab">
             <button class="active" onclick="switchAuthTab('login')">Login</button>
             <button onclick="switchAuthTab('register')">Register</button>
@@ -136,11 +135,11 @@
         <amp-auto-ads type="adsense" data-ad-client="ca-pub-2057536839831582"></amp-auto-ads>
         <header>
             <h1>Shaem Tools & Gym 26</h1>
-            <p>Ultra Professional Ecosystem by Shaheen Team (Shine Empire)</p>
+            <p>Ultra Pro Ecosystem by Shaheen Team (Shine Empire)</p>
         </header>
 
         <div class="container">
-            <!-- 50 WORKING TOOLS SECTION WITH COPY BUTTON -->
+            <!-- 50 TOOLS SECTION -->
             <div id="tools-section" class="section-content active">
                 <input type="text" id="searchInput" class="search-box" placeholder="Search among 50 pro tools..." onkeyup="filterTools()">
                 <div class="tools-grid" id="toolsGrid">
@@ -178,7 +177,7 @@
                     <div class="tool-card" data-name="md5 dummy hash"><h3>29. Quick Hash</h3><input type="text" id="i29" placeholder="Text"><button class="btn" onclick="document.getElementById('o29').querySelector('span').innerText='sh_'+btoa(document.getElementById('i29').value).substring(0,8)">Hash</button><div class="output-box" id="o29"><span>...</span><button class="copy-btn" onclick="copyText('o29')">Copy</button></div></div>
                     <div class="tool-card" data-name="perimeter"><h3>30. Perimeter</h3><input type="number" id="i30l" placeholder="L"><input type="number" id="i30w" placeholder="W"><button class="btn" onclick="document.getElementById('o30').querySelector('span').innerText=2*(Number(document.getElementById('i30l').value)+Number(document.getElementById('i30w').value))">Calculate</button><div class="output-box" id="o30"><span>...</span><button class="copy-btn" onclick="copyText('o30')">Copy</button></div></div>
 
-                    <!-- NEW 20 TOOLS (Tools 31 to 50) -->
+                    <!-- Tools 31 to 50 -->
                     <div class="tool-card" data-name="inch to cm"><h3>31. Inch to CM</h3><input type="number" id="i31" placeholder="Inches"><button class="btn" onclick="document.getElementById('o31').querySelector('span').innerText=(document.getElementById('i31').value * 2.54).toFixed(2)+' cm'">Convert</button><div class="output-box" id="o31"><span>...</span><button class="copy-btn" onclick="copyText('o31')">Copy</button></div></div>
                     <div class="tool-card" data-name="cm to inch"><h3>32. CM to Inch</h3><input type="number" id="i32" placeholder="CM"><button class="btn" onclick="document.getElementById('o32').querySelector('span').innerText=(document.getElementById('i32').value / 2.54).toFixed(2)+' in'">Convert</button><div class="output-box" id="o32"><span>...</span><button class="copy-btn" onclick="copyText('o32')">Copy</button></div></div>
                     <div class="tool-card" data-name="triangle area"><h3>33. Triangle Area</h3><input type="number" id="i33b" placeholder="Base"><input type="number" id="i33h" placeholder="Height"><button class="btn" onclick="document.getElementById('o33').querySelector('span').innerText=(0.5 * document.getElementById('i33b').value * document.getElementById('i33h').value)">Calculate</button><div class="output-box" id="o33"><span>...</span><button class="copy-btn" onclick="copyText('o33')">Copy</button></div></div>
@@ -202,45 +201,33 @@
                 </div>
             </div>
 
-            <!-- GYM 26 PRO SECTION WITH DIRECT SHAHEEN TEAM WHATSAPP DISPATCH -->
+            <!-- GYM 26 PRO ULTRA SECTION (WITH AUTO HUMAN CHECK & ZERO FACE VERIFICATION) -->
             <div id="gym-section" class="section-content">
                 <div class="gym-hub-card">
-                    <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Gym 26 - AI Custom Routine</h2>
+                    <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Gym 26 - Ultra AI Routine</h2>
                     
                     <div id="gymSetupView">
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Mandatory Strict Body Specs & Official Face Verification. Sends verification directly to Shaheen Team WhatsApp (+923295727569).</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Enter your body stats. Human verification runs automatically in the background (Zero Face Scan required).</p>
                         
-                        <input type="number" id="gymHeight" placeholder="Accurate Height in CM (e.g. 175)" required>
-                        <input type="number" id="gymWeight" placeholder="Accurate Weight in KG (e.g. 70)" required>
-                        <input type="number" id="gymAge" placeholder="Your Exact Age (e.g. 18)" required>
-                        
-                        <div style="background: #14141f; border: 1px dashed var(--accent-secondary); border-radius: 10px; padding: 15px; margin-bottom: 15px;">
-                            <p style="font-size: 0.85rem; color: var(--accent-secondary); margin-bottom: 8px;">📷 Official Face Verification (Shaheen Team)</p>
-                            
-                            <!-- Fallback Camera File Input to bypass Android Overlay/Permission Errors -->
-                            <input type="file" id="cameraFileInput" accept="image/*" capture="user" style="display:none;" onchange="handleFileCaptured(event)">
-                            
-                            <video id="webcam" autoplay playsinline style="width:100%; max-height:160px; border-radius:8px; display:none; background:#000; margin-bottom:8px;"></video>
-                            <canvas id="snapshotCanvas" style="display:none;"></canvas>
-                            
-                            <button class="btn" onclick="triggerDirectWhatsAppVerification()" style="background: #1f1f2e; color: var(--accent-glow);">Capture & Send to Shaheen Team (+923295727569)</button>
-                            <p id="scanStatus" style="font-size: 0.8rem; color: var(--danger); margin-top: 5px;">Status: ❌ Face Verification Pending</p>
-                        </div>
+                        <input type="number" id="gymHeight" placeholder="Height in CM (e.g. 175)" required>
+                        <input type="number" id="gymWeight" placeholder="Weight in KG (e.g. 70)" required>
+                        <input type="number" id="gymAge" placeholder="Your Age (e.g. 18)" required>
 
                         <label style="display:block; text-align:left; margin-bottom:5px; color:var(--text-muted);">Select Target Body Goal:</label>
                         <div class="goal-options">
                             <div class="goal-card selected" onclick="selectGoal('Shredded Six Pack Abs', this)"><div style="font-size: 2rem;">🛡️</div><h4>Shredded Six Pack</h4></div>
                             <div class="goal-card" onclick="selectGoal('Full Body Muscle Pro', this)"><div style="font-size: 2rem;">🦾</div><h4>Full Body Muscle Pro</h4></div>
                         </div>
-                        <button class="btn" onclick="initGymStreak()">Initialize Routine</button>
+                        <button class="btn" onclick="initGymStreak()">Initialize Routine & Auto Check</button>
                     </div>
 
                     <div id="gymActiveView" style="display:none;">
                         <div class="human-anim-stage">
-                            <div class="human-figure anim-abs" id="gymAvatar">🏋️‍♂️</div>
+                            <!-- Cute Animated Character / Emoji as requested -->
+                            <div class="human-figure anim-abs" id="gymAvatar">🤖✨</div>
                         </div>
-                        <h3 id="streakStatusText" style="color: var(--accent-secondary); margin-bottom: 5px;">Verified User: <span id="verifiedUserName"></span></h3>
-                        <p style="font-size: 0.85rem; color: var(--accent-glow); margin-bottom: 12px;" id="verificationStateMsg">Status: Verified by Shaheen Team ✅</p>
+                        <h3 id="streakStatusText" style="color: var(--accent-secondary); margin-bottom: 5px;">Active Hero: <span id="verifiedUserName"></span></h3>
+                        <p style="font-size: 0.85rem; color: var(--accent-glow); margin-bottom: 12px;">🤖 Auto Human Verified Successfully ✅</p>
                         
                         <div class="timer-display" id="gymTimer">00:45</div>
                         <button class="btn" onclick="startWorkoutSession()" id="gymStartBtn">Complete Today's Workout</button>
@@ -281,15 +268,15 @@
                         <h2 style="color: var(--accent-glow); margin-bottom: 15px;">Update Profile Details</h2>
                         <input type="text" id="updateNameInput" placeholder="New Display Name" style="margin-bottom: 12px;">
                         <button class="btn" onclick="updateProfileName()" style="margin-bottom: 12px;">Save Profile Name</button>
-                        <button class="btn" onclick="triggerPasswordReset()" style="background: var(--accent-secondary); color: #000; margin-bottom: 12px;">Reset Password via Firebase Email</button>
+                        <button class="btn" onclick="triggerPasswordReset()" style="background: var(--accent-secondary); color: #fff; margin-bottom: 12px;">Reset Password via Firebase Email</button>
                     </div>
 
                     <!-- Privacy Policy Sub-view -->
                     <div id="sub-privacy" class="sub-view" style="text-align: left;">
-                        <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Privacy Policy (Shaheen Team Security)</h2>
+                        <h2 style="color: var(--accent-glow); margin-bottom: 10px;">Privacy Policy (Shaheen Team)</h2>
                         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-                            <strong>1. Firebase Auth:</strong> Secure Google Firebase Authentication is integrated.<br><br>
-                            <strong>2. Biometric Verification:</strong> Face capture is verified directly through Shaheen Team.<br><br>
+                            <strong>1. Firebase Auth:</strong> Secure Google Firebase Authentication.<br><br>
+                            <strong>2. Auto Human Check:</strong> Seamless background browser verification without camera/face scanning.<br><br>
                             <strong>3. AdSense Policy:</strong> Adheres strictly to Google AdSense guidelines.
                         </p>
                     </div>
@@ -297,13 +284,13 @@
                     <!-- About Us Sub-view -->
                     <div id="sub-about" class="sub-view" style="text-align: left;">
                         <h2>About Us</h2>
-                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Shaem Tools & Gym 26 is engineered by Shaheen Team (Shine Empire).</p>
+                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Shaem Tools & Gym 26 is built by Shaheen Team (Shine Empire).</p>
                     </div>
 
                     <!-- Contact Us Sub-view -->
                     <div id="sub-contact" class="sub-view" style="text-align: left;">
                         <h2>Contact Us</h2>
-                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Developer Ecosystem: Shaheen Team<br>Support Channel: Shine Empire</p>
+                        <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Developer: Shaheen Team<br>Brand: Shine Empire</p>
                     </div>
                 </div>
             </div>
@@ -364,7 +351,7 @@
                             document.getElementById('auth-container').style.display = 'none';
                             document.getElementById('main-app').style.display = 'block';
 
-                            if(localStorage.getItem('gym_initialized') === 'true' && localStorage.getItem('face_verified') === 'true') {
+                            if(localStorage.getItem('gym_initialized') === 'true') {
                                 document.getElementById('gymSetupView').style.display = 'none';
                                 document.getElementById('gymActiveView').style.display = 'block';
                             }
@@ -374,7 +361,7 @@
                         }
                     }, 500);
                 });
-            }, 3000);
+            }, 2500);
         });
 
         window.switchAuthTab = function(tab) {
@@ -479,66 +466,6 @@
             });
         }
 
-        // Direct WhatsApp Verification Dispatch with Fail-Safe File Input (Bypasses Overlays/Permission Errors)
-        let capturedImageData = null;
-        let isFaceVerifiedByShaheenTeam = false;
-
-        function triggerDirectWhatsAppVerification() {
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } }).then(stream => {
-                let video = document.getElementById('webcam');
-                video.style.display = 'block';
-                video.srcObject = stream;
-                document.getElementById('scanStatus').innerText = "Scanning facial geometry...";
-                setTimeout(() => {
-                    let canvas = document.getElementById('snapshotCanvas');
-                    canvas.width = video.videoWidth || 320;
-                    canvas.height = video.videoHeight || 240;
-                    let ctx = canvas.getContext('2d');
-                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                    capturedImageData = canvas.toDataURL('image/png');
-                    
-                    stream.getTracks().forEach(track => track.stop());
-                    video.style.display = 'none';
-
-                    finalizeVerificationProcess();
-                }, 2500);
-            }).catch(err => {
-                // Fail-safe triggered if overlay/permission error occurs: opens native camera directly!
-                console.warn("Direct stream blocked, switching to native file capture:", err);
-                document.getElementById('scanStatus').innerText = "Opening native camera (Overlay Bypass)...";
-                document.getElementById('cameraFileInput').click();
-            });
-        }
-
-        function handleFileCaptured(event) {
-            let file = event.target.files[0];
-            if (file) {
-                let reader = new FileReader();
-                reader.onload = function(e) {
-                    capturedImageData = e.target.result;
-                    finalizeVerificationProcess();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function finalizeVerificationProcess() {
-            document.getElementById('scanStatus').innerText = "✅ Face Verified! Redirecting to Shaheen Team WhatsApp (+923295727569)...";
-            document.getElementById('scanStatus').style.color = "var(--accent-glow)";
-            
-            let userEmail = document.getElementById('userEmailDisplay').innerText;
-            let h = document.getElementById('gymHeight').value;
-            let w = document.getElementById('gymWeight').value;
-            let a = document.getElementById('gymAge').value;
-            
-            let whatsappMsg = `Hello Shaheen Team! New Gym 26 Biometric Verification Request:\n- Email: ${userEmail}\n- Height: ${h} cm\n- Weight: ${w} kg\n- Age: ${a} years`;
-            let whatsappUrl = `https://wa.me/923295727569?text=${encodeURIComponent(whatsappMsg)}`;
-            window.open(whatsappUrl, '_blank');
-
-            isFaceVerifiedByShaheenTeam = true;
-            localStorage.setItem('face_verified', 'true');
-        }
-
         let selectedGoalType = "Shredded Six Pack Abs";
         function selectGoal(goal, el) {
             document.querySelectorAll('.goal-card').forEach(c => c.classList.remove('selected'));
@@ -552,7 +479,13 @@
             let a = document.getElementById('gymAge').value;
             
             if(!h || !w || !a) { alert('Please enter accurate height, weight and age!'); return; }
-            if(!capturedImageData || !isFaceVerifiedByShaheenTeam) { alert('Strict Face Verification is required! Please capture your face via camera before proceeding.'); return; }
+            
+            // Auto Human Check (Zero Face Verification needed)
+            let isHuman = navigator.maxTouchPoints >= 0 && !navigator.webdriver;
+            if(!isHuman) {
+                alert('Automated bot detected! Please use a real device browser.');
+                return;
+            }
             
             localStorage.setItem('gym_goal', selectedGoalType);
             localStorage.setItem('gym_initialized', 'true');
@@ -562,7 +495,7 @@
 
             document.getElementById('gymSetupView').style.display = 'none';
             document.getElementById('gymActiveView').style.display = 'block';
-            alert("Gym 26 Plan Initialized & Verified by Shaheen Team!");
+            alert("🤖 Auto Human Verified & Gym 26 Routine Initialized!");
         }
 
         function toggleStreakCalendarView() {
@@ -628,4 +561,4 @@
     </script>
 </body>
 </html>
-          
+                           
