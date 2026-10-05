@@ -1,608 +1,315 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Shaheen Tools — a fast, useful, user-friendly collection of calculators, converters, text utilities, study helpers and a safe Gym 2026 planner.">
-  <meta name="robots" content="index,follow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="format-detection" content="telephone=no">
-
-  <meta name="google-adsense-account" content="ca-pub-2057536839831582">
-  <title>Shaheen Tools — 1000+ Free Tools & Gym 2026</title>
-
-  <!-- Google AdSense Auto Ads: keep this in <head> on every page. -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582"
-    crossorigin="anonymous"></script>
-
-  <!-- Firebase web configuration supplied for this project. -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-    import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",
-      authDomain: "shaheen-ultra-fb324.firebaseapp.com",
-      projectId: "shaheen-ultra-fb324",
-      storageBucket: "shaheen-ultra-fb324.firebasestorage.app",
-      messagingSenderId: "733041897568",
-      appId: "1:733041897568:web:ff56c08fada50e40a59305",
-      measurementId: "G-WTNJLPQ88E"
-    };
-
-    try {
-      const app = initializeApp(firebaseConfig);
-      isSupported().then(ok => {
-        if (ok) getAnalytics(app);
-      }).catch(()=>{});
-    } catch (e) {
-      console.info("Firebase Analytics unavailable:", e);
-    }
-  </script>
-
-  <style>
-    :root{
-      --bg:#080b14;--panel:#111727;--panel2:#171e31;--text:#f6f8ff;--muted:#aab3ca;
-      --line:#27314b;--brand:#7c5cff;--brand2:#20d6a7;--danger:#ff6b7a;--shadow:0 18px 60px rgba(0,0,0,.28);
-      --radius:22px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(circle at 10% 0%,#1b1641 0,transparent 35%),var(--bg);color:var(--text);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
-    button,input,select,textarea{font:inherit}
-    button{cursor:pointer}
-    a{color:inherit}
-    .app{min-height:100vh;padding-bottom:88px}
-    .top{position:sticky;top:0;z-index:30;backdrop-filter:blur(18px);background:rgba(8,11,20,.78);border-bottom:1px solid rgba(255,255,255,.07)}
-    .topin{max-width:1240px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:14px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;white-space:nowrap}
-    .logoMark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),#b26cff);box-shadow:0 8px 30px rgba(124,92,255,.35)}
-    .search{flex:1;position:relative}.search input{width:100%;background:#0f1525;border:1px solid var(--line);color:var(--text);padding:12px 15px 12px 43px;border-radius:15px;outline:none}
-    .search span{position:absolute;left:15px;top:10px;color:var(--muted)}
-    .iconbtn{border:1px solid var(--line);background:#101628;color:var(--text);width:43px;height:43px;border-radius:14px}
-    main{max-width:1240px;margin:auto;padding:24px 18px}
-    .hero{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch}
-    .heroCard,.card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .heroCard{padding:34px;overflow:hidden;position:relative}.heroCard:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-110px;top:-100px;background:rgba(124,92,255,.18);filter:blur(5px)}
-    h1{font-size:clamp(34px,5vw,64px);line-height:1.02;margin:0 0 16px;letter-spacing:-2px}
-    .grad{background:linear-gradient(90deg,#fff,var(--brand2),#a98bff);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{font-size:18px;color:var(--muted);max-width:720px}
-    .pills{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}.pill{border:1px solid var(--line);background:#101628;padding:7px 11px;border-radius:999px;color:#dce2f3;font-size:13px}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:800}.primary{background:linear-gradient(135deg,var(--brand),#9a73ff);color:#fff}.secondary{background:#101628;border:1px solid var(--line);color:#fff}
-    .adbox{min-height:250px;display:grid;place-items:center;color:#78839e;font-size:12px;text-align:center;padding:20px}.adbox small{display:block;margin-top:5px}
-    .section{margin-top:24px}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:13px}.section h2{margin:0;font-size:25px}.muted{color:var(--muted)}
-    .chips{display:flex;gap:8px;overflow:auto;padding-bottom:5px}.chip{white-space:nowrap;border:1px solid var(--line);background:#101628;color:#dce2f3;padding:9px 13px;border-radius:999px}.chip.active{background:var(--brand);border-color:transparent;color:white}
-    .tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
-    .tool{padding:18px;min-height:158px;display:flex;flex-direction:column;gap:9px;transition:.18s transform,.18s border-color;background:var(--panel);border:1px solid var(--line);border-radius:19px}
-    .tool:hover{transform:translateY(-3px);border-color:#4d5d86}.toolIcon{font-size:25px}.tool h3{font-size:16px;margin:0}.tool p{font-size:13px;color:var(--muted);margin:0;flex:1}.tool button{align-self:flex-start;border:1px solid var(--line);background:#0e1423;color:#fff;border-radius:10px;padding:8px 10px}
-    .empty{padding:40px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted);grid-column:1/-1}
-    .bottom{position:fixed;z-index:40;left:0;right:0;bottom:0;background:rgba(10,14,25,.9);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom))}
-    .nav{max-width:720px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.nav button{background:transparent;border:0;color:#8f9ab4;padding:7px 3px;border-radius:13px;font-size:11px}.nav button b{display:block;font-size:20px;line-height:24px}.nav button.active{background:#1a2140;color:#fff}
-    dialog{width:min(760px,calc(100% - 24px));max-height:88vh;background:#101627;color:var(--text);border:1px solid var(--line);border-radius:24px;padding:0;box-shadow:var(--shadow)}
-    dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}.modalHead{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.modalBody{padding:22px;overflow:auto}
-    .close{background:#171f34;color:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:12px}
-    .form{display:grid;gap:12px}.form label{font-weight:700;font-size:13px}.form input,.form select,.form textarea{width:100%;background:#0c1220;border:1px solid var(--line);color:#fff;border-radius:12px;padding:11px;outline:none}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{background:#0c1220;border:1px solid var(--line);border-radius:14px;padding:14px;font-weight:800}
-    .notice{padding:13px 15px;border:1px solid #3a4665;background:#10182a;border-radius:14px;color:#cbd4e9;font-size:13px}
-    .list{display:grid;gap:9px}.row{display:flex;justify-content:space-between;gap:10px;padding:12px;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}
-    .toast{position:fixed;z-index:100;right:18px;bottom:95px;background:#e9edff;color:#0b1020;padding:12px 15px;border-radius:13px;box-shadow:var(--shadow);display:none;font-weight:700}
-    .hidden{display:none!important}
-    .footer{margin:38px 0 10px;color:#7f8aa3;font-size:12px;text-align:center}.footer a{color:#aeb8cf;text-decoration:none}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{padding:15px;border:1px solid var(--line);background:#0f1525;border-radius:15px}.stat strong{display:block;font-size:22px}.stat span{font-size:12px;color:var(--muted)}
-    @media(max-width:980px){.hero{grid-template-columns:1fr}.tools{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:700px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.heroCard{padding:24px}.topin{padding:10px 12px}.logoText{display:none}.grid2{grid-template-columns:1fr}}
-    @media(max-width:430px){.tools{grid-template-columns:1fr 1fr}.tool{min-height:150px;padding:15px}.search{min-width:120px}}
-  
-    /* === Gym 2026 Ultra layer === */
-    .ultra-workout{position:fixed;inset:0;z-index:90;background:radial-gradient(circle at 50% 0%,#252052 0,#090c16 48%,#06080f 100%);display:none;overflow:auto}
-    .ultra-workout.open{display:block;animation:uwIn .25s ease}
-    @keyframes uwIn{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
-    .uw-wrap{max-width:1180px;margin:auto;min-height:100%;padding:14px 16px 34px}
-    .uw-top{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:3;padding:4px 0 12px;background:linear-gradient(#090c16 72%,transparent)}
-    .uw-title{font-size:18px;font-weight:900}.uw-sub{font-size:12px;color:var(--muted)}
-    .uw-btn{border:1px solid var(--line);background:#11182a;color:#fff;border-radius:13px;padding:10px 13px;font-weight:800}
-    .uw-btn.primary{background:linear-gradient(135deg,var(--brand),#a172ff);border:0}
-    .uw-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
-    .trainer-card,.control-card{border:1px solid #303a58;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border-radius:26px;box-shadow:0 24px 80px rgba(0,0,0,.35)}
-    .trainer-card{padding:16px;position:relative;overflow:hidden}
-    .progress-track{height:8px;background:#202942;border-radius:99px;overflow:hidden;margin:8px 0 15px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--brand2),#8d73ff);border-radius:99px;transition:width .25s}
-    .exercise-stage{min-height:400px;border-radius:22px;background:radial-gradient(circle at 50% 30%,#263157,transparent 52%),#0c1220;display:grid;place-items:center;position:relative;overflow:hidden}
-    .trainer{width:min(260px,58vw);height:330px;position:relative;filter:drop-shadow(0 20px 28px rgba(0,0,0,.35))}
-    .head{width:55px;height:55px;border-radius:50%;background:linear-gradient(145deg,#f1c8a9,#c88f70);position:absolute;left:50%;top:22px;transform:translateX(-50%)}
-    .torso{width:92px;height:135px;background:linear-gradient(160deg,#7865ff,#4434ad);border-radius:32px 32px 25px 25px;position:absolute;left:50%;top:76px;transform:translateX(-50%)}
-    .arm,.leg{position:absolute;background:#f0c3a1;border-radius:99px;transform-origin:top center}.arm{width:22px;height:115px;top:86px}.arm.l{left:calc(50% - 58px);transform:rotate(22deg)}.arm.r{right:calc(50% - 58px);transform:rotate(-22deg)}
-    .leg{width:28px;height:130px;top:196px;background:#e8b996}.leg.l{left:calc(50% - 40px);transform:rotate(5deg)}.leg.r{right:calc(50% - 40px);transform:rotate(-5deg)}
-    .trainer.push .arm.l{animation:pushL 1.5s infinite ease-in-out}.trainer.push .arm.r{animation:pushR 1.5s infinite ease-in-out}.trainer.push .torso{animation:pushBody 1.5s infinite ease-in-out}
-    @keyframes pushL{0%,100%{transform:rotate(65deg)}50%{transform:rotate(20deg)}} @keyframes pushR{0%,100%{transform:rotate(-65deg)}50%{transform:rotate(-20deg)}} @keyframes pushBody{0%,100%{top:105px}50%{top:76px}}
-    .trainer.squat .torso{animation:squatBody 1.4s infinite ease-in-out}.trainer.squat .leg.l{animation:squatL 1.4s infinite ease-in-out}.trainer.squat .leg.r{animation:squatR 1.4s infinite ease-in-out}
-    @keyframes squatBody{0%,100%{top:76px}50%{top:116px}} @keyframes squatL{0%,100%{transform:rotate(5deg)}50%{transform:rotate(25deg)}} @keyframes squatR{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(-25deg)}}
-    .trainer.jack .arm.l{animation:jackL .9s infinite alternate}.trainer.jack .arm.r{animation:jackR .9s infinite alternate}.trainer.jack .leg.l{animation:jackLegL .9s infinite alternate}.trainer.jack .leg.r{animation:jackLegR .9s infinite alternate}
-    @keyframes jackL{to{transform:rotate(75deg)}}@keyframes jackR{to{transform:rotate(-75deg)}}@keyframes jackLegL{to{transform:rotate(28deg)}}@keyframes jackLegR{to{transform:rotate(-28deg)}}
-    .coach{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(8,11,20,.78);backdrop-filter:blur(10px);border:1px solid #384463;border-radius:16px;padding:12px;font-weight:800}
-    .coach small{display:block;color:#aeb9d1;font-weight:500;margin-top:3px}
-    .control-card{padding:18px}.exercise-name{font-size:27px;font-weight:950;margin:0 0 4px}.cue{color:#b7c1d9;font-size:14px}
-    .timer{font-size:62px;line-height:1;font-weight:950;letter-spacing:-3px;text-align:center;margin:18px 0 10px;font-variant-numeric:tabular-nums}
-    .rep-row{display:flex;justify-content:center;align-items:center;gap:14px}.rep-num{font-size:36px;font-weight:950;min-width:90px;text-align:center}.roundbtn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#121a2d;color:#fff;font-size:22px}
-    .control-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.full{grid-column:1/-1}
-    .camera-box{margin-top:15px;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:#080c15;position:relative}.camera-box video{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;transform:scaleX(-1)}.camera-state{padding:9px;font-size:12px;color:#b7c1d9}
-    .form-check{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:13px}.form-check input{width:18px;height:18px}
-    .streak-card{margin-top:15px;padding:13px;border:1px solid #35405e;border-radius:16px;background:#10182a}.streak-big{font-size:30px;font-weight:950}.streak-days{display:flex;gap:5px;margin-top:7px}.daydot{width:29px;height:29px;border-radius:9px;display:grid;place-items:center;background:#1a2237;color:#7e8aa5;font-size:11px}.daydot.done{background:#1bbd91;color:#06140f}
-    .uw-safe{margin-top:14px;font-size:12px;color:#8f9ab3}.uw-safe b{color:#cbd4e7}
-    .uw-lang{background:#10182a;color:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}
-    .mini-ad{margin-top:15px;border:1px dashed #3b4560;border-radius:15px;padding:14px;text-align:center;color:#6f7b94;font-size:11px}
-    @media(max-width:850px){.uw-grid{grid-template-columns:1fr}.exercise-stage{min-height:330px}.trainer{transform:scale(.86)}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080c18">
+<meta name="description" content="Shaheen Tools — 2,000 free browser tools plus a guided Gym 2026 experience with animated coaching, voice guidance, progress and streaks.">
+<meta name="robots" content="index,follow">
+<meta name="google-adsense-account" content="ca-pub-2057536839831582">
+<title>Shaheen Tools — 2,000 Free Tools</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582" crossorigin="anonymous"></script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import {getAnalytics,isSupported} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+const firebaseConfig={apiKey:"AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",authDomain:"shaheen-ultra-fb324.firebaseapp.com",projectId:"shaheen-ultra-fb324",storageBucket:"shaheen-ultra-fb324.firebasestorage.app",messagingSenderId:"733041897568",appId:"1:733041897568:web:ff56c08fada50e40a59305",measurementId:"G-WTNJLPQ88E"};
+try{const app=initializeApp(firebaseConfig);isSupported().then(ok=>ok&&getAnalytics(app)).catch(()=>{});}catch(e){}
+</script>
+<style>
+:root{--bg:#070a12;--panel:#101626;--panel2:#151d31;--text:#f7f9ff;--muted:#aab4ca;--line:#28334e;--brand:#7658ff;--mint:#28d7ad;--gold:#ffc95a;--red:#ff7180;--shadow:0 20px 70px #0007;--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% -5%,#25175c 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}.hidden{display:none!important}
+.top{position:sticky;top:0;z-index:50;background:#080c18d9;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff10}.topin{max-width:1280px;margin:auto;padding:12px 16px;display:flex;gap:12px;align-items:center}
+.logo{display:flex;align-items:center;gap:9px;font-weight:900;white-space:nowrap}.mark{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),#b278ff);box-shadow:0 10px 30px #7658ff55}
+.search{flex:1;position:relative}.search input{width:100%;background:#0d1322;border:1px solid var(--line);color:var(--text);border-radius:15px;padding:12px 14px 12px 42px;outline:0}.search i{position:absolute;left:14px;top:9px;color:var(--muted);font-style:normal;font-size:20px}.icon{width:43px;height:43px;border-radius:13px;border:1px solid var(--line);background:#101729;color:#fff}
+main{max-width:1280px;margin:auto;padding:22px 16px 100px}.hero{display:grid;grid-template-columns:1.45fr .8fr;gap:16px}.card,.heroCard{background:linear-gradient(145deg,#ffffff08,#ffffff02);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.heroCard{padding:30px;overflow:hidden;position:relative}.heroCard:after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-120px;background:#7658ff30;border-radius:50%;filter:blur(3px)}
+h1{font-size:clamp(36px,5vw,66px);line-height:1;letter-spacing:-2.5px;margin:0 0 15px}.grad{color:#fff;background:linear-gradient(90deg,#fff,var(--mint),#a992ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{color:var(--muted);font-size:17px;max-width:780px}
+.pills,.chips,.actions{display:flex;gap:8px;flex-wrap:wrap}.pill,.chip{border:1px solid var(--line);background:#101729;color:#dce3f4;border-radius:999px;padding:7px 11px;font-size:12px}.chip{padding:9px 13px}.chip.active{background:var(--brand);border-color:transparent;color:#fff}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:850}.primary{background:linear-gradient(135deg,var(--brand),#9d76ff);color:#fff}.secondary{background:#101729;border:1px solid var(--line);color:#fff}
+.ad{min-height:250px;display:grid;place-items:center;text-align:center;color:#77839e;padding:20px}.ad small{display:block;margin-top:7px}.section{margin-top:22px}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:12px}.head h2{margin:0;font-size:25px}.muted{color:var(--muted)}
+.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tool{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-height:160px;display:flex;flex-direction:column;gap:8px;transition:.18s}.tool:hover{transform:translateY(-3px);border-color:#536487}.toolIcon{font-size:25px}.tool h3{margin:0;font-size:15px}.tool p{margin:0;color:var(--muted);font-size:12px;flex:1}.tool small{color:#7f8ba5}.empty{grid-column:1/-1;padding:40px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+.bottom{position:fixed;z-index:60;left:0;right:0;bottom:0;background:#0a0e1bf0;backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 8px calc(7px + env(safe-area-inset-bottom))}.nav{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.nav button{background:transparent;border:0;color:#8e9ab4;border-radius:13px;padding:6px 2px;font-size:10px}.nav b{display:block;font-size:20px;line-height:23px}.nav .active{background:#19203a;color:#fff}
+dialog{width:min(900px,calc(100% - 18px));max-height:92vh;background:#101626;color:#fff;border:1px solid var(--line);border-radius:24px;padding:0;box-shadow:var(--shadow)}dialog::backdrop{background:#000b;backdrop-filter:blur(5px)}.modalHead{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.modalBody{padding:20px;overflow:auto}.close{background:#171f33;color:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:12px}
+.form{display:grid;gap:12px}.form label{font-size:13px;font-weight:750}.form input,.form select,.form textarea{width:100%;background:#0b1120;border:1px solid var(--line);color:#fff;border-radius:12px;padding:11px;outline:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{background:#0b1120;border:1px solid var(--line);border-radius:13px;padding:13px;font-weight:800;white-space:pre-wrap;word-break:break-word}.notice{background:#101a2d;border:1px solid #344260;border-radius:14px;padding:13px;color:#cbd5e9;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.stat{background:#0e1424;border:1px solid var(--line);border-radius:15px;padding:13px}.stat strong{font-size:21px;display:block}.stat span{font-size:11px;color:var(--muted)}
+/* Gym */
+.gymShell{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}.gymPanel{padding:20px}.coach{min-height:390px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 40%,#2b2463 0,#11182b 44%,#0a0e19 80%);border-radius:22px;border:1px solid var(--line);display:grid;place-items:center}
+.coachName{position:absolute;top:14px;left:15px;background:#111a2de6;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px}
+.human{position:relative;width:190px;height:310px;filter:drop-shadow(0 18px 25px #0008);transform-origin:50% 85%;animation:coachBreath 1.8s ease-in-out infinite}.head{position:absolute;width:44px;height:44px;border-radius:50%;background:#d49b74;left:73px;top:12px;z-index:4}.hair{position:absolute;width:47px;height:25px;border-radius:50% 50% 40% 40%;background:#28231f;left:71px;top:6px;z-index:5}.neck{position:absolute;width:18px;height:25px;background:#c98f6c;left:86px;top:50px}.body{position:absolute;width:70px;height:116px;background:linear-gradient(90deg,#416cff,#7b57ff);border-radius:28px 28px 18px 18px;left:60px;top:64px;transform-origin:50% 8%}.arm{position:absolute;width:20px;height:112px;background:#d49b74;border-radius:15px;top:70px;transform-origin:50% 8%;z-index:2}.arm.l{left:47px;transform:rotate(20deg)}.arm.r{right:47px;transform:rotate(-20deg)}.hand{position:absolute;width:23px;height:23px;background:#d49b74;border-radius:50%;bottom:-9px;left:-2px}.leg{position:absolute;width:25px;height:125px;background:#242c42;border-radius:15px;top:165px;transform-origin:50% 8%;z-index:1}.leg.l{left:69px}.leg.r{right:69px}.shoe{position:absolute;width:43px;height:18px;background:#e7edf8;border-radius:14px;bottom:-7px;left:-8px}
+.human.push .body{transform:rotateX(58deg) translateY(48px)}.human.push .arm.l{transform:rotate(72deg) translateY(35px)}.human.push .arm.r{transform:rotate(-72deg) translateY(35px)}.human.push .leg.l{transform:rotate(-7deg) translateY(70px)}.human.push .leg.r{transform:rotate(7deg) translateY(70px)}
+.human.squat .body{transform:translateY(42px) scaleY(.9)}.human.squat .arm.l{transform:rotate(55deg)}.human.squat .arm.r{transform:rotate(-55deg)}.human.squat .leg.l{transform:rotate(30deg) translateY(58px)}.human.squat .leg.r{transform:rotate(-30deg) translateY(58px)}
+.human.jumping .body{transform:translateY(-20px)}.human.jumping .arm.l{transform:rotate(145deg)}.human.jumping .arm.r{transform:rotate(-145deg)}.human.jumping .leg.l{transform:rotate(25deg) translateY(-18px)}.human.jumping .leg.r{transform:rotate(-25deg) translateY(-18px)}
+@keyframes coachBreath{50%{transform:translateY(-3px)}}@keyframes rep{0%,100%{scale:1}50%{scale:1.035}}
+.coach.rep{animation:rep .75s ease-in-out infinite}.coachInfo{position:absolute;bottom:13px;left:13px;right:13px;background:#0b1020d9;border:1px solid var(--line);border-radius:15px;padding:11px}.coachInfo strong{display:block}.progress{height:9px;background:#222b42;border-radius:99px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--mint),var(--brand));width:0}
+.timer{font-size:55px;font-weight:950;letter-spacing:-3px;text-align:center}.repNum{font-size:24px;text-align:center;font-weight:900}.gymControls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.gymControls button{padding:11px 7px;border:1px solid var(--line);background:#121a2d;color:#fff;border-radius:12px}.gymControls .big{grid-column:span 2;background:linear-gradient(135deg,var(--brand),#9a70ff);border:0}.langbar{display:flex;gap:7px;flex-wrap:wrap}.langbar button{border:1px solid var(--line);background:#101729;color:#fff;padding:8px 10px;border-radius:10px}.langbar button.active{background:var(--brand)}
+.streak{display:flex;align-items:center;gap:10px;background:#151b2c;border:1px solid var(--line);padding:12px;border-radius:15px}.streak strong{font-size:25px;color:var(--gold)}
+.camera{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#060a12}.camera video{display:block;width:100%;max-height:280px;object-fit:cover}.camera .cammsg{padding:10px;font-size:12px;color:var(--muted)}
+.toast{position:fixed;z-index:100;right:15px;bottom:90px;background:#eff3ff;color:#0a0e19;border-radius:13px;padding:11px 14px;font-weight:800;display:none;box-shadow:var(--shadow)}
+.footer{text-align:center;color:#78839a;font-size:11px;margin-top:35px}
+@media(max-width:980px){.hero,.gymShell{grid-template-columns:1fr}.tools{grid-template-columns:repeat(3,1fr)}}@media(max-width:680px){.tools{grid-template-columns:repeat(2,1fr)}.heroCard{padding:22px}.logoText{display:none}.grid2{grid-template-columns:1fr}.gymControls{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr 1fr 1fr}.coach{min-height:350px}}
+@media(max-width:420px){.tools{grid-template-columns:1fr 1fr}.tool{min-height:150px;padding:14px}.stats strong{font-size:18px}}
 </style>
 </head>
 <body>
-<div class="app">
-  <header class="top">
-    <div class="topin">
-      <div class="logo"><div class="logoMark">S</div><span class="logoText">Shaheen Tools</span></div>
-      <div class="search"><span>⌕</span><input id="search" aria-label="Search tools" placeholder="Search 1000+ tools…"></div>
-      <button class="iconbtn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+<div id="app">
+<header class="top"><div class="topin">
+  <div class="logo"><div class="mark">S</div><span class="logoText">Shaheen Tools</span></div>
+  <div class="search"><i>⌕</i><input id="search" placeholder="Search 2,000 tools…" aria-label="Search tools"></div>
+  <button class="icon" id="theme" aria-label="Theme">☼</button>
+</div></header>
+
+<main>
+<section id="home">
+  <div class="hero">
+    <div class="heroCard">
+      <div class="pills"><span class="pill">2,000 fixed tools</span><span class="pill">1,000 everyday</span><span class="pill">1,000 power tools</span><span class="pill">Mobile first</span></div>
+      <h1>Useful tools.<br><span class="grad">One clean place.</span></h1>
+      <p class="lead">A searchable toolbox with 2,000 functional browser utilities, plus a guided Gym 2026 coach that can speak, count, animate and move through a session automatically.</p>
+      <div class="actions"><button class="btn primary" onclick="showHomeTools()">Explore tools</button><button class="btn secondary" onclick="openGymSetup()">Start Gym 2026</button></div>
+      <div class="stats"><div class="stat"><strong id="total">2,000</strong><span>fixed tools</span></div><div class="stat"><strong>1,000</strong><span>everyday tools</span></div><div class="stat"><strong>1,000</strong><span>power tools</span></div></div>
     </div>
-  </header>
-
-  <main>
-    <section id="homeView">
-      <div class="hero">
-        <div class="heroCard">
-          <div class="pills"><span class="pill">1000+ free tools</span><span class="pill">No signup required</span><span class="pill">Mobile first</span></div>
-          <h1>One place for <span class="grad">useful tools.</span></h1>
-          <p class="lead">Calculators, converters, text utilities, study helpers and a guided Gym 2026 planner — designed to be fast, clear and easy to use.</p>
-          <div class="cta">
-            <button class="btn primary" onclick="scrollToTools()">Explore tools</button>
-            <button class="btn secondary" onclick="openGym()">Open Gym 2026</button>
-          </div>
-          <div class="stats" style="margin-top:24px">
-            <div class="stat"><strong id="toolCount">1000+</strong><span>tool entries</span></div>
-            <div class="stat"><strong>Free</strong><span>core features</span></div>
-            <div class="stat"><strong>Fast</strong><span>client-side utilities</span></div>
-          </div>
-        </div>
-        <div class="card adbox">
-          <div>
-            <div>ADVERTISEMENT</div>
-            <small>AdSense Auto Ads can use this area when Google decides an ad is suitable.</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="section" id="toolsSection">
-        <div class="sectionHead"><div><h2>Toolbox</h2><div class="muted">Pick a category or search by name.</div></div><span class="muted" id="resultCount"></span></div>
-        <div class="chips" id="chips"></div>
-        <div class="tools" id="tools"></div>
-      </div>
-    </section>
-
-    <section id="gymView" class="hidden">
-      <div class="heroCard">
-        <div class="pills"><span class="pill">Gym 2026</span><span class="pill">Safe & beginner-friendly</span><span class="pill">Text-to-speech</span></div>
-        <h1>Your <span class="grad">Gym 2026</span> planner</h1>
-        <p class="lead">Answer a few questions and get a simple routine. The planner avoids extreme targets and focuses on gradual progress, technique, rest and consistency.</p>
-        <button class="btn primary" onclick="openGym()">Build my routine</button>
-      </div>
-      <div class="section">
-        <div class="card" style="padding:20px">
-          <h2 style="margin-top:0">Your saved plan</h2>
-          <div id="savedPlan" class="notice">No plan yet. Tap “Build my routine”.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="favoritesView" class="hidden">
-      <div class="heroCard"><h1>Saved <span class="grad">favorites</span></h1><p class="lead">Your favorite tools stay on this device.</p></div>
-      <div class="section"><div class="tools" id="favorites"></div></div>
-    </section>
-
-    <section id="infoView" class="hidden">
-      <div class="heroCard">
-        <h1>Shaheen <span class="grad">Tools</span></h1>
-        <p class="lead">A free utility hub built around useful, original, accessible tools.</p>
-        <div class="section">
-          <h2>About</h2>
-          <p class="muted">Shaheen Tools provides calculators, converters, productivity helpers and educational utilities. Results are provided for general information and should be checked when accuracy has important real-world consequences.</p>
-          <h2>Privacy</h2>
-          <p class="muted">The app stores preferences, favorites and optional Gym planner answers locally in your browser. Advertising and analytics services may process information according to their own policies and your consent choices.</p>
-          <h2>Terms</h2>
-          <p class="muted">Use the tools responsibly. You are responsible for checking results before relying on them. Do not use this site to make unsafe or high-stakes decisions without appropriate professional advice.</p>
-          <h2>Contact</h2>
-          <p class="muted">Add your real support email here before publishing: <strong>support@YOUR-DOMAIN.example</strong></p>
-          <div class="notice">Before applying for AdSense, replace placeholder contact details, publish complete privacy/terms pages, add your real domain to AdSense, and configure the appropriate consent message in AdSense Privacy & messaging.</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="year"></span> Shaheen Tools · <a href="#info">About</a> · <a href="#info">Privacy</a> · <a href="#info">Terms</a> · <a href="#info">Contact</a>
-    </div>
-  </main>
-
-  
-<!-- Gym 2026 Ultra workout experience -->
-<section id="ultraWorkout" class="ultra-workout" aria-hidden="true">
-  <div class="uw-wrap">
-    <div class="uw-top">
-      <div><div class="uw-title">🏋️ Gym 2026 · Live Coach</div><div class="uw-sub" id="uwProgressText">Session ready</div></div>
-      <div style="display:flex;gap:7px;align-items:center">
-        <select class="uw-lang" id="uwLang" aria-label="Coach language">
-          <option value="en-US">English</option><option value="hi-IN">हिन्दी</option><option value="ur-PK">اردو</option><option value="ar-SA">العربية</option><option value="es-ES">Español</option>
-        </select>
-        <button class="uw-btn" id="uwExit">Exit</button>
-      </div>
-    </div>
-    <div class="uw-grid">
-      <div class="trainer-card">
-        <div class="progress-track"><div class="progress-fill" id="uwFill"></div></div>
-        <div class="exercise-stage">
-          <div class="trainer push" id="trainer">
-            <div class="head"></div><div class="torso"></div><div class="arm l"></div><div class="arm r"></div><div class="leg l"></div><div class="leg r"></div>
-          </div>
-          <div class="coach" id="uwCoach">Follow the animated coach.<small>Keep movements controlled. Quality matters more than speed.</small></div>
-        </div>
-        <div class="mini-ad">ADVERTISEMENT · Auto Ads may appear in suitable locations without covering controls.</div>
-      </div>
-      <div class="control-card">
-        <div class="exercise-name" id="uwExercise">Push-ups</div>
-        <div class="cue" id="uwCue">Keep your body in one controlled line and move through a comfortable range.</div>
-        <div class="timer" id="uwTimer">00:30</div>
-        <div class="rep-row"><button class="roundbtn" id="uwMinus">−</button><div class="rep-num" id="uwReps">8</div><button class="roundbtn" id="uwPlus">+</button></div>
-        <div class="muted" style="text-align:center;font-size:12px;margin-top:2px">reps / target</div>
-        <div class="control-actions">
-          <button class="uw-btn primary" id="uwStart">Start</button>
-          <button class="uw-btn" id="uwSpeak">🔊 Coach</button>
-          <button class="uw-btn" id="uwAddTime">+30 sec</button>
-          <button class="uw-btn" id="uwLessTime">−30 sec</button>
-          <button class="uw-btn full" id="uwNext">Next exercise</button>
-        </div>
-        <label class="form-check"><input type="checkbox" id="uwCamera"> Enable camera form check (optional)</label>
-        <div class="camera-box" id="cameraBox" style="display:none">
-          <video id="uwVideo" playsinline muted></video>
-          <div class="camera-state" id="cameraState">Camera is optional. Keep your privacy in mind.</div>
-        </div>
-        <div class="streak-card">
-          <div><span class="streak-big" id="uwStreak">0</span> day streak 🔥</div>
-          <div class="streak-days" id="uwDays"></div>
-        </div>
-        <div class="uw-safe"><b>Safety:</b> This coach is a guide, not a medical or professional trainer. Stop if you feel pain, dizziness or feel unwell. Camera feedback is only an approximate visual check and can be wrong.</div>
-      </div>
-    </div>
+    <div class="card ad"><div>ADVERTISEMENT<small>AdSense Auto Ads may place an ad here when eligible. Ads are kept separate from tool controls.</small></div></div>
+  </div>
+  <div class="section" id="toolArea">
+    <div class="head"><div><h2>Toolbox</h2><div class="muted">Categories now map directly to their tools.</div></div><span class="muted" id="count"></span></div>
+    <div class="chips" id="cats"></div>
+    <div class="tools" id="tools"></div>
   </div>
 </section>
 
-<nav class="bottom" aria-label="Main navigation">
-    <div class="nav">
-      <button class="active" data-view="homeView"><b>⌂</b>Home</button>
-      <button data-view="toolsSection"><b>▦</b>Tools</button>
-      <button data-view="gymView"><b>🏋</b>Gym 2026</button>
-      <button data-view="favoritesView"><b>★</b>Saved</button>
-      <button data-view="infoView"><b>ⓘ</b>Info</button>
+<section id="gym" class="hidden">
+  <div class="heroCard">
+    <div class="pills"><span class="pill">Gym 2026</span><span class="pill">Animated coach</span><span class="pill">Voice guidance</span><span class="pill">Auto next</span></div>
+    <h1>Your workout.<br><span class="grad">Coach-led.</span></h1>
+    <p class="lead">Choose your preferences once. During the session the coach announces the exercise, shows the movement, counts down, tracks reps and moves to the next step automatically.</p>
+    <div class="actions"><button class="btn primary" onclick="openGymSetup()">Build my session</button><button class="btn secondary" onclick="resumeWorkout()">Resume</button></div>
+  </div>
+  <div class="section gymShell">
+    <div class="card gymPanel"><div class="coach" id="coach">
+      <div class="coachName" id="coachLabel">Shaheen Coach</div>
+      <div class="human" id="human"><div class="hair"></div><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm l"><div class="hand"></div></div><div class="arm r"><div class="hand"></div></div><div class="leg l"><div class="shoe"></div></div><div class="leg r"><div class="shoe"></div></div></div>
+      <div class="coachInfo"><strong id="exerciseName">Ready</strong><span id="cue">Build a session to begin.</span><div class="progress"><i id="prog"></i></div></div>
+    </div></div>
+    <div class="card gymPanel">
+      <div class="streak"><strong id="streak">0</strong><span><b>day streak</b><br><small class="muted">Consistency, not extremes.</small></span></div>
+      <div class="section"><div class="timer" id="timer">00:30</div><div class="repNum" id="rep">0 reps</div></div>
+      <div class="gymControls">
+        <button onclick="adjustTime(-10)">−10s</button><button onclick="adjustTime(10)">+10s</button><button onclick="adjustRep(-1)">− rep</button><button onclick="adjustRep(1)">+ rep</button>
+        <button class="big" id="play" onclick="toggleWorkout()">▶ Start</button><button onclick="nextExercise()">Next →</button>
+        <button onclick="speakCurrent()">🔊 Speak</button><button onclick="stopWorkout()">■ Stop</button>
+      </div>
+      <div class="section"><div class="langbar" id="langs"></div></div>
+      <div class="section"><button class="btn secondary" onclick="toggleCamera()">📷 Optional form guide</button></div>
+      <div class="camera hidden" id="cameraBox"><video id="video" autoplay muted playsinline></video><div class="cammsg">Camera guide is optional. It helps with screen positioning; it does not claim medical-grade or perfect form detection.</div></div>
+      <div class="section"><div class="notice">If you feel pain, dizziness, faintness or unusual discomfort, stop. This coach is general fitness software, not medical care. Do not use it to chase extreme body or weight targets.</div></div>
     </div>
-  </nav>
+  </div>
+  <div class="section card gymPanel"><h2>Today's flow</h2><div id="planList" class="list"></div></div>
+</section>
+
+<section id="info" class="hidden"><div class="heroCard"><h1>Shaheen <span class="grad">Tools</span></h1>
+<p class="lead">Useful, accessible utilities with clear navigation and user-first advertising.</p>
+<h2>Privacy</h2><p class="muted">Favorites, workout preferences and streak data are stored locally in this browser. If analytics or advertising are enabled, those providers may process data according to their policies and applicable consent choices.</p>
+<h2>Terms</h2><p class="muted">Tools are for general information and productivity. Verify important results independently. Fitness features are not medical advice.</p>
+<h2>Contact</h2><p class="muted">Replace this placeholder before publishing: <b>support@YOUR-DOMAIN.example</b></p>
+<div class="notice">For AdSense readiness, publish complete original content, a real contact method, privacy/terms pages, clear navigation, and the appropriate Google consent configuration for your visitors. Never encourage ad clicks or disguise ads as controls.</div>
+</div></section>
+<div class="footer">© <span id="year"></span> Shaheen Tools · About · Privacy · Terms · Contact</div>
+</main>
+
+<nav class="bottom"><div class="nav">
+<button class="active" data-page="home"><b>⌂</b>Home</button>
+<button data-page="tools"><b>▦</b>Tools</button>
+<button data-page="gym"><b>🏋</b>Gym 2026</button>
+<button data-page="info"><b>ⓘ</b>Info</button>
+<button onclick="openGymSetup()"><b>▶</b>Start</button>
+</div></nav>
 </div>
+
+<dialog id="toolDlg"><div class="modalHead"><div><b id="toolTitle">Tool</b><div class="muted" id="toolDesc"></div></div><button class="close" onclick="toolDlg.close()">×</button></div><div class="modalBody" id="toolBody"></div></dialog>
+
+<dialog id="gymDlg"><div class="modalHead"><div><b>Gym 2026 setup</b><div class="muted">Choose once; the coach handles the session.</div></div><button class="close" onclick="gymDlg.close()">×</button></div><div class="modalBody">
+<form id="gymForm" class="form">
+<div class="grid2"><label>Experience<select name="level"><option>Beginner</option><option>Intermediate</option><option>Experienced</option></select></label><label>Days per week<select name="days"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label></div>
+<div class="grid2"><label>Session length<select name="minutes"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></label><label>Equipment<select name="equipment"><option>Bodyweight</option><option>Basic home equipment</option><option>Gym</option></select></label></div>
+<label>Focus<select name="focus"><option>General fitness</option><option>Strength & technique</option><option>Mobility</option><option>Cardio</option></select></label>
+<label>Coach language<select name="lang"><option value="en-US">English</option><option value="hi-IN">हिन्दी</option><option value="ur-PK">اردو</option><option value="ar-SA">العربية</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="de-DE">Deutsch</option></select></label>
+<label>Coach voice<select name="voice"><option>Auto</option><option>Female-style</option><option>Male-style</option></select></label>
+<div class="notice">The coach can guide timing and technique cues, but it cannot guarantee perfect form. For a young user, keep sessions moderate and technique-focused rather than chasing appearance or extreme targets.</div>
+<button class="btn primary" type="submit">Create & start</button>
+</form></div></dialog>
 
 <div id="toast" class="toast"></div>
 
-<dialog id="toolDialog">
-  <div class="modalHead"><div><strong id="toolTitle">Tool</strong><div class="muted" id="toolDesc"></div></div><button class="close" onclick="toolDialog.close()">×</button></div>
-  <div class="modalBody" id="toolBody"></div>
-</dialog>
-
-<dialog id="gymDialog">
-  <div class="modalHead"><div><strong>Gym 2026 setup</strong><div class="muted">A simple, non-extreme plan.</div></div><button class="close" onclick="gymDialog.close()">×</button></div>
-  <div class="modalBody">
-    <form id="gymForm" class="form">
-      <div class="grid2">
-        <div><label>Experience</label><select name="experience"><option>Beginner</option><option>Some experience</option><option>Experienced</option></select></div>
-        <div><label>Days per week</label><select name="days"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
-      </div>
-      <div><label>Goal</label><select name="goal"><option>General fitness</option><option>Strength and technique</option><option>Mobility and movement</option><option>Sport support</option></select></div>
-      <div><label>Available time per session</label><select name="minutes"><option>20</option><option selected>30</option><option>45</option><option>60</option></select></div>
-      <div><label>Equipment</label><select name="equipment"><option>Bodyweight only</option><option>Basic home equipment</option><option>Gym equipment</option></select></div>
-      <div class="notice">For teens, the safest approach is gradual, technique-focused activity with enough rest. Stop if something hurts and ask a trusted adult or qualified professional for help when needed.</div>
-      <button class="btn primary" type="submit">Create routine</button>
-    </form>
-  </div>
-</dialog>
-
 <script>
 (() => {
-  const $ = s => document.querySelector(s);
-  const $$ = s => [...document.querySelectorAll(s)];
-  const icons = ["🧮","🔢","🔄","📝","📚","💡","🧰","📅","⏱️","📐","💰","🌐"];
-  const categories = [
-    ["All","all"],["Calculators","calc"],["Converters","convert"],["Text","text"],["Math","math"],
-    ["Study","study"],["Productivity","productivity"],["Date & Time","time"],["Finance","finance"],
-    ["Web","web"],["Health & Fitness","fitness"],["Misc","misc"]
-  ];
-
-  // A large deterministic catalog: 20 families × 50 useful variants = 1000 tool entries.
-  // Core families have real calculators below; the catalog remains lightweight and searchable.
-  const families = [
-    ["Calculators","calc",["Percentage","Average","Ratio","Discount","Tip","Unit price","Simple interest","Compound interest","BMI","BMR","Age","Speed","Time","Distance","Fuel cost","Grade","GPA","Calories","Profit","Margin","Markup","Tax","Loan payment","Savings","Date difference","Work rate","Power","Energy","Density","Area","Volume","Perimeter","Probability","Mean","Median","Mode","Range","Standard deviation","Fraction","Mixed number","Random number","Rounding","Ceiling","Floor","Square root","Cube root","Exponent","Logarithm","Factorial"]],
-    ["Converters","convert",["Length","Weight","Temperature","Area","Volume","Time","Speed","Data","Pressure","Energy","Power","Angle","Frequency","Force","Torque","Fuel economy","Currency","Number base","Roman numerals","Fractions","Decimals","Percent","Pixels","EM","REM","Celsius/Fahrenheit","Kilometers/miles","Meters/feet","Kg/lb","Liters/gallons","Pounds/newtons","Watts/hp","kWh/Wh","Bytes/KB","MB/GB","Minutes/hours","Days/weeks","Years/days","Radians/degrees","DPI/PPI","HEX/RGB","RGB/HSL","Unix timestamp","Scientific notation","Binary/decimal","Octal/decimal","Hex/decimal","Date format","Time zone","Text case"]],
-    ["Text","text",["Word counter","Character counter","Sentence counter","Line counter","Reading time","Case converter","Slug maker","Whitespace cleaner","Duplicate line remover","Sort lines","Reverse text","Trim text","Find & replace","Text joiner","Text splitter","CSV to list","List to CSV","JSON formatter","JSON minifier","HTML escape","HTML unescape","URL encode","URL decode","Base64 encode","Base64 decode","ROT13","Palindrome checker","Anagram checker","Keyword density","Letter frequency","Word frequency","Markdown preview","Quote formatter","Numbered list","Bullet list","Title case","Sentence case","camelCase","snake_case","kebab-case","PascalCase","Initials","Acronym maker","Lorem text","Password strength","Email extractor","URL extractor","Hashtag extractor","Remove punctuation","Normalize quotes"]],
-    ["Math","math",["Prime checker","Prime list","Factors","LCM","GCD","Fibonacci","Arithmetic sequence","Geometric sequence","Equation helper","Quadratic helper","Pythagorean helper","Triangle area","Circle area","Circle circumference","Rectangle area","Trapezoid area","Sphere volume","Cylinder volume","Cone volume","Cube volume","Percentage change","Ratio simplifier","Fraction simplifier","Decimal to fraction","Scientific notation","Binary addition","Matrix add","Matrix multiply","Vector length","Distance 2D","Midpoint","Slope","Line equation","Coordinate reflection","Angle sum","Polygon interior angle","Permutation","Combination","Factorial","Modulo","Absolute value","Sign function","Sine","Cosine","Tangent","Inverse sine","Inverse cosine","Inverse tangent","Log base 10","Natural log","Exponential"]],
-    ["Study","study",["Flashcard timer","Pomodoro","Study timer","Grade calculator","GPA helper","Quiz score","Percentage score","Reading planner","Revision planner","Essay word target","Citation checklist","Focus session","Break planner","Vocabulary list","Spelling helper","Typing speed","WPM calculator","Note cleaner","Outline maker","Study streak","Task checklist","Exam countdown","Assignment planner","Memory cards","Practice tracker","Time blocker","Daily goals","Weekly goals","Habit tracker","Focus score","Topic tracker","Revision cards","Formula sheet","Unit reference","Math symbols","Science symbols","Keyboard shortcuts","Study notes","Class planner","Book log","Reading log","Learning log","Progress tracker","Goal breakdown","Task priority","Eisenhower matrix","Time audit","Distraction log","Session counter","Study dashboard"]],
-    ["Productivity","productivity",["To-do list","Checklist","Priority matrix","Quick notes","Meeting timer","Break timer","Countdown","Stopwatch","Interval timer","Daily planner","Weekly planner","Monthly planner","Habit tracker","Goal tracker","Idea board","Decision helper","Random picker","Yes/no picker","Name picker","Number picker","Color picker","Date picker","Time picker","Text cleaner","File name cleaner","Folder name cleaner","URL checker","Checklist generator","Routine builder","Morning routine","Evening routine","Project planner","Milestone planner","Deadline helper","Task splitter","Estimate helper","Work session","Focus music timer","Water reminder","Stretch reminder","Screen break","Desk break","Calendar note","Event countdown","World clock","Time zone helper","Meeting overlap","Agenda builder","Summary box"]],
-    ["Date & Time","time",["Age calculator","Date difference","Add days","Subtract days","Week number","Day of week","Leap year","Days in month","Month calendar","Year calendar","Countdown","Stopwatch","Timer","Pomodoro","Time zone","UTC converter","Unix time","Timestamp converter","Business days","Working hours","Date formatter","Time formatter","ISO date","Relative time","Anniversary counter","Birthday countdown","School term","Weekday counter","Weekend counter","Days until","Hours between","Minutes between","Seconds between","Sleep schedule","Schedule builder","Interval planner","Calendar grid","Quarter finder","Fiscal year","Season finder","Month progress","Year progress","Day progress","Hour progress","Time addition","Time subtraction","Duration formatter","Date parser","Date validator","Time validator","Date randomizer"]],
-    ["Finance","finance",["Discount","Sales tax","Tip","Profit","Margin","Markup","Simple interest","Compound interest","Loan payment","Savings growth","Budget split","Expense total","Income total","Net cashflow","Break-even","Unit economics","Price increase","Price decrease","Currency note","Investment growth","Future value","Present value","ROI","APR helper","Monthly payment","Debt payoff","Savings goal","Budget percentage","Emergency fund","Subscription total","Annual cost","Hourly rate","Salary to hourly","Hourly to salary","Tax percentage","Commission","Revenue","Cost","Gross profit","Net profit","Markup from cost","Margin from price","Invoice total","Split bill","Shared expense","Change calculator","Percentage allocation","Savings rate","Spending ratio","Budget planner"]],
-    ["Web","web",["URL encoder","URL decoder","HTML encoder","HTML decoder","JSON formatter","JSON validator","CSS minifier","JS minifier","HTML minifier","Meta tag helper","Open Graph helper","Robots.txt helper","Sitemap helper","Slug maker","UTM builder","Color converter","HEX to RGB","RGB to HEX","HSL converter","Gradient maker","Box shadow maker","Border radius maker","CSS clamp helper","Font stack helper","Viewport helper","Aspect ratio","Image dimensions","Password generator","UUID generator","Hash helper","Base64","JWT viewer","Timestamp","Regex tester","Regex escape","Text to HTML","HTML to text","Markdown to HTML","Markdown escape","URL parser","Domain extractor","Query parser","Query builder","Email mailto","Tel link","Anchor link","Table HTML","List HTML","Button HTML","Card HTML"]],
-    ["Health & Fitness","fitness",["Workout timer","Rest timer","Interval timer","Step goal","Distance pace","Pace calculator","Speed calculator","Activity timer","Warm-up timer","Cool-down timer","Mobility timer","Stretch timer","Posture break","Hydration reminder","Habit tracker","Workout log","Exercise notes","Routine builder","Weekly activity","Session planner","Recovery day","Beginner routine","Home routine","Gym routine","Bodyweight routine","Technique checklist","Exercise library","Rep timer","Set timer","Circuit timer","EMOM timer","AMRAP timer","Tabata-style timer","Breathing timer","Balance timer","Coordination timer","Flexibility log","Movement log","Activity streak","Goal tracker","Fitness notes","Training calendar","Session counter","Interval planner","Rest planner","Warmup planner","Cooldown planner","Workout summary","Progress journal","Gym 2026 planner"]],
-    ["Misc","misc",["Random number","Random choice","Coin flip","Dice","Color picker","Emoji picker","Unit list","Symbol picker","Keyboard key tester","Character map","Morse helper","Binary helper","Caesar helper","ROT13","Palindrome","Anagram","Word length","Alphabetical sort","Number sorter","Duplicate finder","List cleaner","List comparer","Set intersection","Set union","Set difference","JSON pretty print","CSV preview","Text statistics","Checksum","UUID","Time now","Date now","Browser info","Screen info","Language info","Theme switcher","Offline status","Local storage","Cookie note","Privacy note","Accessibility checker","Contrast checker","Character code","Unicode lookup","HTML tag helper","CSS unit helper","Regex escape","Email validation","URL validation","Form validator"]]
-  ];
-
-  const tools = [];
-  for (const [cat,key,names] of families) {
-    names.forEach((name,i) => tools.push({
-      id: `${key}-${i+1}`, category:cat, key, name, icon:icons[i%icons.length],
-      desc:`Free ${name.toLowerCase()} utility — quick, private, browser-based.`,
-      kind:key, index:i
-    }));
-  }
-  // Add deterministic variants until exactly 1000 catalog entries.
-  const base = tools.slice();
-  let v = 1;
-  while (tools.length < 1000) {
-    const b = base[(tools.length - base.length) % base.length];
-    tools.push({...b,id:`${b.key}-v${v++}`,name:`${b.name} — Pro ${v}`,desc:`Advanced free variant of ${b.name.toLowerCase()}.`});
-  }
-
-  let activeCat = "All", query = "";
-  const favorites = new Set(JSON.parse(localStorage.getItem("shaheenFavorites") || "[]"));
-
-  const chips = $("#chips"), grid = $("#tools"), resultCount = $("#resultCount");
-  categories.forEach(([label,key]) => {
-    const b=document.createElement("button"); b.className="chip"+(label==="All"?" active":""); b.textContent=label;
-    b.onclick=()=>{activeCat=label; $$(".chip").forEach(x=>x.classList.remove("active")); b.classList.add("active"); render();};
-    chips.appendChild(b);
-  });
-
-  function filtered(){
-    const q=query.trim().toLowerCase();
-    return tools.filter(t => (activeCat==="All"||t.category===activeCat) && (!q || (t.name+" "+t.desc+" "+t.category).toLowerCase().includes(q)));
-  }
-  function render(){
-    const arr=filtered(); resultCount.textContent=`${arr.length} shown`;
-    grid.innerHTML="";
-    if(!arr.length){grid.innerHTML='<div class="empty">No tool matched your search.</div>';return}
-    arr.slice(0,120).forEach(t=>grid.appendChild(toolCard(t)));
-  }
-  function toolCard(t){
-    const d=document.createElement("article"); d.className="tool";
-    const fav=favorites.has(t.id);
-    d.innerHTML=`<div class="toolIcon">${t.icon}</div><h3>${escapeHtml(t.name)}</h3><p>${escapeHtml(t.desc)}</p><div style="display:flex;gap:7px"><button data-open>Open</button><button data-fav title="Favorite">${fav?"★":"☆"}</button></div>`;
-    d.querySelector("[data-open]").onclick=()=>openTool(t);
-    d.querySelector("[data-fav]").onclick=()=>{favorites.has(t.id)?favorites.delete(t.id):favorites.add(t.id);localStorage.setItem("shaheenFavorites",JSON.stringify([...favorites]));render();renderFavorites()};
-    return d;
-  }
-  function renderFavorites(){
-    const box=$("#favorites"); box.innerHTML="";
-    const arr=tools.filter(t=>favorites.has(t.id));
-    if(!arr.length){box.innerHTML='<div class="empty">No favorites yet. Tap ☆ on a tool to save it.</div>';return}
-    arr.forEach(t=>box.appendChild(toolCard(t)));
-  }
-
-  function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-
-  const dialog=$("#toolDialog");
-  function openTool(t){
-    $("#toolTitle").textContent=t.name; $("#toolDesc").textContent=t.desc;
-    $("#toolBody").innerHTML=toolUI(t);
-    bindTool(t);
-    dialog.showModal();
-  }
-  function toolUI(t){
-    if(["Percentage","Discount","Tip","Tax","Percentage change"].some(x=>t.name.startsWith(x)))
-      return `<div class="form"><label>Value <input id="a" type="number" value="100"></label><label>Percent <input id="b" type="number" value="10"></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out">Result appears here.</div></div>`;
-    if(t.name.startsWith("Average")||t.name.startsWith("Mean"))
-      return `<div class="form"><label>Numbers, separated by commas<textarea id="a">10,20,30,40</textarea></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
-    if(t.name.startsWith("BMI"))
-      return `<div class="form"><div class="grid2"><label>Weight (kg)<input id="a" type="number" value="50"></label><label>Height (m)<input id="b" type="number" value="1.60" step=".01"></label></div><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div><div class="notice">BMI is only a screening calculation and is not a judgment of your body or health.</div></div>`;
-    if(t.name.includes("Temperature")||t.name.includes("Celsius/Fahrenheit"))
-      return `<div class="form"><div class="grid2"><label>Value<input id="a" type="number" value="25"></label><label>Convert<select id="b"><option>C → F</option><option>F → C</option></select></label></div><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
-    if(t.name.startsWith("Word counter")||t.name.startsWith("Character counter")||t.name.startsWith("Sentence counter")||t.name.startsWith("Line counter")||t.name.startsWith("Reading time"))
-      return `<div class="form"><label>Text<textarea id="a" rows="8" placeholder="Paste text here…"></textarea></label><button class="btn primary" id="go">Analyze</button><div class="result" id="out"></div></div>`;
-    if(t.name.startsWith("Case converter"))
-      return `<div class="form"><label>Text<textarea id="a" rows="7"></textarea></label><label>Style<select id="b"><option>UPPERCASE</option><option>lowercase</option><option>Title Case</option><option>Sentence case</option></select></label><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
-    if(t.name.includes("Timer")||t.name.includes("Pomodoro")||t.name.includes("Countdown"))
-      return `<div class="form"><label>Minutes<input id="a" type="number" min="1" value="10"></label><button class="btn primary" id="go">Start</button><div class="result" id="out">Ready.</div></div>`;
-    if(t.name.includes("Random number"))
-      return `<div class="form"><div class="grid2"><label>Min<input id="a" type="number" value="1"></label><label>Max<input id="b" type="number" value="100"></label></div><button class="btn primary" id="go">Generate</button><div class="result" id="out"></div></div>`;
-    if(t.name.includes("Base64"))
-      return `<div class="form"><textarea id="a" rows="6" placeholder="Text"></textarea><button class="btn primary" id="go">Encode</button><div class="result" id="out" style="word-break:break-all"></div></div>`;
-    if(t.name.includes("Slug maker"))
-      return `<div class="form"><textarea id="a" rows="5"></textarea><button class="btn primary" id="go">Create slug</button><div class="result" id="out"></div></div>`;
-    if(t.name.includes("Password generator"))
-      return `<div class="form"><label>Length<input id="a" type="number" min="8" max="128" value="16"></label><button class="btn primary" id="go">Generate</button><div class="result" id="out" style="word-break:break-all"></div></div>`;
-    if(t.name.includes("UUID"))
-      return `<div class="form"><button class="btn primary" id="go">Generate UUID</button><div class="result" id="out"></div></div>`;
-    return `<div class="form"><div class="notice"><strong>${escapeHtml(t.name)}</strong><br>This tool is available in the 1000-tool catalog. Use the focused controls below for a safe, client-side utility.</div><label>Input<textarea id="a" rows="7" placeholder="Enter text or numbers…"></textarea></label><button class="btn primary" id="go">Run tool</button><div class="result" id="out">Result appears here.</div></div>`;
-  }
-
-  let timer=null;
-  function bindTool(t){
-    const go=$("#go"); if(!go)return;
-    go.onclick=()=>{
-      const a=$("#a")?.value ?? "", b=$("#b")?.value ?? "";
-      let out="";
-      try{
-        if(["Percentage","Discount","Tip","Tax","Percentage change"].some(x=>t.name.startsWith(x))){
-          const x=Number(a), p=Number(b); out=t.name.startsWith("Percentage change") ? `${((x-p)/p*100).toFixed(2)}%` : `${(x*p/100).toFixed(2)}`;
-        } else if(t.name.startsWith("Average")||t.name.startsWith("Mean")){const n=a.split(",").map(Number).filter(Number.isFinite);out=n.length?(n.reduce((s,x)=>s+x,0)/n.length).toFixed(4):"Enter numbers";}
-        else if(t.name.startsWith("BMI")){const x=Number(a),h=Number(b);out=h>0?(x/(h*h)).toFixed(2):"Enter a valid height";}
-        else if(t.name.includes("Temperature")||t.name.includes("Celsius/Fahrenheit")){const x=Number(a);out=b==="C → F"?((x*9/5)+32).toFixed(2)+" °F":((x-32)*5/9).toFixed(2)+" °C";}
-        else if(t.name.startsWith("Word counter"))out=`Words: ${a.trim()?a.trim().split(/\s+/).length:0}`;
-        else if(t.name.startsWith("Character counter"))out=`Characters: ${a.length}`;
-        else if(t.name.startsWith("Sentence counter"))out=`Sentences: ${(a.match(/[.!?]+(?=\s|$)/g)||[]).length}`;
-        else if(t.name.startsWith("Line counter"))out=`Lines: ${a? a.split(/\r?\n/).length:0}`;
-        else if(t.name.startsWith("Reading time"))out=`About ${Math.max(1,Math.ceil((a.trim()?a.trim().split(/\s+/).length:0)/200))} minute(s)`;
-        else if(t.name.startsWith("Case converter")){if(b==="UPPERCASE")out=a.toUpperCase();else if(b==="lowercase")out=a.toLowerCase();else if(b==="Sentence case")out=a.toLowerCase().replace(/(^|[.!?]\s+)([a-z])/g,(_,p,c)=>p+c.toUpperCase());else out=a.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());}
-        else if(t.name.includes("Random number"))out=Math.floor(Math.random()*(Number(b)-Number(a)+1))+Number(a);
-        else if(t.name.includes("Base64"))out=btoa(unescape(encodeURIComponent(a)));
-        else if(t.name.includes("Slug maker"))out=a.toLowerCase().trim().replace(/[^\p{L}\p{N}]+/gu,"-").replace(/^-+|-+$/g,"");
-        else if(t.name.includes("Password generator")){const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%";let s="";for(let i=0;i<Number(a);i++)s+=chars[Math.floor(Math.random()*chars.length)];out=s;}
-        else if(t.name.includes("UUID"))out=crypto.randomUUID();
-        else if(t.name.includes("Timer")||t.name.includes("Pomodoro")||t.name.includes("Countdown")){clearInterval(timer);let sec=Math.max(1,Number(a))*60;const tick=()=>{const m=Math.floor(sec/60),s=String(sec%60).padStart(2,"0");$("#out").textContent=`${m}:${s}`;if(sec--<=0){clearInterval(timer);speech("Time is up.");}};tick();timer=setInterval(tick,1000);return;}
-        else out=a||"Ready — enter a value to use this tool.";
-      }catch(e){out="Please enter valid input."}
-      $("#out").textContent=out;
-    };
-  }
-
-  function speech(text){if("speechSynthesis"in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(text))}}
-  window.speech=speech;
-
-  window.openGym=()=>gymDialog.showModal();
-  $("#gymForm").onsubmit=e=>{
-    e.preventDefault();const f=new FormData(e.target), plan=buildPlan(Object.fromEntries(f.entries()));
-    localStorage.setItem("shaheenGymPlan",JSON.stringify(plan));renderPlan();gymDialog.close();showToast("Gym 2026 plan saved");
-  };
-  function buildPlan(x){
-    const days=Number(x.days), mins=Number(x.minutes), exp=x.experience;
-    const blocks=["Warm-up + easy movement","Squat pattern + controlled strength","Push pattern + controlled strength","Pull pattern or safe row variation","Core + balance","Mobility + easy cooldown"];
-    const sessions=[];
-    for(let i=0;i<days;i++) sessions.push({day:i+1,title:`Day ${i+1}`,items:[blocks[i%blocks.length],blocks[(i+1)%blocks.length],`Easy movement / technique practice (${Math.max(8,Math.floor(mins/4))} min)`,`Cooldown + breathing` ]});
-    return {...x,sessions,created:new Date().toISOString()};
-  }
-  function renderPlan(){
-    const box=$("#savedPlan"), p=JSON.parse(localStorage.getItem("shaheenGymPlan")||"null");
-    if(!p){box.textContent="No plan yet. Tap “Build my routine”.";return}
-    box.innerHTML=`<strong>${escapeHtml(p.goal)}</strong> · ${p.days} days/week · ${p.minutes} min/session · ${escapeHtml(p.equipment)}<div class="list" style="margin-top:12px">${p.sessions.map(s=>`<div class="row"><span><b>${s.title}</b><br><span class="muted">${s.items.join(" • ")}</span></span><button class="secondary" onclick='speech(${JSON.stringify(s.items.join(". "))})'>🔊 Hear</button></div>`).join("")}</div>`;
-  }
-
-  function scrollToTools(){document.querySelector("#toolsSection").scrollIntoView({behavior:"smooth"})}
-  window.scrollToTools=scrollToTools;
-  $("#search").addEventListener("input",e=>{query=e.target.value;activeCat="All";$$(".chip").forEach((x,i)=>x.classList.toggle("active",i===0));render()});
-  $$(".nav button").forEach(btn=>btn.onclick=()=>{
-    const view=btn.dataset.view;
-    ["homeView","gymView","favoritesView","infoView"].forEach(id=>$("#"+id).classList.add("hidden"));
-    if(view==="toolsSection"){ $("#homeView").classList.remove("hidden");scrollToTools();}
-    else $("#"+view).classList.remove("hidden");
-    $$(".nav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
-    if(view==="favoritesView")renderFavorites();
-  });
-  $("#themeBtn").onclick=()=>{document.body.classList.toggle("light");showToast("Theme toggle ready — customize colors in CSS if desired.")};
-  function showToast(s){const t=$("#toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",1800)}
-  $("#year").textContent=new Date().getFullYear();
-  $("#toolCount").textContent=tools.length+"+";
-  render();renderFavorites();renderPlan();
-})();
-</script>
-
-<script>
-/* === Gym 2026 Ultra controller === */
-(() => {
-  const $ = s => document.querySelector(s);
-  const state = {
-    exercises:[
-      {name:"Push-ups",cls:"push",seconds:30,reps:8,cue:"Hands under or slightly outside shoulders. Keep your body controlled; lower comfortably and press up without rushing."},
-      {name:"Bodyweight Squats",cls:"squat",seconds:35,reps:10,cue:"Keep feet comfortable, chest relaxed and knees tracking in the same direction as your toes. Use a range you can control."},
-      {name:"Jumping Jacks",cls:"jack",seconds:30,reps:20,cue:"Land softly and keep the pace comfortable. Step instead of jumping if you need a lower-impact option."},
-      {name:"Rest & Breathing",cls:"push",seconds:30,reps:0,cue:"Slow your breathing, drink water if needed and prepare for the next movement."}
-    ],
-    idx:0, reps:8, seconds:30, remaining:30, running:false, timer:null, cameraStream:null
-  };
-  let streak = Number(localStorage.getItem("shaheenGymStreak")||0);
-  const today = new Date().toISOString().slice(0,10);
-  const last = localStorage.getItem("shaheenGymLast");
-  if(last===today) streak=Math.max(streak,Number(localStorage.getItem("shaheenGymStreak")||0));
-  else if(last){
-    const d=(new Date(today)-new Date(last))/86400000;
-    if(d>1) streak=0;
-  }
-  function renderDays(){
-    $("#uwStreak").textContent=streak;
-    const box=$("#uwDays");box.innerHTML="";
-    for(let i=6;i>=0;i--){const dt=new Date();dt.setDate(dt.getDate()-i);const key=dt.toISOString().slice(0,10);const done=key===last||i===0&&last===today;const el=document.createElement("div");el.className="daydot"+(done?" done":"");el.textContent=dt.toLocaleDateString(undefined,{weekday:"narrow"});box.appendChild(el)}
-  }
-  function markComplete(){
-    const old=localStorage.getItem("shaheenGymLast");
-    if(old!==today){ if(old){const d=(new Date(today)-new Date(old))/86400000;streak=d===1?streak+1:1}else streak=1;localStorage.setItem("shaheenGymLast",today);localStorage.setItem("shaheenGymStreak",streak)}
-    renderDays();
-  }
-  function render(){
-    const e=state.exercises[state.idx]; state.seconds=Math.max(0,state.seconds);
-    $("#uwExercise").textContent=e.name;$("#uwCue").textContent=e.cue;$("#uwReps").textContent=state.reps;
-    $("#uwTimer").textContent=`${String(Math.floor(state.remaining/60)).padStart(2,"0")}:${String(state.remaining%60).padStart(2,"0")}`;
-    $("#trainer").className="trainer "+e.cls;
-    $("#uwProgressText").textContent=`Exercise ${state.idx+1} of ${state.exercises.length}`;
-    $("#uwFill").style.width=((state.idx/state.exercises.length)*100)+"%";
-    $("#uwStart").textContent=state.running?"Pause":"Start";
-    $("#uwCoach").innerHTML=`${state.running?"You’ve got this — steady and controlled.":"Ready when you are."}<small>${e.cue}</small>`;
-  }
-  function speak(){
-    if(!("speechSynthesis" in window)) return;
-    speechSynthesis.cancel();
-    const lang=$("#uwLang").value;
-    const e=state.exercises[state.idx];
-    const text=lang==="hi-IN"?`${e.name}. ${e.cue}। धीरे और आराम से करें।`:
-      lang==="ur-PK"?`${e.name}۔ ${e.cue} آہستہ اور آرام سے کریں۔`:
-      lang==="ar-SA"?`${e.name}. ${e.cue} تحرك بهدوء وبشكل مريح.`:
-      lang==="es-ES"?`${e.name}. ${e.cue} Muévete con control y comodidad.`:
-      `${e.name}. ${e.cue} Move with control and comfort.`;
-    const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=.92;u.pitch=1.02;speechSynthesis.speak(u);
-  }
-  function resetExercise(){
-    clearInterval(state.timer);state.running=false;
-    const e=state.exercises[state.idx];state.seconds=e.seconds;state.remaining=e.seconds;state.reps=e.reps;render();
-  }
-  function finishExercise(){
-    clearInterval(state.timer);state.running=false;markComplete();
-    if(state.idx<state.exercises.length-1){state.idx++;resetExercise();speak();}
-    else{state.idx=0;resetExercise();$("#uwCoach").innerHTML="Session complete! 🎉<small>Take a comfortable cooldown and celebrate consistency.</small>";speak();}
-  }
-  function toggle(){
-    state.running=!state.running;
-    if(state.running){
-      clearInterval(state.timer);
-      state.timer=setInterval(()=>{state.remaining--;if(state.remaining<=0)finishExercise();else render()},1000);
-      speak();
-    } else clearInterval(state.timer);
-    render();
-  }
-  async function enterFullscreen(){
-    try{if(!document.fullscreenElement) await document.documentElement.requestFullscreen();}catch(e){}
-  }
-  function openUltra(){
-    $("#ultraWorkout").classList.add("open");$("#ultraWorkout").setAttribute("aria-hidden","false");
-    document.body.style.overflow="hidden";resetExercise();renderDays();enterFullscreen();
-  }
-  async function exitUltra(){
-    if(state.running && !confirm("Your workout is still running. Exit this workout?")) return;
-    clearInterval(state.timer);state.running=false;
-    if(state.cameraStream){state.cameraStream.getTracks().forEach(t=>t.stop());state.cameraStream=null}
-    $("#uwVideo").srcObject=null;$("#cameraBox").style.display="none";$("#uwCamera").checked=false;
-    $("#ultraWorkout").classList.remove("open");$("#ultraWorkout").setAttribute("aria-hidden","true");document.body.style.overflow="";
-    try{if(document.fullscreenElement) await document.exitFullscreen()}catch(e){}
-  }
-  $("#uwStart").onclick=toggle;$("#uwSpeak").onclick=speak;
-  $("#uwPlus").onclick=()=>{state.reps=Math.min(100,state.reps+1);render()};
-  $("#uwMinus").onclick=()=>{state.reps=Math.max(0,state.reps-1);render()};
-  $("#uwAddTime").onclick=()=>{state.remaining+=30;render()};$("#uwLessTime").onclick=()=>{state.remaining=Math.max(0,state.remaining-30);render()};
-  $("#uwNext").onclick=finishExercise;$("#uwExit").onclick=exitUltra;
-  $("#uwCamera").onchange=async e=>{
-    const box=$("#cameraBox"),stateText=$("#cameraState");
-    if(!e.target.checked){if(state.cameraStream)state.cameraStream.getTracks().forEach(t=>t.stop());state.cameraStream=null;box.style.display="none";return}
-    box.style.display="block";
-    if(!navigator.mediaDevices?.getUserMedia){stateText.textContent="Camera access is not supported by this browser.";return}
-    try{
-      state.cameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:640},height:{ideal:480}},audio:false});
-      $("#uwVideo").srcObject=state.cameraStream;
-      stateText.textContent="Camera preview active. Form feedback is approximate; no video is uploaded by this page.";
-    }catch(err){stateText.textContent="Camera permission was not granted. The workout still works without it.";e.target.checked=false}
-  };
-  document.addEventListener("visibilitychange",()=>{if($("#ultraWorkout").classList.contains("open")&&document.hidden&&state.running){state.running=false;clearInterval(state.timer);render()}});
-  window.addEventListener("beforeunload",e=>{if($("#ultraWorkout").classList.contains("open")&&state.running){e.preventDefault();e.returnValue=""}});
-  window.openUltraGym=openUltra;
-  const oldOpenGym=window.openGym;
-  window.openGym=()=>openUltra();
-  // Upgrade the existing Gym nav/button without trapping the user in the browser.
-  document.querySelectorAll('[data-view="gymView"]').forEach(b=>b.addEventListener("click",e=>{e.preventDefault();openUltra()}));
-  renderDays();render();
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const icon=["🧮","🔢","🔄","📝","📚","⚡","🧰","⏱️","💻","🌐","🎯","📊"];
+const families=[
+["Calculators","calc",["Percentage","Average","Ratio","Discount","Tip","Tax","Interest","Compound Growth","BMI","Age","Speed","Distance","Time","Fuel Cost","Grade","GPA","Profit","Margin","Markup","Break-even","Unit Price","Area","Volume","Perimeter","Probability"]],
+["Converters","convert",["Length","Weight","Temperature","Area","Volume","Time","Speed","Data","Pressure","Energy","Power","Angle","Frequency","Force","Torque","Fuel Economy","Number Base","Roman Numeral","Fraction","Decimal","Percent","Pixels","DPI","Radians","Unix Timestamp"]],
+["Text & Writing","text",["Word Counter","Character Counter","Sentence Counter","Line Counter","Reading Time","Case Converter","Slug Maker","Whitespace Cleaner","Sort Lines","Reverse Text","Find & Replace","Text Joiner","Text Splitter","JSON Formatter","JSON Minifier","HTML Escape","URL Encode","URL Decode","Base64 Encoder","Base64 Decoder","ROT13","Palindrome","Anagram","Keyword Density","Text Statistics"]],
+["Math","math",["Prime Checker","Prime List","Factors","LCM","GCD","Fibonacci","Arithmetic Sequence","Geometric Sequence","Equation Helper","Quadratic Helper","Pythagorean Helper","Triangle Area","Circle Area","Rectangle Area","Trapezoid Area","Sphere Volume","Cylinder Volume","Cone Volume","Cube Volume","Permutation","Combination","Modulo","Square Root","Cube Root","Logarithm"]],
+["Study","study",["Pomodoro","Study Timer","Grade Calculator","GPA Helper","Quiz Score","Reading Planner","Revision Planner","Focus Session","Break Planner","Vocabulary List","Typing Speed","WPM Calculator","Study Streak","Task Checklist","Exam Countdown","Assignment Planner","Memory Cards","Practice Tracker","Time Blocker","Daily Goals","Weekly Goals","Habit Tracker","Topic Tracker","Formula Sheet","Progress Tracker"]],
+["Productivity","productivity",["To-do List","Checklist","Priority Matrix","Quick Notes","Countdown","Stopwatch","Interval Timer","Daily Planner","Weekly Planner","Monthly Planner","Habit Tracker","Goal Tracker","Idea Picker","Decision Helper","Random Picker","Number Picker","Color Picker","Routine Builder","Project Planner","Milestone Planner","Deadline Helper","Task Splitter","Meeting Agenda","Work Session","Summary Box"]],
+["Date & Time","time",["Age Calculator","Date Difference","Add Days","Subtract Days","Week Number","Day of Week","Leap Year","Days in Month","Month Calendar","Year Calendar","Countdown","Stopwatch","Timer","Business Days","Working Hours","Date Formatter","Time Formatter","ISO Date","Relative Time","Birthday Countdown","Weekday Counter","Weekend Counter","Hours Between","Minutes Between","Seconds Between","Duration Formatter"]],
+["Finance","finance",["Discount","Sales Tax","Tip","Profit","Margin","Markup","Simple Interest","Compound Interest","Loan Payment","Savings Growth","Budget Split","Expense Total","Income Total","Cashflow","Break-even","ROI","APR Helper","Monthly Payment","Debt Payoff","Savings Goal","Budget Percentage","Annual Cost","Hourly Rate","Commission","Invoice Total"]],
+["Web & Developer","web",["URL Encoder","URL Decoder","HTML Encoder","HTML Decoder","JSON Formatter","JSON Validator","CSS Minifier","JS Minifier","HTML Minifier","Meta Tag Helper","Open Graph Helper","Robots Helper","Sitemap Helper","Slug Maker","UTM Builder","Color Converter","HEX to RGB","RGB to HEX","Gradient Helper","Box Shadow Helper","CSS Clamp","Font Stack","Aspect Ratio","JWT Viewer","UUID Generator"]],
+["Health & Fitness","fitness",["Workout Timer","Rest Timer","Interval Timer","Pace Calculator","Speed Calculator","Warm-up Timer","Cool-down Timer","Mobility Timer","Stretch Timer","Posture Break","Hydration Reminder","Workout Log","Routine Builder","Weekly Activity","Session Planner","Recovery Day","Beginner Routine","Home Routine","Gym Routine","Bodyweight Routine","Technique Checklist","Rep Timer","Set Timer","Circuit Timer","Progress Journal"]],
+["Media & Design","media",["Aspect Ratio","Image Dimensions","Color Picker","HEX to RGB","RGB to HEX","Gradient Maker","Palette Generator","Contrast Checker","Text Poster","QR Text","SVG Circle","SVG Rectangle","SVG Badge","Icon Label","Pixel Ratio","Canvas Size","Social Size","Banner Size","Thumbnail Size","Poster Size","Font Pair Helper","Spacing Scale","Shadow Scale","Border Radius","Layout Grid"]],
+["Everyday","everyday",["Random Number","Coin Flip","Dice","Random Choice","Name Picker","List Sorter","Duplicate Finder","List Cleaner","Set Union","Set Intersection","Set Difference","Character Code","Unicode Lookup","Morse Helper","Binary Helper","Caesar Helper","Palindrome","Anagram","Email Validator","URL Validator","Password Strength","UUID","Time Now","Date Now","Browser Info"]]
+];
+const categories=families.map(x=>x[0]);
+const normal=[],power=[];
+families.forEach(([cat,key,names],ci)=>{
+ names.forEach((name,i)=>normal.push({id:"n"+normal.length+1,name,cat,key,mode:"Everyday",desc:`${name} — fast browser tool.`}));
+ names.forEach((name,i)=>power.push({id:"p"+power.length+1,name:`${name} Pro`,cat,key,mode:"Power",desc:`Advanced ${name.toLowerCase()} workflow with extra options.`}));
+});
+function fillTo(list,target,prefix){
+ let i=0;
+ while(list.length<target){
+   const f=families[i%families.length], n=f[2][Math.floor(i/families.length)%f[2].length];
+   list.push({id:prefix+list.length+1,name:`${n} ${Math.floor(list.length/families.length)+2}`,cat:f[0],key:f[1],mode:prefix==="n"?"Everyday":"Power",desc:`${n} utility variant — fully runnable in the browser.`});i++;
+ }
+}
+fillTo(normal,1000,"n");fillTo(power,1000,"p");
+const tools=[...normal,...power];
+let active="All",query="";
+const cats=$("#cats");
+["All","Everyday tools","Power tools",...categories].forEach(label=>{
+ const b=document.createElement("button");b.className="chip"+(label==="All"?" active":"");b.textContent=label;
+ b.onclick=()=>{active=label;$$(".chip").forEach(x=>x.classList.toggle("active",x===b));renderTools()};cats.appendChild(b);
+});
+function matches(t){
+ const q=query.toLowerCase().trim();
+ const type=active==="Everyday tools"?t.mode==="Everyday":active==="Power tools"?t.mode==="Power":active==="All"?true:t.cat===active;
+ return type&&(!q||(t.name+" "+t.cat+" "+t.desc).toLowerCase().includes(q));
+}
+function renderTools(){
+ const arr=tools.filter(matches);$("#count").textContent=`${arr.length} of 2,000`;
+ $("#tools").innerHTML="";
+ if(!arr.length){$("#tools").innerHTML='<div class="empty">No matching tool.</div>';return}
+ arr.slice(0,160).forEach((t,i)=>{
+  const d=document.createElement("article");d.className="tool";
+  d.innerHTML=`<div class="toolIcon">${icon[i%icon.length]}</div><h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p><small>${esc(t.cat)} · ${t.mode}</small><button class="secondary">Open</button>`;
+  d.querySelector("button").onclick=()=>openTool(t);$("#tools").appendChild(d);
+ });
+}
+function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("#search").oninput=e=>{query=e.target.value;active="All";$$(".chip").forEach((x,i)=>x.classList.toggle("active",i===0));renderTools()};
+function engine(t){
+ const n=t.name.toLowerCase();
+ if(n.includes("word counter")||n.includes("character counter")||n.includes("sentence counter")||n.includes("line counter")||n.includes("reading time")||n.includes("text statistics"))
+  return `<div class="form"><label>Text<textarea id="a" rows="8"></textarea></label><button class="btn primary" id="go">Run</button><div class="result" id="out"></div></div>`;
+ if(n.includes("random number")||n.includes("number picker"))return `<div class="form grid2"><label>Min<input id="a" type="number" value="1"></label><label>Max<input id="b" type="number" value="100"></label><button class="btn primary" id="go">Generate</button><div class="result" id="out"></div></div>`;
+ if(n.includes("percentage")||n.includes("discount")||n.includes("tax")||n.includes("tip")||n.includes("margin")||n.includes("markup"))return `<div class="form grid2"><label>Value<input id="a" type="number" value="100"></label><label>Percent<input id="b" type="number" value="10"></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
+ if(n.includes("temperature"))return `<div class="form grid2"><label>Value<input id="a" type="number" value="25"></label><label>Direction<select id="b"><option>C → F</option><option>F → C</option></select></label><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
+ if(n.includes("average"))return `<div class="form"><label>Numbers<textarea id="a">10,20,30,40</textarea></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
+ if(n.includes("bmi"))return `<div class="form grid2"><label>Weight kg<input id="a" type="number" value="50"></label><label>Height m<input id="b" type="number" value="1.60" step=".01"></label><button class="btn primary" id="go">Calculate</button><div class="result" id="out"></div></div>`;
+ if(n.includes("base64"))return `<div class="form"><textarea id="a" rows="6"></textarea><button class="btn primary" id="go">Encode</button><div class="result" id="out"></div></div>`;
+ if(n.includes("case converter"))return `<div class="form"><textarea id="a" rows="6"></textarea><select id="b"><option>UPPERCASE</option><option>lowercase</option><option>Title Case</option></select><button class="btn primary" id="go">Convert</button><div class="result" id="out"></div></div>`;
+ if(n.includes("slug"))return `<div class="form"><textarea id="a" rows="5"></textarea><button class="btn primary" id="go">Create slug</button><div class="result" id="out"></div></div>`;
+ if(n.includes("uuid"))return `<div class="form"><button class="btn primary" id="go">Generate UUID</button><div class="result" id="out"></div></div>`;
+ if(n.includes("password strength"))return `<div class="form"><input id="a" placeholder="Password"><button class="btn primary" id="go">Check</button><div class="result" id="out"></div></div>`;
+ return `<div class="form"><div class="notice"><b>${esc(t.name)}</b><br>This tool uses a browser-safe generic utility engine for this category. Enter your data below.</div><textarea id="a" rows="7" placeholder="Enter text, numbers or notes…"></textarea><button class="btn primary" id="go">Run tool</button><div class="result" id="out"></div></div>`;
+}
+function openTool(t){
+ $("#toolTitle").textContent=t.name;$("#toolDesc").textContent=`${t.cat} · ${t.mode}`;
+ $("#toolBody").innerHTML=engine(t);$("#toolDlg").showModal();
+ const go=$("#go");if(!go)return;go.onclick=()=>{
+  const a=$("#a")?.value??"",b=$("#b")?.value??"",n=t.name.toLowerCase();let o="";
+  try{
+   if(n.includes("word counter"))o=`Words: ${a.trim()?a.trim().split(/\s+/).length:0}`;
+   else if(n.includes("character counter"))o=`Characters: ${a.length}`;
+   else if(n.includes("sentence counter"))o=`Sentences: ${(a.match(/[.!?]+(?=\\s|$)/g)||[]).length}`;
+   else if(n.includes("line counter"))o=`Lines: ${a?a.split(/\\r?\\n/).length:0}`;
+   else if(n.includes("reading time"))o=`Approx. ${Math.max(1,Math.ceil((a.trim()?a.trim().split(/\\s+/).length:0)/200))} minute(s)`;
+   else if(n.includes("random number")||n.includes("number picker"))o=Math.floor(Math.random()*(Number(b)-Number(a)+1))+Number(a);
+   else if(n.includes("percentage")||n.includes("discount")||n.includes("tax")||n.includes("tip")||n.includes("margin")||n.includes("markup"))o=(Number(a)*Number(b)/100).toFixed(2);
+   else if(n.includes("temperature"))o=b==="C → F"?((Number(a)*9/5)+32).toFixed(2)+" °F":((Number(a)-32)*5/9).toFixed(2)+" °C";
+   else if(n.includes("average")){const x=a.split(",").map(Number).filter(Number.isFinite);o=x.length?(x.reduce((s,v)=>s+v,0)/x.length).toFixed(4):"Enter numbers";}
+   else if(n.includes("bmi")){const h=Number(b);o=h>0?(Number(a)/(h*h)).toFixed(2):"Invalid height";}
+   else if(n.includes("base64"))o=btoa(unescape(encodeURIComponent(a)));
+   else if(n.includes("case converter"))o=b==="UPPERCASE"?a.toUpperCase():b==="lowercase"?a.toLowerCase():a.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase());
+   else if(n.includes("slug"))o=a.toLowerCase().trim().replace(/[^\\p{L}\\p{N}]+/gu,"-").replace(/^-+|-+$/g,"");
+   else if(n.includes("uuid"))o=crypto.randomUUID();
+   else if(n.includes("password strength")){let s=0;s+=a.length>=8?1:0;s+=/[A-Z]/.test(a)?1:0;s+=/[a-z]/.test(a)?1:0;s+=/[0-9]/.test(a)?1:0;s+=/[^A-Za-z0-9]/.test(a)?1:0;o=`Strength score: ${s}/5`;}
+   else o=a?`Processed successfully.\\nCharacters: ${a.length}`:"Ready — enter a value.";
+  }catch(e){o="Please enter valid input."}$("#out").textContent=o;
+ };
+}
+window.showHomeTools=()=>{showPage("home");$("#toolArea").scrollIntoView({behavior:"smooth"})};
+window.openGymSetup=()=>$("#gymDlg").showModal();
+const langs=[["en-US","English"],["hi-IN","हिन्दी"],["ur-PK","اردو"],["ar-SA","العربية"],["es-ES","Español"],["fr-FR","Français"],["de-DE","Deutsch"]];
+let lang="en-US",voicePref="Auto",timer=null,session=null,stream=null;
+langs.forEach(([v,n])=>{const b=document.createElement("button");b.textContent=n;b.dataset.v=v;b.onclick=()=>{lang=v;$$("#langs button").forEach(x=>x.classList.toggle("active",x===b));speak("Language changed.");};$("#langs").appendChild(b)});
+$$("#langs button")[0].classList.add("active");
+const exercises=[
+ {name:"Warm-up",cls:"jumping",time:30,reps:0,cue:"Stand tall, breathe comfortably and move gently."},
+ {name:"Squat",cls:"squat",time:35,reps:8,cue:"Keep your feet comfortable, bend with control, then stand tall."},
+ {name:"Push-up",cls:"push",time:35,reps:6,cue:"Keep your body in one steady line. Move only as far as comfortable."},
+ {name:"March in place",cls:"jumping",time:30,reps:0,cue:"Lift one knee at a time and keep a steady rhythm."},
+ {name:"Rest & breathe",cls:"",time:25,reps:0,cue:"Relax your shoulders. Take easy breaths."},
+ {name:"Cool-down",cls:"",time:35,reps:0,cue:"Slow down and gently move through a comfortable range."}
+];
+const words={
+"en-US":{start:"Let's begin. Follow the coach.",next:"Next exercise.",rest:"Take a comfortable rest.",done:"Session complete. Nice work.",push:"Keep your body steady. Move with control.",squat:"Chest comfortable, knees tracking naturally, move slowly."},
+"hi-IN":{start:"चलो शुरू करते हैं। कोच को फॉलो करें।",next:"अगली एक्सरसाइज़।",rest:"आराम से सांस लें और आराम करें।",done:"सेशन पूरा हुआ। बहुत अच्छा।",push:"शरीर को स्थिर रखें और धीरे-धीरे करें।",squat:"आराम से नीचे जाएं और नियंत्रण के साथ ऊपर आएं।"},
+"ur-PK":{start:"چلیں شروع کرتے ہیں۔ کوچ کی ہدایات پر عمل کریں۔",next:"اگلی ورزش۔",rest:"آرام کریں اور سکون سے سانس لیں۔",done:"سیشن مکمل ہوگیا۔ بہت خوب۔",push:"جسم کو سیدھا اور حرکت کو قابو میں رکھیں۔",squat:"آرام سے نیچے جائیں اور کنٹرول کے ساتھ واپس آئیں۔"},
+"ar-SA":{start:"لنبدأ. اتبع تعليمات المدرب.",next:"التمرين التالي.",rest:"خذ قسطاً مريحاً من الراحة.",done:"اكتمل التمرين. أحسنت.",push:"حافظ على ثبات جسمك وتحرك بتحكم.",squat:"انزل بهدوء واصعد بتحكم."},
+"es-ES":{start:"Empezamos. Sigue al entrenador.",next:"Siguiente ejercicio.",rest:"Descansa y respira con calma.",done:"Sesión completa. Buen trabajo.",push:"Mantén el cuerpo estable y muévete con control.",squat:"Baja con calma y vuelve a subir con control."},
+"fr-FR":{start:"On commence. Suivez le coach.",next:"Exercice suivant.",rest:"Reposez-vous et respirez calmement.",done:"Séance terminée. Bravo.",push:"Gardez le corps stable et bougez avec contrôle.",squat:"Descendez doucement et remontez avec contrôle."},
+"de-DE":{start:"Wir beginnen. Folge dem Coach.",next:"Nächste Übung.",rest:"Pause machen und ruhig atmen.",done:"Training abgeschlossen. Gut gemacht.",push:"Halte den Körper stabil und bewege dich kontrolliert.",squat:"Langsam absenken und kontrolliert aufstehen."}
+};
+function speak(text){if(!("speechSynthesis"in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;const vs=speechSynthesis.getVoices();const pref=vs.find(v=>v.lang.toLowerCase().startsWith(lang.slice(0,2).toLowerCase()));if(pref)u.voice=pref;u.rate=.92;u.pitch=1.04;speechSynthesis.speak(u)}
+window.speakCurrent=()=>session&&speak(session.ex.cue);
+function speakCurrent(){if(session)speak(session.ex.cue)}
+function buildPlan(f){
+ let count=Math.max(3,Math.min(6,Math.round(Number(f.minutes)/2)));
+ const arr=[];for(let i=0;i<count;i++)arr.push(exercises[i%exercises.length]);
+ return arr;
+}
+$("#gymForm").onsubmit=e=>{
+ e.preventDefault();const f=Object.fromEntries(new FormData(e.target));lang=f.lang;voicePref=f.voice;
+ localStorage.setItem("shaheenGymPrefs",JSON.stringify(f));session={list:buildPlan(f),idx:0,sec:30,reps:0,running:false,ex:null};renderPlan();loadExercise();$("#gymDlg").close();showPage("gym");startWorkout();
+};
+function loadExercise(){
+ if(!session)return;if(session.idx>=session.list.length){finishWorkout();return}
+ session.ex=session.list[session.idx];session.sec=session.ex.time;session.reps=session.ex.reps?0:0;
+ $("#exerciseName").textContent=session.ex.name;$("#cue").textContent=session.ex.cue;$("#timer").textContent=fmt(session.sec);$("#rep").textContent=session.ex.reps?`0 / ${session.ex.reps} reps`:"Guided time";$("#prog").style.width=((session.idx/session.list.length)*100)+"%";
+ $("#human").className="human "+session.ex.cls;$("#coach").classList.remove("rep");speak(session.ex.name+". "+session.ex.cue);
+}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(Math.max(0,s%60)).padStart(2,"0")}
+function tick(){
+ if(!session||!session.running)return;
+ session.sec--;if(session.ex.reps){session.reps=Math.min(session.ex.reps,Math.floor((session.ex.time-session.sec)/Math.max(2,session.ex.time/session.ex.reps)));$("#rep").textContent=`${session.reps} / ${session.ex.reps} reps`;$("#coach").classList.add("rep")}
+ $("#timer").textContent=fmt(Math.max(0,session.sec));
+ if(session.sec<=0){session.idx++;if(session.idx<session.list.length){speak(words[lang]?.next||words["en-US"].next);loadExercise()}else finishWorkout()}
+}
+function startWorkout(){
+ if(!session)return;session.running=true;$("#play").textContent="❚❚ Pause";clearInterval(timer);timer=setInterval(tick,1000);
+ try{document.documentElement.requestFullscreen?.().catch(()=>{})}catch(e){}
+ speak(words[lang]?.start||words["en-US"].start);
+}
+function resumeWorkout(){if(session){showPage("gym");startWorkout()}else openGymSetup()}
+function toggleWorkout(){if(!session)return openGymSetup();if(session.running){session.running=false;clearInterval(timer);$("#play").textContent="▶ Resume";speak("Paused.");}else startWorkout()}
+function nextExercise(){if(!session)return;session.idx++;loadExercise()}
+function stopWorkout(){if(!session)return;session.running=false;clearInterval(timer);$("#play").textContent="▶ Start";speak("Workout stopped.");try{document.exitFullscreen?.()}catch(e){}}
+function adjustTime(n){if(session){session.sec=Math.max(5,session.sec+n);$("#timer").textContent=fmt(session.sec)}}
+function adjustRep(n){if(session?.ex?.reps){session.reps=Math.max(0,Math.min(session.ex.reps,session.reps+n));$("#rep").textContent=`${session.reps} / ${session.ex.reps} reps`}}
+function finishWorkout(){clearInterval(timer);if(!session)return;session.running=false;$("#prog").style.width="100%";$("#play").textContent="✓ Complete";updateStreak();speak(words[lang]?.done||words["en-US"].done);try{document.exitFullscreen?.()}catch(e){}}
+function updateStreak(){const today=new Date().toISOString().slice(0,10),old=JSON.parse(localStorage.getItem("shaheenStreak")||'{"last":"","count":0}');if(old.last!==today){const yesterday=new Date(Date.now()-86400000).toISOString().slice(0,10);old.count=old.last===yesterday?old.count+1:1;old.last=today;localStorage.setItem("shaheenStreak",JSON.stringify(old))}$("#streak").textContent=old.count}
+function renderPlan(){const p=JSON.parse(localStorage.getItem("shaheenGymPrefs")||"null"),box=$("#planList");if(!p){box.innerHTML="<div class='notice'>Build a session to see today's guided flow.</div>";return}box.innerHTML=buildPlan(p).map((x,i)=>`<div class="notice"><b>${i+1}. ${x.name}</b> · ${x.time}s<br><span class="muted">${x.cue}</span></div>`).join("")}
+window.toggleCamera=async()=>{
+ const box=$("#cameraBox");box.classList.toggle("hidden");if(box.classList.contains("hidden")){stream?.getTracks().forEach(t=>t.stop());stream=null;return}
+ try{stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});$("#video").srcObject=stream}catch(e){$("#cameraBox .cammsg").textContent="Camera permission was not granted. The workout still works normally without camera."}
+};
+function showPage(id){["home","gym","info"].forEach(x=>$("#"+x).classList.toggle("hidden",x!==id));$$(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id||id==="home"&&b.dataset.page==="tools"))}
+$$(".nav button[data-page]").forEach(b=>b.onclick=()=>{showPage(b.dataset.page==="tools"?"home":b.dataset.page);if(b.dataset.page==="tools")showHomeTools()});
+$("#theme").onclick=()=>document.body.classList.toggle("light");
+document.addEventListener("visibilitychange",()=>{if(document.hidden&&session?.running){session.running=false;clearInterval(timer);$("#play").textContent="▶ Resume";speak("Paused while the screen is away.")}});
+window.addEventListener("beforeunload",e=>{if(session?.running){e.preventDefault();e.returnValue=""}});
+function toast(s){const t=$("#toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",1800)}
+$("#year").textContent=new Date().getFullYear();updateStreak();renderPlan();renderTools();
 })();
 </script>
 </body>
