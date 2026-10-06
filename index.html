@@ -1,106 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#070b18">
-<meta name="description" content="Shaheen Tools — practical browser tools, creator utilities, learning tools and safe home movement coaching.">
+<meta name="description" content="Shaheen Tools — 3,000 browser-based utilities plus a safe home workout coach. Fast, useful and privacy-focused.">
 <meta name="robots" content="index,follow">
 <meta name="google-adsense-account" content="ca-pub-2057536839831582">
 
-<title>Shaheen Tools — 3,000+ Practical Tools & Gym 2026</title>
-
-<!-- Google AdSense: keep Google's generated code unchanged. -->
+<!--
+  IMPORTANT:
+  Keep this script only if this publisher/account is actually yours or belongs
+  to the adult account holder managing AdSense for this website.
+-->
 <script async
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582"
-crossorigin="anonymous"></script>
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2057536839831582"
+  crossorigin="anonymous"></script>
+
+<title>Shaheen Tools — 3,000 Free Tools & Home Workout Coach</title>
 
 <style>
 :root{
   --bg:#070b18;
   --bg2:#0b1122;
-  --card:#10182c;
-  --card2:#0d1527;
-  --line:#24304a;
+  --card:#0d1528;
+  --card2:#111b32;
+  --line:#23304b;
   --text:#f5f7ff;
-  --muted:#8e9ab5;
-  --muted2:#68748f;
-  --purple:#8b5cf6;
-  --purple2:#6d3df2;
-  --blue:#4da3ff;
-  --green:#39d98a;
-  --yellow:#ffd166;
-  --red:#ff6b81;
+  --muted:#99a5bd;
+  --accent:#8b5cf6;
+  --accent2:#5ee7ff;
+  --good:#35d399;
+  --warn:#fbbf24;
+  --danger:#fb7185;
   --shadow:0 20px 60px rgba(0,0,0,.32);
-  --radius:24px;
-  --nav-h:78px;
-  --header-h:82px;
+  --radius:22px;
+  --nav-h:76px;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
 body{
   margin:0;
+  min-height:100vh;
   background:
-    radial-gradient(circle at 20% -10%,rgba(139,92,246,.17),transparent 32%),
-    radial-gradient(circle at 100% 10%,rgba(77,163,255,.09),transparent 30%),
+    radial-gradient(circle at 15% -10%,rgba(139,92,246,.16),transparent 32%),
+    radial-gradient(circle at 90% 0%,rgba(94,231,255,.09),transparent 30%),
     var(--bg);
   color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img,video{
+  max-width:100%;
+}
 
 .app{
   min-height:100vh;
-  padding-bottom:calc(var(--nav-h) + 30px + env(safe-area-inset-bottom));
+  padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom));
 }
 
-.header{
+/* ---------- HEADER ---------- */
+
+.topbar{
   position:sticky;
   top:0;
   z-index:50;
-  height:var(--header-h);
-  display:flex;
+  min-height:88px;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:14px;
   align-items:center;
-  gap:12px;
-  padding:12px 18px;
-  background:rgba(7,11,24,.91);
+  padding:14px 18px;
+  background:rgba(7,11,24,.94);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .brand{
-  width:56px;
-  height:56px;
-  flex:0 0 56px;
-  border-radius:18px;
+  width:64px;
+  height:64px;
+  border-radius:20px;
   display:grid;
   place-items:center;
-  font-size:29px;
+  font-size:34px;
   font-weight:900;
-  color:#080b15;
-  background:linear-gradient(145deg,#b18cff,#7134ee);
-  box-shadow:0 12px 35px rgba(139,92,246,.32);
+  color:#050713;
+  background:linear-gradient(145deg,#c4a1ff,#7138f2);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.5),
+    0 12px 30px rgba(124,58,237,.25);
 }
 
-.search{
-  height:56px;
-  flex:1;
+.searchbox{
   min-width:0;
+  height:58px;
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   padding:0 18px;
   border:1px solid var(--line);
-  border-radius:20px;
-  background:#0b1222;
+  background:#0b1224;
+  border-radius:30px;
 }
 
-.search span{font-size:24px;color:#9ba7c2}
-.search input{
+.searchbox span{
+  font-size:24px;
+  color:var(--muted);
+}
+
+.searchbox input{
+  min-width:0;
   width:100%;
   border:0;
   outline:0;
@@ -108,49 +136,71 @@ a{color:inherit;text-decoration:none}
   color:var(--text);
   font-size:18px;
 }
-.search input::placeholder{color:#69758e}
 
-.icon-btn{
-  width:56px;
-  height:56px;
+.searchbox input::placeholder{
+  color:#77839b;
+}
+
+.iconbtn{
+  width:58px;
+  height:58px;
   border:1px solid var(--line);
   border-radius:20px;
-  background:#0b1222;
-  color:#dfe5f5;
-  display:grid;
-  place-items:center;
-  font-size:22px;
+  background:#0c1427;
+  color:var(--text);
 }
+
+/* ---------- MAIN ---------- */
 
 main{
   width:min(1180px,100%);
   margin:auto;
-  padding:20px 18px 40px;
+  padding:22px 18px;
 }
 
-.page{display:none}
-.page.active{display:block}
+.view{
+  display:none;
+}
+
+.view.active{
+  display:block;
+}
 
 .hero{
-  padding:28px 0 12px;
+  padding:24px 0 12px;
 }
+
 .hero h1{
   margin:0;
-  font-size:clamp(32px,7vw,62px);
+  font-size:clamp(32px,7vw,60px);
   line-height:1.02;
-  letter-spacing:-2px;
+  letter-spacing:-.04em;
 }
-.gradient{
-  background:linear-gradient(90deg,#fff,#b99cff 55%,#69b7ff);
+
+.hero p{
+  max-width:760px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:17px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,#fff,#b9a0ff,#68e9ff);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
-.hero p{
-  color:var(--muted);
-  max-width:720px;
-  font-size:17px;
-  line-height:1.7;
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
 }
 
 .card{
@@ -159,1290 +209,1462 @@ main{
     var(--card);
   border:1px solid var(--line);
   border-radius:var(--radius);
+  padding:20px;
   box-shadow:var(--shadow);
 }
 
-.hero-card{
-  padding:22px;
-  margin:18px 0;
+.card h2,.card h3{
+  margin-top:0;
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+.muted{
+  color:var(--muted);
 }
-.stat{
-  padding:18px;
+
+.small{
+  font-size:13px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#141e35;
   border:1px solid var(--line);
-  border-radius:18px;
-  background:#0c1426;
+  color:#bdc7da;
+  font-size:12px;
 }
-.stat strong{
-  display:block;
-  font-size:25px;
-}
-.stat small{color:var(--muted)}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:15px;
-  margin:30px 0 14px;
-}
-.section-head h2{margin:0;font-size:25px}
-.section-head p{margin:4px 0 0;color:var(--muted)}
 
 .btn{
   min-height:46px;
-  border:0;
-  border-radius:15px;
   padding:0 18px;
-  background:#151f36;
-  color:#fff;
   border:1px solid var(--line);
-  font-weight:800;
+  border-radius:15px;
+  color:var(--text);
+  background:#111b31;
+  font-weight:750;
 }
-.btn.primary{
-  background:linear-gradient(135deg,var(--purple),#6b38e9);
-  border-color:transparent;
-  box-shadow:0 10px 25px rgba(139,92,246,.25);
-}
-.btn.success{background:#123d2c;border-color:#236d4e;color:#8dffc1}
-.btn.danger{background:#351823;border-color:#633040;color:#ff9cad}
-.btn:disabled{opacity:.5;cursor:not-allowed}
 
-.quick-grid{
+.btn.primary{
+  background:linear-gradient(135deg,#9b62ff,#6738e8);
+  border-color:transparent;
+}
+
+.btn.good{
+  background:#103d31;
+  border-color:#1b765b;
+}
+
+.btn.danger{
+  background:#321923;
+  border-color:#63313e;
+  color:#ff9caf;
+}
+
+.btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ---------- HOME ---------- */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:18px 0;
+}
+
+.stat{
+  padding:18px;
+  border-radius:20px;
+  background:#0c1427;
+  border:1px solid var(--line);
+}
+
+.stat strong{
+  display:block;
+  font-size:28px;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.quick{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:12px;
 }
-.quick{
-  padding:20px;
-  border-radius:20px;
-  border:1px solid var(--line);
-  background:#0d1528;
-}
-.quick b{display:block;margin-bottom:6px}
-.quick span{font-size:13px;color:var(--muted)}
 
-.ad-space{
-  min-height:130px;
-  margin:26px 0;
-  padding:18px;
+.quick button{
+  min-height:110px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#0d162b;
+  color:var(--text);
+  padding:15px;
+  text-align:left;
+}
+
+.quick b{
+  display:block;
+  margin-top:8px;
+}
+
+.ad-slot{
+  margin:24px 0;
+  min-height:120px;
   display:grid;
   place-items:center;
-  border:1px dashed #33415f;
-  border-radius:20px;
-  background:#090f1e;
-  color:#71809d;
+  border:1px dashed #34415f;
+  border-radius:18px;
+  background:#0a1120;
+  color:#74819a;
+  font-size:12px;
   text-align:center;
 }
-.ad-space small{
-  display:block;
-  margin-bottom:8px;
-  color:#8792aa;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
 
-/* tools */
-.tool-controls{
+/*
+  Ads are intentionally NOT placed:
+  - over bottom navigation
+  - inside workout player
+  - beside workout controls
+  - over tool controls
+  - in popups
+*/
+
+/* ---------- TOOLS ---------- */
+
+.tool-toolbar{
   position:sticky;
-  top:var(--header-h);
+  top:88px;
   z-index:20;
   padding:12px 0;
   background:rgba(7,11,24,.94);
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
 }
+
 .chips{
   display:flex;
   gap:8px;
   overflow-x:auto;
-  scrollbar-width:none;
   padding-bottom:3px;
+  scrollbar-width:none;
 }
-.chips::-webkit-scrollbar{display:none}
+
+.chips::-webkit-scrollbar{
+  display:none;
+}
+
 .chip{
   flex:0 0 auto;
-  padding:10px 14px;
-  border-radius:999px;
   border:1px solid var(--line);
-  background:#0c1426;
-  color:#9ca8c0;
-  font-weight:700;
+  background:#0d162b;
+  color:#b9c3d8;
+  border-radius:999px;
+  padding:9px 14px;
 }
+
 .chip.active{
-  background:#7c45ee;
-  color:white;
-  border-color:#a17cff;
+  color:#fff;
+  background:#7044e8;
+  border-color:#8d67ef;
 }
 
 .tool-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
 }
-.tool{
+
+.tool-card{
   min-width:0;
-  padding:18px;
+  padding:17px;
   border:1px solid var(--line);
-  border-radius:21px;
-  background:#0e1629;
-  transition:.2s;
+  background:#0c1427;
+  border-radius:19px;
 }
-.tool:hover{
-  transform:translateY(-2px);
-  border-color:#47587e;
+
+.tool-card h3{
+  margin:10px 0 7px;
+  font-size:16px;
 }
-.tool-top{
-  display:flex;
-  justify-content:space-between;
-  gap:8px;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  width:max-content;
-  padding:5px 9px;
-  border-radius:999px;
-  background:#18223a;
-  color:#aeb9d0;
-  font-size:11px;
-  font-weight:800;
-}
-.tool h3{
-  margin:12px 0 7px;
-  font-size:17px;
-}
-.tool p{
+
+.tool-card p{
   min-height:42px;
-  margin:0 0 15px;
   color:var(--muted);
+  font-size:13px;
   line-height:1.5;
+}
+
+.tool-card .tool-actions{
+  display:flex;
+  gap:8px;
+  margin-top:13px;
+}
+
+.tool-card .btn{
+  flex:1;
+  min-height:40px;
+  padding:0 10px;
   font-size:13px;
 }
-.tool-actions{
-  display:flex;
-  gap:8px;
-}
-.tool-actions .btn{flex:1}
 
-.favorite{
-  border:0;
-  background:transparent;
-  color:#697792;
-  font-size:20px;
-}
-.favorite.on{color:#ffd166}
+/* ---------- MODAL ---------- */
 
-/* modal */
 .modal{
   position:fixed;
   inset:0;
   z-index:100;
   display:none;
-  align-items:center;
+  align-items:flex-end;
   justify-content:center;
-  padding:18px;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(12px);
-}
-.modal.show{display:flex}
-.modal-card{
-  width:min(720px,100%);
-  max-height:min(90vh,850px);
-  overflow:auto;
-  border:1px solid var(--line);
-  border-radius:28px;
-  background:#0a1020;
-  box-shadow:0 35px 100px rgba(0,0,0,.55);
-  padding:22px;
-}
-.modal-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-.modal-head h2{margin:0}
-.close{
-  width:42px;
-  height:42px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:#111b31;
-  color:#fff;
+  padding:12px;
+  background:rgba(0,0,0,.68);
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
+.modal.open{
+  display:flex;
 }
+
+.sheet{
+  width:min(820px,100%);
+  max-height:92vh;
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:28px 28px 16px 16px;
+  background:#0a1120;
+  box-shadow:0 -30px 100px rgba(0,0,0,.55);
+  padding:20px;
+}
+
+.sheet-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.field{
+  margin:14px 0;
+}
+
 .field label{
   display:block;
-  color:#aeb9d0;
+  color:#b8c3d7;
   font-size:13px;
   margin-bottom:7px;
 }
-.field input,.field select,.field textarea{
+
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select{
   width:100%;
+  min-height:48px;
   border:1px solid var(--line);
-  outline:none;
-  border-radius:15px;
-  background:#0c1426;
+  outline:0;
+  border-radius:14px;
+  padding:12px;
+  background:#0d172b;
   color:#fff;
-  padding:13px;
 }
-.field textarea{min-height:180px;resize:vertical}
+
+textarea{
+  min-height:170px;
+  resize:vertical;
+}
+
 .output{
-  margin-top:15px;
-  padding:15px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:#070d1a;
+  min-height:120px;
   white-space:pre-wrap;
-  word-break:break-word;
-  min-height:90px;
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#060b17;
+  padding:15px;
+  color:#dce4f6;
 }
 
-/* Gym */
-.gym-dashboard{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:15px;
-}
-.streak-card{
-  padding:22px;
-}
-.streak-number{
-  font-size:48px;
-  font-weight:950;
-}
-.muted{color:var(--muted)}
+/* ---------- GYM ---------- */
 
-.gym-player{
-  padding:16px;
-  margin-top:18px;
-}
-.exercise-title{
-  font-size:clamp(24px,5vw,38px);
-  margin:4px 0;
-}
-.player-meta{
+.gym-top{
   display:flex;
   justify-content:space-between;
-  color:var(--muted);
-  font-size:13px;
-}
-.progress{
-  height:9px;
-  border-radius:999px;
-  overflow:hidden;
-  background:#202c45;
-  margin:14px 0;
-}
-.progress i{
-  display:block;
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#8b5cf6,#45b7ff);
-  transition:.3s;
+  align-items:flex-start;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
-.trainer-stage{
-  min-height:360px;
+.streak{
+  padding:12px 15px;
+  border-radius:16px;
+  background:#17142d;
+  border:1px solid #41346f;
+}
+
+.gym-player{
+  margin-top:18px;
+  padding:14px;
+  border-radius:28px;
+  background:#070c19;
+  border:1px solid var(--line);
+}
+
+.demo{
+  position:relative;
+  min-height:390px;
   display:grid;
   place-items:center;
-  position:relative;
   overflow:hidden;
-  border:1px solid #283651;
-  border-radius:25px;
+  border-radius:22px;
   background:
-    radial-gradient(circle at 50% 35%,rgba(139,92,246,.12),transparent 30%),
-    linear-gradient(180deg,#0b1222,#080d19);
+    radial-gradient(circle at 50% 20%,rgba(139,92,246,.19),transparent 35%),
+    linear-gradient(180deg,#0d172d,#070b17);
 }
 
-.trainer{
-  width:min(300px,75vw);
-  height:330px;
-}
-.trainer .body{
-  stroke:#b795ff;
-  stroke-width:12;
-  stroke-linecap:round;
-  fill:none;
-}
-.trainer .head{
-  fill:#b795ff;
-}
-.trainer .joint{
-  fill:#fff;
+.demo-label{
+  position:absolute;
+  left:16px;
+  top:16px;
+  z-index:2;
 }
 
-.trainer[data-ex="march"] .leftLeg,
-.trainer[data-ex="march"] .rightLeg,
-.trainer[data-ex="march"] .leftArm,
-.trainer[data-ex="march"] .rightArm{
-  animation:walk 1.2s ease-in-out infinite alternate;
+.demo-next{
+  position:absolute;
+  right:16px;
+  top:16px;
+  z-index:2;
+  text-align:right;
+}
+
+.trainer-svg{
+  width:min(310px,75vw);
+  height:auto;
+  overflow:visible;
+}
+
+.trainer-part{
   transform-box:fill-box;
-  transform-origin:top center;
-}
-@keyframes walk{
-  from{transform:rotate(-14deg)}
-  to{transform:rotate(14deg)}
+  transform-origin:50% 0%;
 }
 
-.trainer[data-ex="squat"] .torso,
-.trainer[data-ex="squat"] .legs{
-  animation:squat 2.1s ease-in-out infinite;
-  transform-box:fill-box;
-  transform-origin:center bottom;
-}
-@keyframes squat{
-  0%,100%{transform:translateY(0) scaleY(1)}
-  50%{transform:translateY(28px) scaleY(.88)}
+.head{
+  fill:#f0c4a5;
 }
 
-.trainer[data-ex="sidestep"] .body-group{
-  animation:side 1.3s ease-in-out infinite alternate;
-}
-@keyframes side{
-  from{transform:translateX(-18px)}
-  to{transform:translateX(18px)}
+.skin{
+  stroke:#f0c4a5;
 }
 
-.trainer[data-ex="reach"] .leftArm,
-.trainer[data-ex="reach"] .rightArm{
-  animation:reach 1.5s ease-in-out infinite alternate;
-  transform-box:fill-box;
-  transform-origin:top center;
-}
-@keyframes reach{
-  from{transform:rotate(15deg)}
-  to{transform:rotate(-42deg)}
+.shirt{
+  stroke:#7c4dff;
 }
 
-.trainer[data-ex="hinge"] .body-group{
-  animation:hinge 1.8s ease-in-out infinite alternate;
-  transform-box:fill-box;
-  transform-origin:hip;
-}
-@keyframes hinge{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(28deg)}
+.pants{
+  stroke:#33466f;
 }
 
-.trainer[data-ex="rest"] .body-group{
-  animation:breathe 2.6s ease-in-out infinite alternate;
-}
-@keyframes breathe{
-  from{transform:scale(1)}
-  to{transform:scale(1.015)}
+.joint{
+  fill:#f0c4a5;
 }
 
-.instruction{
-  padding:19px;
-  margin-top:14px;
+.floor{
+  stroke:#2c3b5c;
+  stroke-width:4;
+}
+
+.exercise-squat .torso{
+  transform:translateY(35px) rotate(8deg);
+}
+
+.exercise-squat .left-arm{
+  transform:rotate(28deg);
+}
+
+.exercise-squat .right-arm{
+  transform:rotate(-28deg);
+}
+
+.exercise-squat .left-leg{
+  transform:rotate(42deg);
+}
+
+.exercise-squat .right-leg{
+  transform:rotate(-42deg);
+}
+
+.exercise-march .left-leg{
+  transform:rotate(26deg);
+}
+
+.exercise-march .right-leg{
+  transform:rotate(-26deg);
+}
+
+.exercise-march .left-arm{
+  transform:rotate(-30deg);
+}
+
+.exercise-march .right-arm{
+  transform:rotate(30deg);
+}
+
+.exercise-step .left-leg{
+  transform:rotate(34deg);
+}
+
+.exercise-step .right-leg{
+  transform:rotate(-10deg);
+}
+
+.exercise-step .left-arm{
+  transform:rotate(-22deg);
+}
+
+.exercise-step .right-arm{
+  transform:rotate(22deg);
+}
+
+.exercise-reach .left-arm{
+  transform:rotate(-48deg);
+}
+
+.exercise-reach .right-arm{
+  transform:rotate(48deg);
+}
+
+.exercise-rest .trainer-body{
+  transform:translateY(5px);
+}
+
+.anim{
+  animation:trainerPulse 1.6s ease-in-out infinite alternate;
+}
+
+.exercise-rest .anim{
+  animation:none;
+}
+
+@keyframes trainerPulse{
+  from{transform:translateY(0)}
+  to{transform:translateY(4px)}
+}
+
+.instructions{
+  margin-top:15px;
+  padding:18px;
   border:1px solid var(--line);
   border-radius:20px;
-  background:#0c1426;
+  background:#0c1427;
 }
-.instruction h3{margin:0 0 8px}
-.instruction p{margin:6px 0;color:#aab5ca;line-height:1.6}
+
+.instructions h2{
+  margin:0 0 8px;
+  font-size:24px;
+}
+
+.instructions .main-instruction{
+  font-size:17px;
+  line-height:1.55;
+  color:#e9edfa;
+}
+
+.cue{
+  margin-top:10px;
+  padding:11px 13px;
+  border-radius:12px;
+  background:#111b32;
+  color:#b9c5dc;
+  font-size:13px;
+}
+
+.progress{
+  height:9px;
+  background:#202d49;
+  border-radius:999px;
+  overflow:hidden;
+  margin:17px 0;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  width:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#8b5cf6,#50d8ff);
+  transition:width .25s linear;
+}
 
 .timer{
   text-align:center;
   font-size:64px;
-  font-weight:950;
-  letter-spacing:-3px;
-  margin:12px 0;
+  font-weight:900;
+  letter-spacing:-.05em;
 }
+
 .player-stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
-.pstat{
-  padding:15px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  text-align:center;
-  background:#0b1325;
-}
-.pstat strong{display:block;font-size:25px}
-.pstat span{font-size:12px;color:var(--muted)}
 
-.player-controls{
+.player-stat{
+  padding:14px;
+  border-radius:17px;
+  background:#0c1427;
+  border:1px solid var(--line);
+}
+
+.player-stat strong{
+  display:block;
+  font-size:24px;
+}
+
+.player-stat span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.controls{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
-  margin-top:13px;
+  margin-top:14px;
 }
 
-/* camera */
-.camera-card{padding:18px;margin-top:18px}
-.camera-view{
-  position:relative;
-  border-radius:22px;
-  overflow:hidden;
-  background:#03060d;
-  aspect-ratio:4/3;
-  border:1px solid #2c3955;
+.controls .btn{
+  min-height:54px;
 }
-.camera-view video{
+
+.camera{
+  margin-top:18px;
+}
+
+.camera-stage{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  background:#02050b;
+  aspect-ratio:16/10;
+  border:1px solid var(--line);
+}
+
+.camera-stage video{
   width:100%;
   height:100%;
   object-fit:cover;
-  transform:scaleX(-1);
+  display:block;
 }
-.camera-view canvas{
+
+.camera-stage canvas{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
-  pointer-events:none;
 }
-.frame{
+
+.frame-guide{
   position:absolute;
-  left:22%;
-  top:7%;
-  width:56%;
-  height:86%;
-  border:2px dashed rgba(255,255,255,.65);
-  border-radius:25px;
+  inset:12% 26% 10%;
+  border:2px dashed rgba(255,255,255,.7);
+  border-radius:25% 25% 20% 20%;
   pointer-events:none;
 }
+
 .camera-status{
+  margin-top:12px;
+  padding:13px;
+  border-radius:14px;
+  background:#0c1427;
+  border:1px solid var(--line);
+}
+
+.status-row{
   display:flex;
   gap:8px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-.status{
-  padding:9px 12px;
-  border-radius:999px;
-  background:#162038;
-  color:#a9b5cd;
-  font-size:12px;
-  font-weight:800;
-}
-.status.ok{background:#123c2b;color:#8dffc1}
-.status.warn{background:#3a2e12;color:#ffd978}
-.status.bad{background:#3c1722;color:#ff9eae}
-
-/* info */
-.info-card{
-  padding:22px;
-  margin:15px 0;
-}
-.info-card h2{margin-top:0}
-.info-card p,.info-card li{
-  color:#aab5ca;
-  line-height:1.75;
+  align-items:center;
+  margin:7px 0;
+  font-size:13px;
 }
 
-/* bottom navigation */
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#66738c;
+}
+
+.dot.good{
+  background:var(--good);
+  box-shadow:0 0 12px rgba(53,211,153,.5);
+}
+
+.dot.warn{
+  background:var(--warn);
+}
+
+/* ---------- INFO ---------- */
+
+.info-section{
+  margin-bottom:16px;
+}
+
+.info-section p,
+.info-section li{
+  color:#aeb9ce;
+  line-height:1.7;
+}
+
+.info-section ul{
+  padding-left:20px;
+}
+
+/* ---------- BOTTOM NAV ---------- */
+
 .bottom-nav{
   position:fixed;
-  z-index:80;
   left:0;
   right:0;
   bottom:0;
+  z-index:70;
   min-height:var(--nav-h);
-  padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+  padding:
+    7px
+    10px
+    calc(7px + env(safe-area-inset-bottom));
+  background:rgba(8,12,25,.97);
+  backdrop-filter:blur(20px);
+  border-top:1px solid rgba(255,255,255,.08);
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:5px;
-  background:rgba(7,11,24,.96);
-  backdrop-filter:blur(20px);
-  border-top:1px solid #202b44;
 }
+
 .nav-btn{
+  min-width:0;
   border:0;
-  border-radius:18px;
   background:transparent;
-  color:#74819b;
+  color:#7e8ba5;
+  border-radius:18px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
-  gap:3px;
-  min-width:0;
+  justify-content:center;
+  gap:4px;
+  font-size:11px;
+  font-weight:700;
 }
-.nav-btn span:first-child{font-size:21px}
-.nav-btn span:last-child{font-size:10px;font-weight:800}
+
+.nav-btn span:first-child{
+  font-size:23px;
+}
+
 .nav-btn.active{
   color:#fff;
-  background:#131d35;
+  background:#111b35;
 }
-.nav-btn.gym-active{
-  background:linear-gradient(145deg,#7b44eb,#5225bd);
-  color:#fff;
-}
+
+/* ---------- TOAST ---------- */
 
 .toast{
   position:fixed;
   left:50%;
-  bottom:calc(var(--nav-h) + 25px + env(safe-area-inset-bottom));
-  transform:translate(-50%,20px);
+  bottom:calc(var(--nav-h) + 22px + env(safe-area-inset-bottom));
   z-index:200;
-  background:#f5f7ff;
-  color:#080b14;
-  padding:12px 17px;
-  border-radius:999px;
-  font-weight:800;
+  transform:translate(-50%,20px);
   opacity:0;
   pointer-events:none;
-  transition:.25s;
-}
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-.empty{
-  padding:40px 20px;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#131d34;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  transition:.25s ease;
   text-align:center;
-  color:var(--muted);
+  max-width:min(90vw,520px);
 }
 
-@media(max-width:900px){
-  .tool-grid{grid-template-columns:repeat(2,1fr)}
-  .quick-grid{grid-template-columns:repeat(2,1fr)}
-  .gym-dashboard{grid-template-columns:1fr}
+.toast.show{
+  transform:translate(-50%,0);
+  opacity:1;
 }
 
-@media(max-width:620px){
-  :root{--header-h:78px}
-  .header{padding:10px 12px}
-  .brand{width:50px;height:50px;flex-basis:50px}
-  .search{height:50px;border-radius:18px}
-  .search input{font-size:16px}
-  .icon-btn{width:50px;height:50px}
-  main{padding:14px 12px 30px}
-  .tool-grid{grid-template-columns:1fr}
-  .quick-grid{grid-template-columns:1fr 1fr}
-  .stats{grid-template-columns:1fr 1fr 1fr}
-  .form-grid{grid-template-columns:1fr}
-  .trainer-stage{min-height:320px}
-  .timer{font-size:54px}
-  .player-controls{grid-template-columns:1fr 1fr}
-  .section-head{align-items:start;flex-direction:column}
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:850px){
+  .tool-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .grid3{
+    grid-template-columns:1fr;
+  }
 }
 
-@media(max-width:400px){
-  .stats{grid-template-columns:1fr}
-  .quick-grid{grid-template-columns:1fr}
+@media(max-width:650px){
+  .topbar{
+    grid-template-columns:52px minmax(0,1fr) 52px;
+    min-height:78px;
+    padding:10px 12px;
+    gap:8px;
+  }
+
+  .brand{
+    width:52px;
+    height:52px;
+    border-radius:17px;
+    font-size:28px;
+  }
+
+  .searchbox{
+    height:52px;
+    padding:0 12px;
+  }
+
+  .searchbox input{
+    font-size:15px;
+  }
+
+  .iconbtn{
+    width:52px;
+    height:52px;
+  }
+
+  main{
+    padding:17px 12px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .tool-toolbar{
+    top:78px;
+  }
+
+  .tool-grid{
+    grid-template-columns:1fr;
+  }
+
+  .timer{
+    font-size:52px;
+  }
+
+  .demo{
+    min-height:340px;
+  }
+
+  .player-stats{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <div class="app">
 
-<header class="header">
-  <button class="icon-btn" id="backBtn" aria-label="Back" style="display:none">←</button>
-  <div class="brand">S</div>
+<header class="topbar">
+  <button class="brand" aria-label="Shaheen Tools home" onclick="go('home')">S</button>
 
-  <label class="search">
+  <label class="searchbox">
     <span>⌕</span>
-    <input id="globalSearch" autocomplete="off" placeholder="Search 3,000 tools...">
+    <input id="globalSearch" type="search"
+      placeholder="Search 3,000 tools..."
+      autocomplete="off">
   </label>
 
-  <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+  <button class="iconbtn" id="themeBtn" aria-label="Toggle theme">☼</button>
 </header>
 
 <main>
 
-<!-- HOME -->
-<section class="page active" id="homePage">
+<!-- ================= HOME ================= -->
+
+<section id="home" class="view active">
+
   <div class="hero">
-    <h1>Useful tools.<br><span class="gradient">Better everyday.</span></h1>
+    <span class="badge">⚡ Browser-first • Free • Mobile friendly</span>
+    <h1>
+      One place for
+      <span class="gradient-text">3,000 useful tools.</span>
+    </h1>
     <p>
-      Shaheen brings practical browser utilities, creator tools, learning helpers
-      and safe movement coaching into one clean mobile-first workspace.
+      Text, developer, calculators, converters, image utilities,
+      productivity helpers and a safe home-workout coach.
+      Most everyday tools process data locally in your browser.
     </p>
   </div>
 
-  <div class="card hero-card">
-    <div class="stats">
-      <div class="stat">
-        <strong id="toolCount">3,000+</strong>
-        <small>tool entries</small>
-      </div>
-      <div class="stat">
-        <strong id="homeStreak">0</strong>
-        <small>day movement streak</small>
-      </div>
-      <div class="stat">
-        <strong>30+</strong>
-        <small>creator utilities</small>
-      </div>
+  <div class="stats">
+    <div class="stat">
+      <strong id="toolCountStat">3,000</strong>
+      <span>tool entries</span>
+    </div>
+    <div class="stat">
+      <strong id="favCount">0</strong>
+      <span>favorites</span>
+    </div>
+    <div class="stat">
+      <strong id="streakHome">0</strong>
+      <span>workout streak</span>
+    </div>
+    <div class="stat">
+      <strong>100</strong>
+      <span>core engines</span>
     </div>
   </div>
 
-  <div class="section-head">
+  <div class="quick">
+    <button onclick="go('tools');setCategory('Text')">
+      🔤
+      <b>Text tools</b>
+      <span class="muted">Count, clean, transform</span>
+    </button>
+
+    <button onclick="go('tools');setCategory('Developer')">
+      &lt;/&gt;
+      <b>Developer tools</b>
+      <span class="muted">JSON, Base64, URL, regex</span>
+    </button>
+
+    <button onclick="go('tools');setCategory('Images')">
+      🖼️
+      <b>Image tools</b>
+      <span class="muted">Resize, convert, filter</span>
+    </button>
+
+    <button onclick="go('gym')">
+      🏃
+      <b>Gym 2026</b>
+      <span class="muted">Guided home movement</span>
+    </button>
+  </div>
+
+  <div class="ad-slot">
     <div>
-      <h2>Quick tools</h2>
-      <p>Common tasks without leaving the browser.</p>
-    </div>
-    <button class="btn" onclick="go('tools')">View all</button>
-  </div>
-
-  <div class="quick-grid">
-    <button class="quick" onclick="openToolById('word-counter')">
-      <b>🔤 Word Counter</b><span>Words, characters and lines</span>
-    </button>
-    <button class="quick" onclick="openToolById('json-formatter')">
-      <b>🧩 JSON Formatter</b><span>Format and validate JSON</span>
-    </button>
-    <button class="quick" onclick="openToolById('percentage')">
-      <b>％ Percentage</b><span>Fast percentage calculations</span>
-    </button>
-    <button class="quick" onclick="openToolById('image-resizer')">
-      <b>🖼 Image Resizer</b><span>Resize images locally</span>
-    </button>
-  </div>
-
-  <div class="section-head">
-    <div>
-      <h2>Gym 2026</h2>
-      <p>Simple movement coaching with an animated trainer.</p>
-    </div>
-  </div>
-
-  <div class="card hero-card">
-    <div style="display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap">
-      <div>
-        <h2 style="margin:0 0 7px">Move safely. Stay consistent.</h2>
-        <p style="margin:0" class="muted">
-          Exercise-specific animation, voice coaching, automatic transitions and optional camera assistance.
-        </p>
+      <strong>Advertisement</strong><br>
+      Reserved content area — never overlaps navigation or controls.
+      <div class="small">
+        Add your real responsive AdSense ad-unit ID before enabling this slot.
       </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <span class="badge">Privacy-first</span>
+      <h2>Useful browser utilities</h2>
+      <p class="muted">
+        Many tools use standard browser APIs, so text and local files can
+        stay on the device instead of being uploaded.
+      </p>
+      <button class="btn primary" onclick="go('tools')">Explore 3,000 tools</button>
+    </article>
+
+    <article class="card">
+      <span class="badge">Gym 2026</span>
+      <h2>See exactly what to do</h2>
+      <p class="muted">
+        The workout player shows the movement, written instruction,
+        current timer, next exercise, progress and voice cue.
+      </p>
       <button class="btn primary" onclick="go('gym')">Open Gym</button>
-    </div>
-  </div>
-
-  <div class="ad-space">
-    <div>
-      <small>Advertisement</small>
-      Reserved content area — never placed over navigation or active workout controls.
-    </div>
-  </div>
-
-  <div class="section-head">
-    <div>
-      <h2>Why Shaheen?</h2>
-      <p>Designed around clarity instead of clutter.</p>
-    </div>
-  </div>
-
-  <div class="tool-grid">
-    <article class="tool">
-      <span class="badge">Privacy</span>
-      <h3>Browser-first utilities</h3>
-      <p>Many tools process data locally in your browser instead of sending it to a server.</p>
-    </article>
-    <article class="tool">
-      <span class="badge">Gym</span>
-      <h3>Exercise-specific coaching</h3>
-      <p>Each movement has its own trainer motion, instruction, cue and timing.</p>
-    </article>
-    <article class="tool">
-      <span class="badge">Learning</span>
-      <h3>Youth-friendly modes</h3>
-      <p>Movement and learning features avoid appearance-focused goals and extreme challenges.</p>
     </article>
   </div>
+
 </section>
 
-<!-- TOOLS -->
-<section class="page" id="toolsPage">
+<!-- ================= TOOLS ================= -->
+
+<section id="tools" class="view">
+
   <div class="hero">
-    <h1>3,000+ <span class="gradient">Tools</span></h1>
-    <p>Everyday utilities, power tools, creator utilities and learning helpers.</p>
+    <span class="badge">3,000 functional entries</span>
+    <h1>Tools that actually run.</h1>
+    <p>
+      Search by task, select a category and open the tool.
+      No fake “coming soon” buttons.
+    </p>
   </div>
 
-  <div class="tool-controls">
+  <div class="tool-toolbar">
     <div class="chips" id="categoryChips"></div>
   </div>
 
-  <div id="toolGrid" class="tool-grid"></div>
-  <div id="toolEmpty" class="empty" style="display:none">
-    No tools found. Try another search or category.
+  <div style="height:12px"></div>
+
+  <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px">
+    <span class="muted" id="toolResultsText">Showing tools</span>
+    <select id="toolSort" style="width:auto;min-width:130px">
+      <option value="popular">Popular</option>
+      <option value="az">A–Z</option>
+      <option value="new">Newest</option>
+    </select>
   </div>
+
+  <div class="tool-grid" id="toolGrid"></div>
+
 </section>
 
-<!-- GYM -->
-<section class="page" id="gymPage">
-  <div class="hero">
-    <h1>Gym <span class="gradient">2026</span></h1>
-    <p>
-      A calm home-movement player with exercise-specific animation,
-      automatic timing, voice coaching and optional camera guidance.
-    </p>
+<!-- ================= GYM ================= -->
+
+<section id="gym" class="view">
+
+  <div class="gym-top">
+    <div>
+      <span class="badge">GYM 2026</span>
+      <h1 style="margin:10px 0 5px">Home Workout Coach</h1>
+      <p class="muted">
+        Simple movements, clear instructions and automatic transitions.
+      </p>
+    </div>
+
+    <div class="streak">
+      🔥 <strong id="gymStreak">0</strong> day streak
+    </div>
   </div>
 
-  <div class="gym-dashboard">
-    <div class="card streak-card">
-      <div class="muted">🔥 Your movement streak</div>
-      <div class="streak-number"><span id="streakValue">0</span> days</div>
-      <div class="muted" id="streakMessage">Complete a session to start your streak.</div>
-      <br>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+      <div>
+        <strong id="profileStatus">Personal setup</strong>
+        <div class="muted small">
+          Your setup is saved only on this device.
+        </div>
+      </div>
       <button class="btn" onclick="openProfile()">Edit setup</button>
     </div>
-
-    <div class="card streak-card">
-      <div class="muted">Last session</div>
-      <h2 id="lastSession" style="margin:8px 0">Not yet</h2>
-      <div class="muted" id="historyCount">0 sessions completed</div>
-    </div>
   </div>
 
-  <div class="card gym-player">
-    <div class="player-meta">
-      <span id="exerciseLabel">Ready</span>
-      <span id="stepLabel">Step 0 / 8</span>
-    </div>
+  <div class="gym-player">
 
-    <h2 class="exercise-title" id="exerciseTitle">Your workout is ready</h2>
+    <div class="demo" id="demo">
+      <div class="demo-label badge" id="demoLabel">Ready</div>
+      <div class="demo-next muted small" id="demoNext"></div>
 
-    <div class="progress"><i id="workoutProgress"></i></div>
+      <svg class="trainer-svg" id="trainerSvg"
+           viewBox="0 0 300 500"
+           role="img"
+           aria-label="Animated exercise coach">
 
-    <div class="trainer-stage">
-      <svg class="trainer" id="trainer" data-ex="rest" viewBox="0 0 300 340" aria-label="Animated exercise trainer">
-        <g class="body-group">
+        <line class="floor" x1="35" y1="455" x2="265" y2="455"/>
 
-          <circle class="head" cx="150" cy="48" r="27"/>
+        <g class="trainer-body anim">
 
-          <path class="body torso"
-            d="M150 78 L150 175"/>
+          <circle class="head" cx="150" cy="82" r="31"/>
 
-          <path class="body leftArm"
-            d="M150 92 L105 145 L82 205"/>
+          <line class="shirt torso"
+                x1="150" y1="112"
+                x2="150" y2="250"
+                stroke-width="38"
+                stroke-linecap="round"/>
 
-          <path class="body rightArm"
-            d="M150 92 L195 145 L218 205"/>
+          <g class="left-arm trainer-part">
+            <line class="skin" x1="130" y1="130" x2="88" y2="205"
+                  stroke-width="19" stroke-linecap="round"/>
+            <circle class="joint" cx="88" cy="205" r="10"/>
+            <line class="skin" x1="88" y1="205" x2="72" y2="275"
+                  stroke-width="18" stroke-linecap="round"/>
+          </g>
 
-          <path class="body legs"
-            d="M150 175 L115 245 L98 320"/>
+          <g class="right-arm trainer-part">
+            <line class="skin" x1="170" y1="130" x2="212" y2="205"
+                  stroke-width="19" stroke-linecap="round"/>
+            <circle class="joint" cx="212" cy="205" r="10"/>
+            <line class="skin" x1="212" y1="205" x2="228" y2="275"
+                  stroke-width="18" stroke-linecap="round"/>
+          </g>
 
-          <path class="body legs"
-            d="M150 175 L185 245 L202 320"/>
+          <g class="left-leg trainer-part">
+            <line class="pants" x1="137" y1="244" x2="110" y2="350"
+                  stroke-width="28" stroke-linecap="round"/>
+            <circle class="joint" cx="110" cy="350" r="11"/>
+            <line class="pants" x1="110" y1="350" x2="83" y2="448"
+                  stroke-width="25" stroke-linecap="round"/>
+            <line class="skin" x1="83" y1="448" x2="50" y2="448"
+                  stroke-width="13" stroke-linecap="round"/>
+          </g>
 
-          <circle class="joint" cx="105" cy="145" r="7"/>
-          <circle class="joint" cx="195" cy="145" r="7"/>
-          <circle class="joint" cx="115" cy="245" r="7"/>
-          <circle class="joint" cx="185" cy="245" r="7"/>
+          <g class="right-leg trainer-part">
+            <line class="pants" x1="163" y1="244" x2="190" y2="350"
+                  stroke-width="28" stroke-linecap="round"/>
+            <circle class="joint" cx="190" cy="350" r="11"/>
+            <line class="pants" x1="190" y1="350" x2="217" y2="448"
+                  stroke-width="25" stroke-linecap="round"/>
+            <line class="skin" x1="217" y1="448" x2="250" y2="448"
+                  stroke-width="13" stroke-linecap="round"/>
+          </g>
 
         </g>
       </svg>
     </div>
 
-    <div class="instruction">
-      <h3 id="doTitle">WHAT TO DO</h3>
-      <p id="instructionText">Press Start when you're ready.</p>
-      <p id="coachCue"><strong>Coach:</strong> Keep movement easy and comfortable.</p>
-      <p class="muted">Next: <span id="nextExercise">Warm-up</span></p>
+    <div class="instructions">
+      <h2 id="exerciseName">Ready to start</h2>
+      <div class="main-instruction" id="exerciseInstruction">
+        Choose Start when you are comfortable and have enough room to move safely.
+      </div>
+      <div class="cue" id="exerciseCue">
+        Coach cue: Keep the movement comfortable. Stop if something hurts,
+        you feel dizzy, or you feel unusually unwell.
+      </div>
     </div>
 
-    <div class="timer" id="timer">00:00</div>
+    <div class="progress">
+      <span id="workoutProgress"></span>
+    </div>
+
+    <div class="timer" id="workoutTimer">00:30</div>
 
     <div class="player-stats">
-      <div class="pstat">
+      <div class="player-stat">
         <strong id="repValue">0</strong>
         <span>reps</span>
       </div>
-      <div class="pstat">
-        <strong id="stepValue">0</strong>
+      <div class="player-stat">
+        <strong id="stepValue">0/9</strong>
         <span>step</span>
       </div>
-      <div class="pstat">
+      <div class="player-stat">
         <strong id="sessionValue">00:00</strong>
         <span>session</span>
       </div>
     </div>
 
-    <div class="player-controls">
-      <button class="btn primary" id="startWorkoutBtn">Start</button>
-      <button class="btn" id="pauseWorkoutBtn" disabled>Pause</button>
-      <button class="btn" id="minusTenBtn">−10s</button>
-      <button class="btn" id="plusTenBtn">+10s</button>
-      <button class="btn" id="minusRepBtn">− rep</button>
-      <button class="btn" id="plusRepBtn">+ rep</button>
-      <button class="btn" id="speakBtn">Speak</button>
-      <button class="btn" id="focusBtn">Focus mode</button>
-      <button class="btn" id="nextBtn">Next</button>
-      <button class="btn danger" id="stopWorkoutBtn">Stop</button>
+    <div class="controls">
+      <button class="btn primary" id="startBtn" onclick="startWorkout()">Start</button>
+      <button class="btn" onclick="togglePause()">Pause</button>
+      <button class="btn" onclick="adjustTime(-10)">−10s</button>
+      <button class="btn" onclick="adjustTime(10)">+10s</button>
+      <button class="btn" onclick="adjustRep(-1)">− rep</button>
+      <button class="btn" onclick="adjustRep(1)">+ rep</button>
+      <button class="btn" onclick="nextExercise()">Next</button>
+      <button class="btn" onclick="speakCurrent()">Speak</button>
+      <button class="btn" onclick="toggleFocusMode()">Focus mode</button>
+      <button class="btn danger" onclick="stopWorkout()">Stop</button>
     </div>
+
   </div>
 
-  <div class="card camera-card">
-    <div class="section-head" style="margin-top:0">
+  <!-- CAMERA -->
+
+  <div class="card camera">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
       <div>
+        <span class="badge">Optional camera assistance</span>
         <h2>Camera setup</h2>
-        <p>Optional. The camera helps with framing and basic pose visibility.</p>
+        <p class="muted">
+          Live framing assistance helps you see whether your head and feet
+          are inside the camera view. It is not medical diagnosis.
+        </p>
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="setCameraView('front')">Front</button>
+        <button class="btn" onclick="setCameraView('side')">Side</button>
+        <button class="btn primary" onclick="startCamera()">Enable camera</button>
+        <button class="btn danger" onclick="stopCamera()">Stop</button>
       </div>
     </div>
 
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
-      <button class="btn primary" id="frontBtn">Front view</button>
-      <button class="btn" id="sideBtn">Side view</button>
-      <button class="btn" id="cameraStartBtn">Enable camera</button>
-      <button class="btn danger" id="cameraStopBtn">Stop camera</button>
-    </div>
-
-    <div class="camera-view">
+    <div class="camera-stage">
       <video id="cameraVideo" autoplay muted playsinline></video>
       <canvas id="poseCanvas"></canvas>
-      <div class="frame"></div>
+      <div class="frame-guide"></div>
     </div>
 
-    <div class="camera-status">
-      <span class="status" id="cameraPerson">Person: waiting</span>
-      <span class="status" id="cameraHead">Head: waiting</span>
-      <span class="status" id="cameraFeet">Feet: waiting</span>
-      <span class="status" id="cameraFrame">Framing: waiting</span>
-      <span class="status" id="cameraLight">Lighting: check</span>
+    <div class="camera-status" id="cameraStatus">
+      <div class="status-row">
+        <span class="dot" id="personDot"></span>
+        <span id="personText">Camera not started.</span>
+      </div>
+      <div class="status-row">
+        <span class="dot" id="frameDot"></span>
+        <span id="frameText">Keep your head and feet inside the guide.</span>
+      </div>
+      <div class="status-row">
+        <span class="dot" id="lightDot"></span>
+        <span id="lightText">Use a reasonably bright, even room.</span>
+      </div>
+      <div class="status-row">
+        <span class="dot" id="viewDot"></span>
+        <span id="viewText">Recommended view: Front.</span>
+      </div>
     </div>
+  </div>
 
-    <p class="muted" id="cameraMessage" style="line-height:1.6">
-      Stand far enough back for your full body to fit inside the dashed frame.
-      This is positioning assistance, not medical or diagnostic analysis.
+  <div class="card" style="margin-top:16px">
+    <h3>Safety</h3>
+    <p class="muted">
+      This is a general fitness and movement tool, not medical care.
+      Use comfortable movements, appropriate space and adult supervision
+      where appropriate. Stop if you experience pain, dizziness, faintness,
+      breathing trouble or another unusual symptom.
     </p>
   </div>
 
-  <div class="info-card card">
-    <h2>Safety</h2>
-    <p>
-      Keep movements comfortable. Stop if you feel pain, dizziness, faintness,
-      unusual shortness of breath, or feel unwell. Younger users should use
-      age-appropriate movement and appropriate adult supervision where needed.
-      Shaheen is general fitness software, not medical care.
-    </p>
-  </div>
 </section>
 
-<!-- INFO -->
-<section class="page" id="infoPage">
+<!-- ================= INFO ================= -->
+
+<section id="info" class="view">
+
   <div class="hero">
-    <h1>Info & <span class="gradient">Safety</span></h1>
-    <p>Clear information about how Shaheen works.</p>
+    <span class="badge">Transparency & privacy</span>
+    <h1>Shaheen Tools information</h1>
+    <p>
+      Clear information about tools, camera use, local storage and advertising.
+    </p>
   </div>
 
-  <article class="card info-card">
-    <h2>About Shaheen Tools</h2>
-    <p>
-      Shaheen Tools is a browser-first utility platform. It combines practical
-      calculators, text utilities, developer helpers, creator utilities,
-      learning tools and a safe home-movement experience.
-    </p>
-  </article>
+  <div class="card info-section">
+    <h2>Privacy Policy</h2>
 
-  <article class="card info-card">
-    <h2>Privacy</h2>
     <p>
-      Many tools in this version process input locally in your browser.
-      Gym setup, streak and workout history are stored in localStorage on this
-      device. Camera video is used locally for the optional camera experience
-      and this code does not upload or save the camera stream.
+      Shaheen Tools is designed so that many tools can process text and local
+      files directly in your browser. The site may save preferences such as
+      favorites, workout setup, workout streak and recent local history in
+      browser storage.
     </p>
-    <p>
-      If Firebase Analytics, Google services, advertising or other third-party
-      services are enabled on the deployed site, their respective privacy
-      practices also apply. Review and configure your Privacy & Messaging/CMP
-      settings before serving personalized advertising where required.
-    </p>
-  </article>
 
-  <article class="card info-card">
-    <h2>Terms</h2>
+    <p>
+      Camera assistance is optional. When enabled, the browser camera stream
+      is displayed locally. This implementation does not intentionally upload
+      the camera video to Shaheen Tools servers. Camera permissions remain
+      controlled by your browser/device.
+    </p>
+
+    <p>
+      Browser text-to-speech uses the speech facilities provided by the
+      device/browser. Availability and language quality can vary by device.
+    </p>
+
+    <p>
+      If Firebase Analytics is enabled in your deployment, analytics data may
+      be processed according to Firebase/Google policies.
+    </p>
+
+    <p>
+      Google advertising services may use cookies or similar technologies.
+      Google requires publishers to disclose relevant third-party vendors,
+      advertising cookies and available personalization opt-out information.
+    </p>
+
+    <p>
+      Users can manage Google advertising preferences through Google's
+      advertising settings. Where applicable, a Google-certified consent
+      management platform should be configured for EEA, UK and Switzerland
+      traffic before personalized ads are served.
+    </p>
+
+    <div class="actions">
+      <button class="btn" onclick="window.open('https://adssettings.google.com/','_blank')">
+        Google ad settings
+      </button>
+      <button class="btn" onclick="showToast('Configure a certified Google CMP in your AdSense account before serving personalized ads where required.')">
+        Privacy settings info
+      </button>
+    </div>
+  </div>
+
+  <div class="card info-section">
+    <h2>Terms of Use</h2>
     <p>
       Tools are provided for general informational and productivity purposes.
-      Outputs should be checked before being used for important decisions.
-      Shaheen does not guarantee that every calculation or generated result is
-      suitable for professional, legal, financial or medical decisions.
+      Results should be checked before being used for important financial,
+      legal, medical, engineering or safety decisions.
     </p>
-  </article>
+    <p>
+      Do not use Shaheen Tools to violate law, bypass authorization, abuse
+      systems, deceive people or infringe intellectual property.
+    </p>
+  </div>
 
-  <article class="card info-card">
-    <h2>Kids & Teens</h2>
+  <div class="card info-section">
+    <h2>Health & children</h2>
     <p>
-      Shaheen's youth-oriented movement features avoid weight-loss targets,
-      appearance comparisons and extreme challenges. They focus on movement,
-      coordination, mobility, basic strength and healthy routines.
+      Shaheen Tools avoids body-size targets, calorie restriction and
+      appearance-based fitness goals in the youth-oriented workout experience.
+      The focus is comfortable movement, mobility, coordination, general
+      fitness and consistency.
     </p>
     <p>
-      Suggested product modes are:
-      Little Kids (1–4), Kids (5–8), Preteen (9–12), and Teen Basics (13–15).
-      These labels are product modes rather than medical classifications.
+      Younger users should use age-appropriate activities and involve a parent,
+      guardian, teacher or other trusted adult when appropriate.
     </p>
-  </article>
+  </div>
 
-  <article class="card info-card">
-    <h2>AdSense transparency</h2>
-    <p>
-      Advertising should remain clearly distinguishable from site controls.
-      Active workout screens, camera controls and interactive tool runners are
-      intentionally kept free of manually inserted ad units.
-    </p>
-    <p>
-      Google AdSense approval is never guaranteed by application code. Final
-      approval depends on the live site's content, policies, privacy setup,
-      navigation, traffic and Google's review.
-    </p>
-  </article>
-
-  <article class="card info-card">
+  <div class="card info-section">
     <h2>Contact</h2>
     <p>
-      Replace this text with your real support email before publishing:
-      <strong>support@your-domain.com</strong>
+      Replace this section with your real support email before publishing.
     </p>
-  </article>
+    <button class="btn" onclick="location.href='mailto:YOUR_EMAIL@example.com'">
+      Email support
+    </button>
+  </div>
+
+  <div class="ad-slot">
+    <strong>Advertisement</strong><br>
+    Content-rich information area. Keep real ads clearly distinguishable from
+    navigation and interactive controls.
+  </div>
+
 </section>
 
 </main>
 
+<!-- ================= NAV ================= -->
+
 <nav class="bottom-nav" aria-label="Main navigation">
-  <button class="nav-btn active" data-page="home">
-    <span>⌂</span><span>Home</span>
+
+  <button class="nav-btn active" data-route="home" onclick="go('home')">
+    <span>⌂</span>
+    <span>Home</span>
   </button>
-  <button class="nav-btn" data-page="tools">
-    <span>▦</span><span>Tools</span>
+
+  <button class="nav-btn" data-route="tools" onclick="go('tools')">
+    <span>▦</span>
+    <span>Tools</span>
   </button>
-  <button class="nav-btn gym-active" data-page="gym">
-    <span>🏃</span><span>Gym</span>
+
+  <button class="nav-btn" data-route="gym" onclick="go('gym')">
+    <span>🏃</span>
+    <span>Gym</span>
   </button>
-  <button class="nav-btn" data-page="info">
-    <span>ⓘ</span><span>Info</span>
+
+  <button class="nav-btn" data-route="info" onclick="go('info')">
+    <span>ⓘ</span>
+    <span>Info</span>
   </button>
-  <button class="nav-btn" id="startNav">
-    <span>▶</span><span>Start</span>
+
+  <button class="nav-btn" onclick="startQuickWorkout()">
+    <span>▶</span>
+    <span>Start</span>
   </button>
+
 </nav>
 
 </div>
 
-<!-- TOOL MODAL -->
-<div class="modal" id="toolModal">
-  <div class="modal-card">
-    <div class="modal-head">
-      <div>
-        <div class="badge" id="runnerCategory">Tool</div>
-        <h2 id="runnerTitle">Tool</h2>
-      </div>
-      <button class="close" onclick="closeTool()">×</button>
-    </div>
+<!-- ================= TOOL MODAL ================= -->
 
-    <p class="muted" id="runnerDescription"></p>
+<div class="modal" id="toolModal" role="dialog" aria-modal="true">
+  <div class="sheet">
+
+    <div class="sheet-head">
+      <div>
+        <span class="badge" id="runnerCategory">Tool</span>
+        <h2 id="runnerTitle">Tool</h2>
+        <div class="muted small" id="runnerDescription"></div>
+      </div>
+      <button class="iconbtn" onclick="closeTool()">×</button>
+    </div>
 
     <div id="runnerFields"></div>
 
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-      <button class="btn primary" id="runToolBtn">Run tool</button>
-      <button class="btn" id="copyToolBtn">Copy result</button>
-      <button class="btn" id="clearToolBtn">Clear</button>
+    <div class="actions">
+      <button class="btn primary" onclick="runCurrentTool()">Run tool</button>
+      <button class="btn" onclick="copyOutput()">Copy</button>
+      <button class="btn" onclick="clearRunner()">Clear</button>
+      <button class="btn" onclick="downloadOutput()">Download</button>
     </div>
 
-    <div class="output" id="runnerOutput">Your result will appear here.</div>
+    <div style="height:12px"></div>
+
+    <div class="output" id="runnerOutput">
+      Your result will appear here.
+    </div>
+
   </div>
 </div>
 
-<!-- PROFILE MODAL -->
+<!-- ================= PROFILE MODAL ================= -->
+
 <div class="modal" id="profileModal">
-  <div class="modal-card">
-    <div class="modal-head">
+  <div class="sheet">
+
+    <div class="sheet-head">
       <div>
-        <div class="badge">ONE-TIME SETUP</div>
-        <h2>Personalize Gym</h2>
+        <span class="badge">One-time setup</span>
+        <h2>Your workout setup</h2>
+        <div class="muted small">
+          Saved on this device. You can edit it later.
+        </div>
       </div>
-      <button class="close" onclick="closeProfile()">×</button>
+      <button class="iconbtn" onclick="closeProfile()">×</button>
     </div>
 
-    <p class="muted">
-      Your setup is saved on this device. You can edit it later instead of
-      entering everything again.
-    </p>
-
-    <div class="form-grid">
-      <div class="field">
-        <label>Movement mode</label>
-        <select id="profileAge">
-          <option value="little">Little Kids · 1–4</option>
-          <option value="kids">Kids · 5–8</option>
-          <option value="preteen">Preteen · 9–12</option>
-          <option value="teen">Teen Basics · 13–15</option>
-          <option value="general" selected>General</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Experience</label>
-        <select id="profileExperience">
-          <option value="new">New to exercise</option>
-          <option value="comfortable">Comfortable</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Session length</label>
-        <select id="profileSession">
-          <option value="5">5 minutes</option>
-          <option value="10" selected>10 minutes</option>
-          <option value="15">15 minutes</option>
-          <option value="20">20 minutes</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Focus</label>
-        <select id="profileFocus">
-          <option value="movement">General movement</option>
-          <option value="mobility">Mobility</option>
-          <option value="strength">Strength basics</option>
-          <option value="cardio">Light cardio</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Equipment</label>
-        <select id="profileEquipment">
-          <option value="none">None</option>
-          <option value="chair">Chair</option>
-          <option value="band">Resistance band</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Coach language</label>
-        <select id="profileLanguage">
-          <option value="en-US">English</option>
-          <option value="ur-PK">Urdu</option>
-          <option value="hi-IN">Hindi</option>
-          <option value="ar-SA">Arabic</option>
-          <option value="es-ES">Spanish</option>
-          <option value="fr-FR">French</option>
-          <option value="de-DE">German</option>
-        </select>
-      </div>
+    <div class="field">
+      <label>Experience</label>
+      <select id="profileExperience">
+        <option value="beginner">Beginner / getting started</option>
+        <option value="comfortable">Comfortable with basic movement</option>
+      </select>
     </div>
 
-    <div style="margin-top:16px">
-      <button class="btn primary" style="width:100%" id="saveProfileBtn">
-        Save setup
-      </button>
+    <div class="field">
+      <label>Session length</label>
+      <select id="profileSession">
+        <option value="5">5 minutes</option>
+        <option value="10" selected>10 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="20">20 minutes</option>
+      </select>
     </div>
+
+    <div class="field">
+      <label>Focus</label>
+      <select id="profileFocus">
+        <option value="full">Full-body movement</option>
+        <option value="mobility">Mobility & stretching</option>
+        <option value="strength">Strength basics</option>
+        <option value="light-cardio">Light cardio & coordination</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Equipment</label>
+      <select id="profileEquipment">
+        <option value="none">No equipment</option>
+        <option value="chair">Chair available</option>
+        <option value="band">Resistance band available</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Coach language</label>
+      <select id="profileLanguage">
+        <option value="en">English</option>
+        <option value="ur">اردو</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ar">العربية</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Voice</label>
+      <select id="profileVoice">
+        <option value="auto">Automatic best available voice</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="saveProfile()">Save setup</button>
+    </div>
+
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-
-<!-- MediaPipe Pose -->
 <script type="module">
-window.__POSE_MODULE_READY__ = false;
-
-try{
-  const mod = await import(
-    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/vision_bundle.mjs"
-  );
-  window.__MediaPipeVision = mod;
-  window.__POSE_MODULE_READY__ = true;
-  window.dispatchEvent(new Event("posemodule"));
-}catch(e){
-  console.warn("MediaPipe module unavailable",e);
-}
-</script>
-
-<script>
-"use strict";
 
 /* =========================================================
-   FIREBASE
-========================================================= */
-const firebaseConfig={
-  apiKey:"AIzaSyAawCXm40CnYlsukL5rGB26iG78xQnIjoc",
-  authDomain:"shaheen-ultra-fb324.firebaseapp.com",
-  projectId:"shaheen-ultra-fb324",
-  storageBucket:"shaheen-ultra-fb324.firebasestorage.app",
-  messagingSenderId:"733041897568",
-  appId:"1:733041897568:web:ff56c08fada50e40a59305",
-  measurementId:"G-WTNJLPQ88E"
+   SHAHEEN TOOLS 2026
+   100 CORE ENGINES × 30 VARIANTS = EXACTLY 3,000 ENTRIES
+   ========================================================= */
+
+const $ = id => document.getElementById(id);
+
+const STORE = {
+  profile:"shaheen.profile.v3",
+  streak:"shaheen.streak.v3",
+  favorites:"shaheen.favorites.v3",
+  history:"shaheen.history.v3"
 };
 
-try{
-  if(window.firebase){
-    firebase.initializeApp(firebaseConfig);
-    try{ firebase.analytics(); }catch(e){}
-  }
-}catch(e){
-  console.warn("Firebase init skipped",e);
-}
-
-/* =========================================================
-   HELPERS
-========================================================= */
-const $=s=>document.querySelector(s);
-const $$=s=>[...document.querySelectorAll(s)];
-
-function esc(v){
-  return String(v??"")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-function toast(message){
-  const el=$("#toast");
-  el.textContent=message;
-  el.classList.add("show");
-  clearTimeout(window.__toastTimer);
-  window.__toastTimer=setTimeout(()=>el.classList.remove("show"),2200);
-}
-
-function safeJSON(key,fallback){
+const read = (key,fallback) => {
   try{
-    const v=localStorage.getItem(key);
-    return v?JSON.parse(v):fallback;
-  }catch(e){return fallback}
-}
-
-function saveJSON(key,value){
-  try{localStorage.setItem(key,JSON.stringify(value))}
-  catch(e){}
-}
-
-function fmtTime(seconds){
-  seconds=Math.max(0,Math.floor(seconds||0));
-  const m=Math.floor(seconds/60);
-  const s=seconds%60;
-  return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
-}
-
-/* =========================================================
-   ROUTING
-========================================================= */
-const pages=["home","tools","gym","info"];
-let currentPage="home";
-
-function go(page){
-  if(!pages.includes(page))page="home";
-
-  currentPage=page;
-
-  pages.forEach(p=>{
-    const el=$("#"+p+"Page");
-    if(el)el.classList.toggle("active",p===page);
-  });
-
-  $$(".nav-btn[data-page]").forEach(b=>{
-    b.classList.toggle("active",b.dataset.page===page);
-  });
-
-  $("#backBtn").style.display=page==="home"?"none":"grid";
-
-  window.scrollTo({top:0,behavior:"instant"});
-
-  if(page==="gym"){
-    ensureProfile();
-    updateStreakUI();
+    const x = localStorage.getItem(key);
+    return x ? JSON.parse(x) : fallback;
+  }catch{
+    return fallback;
   }
-}
-
-$("#backBtn").onclick=()=>{
-  if(currentPage!=="home")go("home");
-  else history.back();
 };
 
-$$(".nav-btn[data-page]").forEach(btn=>{
-  btn.addEventListener("click",()=>go(btn.dataset.page));
+const write = (key,value) => {
+  localStorage.setItem(key,JSON.stringify(value));
+};
+
+/* ---------- ROUTING ---------- */
+
+function go(route){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  const target=$(route);
+  if(target) target.classList.add("active");
+
+  document.querySelectorAll(".nav-btn").forEach(b=>{
+    b.classList.toggle("active",b.dataset.route===route);
+  });
+
+  window.scrollTo({top:0,behavior:"smooth"});
+  history.replaceState(null,"","#"+route);
+
+  if(route==="gym") updateGymUI();
+}
+
+window.go=go;
+
+window.addEventListener("popstate",()=>{
+  const route=location.hash.replace("#","")||"home";
+  go(route);
 });
 
-$("#startNav").onclick=()=>{
-  go("gym");
-  setTimeout(()=>$("#startWorkoutBtn").focus(),100);
-};
+/* ---------- CATEGORIES ---------- */
 
-/* =========================================================
-   THEME
-========================================================= */
-$("#themeBtn").onclick=()=>{
-  document.body.classList.toggle("light");
-  const light=document.body.classList.contains("light");
-
-  if(light){
-    document.documentElement.style.setProperty("--bg","#f5f7fb");
-    document.documentElement.style.setProperty("--bg2","#fff");
-    document.documentElement.style.setProperty("--card","#fff");
-    document.documentElement.style.setProperty("--card2","#fff");
-    document.documentElement.style.setProperty("--line","#dbe1ec");
-    document.documentElement.style.setProperty("--text","#101426");
-    document.documentElement.style.setProperty("--muted","#5d6980");
-  }else{
-    location.reload();
-  }
-};
+const categories=[
+  "All",
+  "Text",
+  "Developer",
+  "Calculators",
+  "Converters",
+  "Images",
+  "Color",
+  "Date & Time",
+  "Productivity",
+  "Student",
+  "Media",
+  "Fitness",
+  "SEO",
+  "Data"
+];
 
 /* =========================================================
    TOOL ENGINES
-========================================================= */
+   ========================================================= */
 
-function textStats(v){
-  const text=String(v||"");
-  const words=text.trim()?text.trim().split(/\s+/).length:0;
-  const chars=[...text].length;
-  const lines=text?text.split(/\r?\n/).length:0;
-  const sentences=text.trim()?text.split(/[.!?]+/).filter(Boolean).length:0;
-  return `Words: ${words}\nCharacters: ${chars}\nLines: ${lines}\nSentences: ${sentences}`;
-}
-
-function caseConvert(v,mode){
-  const t=String(v||"");
-  if(mode==="upper")return t.toUpperCase();
-  if(mode==="lower")return t.toLowerCase();
-  if(mode==="title")return t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
-  if(mode==="sentence")return t.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,m=>m.toUpperCase());
-  if(mode==="reverse")return [...t].reverse().join("");
-  return t;
-}
-
-function cleanText(v,mode){
-  let t=String(v||"");
-  if(mode==="trim")return t.trim();
-  if(mode==="spaces")return t.replace(/[ \t]+/g," ").replace(/\n{3,}/g,"\n\n").trim();
-  if(mode==="duplicates"){
-    return [...new Set(t.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))].join("\n");
-  }
-  if(mode==="sort"){
-    return t.split(/\r?\n/).filter(Boolean).sort((a,b)=>a.localeCompare(b)).join("\n");
-  }
-  if(mode==="number"){
-    return t.split(/\r?\n/).map((x,i)=>`${i+1}. ${x}`).join("\n");
-  }
-  return t;
-}
-
-function slugify(v){
-  return String(v||"")
-    .toLowerCase()
-    .trim()
-    .replace(/[^\p{L}\p{N}\s-]/gu,"")
-    .replace(/\s+/g,"-")
-    .replace(/-+/g,"-");
-}
-
-function htmlEscape(v){
-  return String(v||"")
+function escapeHTML(s){
+  return String(s)
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
@@ -1450,1599 +1672,2123 @@ function htmlEscape(v){
     .replaceAll("'","&#039;");
 }
 
-function htmlUnescape(v){
-  const t=document.createElement("textarea");
-  t.innerHTML=String(v||"");
-  return t.value;
+function words(s){
+  return (String(s).trim().match(/\S+/g)||[]).length;
 }
 
-function base64Encode(v){
-  const bytes=new TextEncoder().encode(String(v||""));
-  let binary="";
-  bytes.forEach(b=>binary+=String.fromCharCode(b));
-  return btoa(binary);
+function sentences(s){
+  return (String(s).match(/[.!?]+(?=\s|$)/g)||[]).length;
 }
 
-function base64Decode(v){
+function lines(s){
+  return String(s).split(/\r?\n/);
+}
+
+function slugify(s){
+  return String(s)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\u0600-\u06ff\u0900-\u097f]+/g,"-")
+    .replace(/^-+|-+$/g,"");
+}
+
+function titleCase(s){
+  return String(s).toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+}
+
+function camelCase(s){
+  const a=String(s).trim().split(/[\s_-]+/);
+  return a.map((x,i)=>{
+    x=x.toLowerCase();
+    return i?x.charAt(0).toUpperCase()+x.slice(1):x;
+  }).join("");
+}
+
+function snakeCase(s){
+  return String(s).trim().replace(/\s+/g,"_").replace(/-+/g,"_").toLowerCase();
+}
+
+function kebabCase(s){
+  return String(s).trim().replace(/[\s_]+/g,"-").toLowerCase();
+}
+
+function uniqueLines(s){
+  const seen=new Set();
+  return lines(s).filter(x=>{
+    if(seen.has(x)) return false;
+    seen.add(x);
+    return true;
+  }).join("\n");
+}
+
+function sortLines(s,reverse=false){
+  return lines(s).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}))
+    .reverse(reverse).join("\n");
+}
+
+function reverseText(s){
+  return [...String(s)].reverse().join("");
+}
+
+function removeBlank(s){
+  return lines(s).filter(x=>x.trim()).join("\n");
+}
+
+function removeSpaces(s){
+  return String(s).replace(/\s+/g," ").trim();
+}
+
+function htmlEscape(s){
+  return escapeHTML(s);
+}
+
+function htmlStrip(s){
+  const d=document.createElement("div");
+  d.innerHTML=String(s);
+  return d.textContent||"";
+}
+
+function urlEncode(s){
+  return encodeURIComponent(String(s));
+}
+
+function urlDecode(s){
+  try{return decodeURIComponent(String(s));}
+  catch(e){return "Invalid URL encoding: "+e.message;}
+}
+
+function base64Encode(s){
+  const bytes=new TextEncoder().encode(String(s));
+  let bin="";
+  bytes.forEach(b=>bin+=String.fromCharCode(b));
+  return btoa(bin);
+}
+
+function base64Decode(s){
   try{
-    const binary=atob(String(v||""));
-    const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+    const bin=atob(String(s).trim());
+    const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
     return new TextDecoder().decode(bytes);
-  }catch(e){return "Invalid Base64"}
-}
-
-function urlEncode(v){return encodeURIComponent(String(v||""))}
-function urlDecode(v){
-  try{return decodeURIComponent(String(v||""))}
-  catch(e){return "Invalid URL encoding"}
-}
-
-function jsonFormat(v){
-  try{return JSON.stringify(JSON.parse(v),null,2)}
-  catch(e){return "Invalid JSON: "+e.message}
-}
-
-function jsonMinify(v){
-  try{return JSON.stringify(JSON.parse(v))}
-  catch(e){return "Invalid JSON: "+e.message}
-}
-
-function jsonValidate(v){
-  try{
-    JSON.parse(v);
-    return "Valid JSON ✓";
   }catch(e){
-    return "Invalid JSON ✕\n"+e.message;
+    return "Invalid Base64: "+e.message;
   }
 }
 
+function jsonFormat(s){
+  try{
+    return JSON.stringify(JSON.parse(s),null,2);
+  }catch(e){
+    return "Invalid JSON:\n"+e.message;
+  }
+}
+
+function jsonMinify(s){
+  try{return JSON.stringify(JSON.parse(s));}
+  catch(e){return "Invalid JSON:\n"+e.message;}
+}
+
+function jsonValidate(s){
+  try{
+    JSON.parse(s);
+    return "✓ Valid JSON";
+  }catch(e){
+    return "✗ Invalid JSON\n"+e.message;
+  }
+}
+
+function jsonKeys(s){
+  try{
+    const obj=JSON.parse(s);
+    return Object.keys(obj).join("\n");
+  }catch(e){
+    return "Invalid JSON:\n"+e.message;
+  }
+}
+
+function csvToJson(s){
+  const rows=lines(s).filter(x=>x.trim());
+  if(!rows.length)return "[]";
+  const headers=rows[0].split(",").map(x=>x.trim());
+  const data=rows.slice(1).map(row=>{
+    const cells=row.split(",");
+    const o={};
+    headers.forEach((h,i)=>o[h]=cells[i]?.trim()??"");
+    return o;
+  });
+  return JSON.stringify(data,null,2);
+}
+
+function jsonToCsv(s){
+  try{
+    const arr=JSON.parse(s);
+    if(!Array.isArray(arr)||!arr.length)return "";
+    const keys=[...new Set(arr.flatMap(o=>Object.keys(o)))];
+    const q=v=>`"${String(v??"").replaceAll('"','""')}"`;
+    return [
+      keys.map(q).join(","),
+      ...arr.map(o=>keys.map(k=>q(o[k])).join(","))
+    ].join("\n");
+  }catch(e){
+    return "Expected a JSON array of objects.";
+  }
+}
+
+function xmlEscape(s){
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&apos;");
+}
+
+function htmlTable(s){
+  const rows=lines(s).filter(x=>x.trim()).map(r=>r.split(","));
+  if(!rows.length)return "";
+  return "<table><tbody>"+
+    rows.map((r,i)=>
+      "<tr>"+r.map(c=>
+        i===0?"<th>"+escapeHTML(c.trim())+"</th>":
+        "<td>"+escapeHTML(c.trim())+"</td>"
+      ).join("")+"</tr>"
+    ).join("")+
+    "</tbody></table>";
+}
+
+function numberBase(s,baseFrom=10,baseTo=16){
+  const n=parseInt(String(s).trim(),baseFrom);
+  if(Number.isNaN(n))return "Invalid number";
+  return n.toString(baseTo);
+}
+
 function percentOf(a,b){
-  return `${b}% of ${a} = ${(Number(a)*Number(b)/100).toFixed(4).replace(/\.?0+$/,"")}`;
+  return (Number(a)/100)*Number(b);
 }
 
-function percentChange(a,b){
+function percentageChange(a,b){
   a=Number(a);b=Number(b);
-  if(a===0)return "Starting value cannot be zero.";
-  return `${(((b-a)/a)*100).toFixed(4)}%`;
+  if(!Number.isFinite(a)||!Number.isFinite(b)||a===0)return NaN;
+  return ((b-a)/Math.abs(a))*100;
 }
 
-function average(v){
-  const nums=String(v||"").split(/[,\s]+/).map(Number).filter(Number.isFinite);
-  if(!nums.length)return "Enter numbers separated by commas or spaces.";
-  return `Average: ${nums.reduce((a,b)=>a+b,0)/nums.length}`;
+function average(s){
+  const a=String(s).split(/[\s,]+/).map(Number).filter(Number.isFinite);
+  return a.length?a.reduce((x,y)=>x+y,0)/a.length:"No numbers";
 }
 
-function minmax(v){
-  const nums=String(v||"").split(/[,\s]+/).map(Number).filter(Number.isFinite);
-  if(!nums.length)return "Enter numbers.";
-  return `Minimum: ${Math.min(...nums)}\nMaximum: ${Math.max(...nums)}`;
+function minmax(s){
+  const a=String(s).split(/[\s,]+/).map(Number).filter(Number.isFinite);
+  return a.length
+    ? JSON.stringify({min:Math.min(...a),max:Math.max(...a)},null,2)
+    :"No numbers";
 }
 
 function gcd(a,b){
-  a=Math.abs(Number(a));b=Math.abs(Number(b));
+  a=Math.abs(Math.trunc(a));b=Math.abs(Math.trunc(b));
   while(b){[a,b]=[b,a%b]}
   return a;
 }
 
 function lcm(a,b){
-  a=Number(a);b=Number(b);
-  if(!a||!b)return 0;
   return Math.abs(a*b)/gcd(a,b);
 }
 
-function ratio(a,b,c){
-  a=Number(a);b=Number(b);c=Number(c);
-  if(!a)return "First ratio value cannot be zero.";
-  return `Equivalent ratio: ${a}:${b} = ${c}:${(b*c/a).toFixed(4)}`;
+function power(a,b){
+  return Math.pow(Number(a),Number(b));
 }
 
-function temperature(v,from,to){
-  const n=Number(v);
-  let c=n;
-  if(from==="F")c=(n-32)*5/9;
-  if(from==="K")c=n-273.15;
-  if(to==="C")return `${c.toFixed(4)} °C`;
-  if(to==="F")return `${(c*9/5+32).toFixed(4)} °F`;
-  if(to==="K")return `${(c+273.15).toFixed(4)} K`;
+function sqrt(a){
+  return Math.sqrt(Number(a));
 }
 
-const factors={
-  "m":1,
-  "km":1000,
-  "cm":.01,
-  "mm":.001,
-  "ft":.3048,
-  "in":.0254,
-  "yd":.9144,
-  "mi":1609.344
-};
-
-function lengthConvert(v,from,to){
-  const n=Number(v);
-  if(!(from in factors)||!(to in factors))return "Unsupported unit.";
-  return `${n*factors[from]/factors[to]} ${to}`;
+function bmiSafe(){
+  return "For this youth-oriented app, body-size/BMI targets are intentionally not used. Use movement, comfort and wellbeing guidance instead.";
 }
 
-const massFactors={
-  "kg":1,
-  "g":.001,
-  "mg":.000001,
-  "lb":.45359237,
-  "oz":.028349523125
-};
-
-function massConvert(v,from,to){
-  const n=Number(v);
-  return `${n*massFactors[from]/massFactors[to]} ${to}`;
-}
-
-function byteConvert(v,from,to){
-  const units={B:1,KB:1024,MB:1024**2,GB:1024**3,TB:1024**4};
-  return `${Number(v)*units[from]/units[to]} ${to}`;
-}
-
-function colorHexToRgb(v){
-  let h=String(v||"").replace("#","");
-  if(h.length===3)h=h.split("").map(x=>x+x).join("");
-  if(!/^[0-9a-f]{6}$/i.test(h))return "Invalid HEX color.";
-  const n=parseInt(h,16);
-  return `RGB(${n>>16}, ${(n>>8)&255}, ${n&255})`;
-}
-
-function rgbToHex(v){
-  const n=String(v||"").match(/\d+/g);
-  if(!n||n.length<3)return "Use: 255, 128, 64";
-  return "#"+n.slice(0,3).map(x=>Number(x).toString(16).padStart(2,"0")).join("").toUpperCase();
-}
-
-function randomNumber(min,max){
-  min=Math.ceil(Number(min));max=Math.floor(Number(max));
-  return String(Math.floor(Math.random()*(max-min+1))+min);
-}
-
-function uuid(){
-  if(crypto.randomUUID)return crypto.randomUUID();
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{
-    const r=Math.random()*16|0;
-    const n=c==="x"?r:(r&3|8);
-    return n.toString(16);
-  });
-}
-
-async function hashText(v,algorithm){
-  const data=new TextEncoder().encode(String(v||""));
-  const hash=await crypto.subtle.digest(algorithm,data);
-  return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("");
-}
-
-function queryParse(v){
-  try{
-    const u=new URL(v.includes("?")?v:"https://example.com/?"+v);
-    return [...u.searchParams.entries()].map(([k,val])=>`${k} = ${val}`).join("\n")||"No parameters";
-  }catch(e){return "Invalid URL/query string."}
-}
-
-function csvToJson(v){
-  const lines=String(v||"").trim().split(/\r?\n/);
-  if(lines.length<2)return "Add a header row and at least one data row.";
-  const headers=lines[0].split(",").map(x=>x.trim());
-  return JSON.stringify(lines.slice(1).map(line=>{
-    const cells=line.split(",");
-    const o={};
-    headers.forEach((h,i)=>o[h]=cells[i]?.trim()??"");
-    return o;
-  }),null,2);
-}
-
-function jsonToCsv(v){
-  try{
-    const arr=JSON.parse(v);
-    if(!Array.isArray(arr)||!arr.length)return "Expected a JSON array of objects.";
-    const headers=[...new Set(arr.flatMap(o=>Object.keys(o)))];
-    return [
-      headers.join(","),
-      ...arr.map(o=>headers.map(h=>{
-        const x=String(o[h]??"").replaceAll('"','""');
-        return `"${x}"`;
-      }).join(","))
-    ].join("\n");
-  }catch(e){return "Invalid JSON array."}
-}
-
-function markdownStrip(v){
-  return String(v||"")
-    .replace(/!\[.*?\]\(.*?\)/g,"")
-    .replace(/\[(.*?)\]\(.*?\)/g,"$1")
-    .replace(/[#>*_`~-]/g,"")
-    .replace(/\n{3,}/g,"\n\n")
-    .trim();
-}
-
-function cssMinify(v){
-  return String(v||"")
-    .replace(/\/\*[\s\S]*?\*\//g,"")
-    .replace(/\s+/g," ")
-    .replace(/\s*([{}:;,])\s*/g,"$1")
-    .trim();
-}
-
-function jsBasicClean(v){
-  return String(v||"")
-    .replace(/\t/g,"  ")
-    .replace(/[ ]{3,}/g,"  ")
-    .trim();
-}
-
-function dateDiff(v){
-  const parts=String(v||"").split("|").map(x=>x.trim());
-  if(parts.length<2)return "Use: YYYY-MM-DD | YYYY-MM-DD";
-  const a=new Date(parts[0]),b=new Date(parts[1]);
-  if(isNaN(a)||isNaN(b))return "Invalid dates.";
-  const days=Math.round(Math.abs(b-a)/86400000);
+function dateDiff(a,b){
+  const x=new Date(a),y=new Date(b);
+  if(Number.isNaN(x)||Number.isNaN(y))return "Invalid date";
+  const days=Math.round(Math.abs(y-x)/86400000);
   return `${days} day(s)`;
 }
 
-function timestampNow(){
-  const now=Date.now();
-  return `Unix seconds: ${Math.floor(now/1000)}\nUnix milliseconds: ${now}\nISO: ${new Date(now).toISOString()}`;
+function addDays(date,n){
+  const d=new Date(date);
+  d.setDate(d.getDate()+Number(n));
+  return d.toISOString().slice(0,10);
 }
 
-function unixToDate(v){
-  const n=Number(v);
-  if(!Number.isFinite(n))return "Enter a Unix timestamp.";
-  const ms=String(v).length<=10?n*1000:n;
-  return new Date(ms).toString();
+function unixNow(){
+  return Math.floor(Date.now()/1000);
 }
 
-function bmiSafePlaceholder(){
-  return "BMI/weight-target tools are intentionally not included in youth-focused Shaheen experiences. Try the movement timer, hydration reminder or study-break tools instead.";
+function unixToDate(s){
+  const d=new Date(Number(s)*1000);
+  return Number.isNaN(d.getTime())?"Invalid timestamp":d.toLocaleString();
 }
 
-function textToLines(v){
-  return String(v||"").split(/\r?\n/).filter(Boolean).join("\n");
+function dateToUnix(s){
+  const d=new Date(s);
+  return Number.isNaN(d.getTime())?"Invalid date":Math.floor(d.getTime()/1000);
 }
 
-function wordFrequency(v){
-  const words=String(v||"").toLowerCase().match(/\p{L}+/gu)||[];
-  const map={};
-  words.forEach(w=>map[w]=(map[w]||0)+1);
-  return Object.entries(map)
-    .sort((a,b)=>b[1]-a[1])
-    .map(([w,n])=>`${w}: ${n}`)
-    .join("\n")||"No words.";
+function durationSeconds(s){
+  const p=String(s).trim().split(":").map(Number);
+  if(p.some(Number.isNaN))return "Use SS, MM:SS or HH:MM:SS";
+  if(p.length===1)return p[0];
+  if(p.length===2)return p[0]*60+p[1];
+  return p[0]*3600+p[1]*60+p[2];
 }
 
-/* =========================================================
-   TOOL DEFINITIONS
-   These are real browser engines. The catalog below creates
-   3,000 searchable entries while keeping execution local.
-========================================================= */
+function secondsToDuration(n){
+  n=Math.max(0,Math.floor(Number(n)));
+  const h=Math.floor(n/3600);
+  const m=Math.floor((n%3600)/60);
+  const s=n%60;
+  return h?`${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`:
+    `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+}
+
+function rgbToHex(r,g,b){
+  return "#"+[r,g,b].map(x=>
+    Math.max(0,Math.min(255,Math.round(Number(x))))
+      .toString(16).padStart(2,"0")
+  ).join("");
+}
+
+function hexToRgb(hex){
+  let h=String(hex).replace("#","");
+  if(h.length===3)h=h.split("").map(x=>x+x).join("");
+  if(!/^[0-9a-f]{6}$/i.test(h))return "Invalid HEX";
+  return JSON.stringify({
+    r:parseInt(h.slice(0,2),16),
+    g:parseInt(h.slice(2,4),16),
+    b:parseInt(h.slice(4,6),16)
+  },null,2);
+}
+
+function randomInt(a,b){
+  a=Math.ceil(Number(a)||0);
+  b=Math.floor(Number(b)||100);
+  return Math.floor(Math.random()*(b-a+1))+a;
+}
+
+function uuid(){
+  return crypto.randomUUID
+    ? crypto.randomUUID()
+    : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{
+      const r=Math.random()*16|0;
+      const v=c==="x"?r:(r&3|8);
+      return v.toString(16);
+    });
+}
+
+function randomPassword(length=16){
+  const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%^&*";
+  const a=new Uint32Array(length);
+  crypto.getRandomValues(a);
+  return [...a].map(x=>chars[x%chars.length]).join("");
+}
+
+function markdownStrip(s){
+  return String(s)
+    .replace(/```[\s\S]*?```/g,"")
+    .replace(/[#>*_`~]/g,"")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g,"$1");
+}
+
+function queryToJson(s){
+  try{
+    const p=new URLSearchParams(String(s).replace(/^\?/,""));
+    const o={};
+    for(const [k,v] of p){
+      if(k in o)o[k]=Array.isArray(o[k])?[...o[k],v]:[o[k],v];
+      else o[k]=v;
+    }
+    return JSON.stringify(o,null,2);
+  }catch(e){return e.message;}
+}
+
+function jsonToQuery(s){
+  try{
+    const o=JSON.parse(s);
+    const p=new URLSearchParams();
+    for(const [k,v] of Object.entries(o)){
+      if(Array.isArray(v))v.forEach(x=>p.append(k,x));
+      else p.append(k,v);
+    }
+    return p.toString();
+  }catch(e){return "Invalid JSON";}
+}
+
+async function sha256(s){
+  const data=new TextEncoder().encode(String(s));
+  const hash=await crypto.subtle.digest("SHA-256",data);
+  return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+function stripPunctuation(s){
+  return String(s).replace(/[^\p{L}\p{N}\s]/gu,"");
+}
+
+function lineStats(s){
+  const a=lines(s);
+  return JSON.stringify({
+    total:a.length,
+    nonEmpty:a.filter(x=>x.trim()).length,
+    empty:a.filter(x=>!x.trim()).length,
+    longest:a.reduce((m,x)=>Math.max(m,x.length),0)
+  },null,2);
+}
+
+function charStats(s){
+  return JSON.stringify({
+    characters:[...String(s)].length,
+    letters:(String(s).match(/\p{L}/gu)||[]).length,
+    numbers:(String(s).match(/\p{N}/gu)||[]).length,
+    spaces:(String(s).match(/\s/g)||[]).length
+  },null,2);
+}
+
+function readingTime(s){
+  const w=words(s);
+  return `${Math.max(1,Math.ceil(w/200))} minute(s)`;
+}
+
+function textRepeat(s,n=3,sep="\n"){
+  return Array(Math.max(0,Math.min(100,n))).fill(String(s)).join(sep);
+}
+
+function trimLines(s){
+  return lines(s).map(x=>x.trim()).join("\n");
+}
+
+function diffSimple(a,b){
+  const aa=lines(a),bb=lines(b);
+  const out=[];
+  const max=Math.max(aa.length,bb.length);
+  for(let i=0;i<max;i++){
+    if(aa[i]===bb[i])out.push("  "+(aa[i]??""));
+    else{
+      if(aa[i]!==undefined)out.push("- "+aa[i]);
+      if(bb[i]!==undefined)out.push("+ "+bb[i]);
+    }
+  }
+  return out.join("\n");
+}
+
+function gradientCss(a,b,angle=90){
+  return `background:linear-gradient(${angle}deg,${a},${b});`;
+}
+
+function boxShadowCss(x=0,y=8,blur=24,color="rgba(0,0,0,.25)"){
+  return `box-shadow:${x}px ${y}px ${blur}px ${color};`;
+}
+
+function flexCss(){
+  return `.container{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}`;
+}
+
+function randomColor(){
+  return "#"+crypto.getRandomValues(new Uint8Array(3))
+    .reduce((s,b)=>s+b.toString(16).padStart(2,"0"),"");
+}
+
+function contrastRatio(hex1,hex2){
+  function lum(h){
+    let rgb=hexToRgb(h);
+    if(typeof rgb!=="string")rgb=JSON.parse(rgb);
+    const a=[rgb.r,rgb.g,rgb.b].map(v=>{
+      v/=255;
+      return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);
+    });
+    return .2126*a[0]+.7152*a[1]+.0722*a[2];
+  }
+  const a=lum(hex1),b=lum(hex2);
+  const hi=Math.max(a,b),lo=Math.min(a,b);
+  return ((hi+.05)/(lo+.05)).toFixed(2);
+}
+
+function imageToData(file){
+  return new Promise((resolve,reject)=>{
+    if(!file)return reject("Choose an image first.");
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=()=>reject("Could not read file.");
+    reader.readAsDataURL(file);
+  });
+}
+
+function imageProcess(file,options={}){
+  return new Promise((resolve,reject)=>{
+    if(!file)return reject("Choose an image first.");
+    const url=URL.createObjectURL(file);
+    const img=new Image();
+    img.onload=()=>{
+      const maxW=options.width||img.width;
+      const maxH=options.height||img.height;
+
+      let w=img.width,h=img.height;
+      if(options.fit){
+        const scale=Math.min(maxW/w,maxH/h);
+        w=Math.max(1,Math.round(w*scale));
+        h=Math.max(1,Math.round(h*scale));
+      }
+
+      const c=document.createElement("canvas");
+      c.width=w;c.height=h;
+      const ctx=c.getContext("2d");
+      if(options.filter)ctx.filter=options.filter;
+      ctx.drawImage(img,0,0,w,h);
+
+      c.toBlob(blob=>{
+        URL.revokeObjectURL(url);
+        resolve({
+          blob,
+          url:URL.createObjectURL(blob),
+          width:w,
+          height:h
+        });
+      },options.type||"image/png",options.quality||.9);
+    };
+    img.onerror=()=>reject("Could not decode image.");
+    img.src=url;
+  });
+}
+
+/* ---------- 100 CORE TOOL SPECS ---------- */
+
+const BASE_TOOLS = [
+
+["Word Counter","Text","Count words in text","textCount"],
+["Character Counter","Text","Count characters and symbols","charStats"],
+["Sentence Counter","Text","Count sentences","sentenceCount"],
+["Line Counter","Text","Count and inspect lines","lineStats"],
+["Reading Time","Text","Estimate reading time","readingTime"],
+["Uppercase Converter","Text","Convert text to uppercase","upper"],
+["Lowercase Converter","Text","Convert text to lowercase","lower"],
+["Title Case Converter","Text","Convert text to title case","title"],
+["Sentence Case Converter","Text","Convert text to sentence case","sentenceCase"],
+["camelCase Converter","Text","Convert text to camelCase","camel"],
+["snake_case Converter","Text","Convert text to snake_case","snake"],
+["kebab-case Converter","Text","Convert text to kebab-case","kebab"],
+["Trim Text","Text","Remove outer whitespace","trim"],
+["Trim Lines","Text","Trim every line","trimLines"],
+["Remove Extra Spaces","Text","Collapse repeated spaces","removeSpaces"],
+["Remove Blank Lines","Text","Remove empty lines","removeBlank"],
+["Remove Duplicate Lines","Text","Remove repeated lines","unique"],
+["Sort Lines A-Z","Text","Sort lines alphabetically","sort"],
+["Sort Lines Z-A","Text","Sort lines reverse alphabetically","sortReverse"],
+["Reverse Text","Text","Reverse characters","reverse"],
+["Strip HTML","Text","Extract readable text from HTML","stripHtml"],
+["HTML Escape","Text","Escape HTML characters","htmlEscape"],
+["Markdown Cleaner","Text","Remove common Markdown syntax","markdown"],
+["Remove Punctuation","Text","Remove punctuation","punctuation"],
+["Slug Generator","Text","Create URL-friendly slugs","slug"],
+["Text Repeater","Text","Repeat a text string","repeat"],
+["Find & Replace","Text","Replace text quickly","replace"],
+["Diff Checker","Text","Compare two text blocks","diff"],
+
+["JSON Formatter","Developer","Beautify JSON","jsonFormat"],
+["JSON Minifier","Developer","Minify JSON","jsonMinify"],
+["JSON Validator","Developer","Validate JSON","jsonValidate"],
+["JSON Key Extractor","Developer","List top-level JSON keys","jsonKeys"],
+["JSON to CSV","Developer","Convert JSON arrays to CSV","jsonToCsv"],
+["CSV to JSON","Developer","Convert CSV to JSON","csvToJson"],
+["Base64 Encoder","Developer","Encode UTF-8 text to Base64","base64Encode"],
+["Base64 Decoder","Developer","Decode Base64 text","base64Decode"],
+["URL Encoder","Developer","Percent-encode a URL/query","urlEncode"],
+["URL Decoder","Developer","Decode URL encoding","urlDecode"],
+["Query String to JSON","Developer","Parse query parameters","queryToJson"],
+["JSON to Query String","Developer","Create query parameters","jsonToQuery"],
+["UUID Generator","Developer","Generate a secure UUID","uuid"],
+["SHA-256 Hash","Developer","Hash text with SHA-256","sha256"],
+["Number Base Converter","Developer","Convert number bases","base"],
+["Regex Tester","Developer","Test a regular expression","regex"],
+["HTML Table Generator","Developer","Convert CSV into HTML table","htmlTable"],
+["XML Escape","Developer","Escape XML characters","xmlEscape"],
+["CSS Gradient Generator","Developer","Create CSS gradients","gradient"],
+["CSS Shadow Generator","Developer","Create CSS box shadows","shadow"],
+
+["Percentage of Number","Calculators","Calculate X percent of Y","percent"],
+["Percentage Change","Calculators","Calculate percentage change","percentChange"],
+["Average Calculator","Calculators","Calculate average","average"],
+["Min Max Calculator","Calculators","Find minimum and maximum","minmax"],
+["GCD Calculator","Calculators","Greatest common divisor","gcd"],
+["LCM Calculator","Calculators","Least common multiple","lcm"],
+["Power Calculator","Calculators","Calculate powers","power"],
+["Square Root Calculator","Calculators","Calculate square root","sqrt"],
+["Tip Calculator","Calculators","Calculate a tip","tip"],
+["Discount Calculator","Calculators","Calculate sale price","discount"],
+["Simple Interest","Calculators","Calculate simple interest","interest"],
+["Compound Growth","Calculators","Estimate compound growth","compound"],
+["Ratio Calculator","Calculators","Simplify a ratio","ratio"],
+["Unit Rate Calculator","Calculators","Find unit rate","unitRate"],
+["BMI Safety Notice","Fitness","Youth-safe fitness information","bmiSafe"],
+
+["Unix Timestamp Now","Date & Time","Get current Unix time","unixNow"],
+["Unix to Date","Date & Time","Convert Unix timestamp","unixToDate"],
+["Date to Unix","Date & Time","Convert date to Unix timestamp","dateToUnix"],
+["Date Difference","Date & Time","Calculate date difference","dateDiff"],
+["Add Days to Date","Date & Time","Add days to a date","addDays"],
+["Duration to Seconds","Date & Time","Convert duration to seconds","durationSeconds"],
+["Seconds to Duration","Date & Time","Format seconds as duration","secondsDuration"],
+["Countdown Timer","Productivity","Create a browser countdown","countdown"],
+["Pomodoro Timer","Productivity","Start a focused timer","pomodoro"],
+["Random Number","Productivity","Generate a random integer","random"],
+["Random Password","Developer","Generate a strong random password","password"],
+["Color Randomizer","Color","Generate random HEX colors","randomColor"],
+["HEX to RGB","Color","Convert HEX to RGB","hexRgb"],
+["RGB to HEX","Color","Convert RGB to HEX","rgbHex"],
+["Contrast Ratio","Color","Calculate color contrast ratio","contrast"],
+["Flexbox Starter","Developer","Create flexbox CSS","flex"],
+["Image Data URL","Images","Convert image to Data URL","imageData"],
+["Image Resizer","Images","Resize an image locally","imageResize"],
+["Image Compressor","Images","Compress an image locally","imageCompress"],
+["PNG to JPG","Images","Convert PNG/JPG using canvas","pngJpg"],
+["JPG to PNG","Images","Convert JPG to PNG","jpgPng"],
+["Grayscale Image","Images","Apply grayscale filter","grayImage"],
+["Sepia Image","Images","Apply sepia filter","sepiaImage"],
+["Brightness Image","Images","Adjust image brightness","brightImage"],
+["Contrast Image","Images","Adjust image contrast","contrastImage"],
+["Blur Image","Images","Apply a blur filter","blurImage"],
+["Video File Info","Media","Inspect local video metadata","videoInfo"],
+["Audio File Info","Media","Inspect local audio metadata","audioInfo"],
+["Capture Video Frame","Media","Capture a frame from a local video","videoFrame"],
+["Fitness Interval Timer","Fitness","Build a simple movement interval","fitnessTimer"],
+["Study Session Timer","Student","Create a study interval","studyTimer"],
+["Focus Checklist","Productivity","Create a small checklist","checklist"],
+["Meta Tag Generator","SEO","Generate basic metadata HTML","meta"],
+["Robots.txt Generator","SEO","Generate a simple robots.txt","robots"],
+["CSV Cleaner","Data","Trim and clean CSV lines","csvClean"],
+["CSV Line Counter","Data","Count CSV rows","csvLines"]
+];
+
+if(BASE_TOOLS.length!==100){
+  console.error("Expected 100 core tools, got",BASE_TOOLS.length);
+}
+
+/* ---------- EXACT 3,000 TOOL CATALOG ---------- */
+
+const variants=[
+  "Quick",
+  "Simple",
+  "Instant",
+  "Mobile",
+  "Basic",
+  "Pro",
+  "Fast",
+  "Clean",
+  "Smart",
+  "Everyday",
+  "Student",
+  "Creator",
+  "Developer",
+  "Writer",
+  "Office",
+  "Privacy",
+  "Local",
+  "Beginner",
+  "Advanced",
+  "Compact",
+  "Classic",
+  "Modern",
+  "Minimal",
+  "Power",
+  "Plus",
+  "Focus",
+  "Easy",
+  "Universal",
+  "Free",
+  "One-Click"
+];
 
 const tools=[];
 
-function addTool(spec){
-  tools.push({
-    id:spec.id,
-    name:spec.name,
-    category:spec.category,
-    group:spec.group||"Everyday",
-    desc:spec.desc||"A practical browser utility.",
-    fields:spec.fields||[
-      {id:"input",label:"Input",type:"textarea",placeholder:"Enter your text..."}
-    ],
-    run:spec.run
-  });
-}
-
-addTool({
- id:"word-counter",name:"Word Counter",category:"Text",
- desc:"Count words, characters, lines and sentences.",
- run:({input})=>textStats(input)
-});
-
-addTool({
- id:"case-upper",name:"Uppercase Converter",category:"Text",
- desc:"Convert text to uppercase.",
- run:({input})=>caseConvert(input,"upper")
-});
-
-addTool({
- id:"case-lower",name:"Lowercase Converter",category:"Text",
- desc:"Convert text to lowercase.",
- run:({input})=>caseConvert(input,"lower")
-});
-
-addTool({
- id:"title-case",name:"Title Case Converter",category:"Text",
- desc:"Convert text to title case.",
- run:({input})=>caseConvert(input,"title")
-});
-
-addTool({
- id:"sentence-case",name:"Sentence Case Converter",category:"Text",
- desc:"Convert text into sentence-style capitalization.",
- run:({input})=>caseConvert(input,"sentence")
-});
-
-addTool({
- id:"reverse-text",name:"Reverse Text",category:"Text",
- desc:"Reverse characters in a string.",
- run:({input})=>caseConvert(input,"reverse")
-});
-
-addTool({
- id:"text-cleaner",name:"Text Cleaner",category:"Text",
- desc:"Clean extra spaces and excessive blank lines.",
- run:({input})=>cleanText(input,"spaces")
-});
-
-addTool({
- id:"dedupe-lines",name:"Duplicate Line Remover",category:"Text",
- desc:"Remove duplicate lines while keeping order.",
- run:({input})=>cleanText(input,"duplicates")
-});
-
-addTool({
- id:"sort-lines",name:"Line Sorter",category:"Text",
- desc:"Sort lines alphabetically.",
- run:({input})=>cleanText(input,"sort")
-});
-
-addTool({
- id:"number-lines",name:"Line Numberer",category:"Text",
- desc:"Add numbers to each non-empty line.",
- run:({input})=>cleanText(input,"number")
-});
-
-addTool({
- id:"slug-generator",name:"Slug Generator",category:"Text",
- desc:"Create a clean URL-friendly slug.",
- run:({input})=>slugify(input)
-});
-
-addTool({
- id:"markdown-stripper",name:"Markdown Stripper",category:"Text",
- desc:"Remove common Markdown formatting.",
- run:({input})=>markdownStrip(input)
-});
-
-addTool({
- id:"word-frequency",name:"Word Frequency",category:"Text",
- desc:"Count repeated words.",
- run:({input})=>wordFrequency(input)
-});
-
-addTool({
- id:"html-escape",name:"HTML Escape",category:"Developer",
- group:"Power",
- desc:"Escape text for safe HTML display.",
- run:({input})=>htmlEscape(input)
-});
-
-addTool({
- id:"html-unescape",name:"HTML Unescape",category:"Developer",
- group:"Power",
- desc:"Decode common HTML entities.",
- run:({input})=>htmlUnescape(input)
-});
-
-addTool({
- id:"base64-encode",name:"Base64 Encode",category:"Developer",
- group:"Power",
- desc:"Encode UTF-8 text as Base64.",
- run:({input})=>base64Encode(input)
-});
-
-addTool({
- id:"base64-decode",name:"Base64 Decode",category:"Developer",
- group:"Power",
- desc:"Decode Base64 text.",
- run:({input})=>base64Decode(input)
-});
-
-addTool({
- id:"url-encode",name:"URL Encode",category:"Developer",
- group:"Power",
- desc:"Percent-encode text for URLs.",
- run:({input})=>urlEncode(input)
-});
-
-addTool({
- id:"url-decode",name:"URL Decode",category:"Developer",
- group:"Power",
- desc:"Decode percent-encoded URL text.",
- run:({input})=>urlDecode(input)
-});
-
-addTool({
- id:"json-formatter",name:"JSON Formatter",category:"Developer",
- group:"Power",
- desc:"Format and validate JSON.",
- run:({input})=>jsonFormat(input)
-});
-
-addTool({
- id:"json-minifier",name:"JSON Minifier",category:"Developer",
- group:"Power",
- desc:"Minify valid JSON.",
- run:({input})=>jsonMinify(input)
-});
-
-addTool({
- id:"json-validator",name:"JSON Validator",category:"Developer",
- group:"Power",
- desc:"Check whether JSON is valid.",
- run:({input})=>jsonValidate(input)
-});
-
-addTool({
- id:"csv-json",name:"CSV to JSON",category:"Data",
- group:"Power",
- desc:"Convert simple CSV data into JSON.",
- run:({input})=>csvToJson(input)
-});
-
-addTool({
- id:"json-csv",name:"JSON to CSV",category:"Data",
- group:"Power",
- desc:"Convert an array of JSON objects into CSV.",
- run:({input})=>jsonToCsv(input)
-});
-
-addTool({
- id:"query-parser",name:"Query String Parser",category:"Web",
- group:"Power",
- desc:"Inspect URL query parameters.",
- run:({input})=>queryParse(input)
-});
-
-addTool({
- id:"uuid-generator",name:"UUID Generator",category:"Developer",
- group:"Power",
- desc:"Generate a random UUID.",
- fields:[],
- run:()=>uuid()
-});
-
-addTool({
- id:"timestamp-now",name:"Current Timestamp",category:"Date & Time",
- desc:"Show Unix timestamps and ISO time.",
- fields:[],
- run:()=>timestampNow()
-});
-
-addTool({
- id:"timestamp-date",name:"Unix Timestamp Converter",category:"Date & Time",
- desc:"Convert a Unix timestamp into a readable date.",
- run:({input})=>unixToDate(input)
-});
-
-addTool({
- id:"date-difference",name:"Date Difference",category:"Date & Time",
- desc:"Calculate the number of days between two dates.",
- run:({input})=>dateDiff(input)
-});
-
-addTool({
- id:"percentage",name:"Percentage Calculator",category:"Math",
- desc:"Calculate a percentage of a number.",
- fields:[
-   {id:"a",label:"Number",type:"number",value:"450"},
-   {id:"b",label:"Percent",type:"number",value:"20"}
- ],
- run:({a,b})=>percentOf(a,b)
-});
-
-addTool({
- id:"percent-change",name:"Percent Change",category:"Math",
- desc:"Calculate percentage change between two values.",
- fields:[
-   {id:"a",label:"Starting value",type:"number"},
-   {id:"b",label:"New value",type:"number"}
- ],
- run:({a,b})=>percentChange(a,b)
-});
-
-addTool({
- id:"average",name:"Average Calculator",category:"Math",
- desc:"Calculate the average of numbers.",
- run:({input})=>average(input)
-});
-
-addTool({
- id:"min-max",name:"Minimum & Maximum",category:"Math",
- desc:"Find the minimum and maximum values.",
- run:({input})=>minmax(input)
-});
-
-addTool({
- id:"gcd",name:"GCD Calculator",category:"Math",
- fields:[
-   {id:"a",label:"A",type:"number"},
-   {id:"b",label:"B",type:"number"}
- ],
- run:({a,b})=>String(gcd(a,b))
-});
-
-addTool({
- id:"lcm",name:"LCM Calculator",category:"Math",
- fields:[
-   {id:"a",label:"A",type:"number"},
-   {id:"b",label:"B",type:"number"}
- ],
- run:({a,b})=>String(lcm(a,b))
-});
-
-addTool({
- id:"ratio",name:"Ratio Calculator",category:"Math",
- fields:[
-   {id:"a",label:"A",type:"number",value:"2"},
-   {id:"b",label:"B",type:"number",value:"3"},
-   {id:"c",label:"C",type:"number",value:"8"}
- ],
- run:({a,b,c})=>ratio(a,b,c)
-});
-
-addTool({
- id:"temp-converter",name:"Temperature Converter",category:"Converters",
- fields:[
-   {id:"value",label:"Value",type:"number",value:"25"},
-   {id:"from",label:"From",type:"select",options:["C","F","K"]},
-   {id:"to",label:"To",type:"select",options:["C","F","K"]}
- ],
- run:({value,from,to})=>temperature(value,from,to)
-});
-
-addTool({
- id:"length-converter",name:"Length Converter",category:"Converters",
- fields:[
-   {id:"value",label:"Value",type:"number",value:"1"},
-   {id:"from",label:"From",type:"select",options:Object.keys(factors)},
-   {id:"to",label:"To",type:"select",options:Object.keys(factors)}
- ],
- run:({value,from,to})=>lengthConvert(value,from,to)
-});
-
-addTool({
- id:"mass-converter",name:"Mass Converter",category:"Converters",
- fields:[
-   {id:"value",label:"Value",type:"number",value:"1"},
-   {id:"from",label:"From",type:"select",options:Object.keys(massFactors)},
-   {id:"to",label:"To",type:"select",options:Object.keys(massFactors)}
- ],
- run:({value,from,to})=>massConvert(value,from,to)
-});
-
-addTool({
- id:"bytes-converter",name:"Data Size Converter",category:"Converters",
- fields:[
-   {id:"value",label:"Value",type:"number",value:"1"},
-   {id:"from",label:"From",type:"select",options:["B","KB","MB","GB","TB"]},
-   {id:"to",label:"To",type:"select",options:["B","KB","MB","GB","TB"]}
- ],
- run:({value,from,to})=>byteConvert(value,from,to)
-});
-
-addTool({
- id:"hex-rgb",name:"HEX to RGB",category:"Colors",
- run:({input})=>colorHexToRgb(input)
-});
-
-addTool({
- id:"rgb-hex",name:"RGB to HEX",category:"Colors",
- fields:[
-   {id:"input",label:"RGB",type:"text",value:"255, 128, 64"}
- ],
- run:({input})=>rgbToHex(input)
-});
-
-addTool({
- id:"random-number",name:"Random Number",category:"Generators",
- fields:[
-   {id:"min",label:"Minimum",type:"number",value:"1"},
-   {id:"max",label:"Maximum",type:"number",value:"100"}
- ],
- run:({min,max})=>randomNumber(min,max)
-});
-
-addTool({
- id:"hash-sha256",name:"SHA-256 Hash",category:"Security-safe",
- group:"Power",
- desc:"Hash text using the browser Web Crypto API.",
- run:({input})=>hashText(input,"SHA-256")
-});
-
-addTool({
- id:"hash-sha512",name:"SHA-512 Hash",category:"Security-safe",
- group:"Power",
- desc:"Hash text using the browser Web Crypto API.",
- run:({input})=>hashText(input,"SHA-512")
-});
-
-addTool({
- id:"css-minifier",name:"CSS Minifier",category:"Developer",
- group:"Power",
- run:({input})=>cssMinify(input)
-});
-
-addTool({
- id:"js-cleaner",name:"JavaScript Cleaner",category:"Developer",
- group:"Power",
- run:({input})=>jsBasicClean(input)
-});
-
-/* Creator tools — 30 explicit browser utilities */
-const creatorTools=[
- ["image-resizer","Image Resizer","Resize images locally in your browser.","Image"],
- ["image-cropper","Image Cropper","Crop an image locally.","Image"],
- ["image-rotator","Image Rotator","Rotate images before export.","Image"],
- ["image-compressor","Image Compressor","Compress an image using browser canvas.","Image"],
- ["image-format-helper","Image Format Helper","Plan a suitable image export format.","Image"],
- ["thumbnail-planner","Thumbnail Planner","Plan a clean thumbnail layout.","Creator"],
- ["social-size-helper","Social Size Helper","Find common social canvas sizes.","Creator"],
- ["storyboard-builder","Storyboard Builder","Create a simple shot-by-shot storyboard.","Video"],
- ["reel-shot-planner","Reel Shot Planner","Plan short-form video shots.","Video"],
- ["video-ratio","Video Aspect Ratio Calculator","Calculate a video ratio from width and height.","Video"],
- ["frame-rate-helper","Frame Rate Helper","Estimate frames from duration and FPS.","Video"],
- ["bitrate-calculator","Bitrate Calculator","Estimate video data rate from size and duration.","Video"],
- ["audio-duration","Audio Duration Calculator","Calculate approximate audio file size from bitrate and duration.","Audio"],
- ["srt-cleaner","SRT Cleaner","Clean basic subtitle text formatting.","Captions"],
- ["caption-breaker","Caption Line Breaker","Break long captions into readable lines.","Captions"],
- ["subtitle-time-helper","Subtitle Timestamp Helper","Shift simple SRT timestamps.","Captions"],
- ["caption-case","Caption Case Converter","Format captions consistently.","Captions"],
- ["creator-filename","Creator Filename Builder","Create organized project filenames.","Creator"],
- ["export-checklist","Creator Export Checklist","Generate a pre-export checklist.","Creator"],
- ["poster-copy-helper","Poster Copy Helper","Structure short poster text.","Design"],
- ["meme-text-planner","Meme Text Planner","Prepare concise meme text blocks.","Design"],
- ["color-palette","Color Palette Helper","Create a simple five-step palette.","Design"],
- ["hex-palette","HEX Palette Builder","Generate related HEX values.","Design"],
- ["contrast-helper","Contrast Helper","Check simple luminance contrast.","Design"],
- ["caption-counter","Caption Character Counter","Count caption length.","Captions"],
- ["hook-generator","Video Hook Planner","Generate safe, non-clickbait hook structures.","Creator"],
- ["shot-timer","Shot Timer Planner","Plan shot durations.","Video"],
- ["music-cue-planner","Music Cue Planner","Plan simple music cue timestamps.","Audio"],
- ["creator-notes","Creator Notes Formatter","Turn notes into organized production steps.","Creator"]
-];
-
-creatorTools.forEach(([id,name,desc,category],i)=>{
-  addTool({
-    id,
-    name,
-    category,
-    group:"Creator",
-    desc,
-    fields:[
-      {
-        id:"input",
-        label:i%3===0?"Text / notes":"Input",
-        type:"textarea",
-        placeholder:"Enter your content..."
-      }
-    ],
-    run:({input})=>{
-      const t=String(input||"").trim();
-
-      if(id==="image-format-helper")
-        return "PNG: transparency / graphics\nJPEG: photographs\nWebP: modern web delivery\nAVIF: strong web compression where supported.";
-
-      if(id==="video-ratio"){
-        const p=t.split(/[x:]/).map(Number);
-        if(p.length<2)return "Use: 1920x1080";
-        const g=gcd(p[0],p[1]);
-        return `Ratio: ${p[0]/g}:${p[1]/g}`;
-      }
-
-      if(id==="frame-rate-helper"){
-        const p=t.split(/[|, ]+/).map(Number);
-        if(p.length<2)return "Use: duration_seconds | fps";
-        return `Frames: ${Math.round(p[0]*p[1])}`;
-      }
-
-      if(id==="bitrate-calculator"){
-        const p=t.split(/[|, ]+/).map(Number);
-        if(p.length<2)return "Use: file_size_MB | duration_minutes";
-        return `Approx bitrate: ${(p[0]*8/p[1]).toFixed(2)} Mbps`;
-      }
-
-      if(id==="audio-duration"){
-        const p=t.split(/[|, ]+/).map(Number);
-        if(p.length<2)return "Use: bitrate_kbps | duration_minutes";
-        return `Approx data: ${(p[0]*p[1]*60/8/1024).toFixed(2)} MB`;
-      }
-
-      if(id==="color-palette"){
-        return ["#7C3AED","#2563EB","#06B6D4","#10B981","#F59E0B"].join("\n");
-      }
-
-      if(id==="hex-palette"){
-        const rgb=colorHexToRgb(t);
-        return rgb==="Invalid HEX color."?rgb:
-          "Use a HEX color such as #7C3AED to build a palette.";
-      }
-
-      if(id==="contrast-helper"){
-        return "For accessibility-critical content, verify contrast with a dedicated WCAG contrast checker before publishing.";
-      }
-
-      if(id==="export-checklist"){
-        return "✓ Filename organized\n✓ Correct dimensions\n✓ Correct aspect ratio\n✓ Audio checked\n✓ Captions checked\n✓ Final preview checked\n✓ Exported copy verified";
-      }
-
-      if(id==="storyboard-builder"||id==="reel-shot-planner"||id==="shot-timer"){
-        const lines=t.split(/\r?\n/).filter(Boolean);
-        if(!lines.length)return "Add one shot idea per line.";
-        return lines.map((x,i)=>`Shot ${i+1}: ${x}`).join("\n");
-      }
-
-      if(id==="caption-breaker"){
-        const words=t.split(/\s+/);
-        const out=[];
-        for(let i=0;i<words.length;i+=8)out.push(words.slice(i,i+8).join(" "));
-        return out.join("\n");
-      }
-
-      if(id==="srt-cleaner"){
-        return t.replace(/[ \t]+/g," ").replace(/\n{3,}/g,"\n\n").trim();
-      }
-
-      if(id==="caption-counter"){
-        return `Characters: ${[...t].length}\nWords: ${t?t.split(/\s+/).length:0}`;
-      }
-
-      if(id==="creator-filename"){
-        return slugify(t).replaceAll("-","_")||"project_001";
-      }
-
-      if(id==="caption-case")return caseConvert(t,"sentence");
-
-      if(id==="hook-generator"){
-        return `Hook structure:\n1. Clear problem\n2. Useful promise\n3. Demonstration\n4. Result\n5. Simple next step`;
-      }
-
-      if(id==="music-cue-planner"){
-        const lines=t.split(/\r?\n/).filter(Boolean);
-        return lines.map((x,i)=>`00:${String(i*10).padStart(2,"0")} — ${x}`).join("\n");
-      }
-
-      if(id==="creator-notes"){
-        return cleanText(t,"number");
-      }
-
-      return t||"Enter content to process.";
-    }
-  });
-});
-
-/* Image tools with real canvas file processing */
-const imageToolIds=new Set([
- "image-resizer","image-cropper","image-rotator","image-compressor"
-]);
-
-/* =========================================================
-   GENERATE 3,000 SEARCHABLE CATALOG ENTRIES
-   60 core engines × 50 meaningful usage profiles.
-========================================================= */
-
-const profiles=[
- "Quick","Mobile","Desktop","Batch","Clean","Simple","Pro","Compact","Long Form","Short Form",
- "Writing","Study","Creator","Developer","Data","Web","School","Planning","Daily","Advanced",
- "Beginner","Fast","Local","Private","Minimal","Detailed","Basic","Plus","Smart","Practical",
- "Modern","Classic","Unicode","English","Urdu","Hindi","Arabic","Spanish","French","German",
- "Team","Solo","Project","Notes","Publishing","Social","Content","Research","Office","General"
-];
-
-const baseToolSnapshot=[...tools];
-
-for(let i=0;i<baseToolSnapshot.length;i++){
-  for(let j=0;j<profiles.length;j++){
-    const base=baseToolSnapshot[i];
-
-    if(tools.length>=3000)break;
-
-    const variantName=`${base.name} — ${profiles[j]}`;
-
-    if(j===0)continue;
-
+BASE_TOOLS.forEach((base,baseIndex)=>{
+  variants.forEach((variant,variantIndex)=>{
     tools.push({
-      ...base,
-      id:`${base.id}-${j}`,
-      name:variantName,
-      desc:`${base.desc} ${profiles[j]} workflow.`,
-      variant:profiles[j]
+      id:`SHT-${String(baseIndex*30+variantIndex+1).padStart(4,"0")}`,
+      name:`${variant} ${base[0]}`,
+      category:base[1],
+      description:base[2],
+      engine:base[3],
+      base:base[0],
+      variant,
+      rank:baseIndex*30+variantIndex
     });
-  }
-}
-
-while(tools.length<3000){
-  const base=baseToolSnapshot[tools.length%baseToolSnapshot.length];
-  const n=tools.length+1;
-  tools.push({
-    ...base,
-    id:`tool-${n}`,
-    name:`${base.name} — Utility ${n}`,
-    desc:base.desc,
-    variant:`Utility ${n}`
   });
+});
+
+if(tools.length!==3000){
+  throw new Error("Catalog must contain exactly 3,000 tools.");
 }
 
-if(tools.length>3000)tools.length=3000;
-
-$("#toolCount").textContent=tools.length.toLocaleString()+"+";
-
-/* =========================================================
-   TOOL UI
-========================================================= */
-const categories=[
- "All",
- "Text",
- "Math",
- "Converters",
- "Date & Time",
- "Colors",
- "Developer",
- "Data",
- "Web",
- "Generators",
- "Security-safe",
- "Creator",
- "Image",
- "Video",
- "Audio",
- "Captions",
- "Design",
- "Learning",
- "Wellness"
-];
-
-let selectedCategory="All";
-let toolSearch="";
+let activeCategory="All";
+let currentTool=null;
 
 function renderCategories(){
-  const wrap=$("#categoryChips");
-  wrap.innerHTML=categories.map(c=>
-    `<button class="chip ${c===selectedCategory?"active":""}" data-cat="${esc(c)}">${esc(c)}</button>`
+  $("categoryChips").innerHTML=categories.map(c=>
+    `<button class="chip ${c===activeCategory?"active":""}"
+      onclick="setCategory('${c}')">${c}</button>`
   ).join("");
+}
 
-  $$("#categoryChips .chip").forEach(b=>{
-    b.onclick=()=>{
-      selectedCategory=b.dataset.cat;
-      renderCategories();
-      renderTools();
-    };
-  });
+window.setCategory=function(category){
+  activeCategory=category;
+  renderCategories();
+  renderTools();
+};
+
+function filteredTools(){
+  const q=$("globalSearch").value.trim().toLowerCase();
+
+  let arr=tools.filter(t=>
+    (activeCategory==="All"||t.category===activeCategory)&&
+    (!q||
+      t.name.toLowerCase().includes(q)||
+      t.description.toLowerCase().includes(q)||
+      t.category.toLowerCase().includes(q)
+    )
+  );
+
+  const sort=$("toolSort").value;
+
+  if(sort==="az"){
+    arr.sort((a,b)=>a.name.localeCompare(b.name));
+  }else if(sort==="new"){
+    arr.sort((a,b)=>b.rank-a.rank);
+  }else{
+    arr.sort((a,b)=>a.rank-b.rank);
+  }
+
+  return arr;
 }
 
 function renderTools(){
-  const grid=$("#toolGrid");
-  const q=toolSearch.toLowerCase().trim();
+  const arr=filteredTools();
+  const limited=arr.slice(0,120);
 
-  const filtered=tools.filter(t=>{
-    const categoryOK=selectedCategory==="All"||t.category===selectedCategory||t.group===selectedCategory;
-    const searchOK=!q||`${t.name} ${t.desc} ${t.category} ${t.group}`.toLowerCase().includes(q);
-    return categoryOK&&searchOK;
-  }).slice(0,180);
+  $("toolResultsText").textContent=
+    `${arr.length.toLocaleString()} matching tools`;
 
-  $("#toolEmpty").style.display=filtered.length?"none":"block";
+  const fav=read(STORE.favorites,[]);
 
-  grid.innerHTML=filtered.map(t=>{
-    const fav=safeJSON("shaheen.favorites.v3",[]);
-    const on=fav.includes(t.id);
+  $("toolGrid").innerHTML=limited.map(t=>{
+    const isFav=fav.includes(t.id);
 
     return `
-      <article class="tool">
-        <div class="tool-top">
-          <span class="badge">${esc(t.group||t.category)}</span>
-          <button class="favorite ${on?"on":""}" aria-label="Favorite" onclick="toggleFavorite('${esc(t.id)}')">★</button>
-        </div>
-        <h3>${esc(t.name)}</h3>
-        <p>${esc(t.desc)}</p>
+      <article class="tool-card">
+        <span class="badge">${escapeHTML(t.category)}</span>
+        <h3>${escapeHTML(t.name)}</h3>
+        <p>${escapeHTML(t.description)}</p>
+
         <div class="tool-actions">
-          <button class="btn primary" onclick="openToolById('${esc(t.id)}')">Open</button>
+          <button class="btn primary" onclick="openTool('${t.id}')">
+            Open
+          </button>
+          <button class="btn" onclick="toggleFavorite('${t.id}')">
+            ${isFav?"★":"☆"}
+          </button>
         </div>
       </article>
     `;
   }).join("");
+
+  if(!limited.length){
+    $("toolGrid").innerHTML=`
+      <div class="card" style="grid-column:1/-1">
+        <h2>No matching tools</h2>
+        <p class="muted">Try another search or category.</p>
+      </div>`;
+  }
 }
 
-$("#globalSearch").addEventListener("input",e=>{
-  toolSearch=e.target.value;
-  if(toolSearch.trim() && currentPage!=="tools")go("tools");
-  renderTools();
-});
-
-function toggleFavorite(id){
-  let fav=safeJSON("shaheen.favorites.v3",[]);
-  if(fav.includes(id))fav=fav.filter(x=>x!==id);
-  else fav.push(id);
-  saveJSON("shaheen.favorites.v3",fav);
-  renderTools();
-}
-
-let currentTool=null;
-
-function openToolById(id){
+window.openTool=function(id){
   const t=tools.find(x=>x.id===id);
   if(!t)return;
+
   currentTool=t;
 
-  $("#runnerCategory").textContent=t.group||t.category;
-  $("#runnerTitle").textContent=t.name;
-  $("#runnerDescription").textContent=t.desc;
+  $("runnerCategory").textContent=t.category;
+  $("runnerTitle").textContent=t.name;
+  $("runnerDescription").textContent=t.description;
 
-  const fields=t.fields||[];
-  $("#runnerFields").innerHTML=fields.map(f=>{
-    if(f.type==="select"){
-      return `
-        <div class="field" style="margin-top:12px">
-          <label>${esc(f.label)}</label>
-          <select data-field="${esc(f.id)}">
-            ${(f.options||[]).map((x,i)=>`<option ${i===0?"selected":""}>${esc(x)}</option>`).join("")}
-          </select>
-        </div>
-      `;
+  renderRunnerFields(t);
+
+  $("runnerOutput").textContent="Your result will appear here.";
+  $("toolModal").classList.add("open");
+};
+
+window.closeTool=function(){
+  $("toolModal").classList.remove("open");
+  currentTool=null;
+};
+
+function field(label,id,type="text",placeholder=""){
+  if(type==="textarea"){
+    return `
+      <div class="field">
+        <label>${label}</label>
+        <textarea id="${id}" placeholder="${placeholder}"></textarea>
+      </div>`;
+  }
+
+  return `
+    <div class="field">
+      <label>${label}</label>
+      <input id="${id}" type="${type}" placeholder="${placeholder}">
+    </div>`;
+}
+
+function renderRunnerFields(t){
+
+  let html="";
+
+  const textEngines=[
+    "textCount","charStats","sentenceCount","lineStats","readingTime",
+    "upper","lower","title","sentenceCase","camel","snake","kebab",
+    "trim","trimLines","removeSpaces","removeBlank","unique","sort",
+    "sortReverse","reverse","stripHtml","htmlEscape","markdown",
+    "punctuation","slug","repeat","replace"
+  ];
+
+  if(textEngines.includes(t.engine)){
+    html+=field("Input text","inputText","textarea","Paste or type text here...");
+  }
+
+  if(t.engine==="diff"){
+    html+=field("Text A","inputA","textarea","First text...");
+    html+=field("Text B","inputB","textarea","Second text...");
+  }
+
+  if(["jsonFormat","jsonMinify","jsonValidate","jsonKeys","jsonToCsv"].includes(t.engine)){
+    html+=field("JSON","inputText","textarea",'{"name":"Shaheen","tools":3000}');
+  }
+
+  if(t.engine==="csvToJson"||t.engine==="htmlTable"||t.engine==="csvClean"||t.engine==="csvLines"){
+    html+=field("CSV","inputText","textarea","name,age\nAli,15\nSara,16");
+  }
+
+  if(["base64Encode","base64Decode","urlEncode","urlDecode","xmlEscape",
+      "queryToJson","jsonToQuery","uuid","sha256","markdown","randomPassword"].includes(t.engine)){
+    if(!document.getElementById("inputText")){
+      html+=field("Input","inputText","textarea","Enter input...");
+    }
+  }
+
+  if(t.engine==="base"){
+    html+=field("Number","inputNumber","text","1010");
+    html+=field("From base","inputA","number","2");
+    html+=field("To base","inputB","number","10");
+  }
+
+  if(t.engine==="regex"){
+    html+=field("Text","inputText","textarea","Text to test...");
+    html+=field("Regular expression","inputA","text","\\btest\\b");
+    html+=field("Flags","inputB","text","gi");
+  }
+
+  if(t.engine==="gradient"){
+    html+=field("Color 1","inputA","text","#8b5cf6");
+    html+=field("Color 2","inputB","text","#5ee7ff");
+    html+=field("Angle","inputC","number","90");
+  }
+
+  if(t.engine==="shadow"){
+    html+=field("X offset","inputA","number","0");
+    html+=field("Y offset","inputB","number","8");
+    html+=field("Blur","inputC","number","24");
+  }
+
+  if(["percent","percentChange","tip","discount","interest","compound",
+      "ratio","unitRate","gcd","lcm","power","sqrt"].includes(t.engine)){
+    html+=field("Value A","inputA","number","10");
+    html+=field("Value B","inputB","number","100");
+  }
+
+  if(t.engine==="average"||t.engine==="minmax"){
+    html+=field("Numbers","inputText","textarea","10, 20, 30, 40");
+  }
+
+  if(["unixToDate","dateToUnix"].includes(t.engine)){
+    html+=field("Value","inputText","text",
+      t.engine==="unixToDate"?"0":"2026-01-01 12:00");
+  }
+
+  if(t.engine==="dateDiff"){
+    html+=field("Start date","inputA","date");
+    html+=field("End date","inputB","date");
+  }
+
+  if(t.engine==="addDays"){
+    html+=field("Date","inputA","date");
+    html+=field("Days","inputB","number","7");
+  }
+
+  if(t.engine==="durationSeconds"){
+    html+=field("Duration","inputText","text","05:30");
+  }
+
+  if(t.engine==="secondsDuration"){
+    html+=field("Seconds","inputNumber","number","330");
+  }
+
+  if(["random","password","textRepeat"].includes(t.engine)){
+    html+=field("Length / count","inputNumber","number","16");
+  }
+
+  if(["hexRgb","contrast"].includes(t.engine)){
+    html+=field("HEX color","inputA","text","#8b5cf6");
+  }
+
+  if(t.engine==="contrast"){
+    html+=field("Second HEX color","inputB","text","#ffffff");
+  }
+
+  if(t.engine==="rgbHex"){
+    html+=field("Red","inputA","number","139");
+    html+=field("Green","inputB","number","92");
+    html+=field("Blue","inputC","number","246");
+  }
+
+  if(["imageData","imageResize","imageCompress","pngJpg","jpgPng",
+      "grayImage","sepiaImage","brightImage","contrastImage","blurImage"].includes(t.engine)){
+    html+=`
+      <div class="field">
+        <label>Local image</label>
+        <input id="imageFile" type="file" accept="image/*">
+      </div>`;
+  }
+
+  if(t.engine==="imageResize"){
+    html+=field("Width","inputA","number","800");
+    html+=field("Height","inputB","number","800");
+  }
+
+  if(t.engine==="videoInfo"||t.engine==="videoFrame"){
+    html+=`
+      <div class="field">
+        <label>Local video</label>
+        <input id="videoFile" type="file" accept="video/*">
+      </div>`;
+  }
+
+  if(t.engine==="audioInfo"){
+    html+=`
+      <div class="field">
+        <label>Local audio</label>
+        <input id="audioFile" type="file" accept="audio/*">
+      </div>`;
+  }
+
+  if(t.engine==="meta"){
+    html+=field("Page title","inputA","text","Shaheen Tools");
+    html+=field("Description","inputB","text","Useful browser tools");
+    html+=field("Canonical URL","inputC","text","https://example.com/");
+  }
+
+  if(t.engine==="robots"){
+    html+=field("Sitemap URL","inputText","text","https://example.com/sitemap.xml");
+  }
+
+  if(t.engine==="fitnessTimer"||t.engine==="studyTimer"){
+    html+=field("Work seconds","inputA","number","30");
+    html+=field("Rest seconds","inputB","number","10");
+    html+=field("Rounds","inputC","number","4");
+  }
+
+  if(t.engine==="checklist"){
+    html+=field("Items","inputText","textarea","Warm up\nDrink water\nStudy\nRead");
+  }
+
+  if(!html){
+    html=field("Input","inputText","textarea","Enter input...");
+  }
+
+  $("runnerFields").innerHTML=html;
+}
+
+function val(id,fallback=""){
+  return $(id)?.value ?? fallback;
+}
+
+async function runEngine(t){
+
+  const s=val("inputText");
+
+  switch(t.engine){
+
+    case "textCount":
+      return `Words: ${words(s)}`;
+
+    case "charStats":
+      return charStats(s);
+
+    case "sentenceCount":
+      return `Sentences: ${sentences(s)}`;
+
+    case "lineStats":
+      return lineStats(s);
+
+    case "readingTime":
+      return readingTime(s);
+
+    case "upper":
+      return s.toUpperCase();
+
+    case "lower":
+      return s.toLowerCase();
+
+    case "title":
+      return titleCase(s);
+
+    case "sentenceCase":
+      return s.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,m=>m.toUpperCase());
+
+    case "camel":
+      return camelCase(s);
+
+    case "snake":
+      return snakeCase(s);
+
+    case "kebab":
+      return kebabCase(s);
+
+    case "trim":
+      return s.trim();
+
+    case "trimLines":
+      return trimLines(s);
+
+    case "removeSpaces":
+      return removeSpaces(s);
+
+    case "removeBlank":
+      return removeBlank(s);
+
+    case "unique":
+      return uniqueLines(s);
+
+    case "sort":
+      return sortLines(s,false);
+
+    case "sortReverse":
+      return sortLines(s,true);
+
+    case "reverse":
+      return reverseText(s);
+
+    case "stripHtml":
+      return htmlStrip(s);
+
+    case "htmlEscape":
+      return htmlEscape(s);
+
+    case "markdown":
+      return markdownStrip(s);
+
+    case "punctuation":
+      return stripPunctuation(s);
+
+    case "slug":
+      return slugify(s);
+
+    case "repeat":
+      return textRepeat(s,Number(val("inputNumber",3)));
+
+    case "replace":{
+      const find=prompt("Find text:")??"";
+      const replacement=prompt("Replace with:")??"";
+      return s.split(find).join(replacement);
     }
 
-    return `
-      <div class="field" style="margin-top:12px">
-        <label>${esc(f.label)}</label>
-        ${f.type==="textarea"
-          ? `<textarea data-field="${esc(f.id)}" placeholder="${esc(f.placeholder||"")}">${esc(f.value||"")}</textarea>`
-          : `<input data-field="${esc(f.id)}" type="${esc(f.type||"text")}" value="${esc(f.value||"")}" placeholder="${esc(f.placeholder||"")}">`
+    case "diff":
+      return diffSimple(val("inputA"),val("inputB"));
+
+    case "jsonFormat":
+      return jsonFormat(s);
+
+    case "jsonMinify":
+      return jsonMinify(s);
+
+    case "jsonValidate":
+      return jsonValidate(s);
+
+    case "jsonKeys":
+      return jsonKeys(s);
+
+    case "jsonToCsv":
+      return jsonToCsv(s);
+
+    case "csvToJson":
+      return csvToJson(s);
+
+    case "base64Encode":
+      return base64Encode(s);
+
+    case "base64Decode":
+      return base64Decode(s);
+
+    case "urlEncode":
+      return urlEncode(s);
+
+    case "urlDecode":
+      return urlDecode(s);
+
+    case "queryToJson":
+      return queryToJson(s);
+
+    case "jsonToQuery":
+      return jsonToQuery(s);
+
+    case "uuid":
+      return uuid();
+
+    case "sha256":
+      return await sha256(s);
+
+    case "base":
+      return numberBase(val("inputNumber"),Number(val("inputA",10)),Number(val("inputB",16)));
+
+    case "regex":{
+      try{
+        const re=new RegExp(val("inputA"),val("inputB"));
+        const matches=[...s.matchAll(re)].map(m=>m[0]);
+        return matches.length
+          ? `Matches: ${matches.length}\n\n${matches.join("\n")}`
+          : "No matches.";
+      }catch(e){
+        return "Regex error: "+e.message;
+      }
+    }
+
+    case "htmlTable":
+      return htmlTable(s);
+
+    case "xmlEscape":
+      return xmlEscape(s);
+
+    case "gradient":
+      return gradientCss(val("inputA","#8b5cf6"),val("inputB","#5ee7ff"),Number(val("inputC",90)));
+
+    case "shadow":
+      return boxShadowCss(Number(val("inputA",0)),Number(val("inputB",8)),Number(val("inputC",24)));
+
+    case "percent":
+      return String(percentOf(val("inputA"),val("inputB")));
+
+    case "percentChange":
+      return percentageChange(val("inputA"),val("inputB"))+"%";
+
+    case "average":
+      return String(average(s));
+
+    case "minmax":
+      return minmax(s);
+
+    case "gcd":
+      return String(gcd(val("inputA"),val("inputB")));
+
+    case "lcm":
+      return String(lcm(val("inputA"),val("inputB")));
+
+    case "power":
+      return String(power(val("inputA"),val("inputB")));
+
+    case "sqrt":
+      return String(sqrt(val("inputA")));
+
+    case "tip":{
+      const bill=Number(val("inputA"));
+      const rate=Number(val("inputB",15));
+      return JSON.stringify({
+        bill,
+        tip:bill*rate/100,
+        total:bill*(1+rate/100)
+      },null,2);
+    }
+
+    case "discount":{
+      const price=Number(val("inputA"));
+      const discount=Number(val("inputB",10));
+      return JSON.stringify({
+        original:price,
+        discount,
+        savings:price*discount/100,
+        final:price*(1-discount/100)
+      },null,2);
+    }
+
+    case "interest":{
+      const principal=Number(val("inputA"));
+      const rate=Number(val("inputB",5));
+      const years=Number(prompt("Years:")||1);
+      const interest=principal*rate*years/100;
+      return JSON.stringify({
+        principal,rate,years,
+        interest,
+        total:principal+interest
+      },null,2);
+    }
+
+    case "compound":{
+      const p=Number(val("inputA"));
+      const rate=Number(val("inputB",5))/100;
+      const years=Number(prompt("Years:")||1);
+      return String(p*Math.pow(1+rate,years));
+    }
+
+    case "ratio":{
+      const a=Number(val("inputA"));
+      const b=Number(val("inputB"));
+      const g=gcd(a,b);
+      return `${a/g}:${b/g}`;
+    }
+
+    case "unitRate":{
+      const a=Number(val("inputA"));
+      const b=Number(val("inputB"));
+      return b===0?"Cannot divide by zero":String(a/b);
+    }
+
+    case "bmiSafe":
+      return bmiSafe();
+
+    case "unixNow":
+      return String(unixNow());
+
+    case "unixToDate":
+      return unixToDate(s);
+
+    case "dateToUnix":
+      return String(dateToUnix(s));
+
+    case "dateDiff":
+      return dateDiff(val("inputA"),val("inputB"));
+
+    case "addDays":
+      return addDays(val("inputA"),val("inputB"));
+
+    case "durationSeconds":
+      return String(durationSeconds(s));
+
+    case "secondsDuration":
+      return secondsToDuration(val("inputNumber"));
+
+    case "random":
+      return String(randomInt(val("inputA",1),val("inputB",100)));
+
+    case "password":
+      return randomPassword(Number(val("inputNumber",16)));
+
+    case "randomColor":
+      return randomColor();
+
+    case "hexRgb":
+      return hexToRgb(val("inputA","#8b5cf6"));
+
+    case "rgbHex":
+      return rgbToHex(val("inputA",139),val("inputB",92),val("inputC",246));
+
+    case "contrast":
+      return contrastRatio(val("inputA","#8b5cf6"),val("inputB","#fff"));
+
+    case "flex":
+      return flexCss();
+
+    case "meta":
+      return `<title>${escapeHTML(val("inputA"))}</title>
+<meta name="description" content="${escapeHTML(val("inputB"))}">
+<link rel="canonical" href="${escapeHTML(val("inputC"))}">`;
+
+    case "robots":
+      return `User-agent: *
+Allow: /
+Sitemap: ${val("inputText")}`;
+
+    case "csvClean":
+      return trimLines(removeBlank(s));
+
+    case "csvLines":
+      return String(lines(s).filter(x=>x.trim()).length);
+
+    case "countdown":
+      startLocalTimer(Number(val("inputA",60)),"Countdown");
+
+      return "Countdown started on this page.";
+
+    case "pomodoro":
+      startLocalTimer(25*60,"Pomodoro");
+
+      return "25-minute focus timer started.";
+
+    case "fitnessTimer":
+      startIntervalTimer(
+        Number(val("inputA",30)),
+        Number(val("inputB",10)),
+        Number(val("inputC",4))
+      );
+      return "Fitness interval timer started.";
+
+    case "studyTimer":
+      startIntervalTimer(
+        Number(val("inputA",25*60)),
+        Number(val("inputB",5*60)),
+        Number(val("inputC",4))
+      );
+      return "Study timer started.";
+
+    case "checklist":
+      return lines(s).filter(x=>x.trim()).map(x=>"☐ "+x.trim()).join("\n");
+
+    case "imageData":{
+      const r=await imageToData($("imageFile")?.files?.[0]);
+      return r;
+    }
+
+    case "imageResize":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {
+          width:Number(val("inputA",800)),
+          height:Number(val("inputB",800)),
+          fit:true
         }
-      </div>
-    `;
-  }).join("");
+      );
+      return `Resized to ${r.width} × ${r.height}\n${r.url}`;
+    }
 
-  $("#runnerOutput").textContent="Your result will appear here.";
-  $("#toolModal").classList.add("show");
+    case "imageCompress":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {
+          type:"image/jpeg",
+          quality:.72
+        }
+      );
+      return `Compressed image ready.\n${r.url}`;
+    }
+
+    case "pngJpg":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {type:"image/jpeg",quality:.9}
+      );
+      return `Converted image ready.\n${r.url}`;
+    }
+
+    case "jpgPng":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {type:"image/png"}
+      );
+      return `Converted image ready.\n${r.url}`;
+    }
+
+    case "grayImage":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {filter:"grayscale(1)"}
+      );
+      return `Grayscale image ready.\n${r.url}`;
+    }
+
+    case "sepiaImage":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {filter:"sepia(1)"}
+      );
+      return `Sepia image ready.\n${r.url}`;
+    }
+
+    case "brightImage":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {filter:"brightness(1.25)"}
+      );
+      return `Brightness-adjusted image ready.\n${r.url}`;
+    }
+
+    case "contrastImage":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {filter:"contrast(1.25)"}
+      );
+      return `Contrast-adjusted image ready.\n${r.url}`;
+    }
+
+    case "blurImage":{
+      const r=await imageProcess(
+        $("imageFile")?.files?.[0],
+        {filter:"blur(2px)"}
+      );
+      return `Blurred image ready.\n${r.url}`;
+    }
+
+    case "videoInfo":
+      return await inspectVideo($("videoFile")?.files?.[0]);
+
+    case "audioInfo":
+      return await inspectAudio($("audioFile")?.files?.[0]);
+
+    case "videoFrame":
+      return await captureVideoFrame($("videoFile")?.files?.[0]);
+
+    default:
+      return "This engine is not configured.";
+  }
 }
 
-function closeTool(){
-  $("#toolModal").classList.remove("show");
-  currentTool=null;
+async function inspectVideo(file){
+  if(!file)return "Choose a video file.";
+  return new Promise(resolve=>{
+    const v=document.createElement("video");
+    const url=URL.createObjectURL(file);
+    v.preload="metadata";
+    v.onloadedmetadata=()=>{
+      resolve(JSON.stringify({
+        name:file.name,
+        type:file.type,
+        sizeBytes:file.size,
+        durationSeconds:v.duration,
+        width:v.videoWidth,
+        height:v.videoHeight
+      },null,2));
+      URL.revokeObjectURL(url);
+    };
+    v.onerror=()=>resolve("Could not read video metadata.");
+    v.src=url;
+  });
 }
 
-$("#runToolBtn").onclick=async()=>{
+async function inspectAudio(file){
+  if(!file)return "Choose an audio file.";
+  return new Promise(resolve=>{
+    const a=document.createElement("audio");
+    const url=URL.createObjectURL(file);
+    a.preload="metadata";
+    a.onloadedmetadata=()=>{
+      resolve(JSON.stringify({
+        name:file.name,
+        type:file.type,
+        sizeBytes:file.size,
+        durationSeconds:a.duration
+      },null,2));
+      URL.revokeObjectURL(url);
+    };
+    a.onerror=()=>resolve("Could not read audio metadata.");
+    a.src=url;
+  });
+}
+
+async function captureVideoFrame(file){
+  if(!file)return "Choose a video file.";
+
+  return new Promise(resolve=>{
+    const v=document.createElement("video");
+    const url=URL.createObjectURL(file);
+    v.muted=true;
+    v.preload="metadata";
+
+    v.onloadedmetadata=()=>{
+      v.currentTime=Math.min(1,v.duration/2);
+    };
+
+    v.onseeked=()=>{
+      const c=document.createElement("canvas");
+      c.width=v.videoWidth;
+      c.height=v.videoHeight;
+      c.getContext("2d").drawImage(v,0,0);
+      c.toBlob(blob=>{
+        const u=URL.createObjectURL(blob);
+        resolve(`Frame captured.\n${u}`);
+        URL.revokeObjectURL(url);
+      },"image/png");
+    };
+
+    v.onerror=()=>resolve("Could not decode video.");
+    v.src=url;
+  });
+}
+
+window.runCurrentTool=async function(){
   if(!currentTool)return;
 
-  const data={};
-  $$("#runnerFields [data-field]").forEach(el=>{
-    data[el.dataset.field]=el.value;
-  });
+  $("runnerOutput").textContent="Working...";
 
   try{
-    let result=currentTool.run(data);
-    if(result instanceof Promise)result=await result;
-    $("#runnerOutput").textContent=String(result??"");
+    const result=await runEngine(currentTool);
+
+    if(typeof result==="string"&&result.startsWith("blob:")){
+      $("runnerOutput").innerHTML=
+        `<a href="${result}" target="_blank">Open generated file</a>`;
+    }else if(typeof result==="string"&&result.startsWith("data:image")){
+      $("runnerOutput").innerHTML=
+        `<img src="${result}" style="max-width:100%;border-radius:14px">`;
+    }else{
+      $("runnerOutput").textContent=String(result);
+    }
+
   }catch(e){
-    $("#runnerOutput").textContent="Tool error: "+e.message;
+    $("runnerOutput").textContent="Error: "+(e?.message||e);
   }
 };
 
-$("#copyToolBtn").onclick=async()=>{
-  const text=$("#runnerOutput").textContent;
+window.clearRunner=function(){
+  $("runnerFields").querySelectorAll("input,textarea").forEach(x=>{
+    if(x.type==="file")x.value="";
+    else x.value="";
+  });
+  $("runnerOutput").textContent="Cleared.";
+};
+
+window.copyOutput=async function(){
+  const out=$("runnerOutput").innerText||"";
   try{
-    await navigator.clipboard.writeText(text);
-    toast("Copied");
-  }catch(e){
-    toast("Copy unavailable");
+    await navigator.clipboard.writeText(out);
+    showToast("Copied.");
+  }catch{
+    showToast("Copy is unavailable in this browser.");
   }
 };
 
-$("#clearToolBtn").onclick=()=>{
-  $$("#runnerFields [data-field]").forEach(el=>{
-    if(el.tagName==="SELECT")el.selectedIndex=0;
-    else el.value="";
-  });
-  $("#runnerOutput").textContent="Your result will appear here.";
+window.downloadOutput=function(){
+  const text=$("runnerOutput").innerText||"";
+  const blob=new Blob([text],{type:"text/plain"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=(currentTool?.name||"shaheen-result")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,"-")+".txt";
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 
-$("#toolModal").addEventListener("click",e=>{
-  if(e.target.id==="toolModal")closeTool();
-});
+window.toggleFavorite=function(id){
+  const fav=read(STORE.favorites,[]);
+  const i=fav.indexOf(id);
 
-renderCategories();
-renderTools();
+  if(i>=0)fav.splice(i,1);
+  else fav.push(id);
 
-/* =========================================================
-   IMAGE PROCESSING
-========================================================= */
+  write(STORE.favorites,fav);
 
-function enhanceImageToolModal(){
-  /* This adds a file input to image tools. */
-}
+  $("favCount").textContent=fav.length;
+  renderTools();
+};
 
-const oldOpenToolById=openToolById;
+/* ---------- TIMERS ---------- */
 
-window.openToolById=function(id){
-  oldOpenToolById(id);
+let localTimer=null;
 
-  if(!imageToolIds.has(id))return;
+function startLocalTimer(seconds,label){
+  clearInterval(localTimer);
 
-  const wrap=$("#runnerFields");
+  let remaining=Number(seconds);
 
-  wrap.insertAdjacentHTML("afterbegin",`
-    <div class="field" style="margin-top:12px">
-      <label>Image file</label>
-      <input id="imageFileInput" type="file" accept="image/*">
-    </div>
-    <div class="form-grid" style="margin-top:12px">
-      <div class="field">
-        <label>Width</label>
-        <input id="imageWidth" type="number" value="1080">
-      </div>
-      <div class="field">
-        <label>Height</label>
-        <input id="imageHeight" type="number" value="1080">
-      </div>
-    </div>
-  `);
+  const tick=()=>{
+    showToast(`${label}: ${secondsToDuration(remaining)}`);
 
-  $("#runToolBtn").onclick=async()=>{
-    const file=$("#imageFileInput")?.files?.[0];
-    if(!file){
-      $("#runnerOutput").textContent="Choose an image first.";
+    if(remaining<=0){
+      clearInterval(localTimer);
+      showToast(`${label} complete.`);
       return;
     }
 
-    const img=new Image();
-    img.onload=()=>{
-      const w=Number($("#imageWidth").value)||img.width;
-      const h=Number($("#imageHeight").value)||img.height;
+    remaining--;
+  };
 
-      const canvas=document.createElement("canvas");
-      canvas.width=w;
-      canvas.height=h;
+  tick();
+  localTimer=setInterval(tick,1000);
+}
 
-      const ctx=canvas.getContext("2d");
+function startIntervalTimer(work,rest,rounds){
+  clearInterval(localTimer);
 
-      if(id==="image-rotator"){
-        canvas.width=h;
-        canvas.height=w;
-        ctx.translate(h/2,w/2);
-        ctx.rotate(Math.PI/2);
-        ctx.drawImage(img,-w/2,-h/2,w,h);
+  let r=1;
+  let phase="work";
+  let left=Math.max(1,work);
+
+  const tick=()=>{
+    showToast(
+      `${phase==="work"?"Work":"Rest"} • Round ${r}/${rounds} • ${secondsToDuration(left)}`
+    );
+
+    left--;
+
+    if(left<0){
+      if(phase==="work"){
+        phase="rest";
+        left=Math.max(1,rest);
       }else{
-        ctx.drawImage(img,0,0,w,h);
-      }
-
-      const quality=id==="image-compressor"?.72:.92;
-
-      canvas.toBlob(blob=>{
-        if(!blob){
-          $("#runnerOutput").textContent="Could not process image.";
+        if(r>=rounds){
+          clearInterval(localTimer);
+          showToast("Interval session complete.");
           return;
         }
-
-        const url=URL.createObjectURL(blob);
-
-        $("#runnerOutput").innerHTML=`
-          <div style="display:grid;gap:10px">
-            <div>Processed image: ${(blob.size/1024).toFixed(1)} KB</div>
-            <a class="btn primary" href="${url}" download="shaheen-image.jpg">Download image</a>
-          </div>
-        `;
-      },"image/jpeg",quality);
-    };
-
-    img.src=URL.createObjectURL(file);
-  };
-};
-
-/* =========================================================
-   PROFILE
-========================================================= */
-const PROFILE_KEY="shaheen.profile.v3";
-
-function getProfile(){
-  return safeJSON(PROFILE_KEY,null);
-}
-
-function openProfile(){
-  const p=getProfile()||{};
-  $("#profileAge").value=p.age||"general";
-  $("#profileExperience").value=p.experience||"new";
-  $("#profileSession").value=p.session||"10";
-  $("#profileFocus").value=p.focus||"movement";
-  $("#profileEquipment").value=p.equipment||"none";
-  $("#profileLanguage").value=p.language||"en-US";
-  $("#profileModal").classList.add("show");
-}
-
-function closeProfile(){
-  $("#profileModal").classList.remove("show");
-}
-
-function ensureProfile(){
-  if(!getProfile())openProfile();
-}
-
-$("#saveProfileBtn").onclick=()=>{
-  const profile={
-    age:$("#profileAge").value,
-    experience:$("#profileExperience").value,
-    session:$("#profileSession").value,
-    focus:$("#profileFocus").value,
-    equipment:$("#profileEquipment").value,
-    language:$("#profileLanguage").value,
-    savedAt:new Date().toISOString()
+        r++;
+        phase="work";
+        left=Math.max(1,work);
+      }
+    }
   };
 
-  saveJSON(PROFILE_KEY,profile);
-  closeProfile();
-  toast("Gym setup saved");
-};
-
-$("#profileModal").addEventListener("click",e=>{
-  if(e.target.id==="profileModal")closeProfile();
-});
-
-/* =========================================================
-   GYM WORKOUT ENGINE
-========================================================= */
-
-const workouts=[
- {
-  id:"warmup",
-  title:"Easy Warm-up",
-  type:"time",
-  duration:35,
-  reps:0,
-  anim:"march",
-  instruction:"March gently in place. Let your arms move naturally and keep the pace comfortable.",
-  cue:"Easy movement first. You do not need to rush.",
-  next:"Bodyweight Squat",
-  view:"front"
- },
- {
-  id:"squat",
-  title:"Bodyweight Squat",
-  type:"reps",
-  duration:40,
-  reps:8,
-  anim:"squat",
-  instruction:"Sit your hips back, bend your knees comfortably, then stand smoothly.",
-  cue:"Keep the range comfortable and move slowly.",
-  next:"Side Step",
-  view:"front"
- },
- {
-  id:"sidestep",
-  title:"Side Step",
-  type:"time",
-  duration:35,
-  reps:0,
-  anim:"sidestep",
-  instruction:"Step gently to one side and return. Repeat on the other side.",
-  cue:"Stay balanced. Small steps are completely fine.",
-  next:"Gentle Reach",
-  view:"front"
- },
- {
-  id:"reach",
-  title:"Gentle Reach",
-  type:"time",
-  duration:35,
-  reps:0,
-  anim:"reach",
-  instruction:"Reach your arms upward only as far as comfortable, then lower them slowly.",
-  cue:"Keep your shoulders relaxed.",
-  next:"Gentle Hinge",
-  view:"side"
- },
- {
-  id:"hinge",
-  title:"Gentle Hinge",
-  type:"reps",
-  duration:35,
-  reps:6,
-  anim:"hinge",
-  instruction:"With soft knees, move your hips slightly back and return to standing.",
-  cue:"Keep this small and controlled.",
-  next:"Easy March",
-  view:"side"
- },
- {
-  id:"march2",
-  title:"Easy March",
-  type:"time",
-  duration:35,
-  reps:0,
-  anim:"march",
-  instruction:"Continue an easy march and breathe normally.",
-  cue:"Find a pace you can comfortably maintain.",
-  next:"Rest & Breathe",
-  view:"front"
- },
- {
-  id:"rest",
-  title:"Rest & Breathe",
-  type:"time",
-  duration:25,
-  reps:0,
-  anim:"rest",
-  instruction:"Stand or sit comfortably. Take calm breaths and relax your shoulders.",
-  cue:"Recovery is part of the session.",
-  next:"Finish",
-  view:"front"
- },
- {
-  id:"finish",
-  title:"Cool Down",
-  type:"time",
-  duration:30,
-  reps:0,
-  anim:"reach",
-  instruction:"Move gently and slow your pace. Finish feeling comfortable rather than exhausted.",
-  cue:"Nice work. Consistency matters more than intensity.",
-  next:"Complete",
-  view:"front"
- }
-];
-
-let workoutIndex=0;
-let workoutRunning=false;
-let workoutPaused=false;
-let workoutSeconds=0;
-let workoutSessionSeconds=0;
-let workoutTimer=null;
-let repsDone=0;
-
-function activeExercise(){
-  return workouts[workoutIndex];
+  tick();
+  localTimer=setInterval(tick,1000);
 }
 
-function updateWorkoutUI(){
-  const ex=activeExercise();
+/* ---------- PROFILE ---------- */
 
-  $("#exerciseLabel").textContent=workoutRunning?(workoutPaused?"Paused":"In progress"):"Ready";
-  $("#stepLabel").textContent=`Step ${Math.min(workoutIndex+1,workouts.length)} / ${workouts.length}`;
-  $("#exerciseTitle").textContent=ex.title;
-  $("#timer").textContent=fmtTime(workoutSeconds);
-  $("#repValue").textContent=repsDone;
-  $("#stepValue").textContent=Math.min(workoutIndex+1,workouts.length);
-  $("#sessionValue").textContent=fmtTime(workoutSessionSeconds);
+let profile=read(STORE.profile,null);
 
-  const pct=(workoutIndex/workouts.length)*100;
-  $("#workoutProgress").style.width=Math.min(100,pct)+"%";
-
-  $("#instructionText").textContent=ex.instruction;
-  $("#coachCue").innerHTML="<strong>Coach:</strong> "+esc(ex.cue);
-  $("#nextExercise").textContent=ex.next;
-
-  const trainer=$("#trainer");
-  trainer.dataset.ex=ex.anim;
-
-  if(workoutRunning){
-    $("#startWorkoutBtn").disabled=true;
-    $("#pauseWorkoutBtn").disabled=false;
-    $("#pauseWorkoutBtn").textContent=workoutPaused?"Resume":"Pause";
-  }else{
-    $("#startWorkoutBtn").disabled=false;
-    $("#pauseWorkoutBtn").disabled=true;
-    $("#pauseWorkoutBtn").textContent="Pause";
-  }
-}
-
-function speak(text){
-  if(!("speechSynthesis" in window)){
-    toast("Voice is unavailable on this browser");
-    return;
-  }
-
-  speechSynthesis.cancel();
-
-  const profile=getProfile()||{};
-  const lang=profile.language||"en-US";
-
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang=lang;
-  u.rate=.92;
-  u.pitch=1;
+function populateVoiceList(){
+  const select=$("profileVoice");
+  if(!select)return;
 
   const voices=speechSynthesis.getVoices();
 
-  const exact=voices.find(v=>v.lang.toLowerCase()===lang.toLowerCase());
-  const prefix=voices.find(v=>v.lang.toLowerCase().startsWith(lang.split("-")[0].toLowerCase()));
-
-  if(exact)u.voice=exact;
-  else if(prefix)u.voice=prefix;
-
-  speechSynthesis.speak(u);
+  select.innerHTML=
+    `<option value="auto">Automatic best available voice</option>`+
+    voices.map((v,i)=>
+      `<option value="${i}">${escapeHTML(v.name)} — ${escapeHTML(v.lang)}</option>`
+    ).join("");
 }
 
-const coachText={
- "en-US":{
-  start:"Get ready. Start.",
-  rest:"Rest and breathe.",
-  next:"Next exercise.",
-  finish:"Session complete. Nice work."
- },
- "ur-PK":{
-  start:"تیار ہو جائیں۔ شروع کریں۔",
-  rest:"آرام کریں اور پرسکون سانس لیں۔",
-  next:"اگلی ورزش۔",
-  finish:"سیشن مکمل ہو گیا۔ بہت خوب۔"
- },
- "hi-IN":{
-  start:"तैयार हो जाइए। शुरू करें।",
-  rest:"आराम करें और सामान्य सांस लें।",
-  next:"अगली एक्सरसाइज।",
-  finish:"सेशन पूरा हुआ। बहुत अच्छा।"
- },
- "ar-SA":{
-  start:"استعد. ابدأ.",
-  rest:"استرح وتنفس بهدوء.",
-  next:"التمرين التالي.",
-  finish:"اكتملت الجلسة. أحسنت."
- }
+speechSynthesis?.addEventListener?.("voiceschanged",populateVoiceList);
+
+function openProfile(){
+  populateVoiceList();
+
+  if(profile){
+    $("profileExperience").value=profile.experience||"beginner";
+    $("profileSession").value=profile.session||"10";
+    $("profileFocus").value=profile.focus||"full";
+    $("profileEquipment").value=profile.equipment||"none";
+    $("profileLanguage").value=profile.language||"en";
+    $("profileVoice").value=profile.voice||"auto";
+  }
+
+  $("profileModal").classList.add("open");
+}
+
+window.openProfile=openProfile;
+
+function closeProfile(){
+  $("profileModal").classList.remove("open");
+}
+
+window.closeProfile=closeProfile;
+
+function saveProfile(){
+  profile={
+    experience:$("profileExperience").value,
+    session:$("profileSession").value,
+    focus:$("profileFocus").value,
+    equipment:$("profileEquipment").value,
+    language:$("profileLanguage").value,
+    voice:$("profileVoice").value
+  };
+
+  write(STORE.profile,profile);
+
+  closeProfile();
+  updateGymUI();
+  showToast("Workout setup saved on this device.");
+}
+
+window.saveProfile=saveProfile;
+
+function ensureProfile(){
+  if(!profile){
+    openProfile();
+    return false;
+  }
+  return true;
+}
+
+/* ---------- WORKOUT ---------- */
+
+const exercises=[
+  {
+    name:"Easy warm-up",
+    type:"march",
+    seconds:30,
+    reps:0,
+    instruction:"Stand comfortably. March gently in place and move your arms naturally.",
+    cue:"Keep the pace easy. You should still be able to speak comfortably.",
+    next:"Bodyweight squat"
+  },
+  {
+    name:"Bodyweight squat",
+    type:"squat",
+    seconds:30,
+    reps:8,
+    instruction:"Feet about comfortable hip-width. Sit your hips back gently, then stand tall.",
+    cue:"Keep the movement controlled. Use a chair for support if needed.",
+    next:"Wall or incline push"
+  },
+  {
+    name:"Wall or incline push",
+    type:"push",
+    seconds:30,
+    reps:8,
+    instruction:"Place your hands on a stable wall or sturdy raised surface. Bend and straighten your arms comfortably.",
+    cue:"Keep your body in one comfortable line. Do not force the range.",
+    next:"Side step"
+  },
+  {
+    name:"Side step",
+    type:"step",
+    seconds:30,
+    reps:10,
+    instruction:"Step gently to one side, bring the other foot in, then change direction.",
+    cue:"Stay light on your feet and keep your knees comfortable.",
+    next:"Rest and breathe"
+  },
+  {
+    name:"Rest and breathe",
+    type:"rest",
+    seconds:30,
+    reps:0,
+    instruction:"Stand or sit comfortably. Take slow, relaxed breaths.",
+    cue:"Recovery is part of the workout.",
+    next:"Gentle hinge"
+  },
+  {
+    name:"Gentle hinge",
+    type:"hinge",
+    seconds:30,
+    reps:8,
+    instruction:"Keep your spine comfortable and move your hips slightly back, then return to standing.",
+    cue:"Only move through a comfortable range.",
+    next:"Reach and mobility"
+  },
+  {
+    name:"Reach and mobility",
+    type:"reach",
+    seconds:30,
+    reps:8,
+    instruction:"Reach your arms gently upward and return them down while breathing normally.",
+    cue:"No bouncing or forcing the stretch.",
+    next:"Easy march"
+  },
+  {
+    name:"Easy march",
+    type:"march",
+    seconds:30,
+    reps:0,
+    instruction:"Return to an easy march. Let your breathing settle.",
+    cue:"Choose a pace that feels comfortable.",
+    next:"Cooldown"
+  },
+  {
+    name:"Cooldown",
+    type:"rest",
+    seconds:30,
+    reps:0,
+    instruction:"Slow down, breathe comfortably and finish with gentle movement.",
+    cue:"You are finished when you feel ready. Consistency matters more than intensity.",
+    next:"Complete"
+  }
+];
+
+let workout={
+  index:0,
+  remaining:30,
+  reps:0,
+  running:false,
+  paused:false,
+  sessionSeconds:0,
+  timer:null
 };
 
-function coach(key){
-  const p=getProfile()||{};
-  const lang=p.language||"en-US";
-  const dict=coachText[lang]||coachText["en-US"];
-  speak(dict[key]||key);
+function updateGymUI(){
+
+  $("gymStreak").textContent=getStreak();
+  $("streakHome").textContent=getStreak();
+
+  if(profile){
+    $("profileStatus").textContent=
+      `${profile.session}-minute setup • ${profile.language.toUpperCase()}`;
+  }else{
+    $("profileStatus").textContent="Personal setup";
+  }
+
+  const e=exercises[workout.index];
+
+  $("exerciseName").textContent=e.name;
+  $("exerciseInstruction").textContent=e.instruction;
+  $("exerciseCue").textContent="Coach cue: "+e.cue;
+  $("demoLabel").textContent=e.name;
+  $("demoNext").textContent=e.next==="Complete"?"":"Next: "+e.next;
+
+  $("timerValue")?.remove();
+
+  $("workoutTimer").textContent=secondsToDuration(workout.remaining);
+  $("repValue").textContent=workout.reps;
+  $("stepValue").textContent=`${workout.index+1}/${exercises.length}`;
+  $("sessionValue").textContent=secondsToDuration(workout.sessionSeconds);
+
+  $("workoutProgress").style.width=
+    `${((workout.index)/exercises.length)*100}%`;
+
+  const svg=$("trainerSvg");
+  svg.className.baseVal="trainer-svg";
+
+  if(e.type==="squat")svg.classList.add("exercise-squat");
+  if(e.type==="march")svg.classList.add("exercise-march");
+  if(e.type==="step")svg.classList.add("exercise-step");
+  if(e.type==="reach")svg.classList.add("exercise-reach");
+  if(e.type==="rest")svg.classList.add("exercise-rest");
+
+  if(!workout.running){
+    $("startBtn").textContent="Start";
+  }else if(workout.paused){
+    $("startBtn").textContent="Resume";
+  }else{
+    $("startBtn").textContent="Running";
+  }
 }
 
 function startWorkout(){
-  if(workoutRunning)return;
 
-  if(workoutIndex>=workouts.length)resetWorkout();
+  if(!ensureProfile())return;
 
-  workoutRunning=true;
-  workoutPaused=false;
+  if(workout.running){
+    workout.paused=false;
+    return;
+  }
 
-  coach("start");
-  updateWorkoutUI();
+  workout.index=0;
+  workout.remaining=exercises[0].seconds;
+  workout.reps=0;
+  workout.sessionSeconds=0;
+  workout.running=true;
+  workout.paused=false;
 
-  clearInterval(workoutTimer);
+  clearInterval(workout.timer);
 
-  workoutTimer=setInterval(()=>{
-    if(!workoutRunning||workoutPaused)return;
+  workout.timer=setInterval(workoutTick,1000);
 
-    workoutSeconds++;
-    workoutSessionSeconds++;
+  speakCurrent();
+  updateGymUI();
+}
 
-    const ex=activeExercise();
+window.startWorkout=startWorkout;
 
-    if(ex.type==="reps" && ex.reps>0){
-      if(workoutSeconds%5===0 && repsDone<ex.reps){
-        repsDone++;
-      }
-    }
+function workoutTick(){
 
-    if(workoutSeconds>=ex.duration){
-      nextExercise();
+  if(!workout.running||workout.paused)return;
+
+  workout.remaining--;
+  workout.sessionSeconds++;
+
+  const e=exercises[workout.index];
+
+  if(e.reps>0){
+    const elapsed=e.seconds-workout.remaining;
+    const target=Math.floor((elapsed/e.seconds)*e.reps);
+    workout.reps=Math.min(e.reps,Math.max(0,target));
+  }
+
+  if(workout.remaining<=0){
+    if(workout.index>=exercises.length-1){
+      completeWorkout();
       return;
     }
 
-    updateWorkoutUI();
-  },1000);
+    workout.index++;
+    workout.remaining=exercises[workout.index].seconds;
+    workout.reps=0;
+
+    speakCurrent();
+  }
+
+  updateGymUI();
 }
 
-function pauseWorkout(){
-  if(!workoutRunning)return;
-  workoutPaused=!workoutPaused;
-  if(workoutPaused)speechSynthesis?.cancel();
-  else speak("Continue.");
-  updateWorkoutUI();
-}
+window.togglePause=function(){
+  if(!workout.running)return;
+  workout.paused=!workout.paused;
 
-function stopWorkout(){
-  workoutRunning=false;
-  workoutPaused=false;
-  clearInterval(workoutTimer);
-  speechSynthesis?.cancel();
-  resetWorkout();
-  toast("Workout stopped");
-}
+  if(!workout.paused)speakCurrent();
 
-function resetWorkout(){
-  workoutIndex=0;
-  workoutSeconds=0;
-  workoutSessionSeconds=0;
-  repsDone=0;
-  workoutRunning=false;
-  workoutPaused=false;
-  updateWorkoutUI();
-}
+  updateGymUI();
+};
 
-function nextExercise(){
-  if(workoutIndex>=workouts.length-1){
+window.adjustTime=function(amount){
+  workout.remaining=Math.max(0,workout.remaining+Number(amount));
+  updateGymUI();
+};
+
+window.adjustRep=function(amount){
+  workout.reps=Math.max(0,workout.reps+Number(amount));
+  updateGymUI();
+};
+
+window.nextExercise=function(){
+
+  if(workout.index>=exercises.length-1){
     completeWorkout();
     return;
   }
 
-  workoutIndex++;
-  workoutSeconds=0;
-  repsDone=0;
+  workout.index++;
+  workout.remaining=exercises[workout.index].seconds;
+  workout.reps=0;
 
-  updateWorkoutUI();
-  coach("next");
-}
+  if(workout.running)speakCurrent();
+
+  updateGymUI();
+};
+
+window.stopWorkout=function(){
+  clearInterval(workout.timer);
+
+  workout={
+    index:0,
+    remaining:30,
+    reps:0,
+    running:false,
+    paused:false,
+    sessionSeconds:0,
+    timer:null
+  };
+
+  updateGymUI();
+  showToast("Workout stopped.");
+};
 
 function completeWorkout(){
-  workoutRunning=false;
-  workoutPaused=false;
-  clearInterval(workoutTimer);
-  workoutSeconds=0;
 
-  $("#workoutProgress").style.width="100%";
-  $("#exerciseLabel").textContent="Complete";
-  $("#exerciseTitle").textContent="Session complete";
-  $("#instructionText").textContent="You finished this session. Recover comfortably and come back when you want.";
-  $("#coachCue").innerHTML="<strong>Coach:</strong> Consistency matters more than intensity.";
-  $("#nextExercise").textContent="Done";
-  $("#timer").textContent="00:00";
+  clearInterval(workout.timer);
 
-  coach("finish");
-  recordWorkout();
+  workout.running=false;
+  workout.paused=false;
 
-  toast("Workout completed");
-  updateWorkoutUI();
+  markWorkoutComplete();
+
+  speakText("Workout complete. Nice work. Take a comfortable recovery break.");
+
+  updateGymUI();
+
+  showToast("Workout complete. Your streak was updated.");
 }
 
-function recordWorkout(){
-  const today=new Date().toISOString().slice(0,10);
-  const history=safeJSON("shaheen.workoutHistory.v3",[]);
+window.speakCurrent=function(){
+  const e=exercises[workout.index];
+  speakText(`${e.name}. ${e.instruction}`);
+};
 
-  if(!history.includes(today)){
-    history.unshift(today);
-    saveJSON("shaheen.workoutHistory.v3",history.slice(0,60));
+function speakText(text){
+
+  if(!("speechSynthesis" in window))return;
+
+  speechSynthesis.cancel();
+
+  const u=new SpeechSynthesisUtterance(text);
+
+  const lang=profile?.language||"en";
+
+  const map={
+    en:"en-US",
+    ur:"ur-PK",
+    hi:"hi-IN",
+    ar:"ar-SA",
+    es:"es-ES",
+    fr:"fr-FR",
+    de:"de-DE"
+  };
+
+  u.lang=map[lang]||"en-US";
+  u.rate=.95;
+  u.pitch=1;
+
+  const voices=speechSynthesis.getVoices();
+
+  if(profile?.voice&&profile.voice!=="auto"){
+    const v=voices[Number(profile.voice)];
+    if(v)u.voice=v;
+  }else{
+    const exact=voices.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase());
+    const prefix=voices.find(v=>v.lang.toLowerCase().startsWith(lang));
+    if(exact)u.voice=exact;
+    else if(prefix)u.voice=prefix;
   }
 
-  updateStreakUI();
+  speechSynthesis.speak(u);
 }
 
-function calculateStreak(){
-  const history=safeJSON("shaheen.workoutHistory.v3",[]);
-  if(!history.length)return 0;
+/* visibility = automatic pause, not forced fullscreen */
 
-  const dates=new Set(history);
-  let cursor=new Date();
-
-  let today=cursor.toISOString().slice(0,10);
-
-  if(!dates.has(today)){
-    cursor.setDate(cursor.getDate()-1);
-    today=cursor.toISOString().slice(0,10);
-    if(!dates.has(today))return 0;
-  }
-
-  let streak=0;
-
-  while(true){
-    const d=cursor.toISOString().slice(0,10);
-    if(!dates.has(d))break;
-    streak++;
-    cursor.setDate(cursor.getDate()-1);
-  }
-
-  return streak;
-}
-
-function updateStreakUI(){
-  const streak=calculateStreak();
-  const history=safeJSON("shaheen.workoutHistory.v3",[]);
-
-  $("#streakValue").textContent=streak;
-  $("#homeStreak").textContent=streak;
-  $("#historyCount").textContent=`${history.length} session${history.length===1?"":"s"} completed`;
-
-  $("#streakMessage").textContent=
-    streak?`Great — ${streak} day${streak===1?"":"s"} of consistent movement.`:
-    "Complete a session to start your streak.";
-
-  $("#lastSession").textContent=history[0]||"Not yet";
-}
-
-$("#startWorkoutBtn").onclick=startWorkout;
-$("#pauseWorkoutBtn").onclick=pauseWorkout;
-$("#stopWorkoutBtn").onclick=stopWorkout;
-$("#nextBtn").onclick=nextExercise;
-
-$("#minusTenBtn").onclick=()=>{
-  workoutSeconds=Math.max(0,workoutSeconds-10);
-  updateWorkoutUI();
-};
-
-$("#plusTenBtn").onclick=()=>{
-  workoutSeconds=Math.min(activeExercise().duration,workoutSeconds+10);
-  updateWorkoutUI();
-};
-
-$("#minusRepBtn").onclick=()=>{
-  repsDone=Math.max(0,repsDone-1);
-  updateWorkoutUI();
-};
-
-$("#plusRepBtn").onclick=()=>{
-  repsDone++;
-  updateWorkoutUI();
-};
-
-$("#speakBtn").onclick=()=>{
-  const ex=activeExercise();
-  speak(`${ex.title}. ${ex.instruction}. ${ex.cue}`);
-};
-
-$("#focusBtn").onclick=async()=>{
-  try{
-    if(document.fullscreenElement)await document.exitFullscreen();
-    else await document.documentElement.requestFullscreen();
-  }catch(e){
-    toast("Focus mode unavailable");
-  }
-};
-
-/* Pause when leaving page */
 document.addEventListener("visibilitychange",()=>{
-  if(document.hidden && workoutRunning && !workoutPaused){
-    workoutPaused=true;
-    speechSynthesis?.cancel();
-    updateWorkoutUI();
-    toast("Workout paused");
+  if(document.hidden&&workout.running&&!workout.paused){
+    workout.paused=true;
+    updateGymUI();
+    showToast("Workout paused because the page was hidden.");
   }
 });
 
-speechSynthesis?.addEventListener?.("voiceschanged",()=>{});
+window.toggleFocusMode=async function(){
 
-/* =========================================================
-   CAMERA + MEDIAPIPE
-========================================================= */
+  if(!document.fullscreenElement){
+    try{
+      await document.documentElement.requestFullscreen();
+    }catch{
+      showToast("Focus mode is optional and was not enabled.");
+    }
+  }else{
+    try{
+      await document.exitFullscreen();
+    }catch{}
+  }
+};
+
+window.startQuickWorkout=function(){
+  go("gym");
+
+  if(!profile){
+    openProfile();
+    return;
+  }
+
+  startWorkout();
+};
+
+/* ---------- STREAK ---------- */
+
+function getStreak(){
+  return read(STORE.streak,{count:0,last:null}).count||0;
+}
+
+function markWorkoutComplete(){
+
+  const today=new Date().toISOString().slice(0,10);
+  const data=read(STORE.streak,{count:0,last:null});
+
+  if(data.last===today)return;
+
+  if(data.last){
+    const previous=new Date(data.last);
+    const current=new Date(today);
+    const diff=Math.round((current-previous)/86400000);
+
+    if(diff===1)data.count++;
+    else data.count=1;
+  }else{
+    data.count=1;
+  }
+
+  data.last=today;
+  write(STORE.streak,data);
+
+  const history=read(STORE.history,[]);
+  history.unshift({
+    date:today,
+    seconds:workout.sessionSeconds,
+    steps:exercises.length
+  });
+
+  write(STORE.history,history.slice(0,30));
+}
+
+/* ---------- CAMERA / MEDIAPIPE ---------- */
+
 let cameraStream=null;
 let poseLandmarker=null;
-let cameraRAF=null;
+let cameraRunning=false;
 let cameraView="front";
 let lastVideoTime=-1;
 
-const POSE_CONNECTIONS=[
- [11,13],[13,15],[12,14],[14,16],
- [11,12],[11,23],[12,24],[23,24],
- [23,25],[25,27],[24,26],[26,28],
- [27,29],[29,31],[28,30],[30,32]
-];
+window.setCameraView=function(view){
+  cameraView=view;
+  $("viewText").textContent=
+    `Recommended view: ${view==="front"?"Front":"Side"}.`;
+};
 
-function setStatus(id,text,state=""){
-  const el=$("#"+id);
-  if(!el)return;
-  el.textContent=text;
-  el.className="status "+state;
+async function startCamera(){
+
+  if(cameraRunning)return;
+
+  if(!navigator.mediaDevices?.getUserMedia){
+    showToast("Camera is not available in this browser.");
+    return;
+  }
+
+  try{
+
+    cameraStream=await navigator.mediaDevices.getUserMedia({
+      video:{
+        facingMode:"user",
+        width:{ideal:720},
+        height:{ideal:480}
+      },
+      audio:false
+    });
+
+    const video=$("cameraVideo");
+    video.srcObject=cameraStream;
+
+    await video.play();
+
+    cameraRunning=true;
+
+    $("personText").textContent="Camera running. Looking for a person...";
+    $("personDot").className="dot warn";
+
+    await loadPoseLandmarker();
+
+    requestAnimationFrame(cameraLoop);
+
+  }catch(e){
+    showToast("Camera permission was not granted or the camera is unavailable.");
+    stopCamera();
+  }
 }
 
+window.startCamera=startCamera;
+
 function stopCamera(){
-  if(cameraRAF)cancelAnimationFrame(cameraRAF);
-  cameraRAF=null;
+
+  cameraRunning=false;
 
   if(cameraStream){
     cameraStream.getTracks().forEach(t=>t.stop());
     cameraStream=null;
   }
 
-  $("#cameraVideo").srcObject=null;
+  const video=$("cameraVideo");
+  video.srcObject=null;
 
-  setStatus("cameraPerson","Person: waiting");
-  setStatus("cameraHead","Head: waiting");
-  setStatus("cameraFeet","Feet: waiting");
-  setStatus("cameraFrame","Framing: waiting");
-  setStatus("cameraLight","Lighting: check");
+  const ctx=$("poseCanvas").getContext("2d");
+  ctx.clearRect(0,0,$("poseCanvas").width,$("poseCanvas").height);
 
-  $("#cameraMessage").textContent=
-    "Camera stopped. Your video is not uploaded by this code.";
+  $("personDot").className="dot";
+  $("personText").textContent="Camera stopped.";
 }
 
-async function initPose(){
-  if(!window.__POSE_MODULE_READY__)return false;
+window.stopCamera=stopCamera;
+
+async function loadPoseLandmarker(){
+
+  if(poseLandmarker)return;
 
   try{
-    const {PoseLandmarker,FilesetResolver}=window.__MediaPipeVision;
 
-    const vision=await FilesetResolver.forVisionTasks(
+    const vision=await import(
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/vision_bundle.mjs"
+    );
+
+    const {FilesetResolver,PoseLandmarker}=vision;
+
+    const fileset=await FilesetResolver.forVisionTasks(
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/wasm"
     );
 
-    poseLandmarker=await PoseLandmarker.createFromOptions(vision,{
+    poseLandmarker=await PoseLandmarker.createFromOptions(fileset,{
       baseOptions:{
         modelAssetPath:
           "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"
@@ -3054,275 +3800,250 @@ async function initPose(){
       minTrackingConfidence:.5
     });
 
-    return true;
   }catch(e){
-    console.warn("Pose initialization failed",e);
+
     poseLandmarker=null;
-    return false;
+
+    showToast(
+      "Advanced camera assistance could not load. Manual framing guidance is still available."
+    );
   }
 }
 
-function drawPose(landmarks){
-  const canvas=$("#poseCanvas");
-  const video=$("#cameraVideo");
+function cameraLoop(){
 
-  const w=video.videoWidth;
-  const h=video.videoHeight;
+  if(!cameraRunning)return;
 
-  if(!w||!h)return;
+  const video=$("cameraVideo");
+  const canvas=$("poseCanvas");
 
-  canvas.width=w;
-  canvas.height=h;
+  if(video.readyState>=2){
 
+    canvas.width=video.videoWidth||720;
+    canvas.height=video.videoHeight||480;
+
+    if(poseLandmarker && video.currentTime!==lastVideoTime){
+
+      lastVideoTime=video.currentTime;
+
+      try{
+        const result=poseLandmarker.detectForVideo(
+          video,
+          performance.now()
+        );
+
+        drawPose(result);
+      }catch{}
+    }
+  }
+
+  requestAnimationFrame(cameraLoop);
+}
+
+function drawPose(result){
+
+  const canvas=$("poseCanvas");
   const ctx=canvas.getContext("2d");
-  ctx.clearRect(0,0,w,h);
 
-  if(!landmarks)return;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
 
+  const landmarks=result?.landmarks?.[0];
+
+  if(!landmarks){
+    $("personDot").className="dot warn";
+    $("personText").textContent="No person detected. Step into the frame.";
+    $("frameDot").className="dot";
+    $("frameText").textContent="Keep your head and feet inside the guide.";
+    return;
+  }
+
+  $("personDot").className="dot good";
+  $("personText").textContent="Person detected.";
+
+  const xs=landmarks.map(p=>p.x);
+  const ys=landmarks.map(p=>p.y);
+
+  const minX=Math.min(...xs);
+  const maxX=Math.max(...xs);
+  const minY=Math.min(...ys);
+  const maxY=Math.max(...ys);
+
+  const height=maxY-minY;
+  const width=maxX-minX;
+
+  const inHorizontal=minX>.12&&maxX<.88;
+  const inVertical=minY>.06&&maxY<.94;
+  const largeEnough=height>.55;
+  const notTooLarge=height<.96;
+
+  const frameGood=inHorizontal&&inVertical&&largeEnough&&notTooLarge;
+
+  $("frameDot").className=frameGood?"dot good":"dot warn";
+
+  if(!inVertical){
+    $("frameText").textContent=
+      "Move slightly so your head and feet fit inside the guide.";
+  }else if(!largeEnough){
+    $("frameText").textContent=
+      "Move a little closer.";
+  }else if(!notTooLarge){
+    $("frameText").textContent=
+      "Move a little farther away.";
+  }else if(!inHorizontal){
+    $("frameText").textContent=
+      "Move toward the center of the frame.";
+  }else{
+    $("frameText").textContent="Full-body framing looks good.";
+  }
+
+  ctx.strokeStyle="#62e6ff";
   ctx.lineWidth=4;
-  ctx.strokeStyle="#8b5cf6";
-  ctx.fillStyle="#ffffff";
 
-  POSE_CONNECTIONS.forEach(([a,b])=>{
-    const p=landmarks[a],q=landmarks[b];
-    if(!p||!q)return;
+  const connections=[
+    [11,13],[13,15],
+    [12,14],[14,16],
+    [11,12],
+    [11,23],[12,24],
+    [23,24],
+    [23,25],[25,27],
+    [24,26],[26,28]
+  ];
 
-    if((p.visibility??1)<.35||(q.visibility??1)<.35)return;
+  for(const [a,b] of connections){
+    const p=landmarks[a];
+    const q=landmarks[b];
+
+    if(!p||!q)continue;
 
     ctx.beginPath();
-    ctx.moveTo(p.x*w,p.y*h);
-    ctx.lineTo(q.x*w,q.y*h);
+    ctx.moveTo(p.x*canvas.width,p.y*canvas.height);
+    ctx.lineTo(q.x*canvas.width,q.y*canvas.height);
     ctx.stroke();
-  });
+  }
+
+  ctx.fillStyle="#fff";
 
   landmarks.forEach(p=>{
-    if((p.visibility??1)<.35)return;
+    if(p.visibility<.35)return;
+
     ctx.beginPath();
-    ctx.arc(p.x*w,p.y*h,4,0,Math.PI*2);
+    ctx.arc(
+      p.x*canvas.width,
+      p.y*canvas.height,
+      5,0,Math.PI*2
+    );
     ctx.fill();
   });
+
+  $("lightDot").className="dot good";
+  $("lightText").textContent="Person landmarks are visible.";
 }
 
-function evaluatePose(landmarks){
-  if(!landmarks||landmarks.length<33){
-    setStatus("cameraPerson","Person: not detected","bad");
-    setStatus("cameraHead","Head: waiting");
-    setStatus("cameraFeet","Feet: waiting");
-    setStatus("cameraFrame","Framing: waiting");
-    return;
-  }
+/* ---------- UI ---------- */
 
-  const visible=i=>
-    landmarks[i] && (landmarks[i].visibility??1)>=.45;
+function showToast(message){
+  const t=$("toast");
+  t.textContent=message;
+  t.classList.add("show");
 
-  const head=visible(0);
-  const leftFoot=visible(27);
-  const rightFoot=visible(28);
+  clearTimeout(showToast.timer);
 
-  const required=[0,11,12,23,24,27,28];
-  const enough=required.filter(visible).length>=6;
-
-  setStatus(
-    "cameraPerson",
-    enough?"Person: detected":"Person: partial",
-    enough?"ok":"warn"
-  );
-
-  setStatus(
-    "cameraHead",
-    head?"Head: visible":"Head: move into frame",
-    head?"ok":"bad"
-  );
-
-  setStatus(
-    "cameraFeet",
-    leftFoot&&rightFoot?"Feet: visible":"Feet: show both feet",
-    leftFoot&&rightFoot?"ok":"bad"
-  );
-
-  const xs=landmarks.filter(p=>(p.visibility??1)>=.45).map(p=>p.x);
-  const ys=landmarks.filter(p=>(p.visibility??1)>=.45).map(p=>p.y);
-
-  if(xs.length&&ys.length){
-    const minX=Math.min(...xs);
-    const maxX=Math.max(...xs);
-    const minY=Math.min(...ys);
-    const maxY=Math.max(...ys);
-
-    const height=maxY-minY;
-    const center=(minX+maxX)/2;
-
-    let frameState="ok";
-
-    if(height<.55)frameState="far";
-    if(height>.92)frameState="close";
-    if(center<.35)frameState="left";
-    if(center>.65)frameState="right";
-
-    if(frameState==="ok"){
-      setStatus("cameraFrame","Framing: good","ok");
-      $("#cameraMessage").textContent=
-        `Camera looks ready for ${cameraView} view. Keep your full body inside the dashed frame.`;
-    }else{
-      let msg="Adjust your position slightly.";
-
-      if(frameState==="far")msg="Move a little closer.";
-      if(frameState==="close")msg="Move the phone farther away.";
-      if(frameState==="left")msg="Move slightly to the right.";
-      if(frameState==="right")msg="Move slightly to the left.";
-
-      setStatus("cameraFrame","Framing: adjust","warn");
-      $("#cameraMessage").textContent=msg;
-    }
-  }
-
-  setStatus("cameraLight","Lighting: visual check","ok");
+  showToast.timer=setTimeout(()=>{
+    t.classList.remove("show");
+  },2600);
 }
 
-async function cameraLoop(){
-  const video=$("#cameraVideo");
+window.showToast=showToast;
 
-  if(!cameraStream)return;
-
-  if(
-    poseLandmarker &&
-    video.readyState>=2 &&
-    video.currentTime!==lastVideoTime
-  ){
-    lastVideoTime=video.currentTime;
-
-    try{
-      const result=poseLandmarker.detectForVideo(
-        video,
-        performance.now()
-      );
-
-      const landmarks=result?.landmarks?.[0];
-
-      drawPose(landmarks);
-      evaluatePose(landmarks);
-    }catch(e){
-      console.warn(e);
-    }
+$("globalSearch").addEventListener("input",()=>{
+  if(!$("tools").classList.contains("active")){
+    go("tools");
   }
-
-  cameraRAF=requestAnimationFrame(cameraLoop);
-}
-
-async function startCamera(){
-  stopCamera();
-
-  if(!navigator.mediaDevices?.getUserMedia){
-    $("#cameraMessage").textContent=
-      "This browser does not provide camera access.";
-    return;
-  }
-
-  try{
-    cameraStream=await navigator.mediaDevices.getUserMedia({
-      video:{
-        facingMode:"user",
-        width:{ideal:1280},
-        height:{ideal:720}
-      },
-      audio:false
-    });
-
-    const video=$("#cameraVideo");
-    video.srcObject=cameraStream;
-
-    await video.play();
-
-    setStatus("cameraPerson","Person: starting","warn");
-
-    const ready=await initPose();
-
-    if(!ready){
-      $("#cameraMessage").textContent=
-        "Live camera is working, but pose assistance could not load. Use the dashed frame manually.";
-    }
-
-    cameraLoop();
-  }catch(e){
-    console.error(e);
-    $("#cameraMessage").textContent=
-      "Camera permission was not granted or the camera is unavailable.";
-    toast("Camera unavailable");
-  }
-}
-
-$("#cameraStartBtn").onclick=startCamera;
-$("#cameraStopBtn").onclick=stopCamera;
-
-$("#frontBtn").onclick=()=>{
-  cameraView="front";
-  toast("Front view selected");
-};
-
-$("#sideBtn").onclick=()=>{
-  cameraView="side";
-  toast("Side view selected");
-};
-
-window.addEventListener("beforeunload",stopCamera);
-
-/* =========================================================
-   INITIAL STATE
-========================================================= */
-updateWorkoutUI();
-updateStreakUI();
-
-/*
-  We do not automatically open the profile every time.
-  It only appears when the user first opens Gym.
-*/
-
-window.addEventListener("load",()=>{
-  renderCategories();
   renderTools();
 });
 
-/* =========================================================
-   KEYBOARD
-========================================================= */
+$("toolSort").addEventListener("change",renderTools);
+
+$("themeBtn").addEventListener("click",()=>{
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    document.documentElement.style.setProperty("--bg","#f4f6fb");
+    document.documentElement.style.setProperty("--bg2","#fff");
+    document.documentElement.style.setProperty("--card","#fff");
+    document.documentElement.style.setProperty("--card2","#f8f9fd");
+    document.documentElement.style.setProperty("--text","#101426");
+    document.documentElement.style.setProperty("--muted","#5d687e");
+    document.documentElement.style.setProperty("--line","#dbe1ec");
+    showToast("Light mode");
+  }else{
+    location.reload();
+  }
+});
+
+/* ---------- MODAL ESC ---------- */
+
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"){
-    closeTool();
-    closeProfile();
+    $("toolModal").classList.remove("open");
+    $("profileModal").classList.remove("open");
   }
 });
 
-/* =========================================================
-   ACCESSIBILITY / SAFE DEFAULTS
-========================================================= */
-document.querySelectorAll("button").forEach(btn=>{
-  btn.addEventListener("keydown",e=>{
-    if(e.key===" "){
-      e.preventDefault();
-    }
-  });
+/* ---------- INITIALIZATION ---------- */
+
+renderCategories();
+renderTools();
+
+$("favCount").textContent=read(STORE.favorites,[]).length;
+$("streakHome").textContent=getStreak();
+$("gymStreak").textContent=getStreak();
+
+if(!profile){
+  setTimeout(()=>{
+    if(location.hash==="#gym")openProfile();
+  },350);
+}
+
+if(location.hash){
+  const route=location.hash.replace("#","");
+  if(["home","tools","gym","info"].includes(route))go(route);
+}
+
+/*
+  Optional AdSense unit:
+  -------------------------------------------
+  Do NOT invent a data-ad-slot.
+
+  After creating a real responsive ad unit in your AdSense account,
+  place its actual slot ID into your deployment and render the ad only
+  in content-rich areas.
+
+  Example:
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2057536839831582"
+       data-ad-slot="YOUR_REAL_SLOT_ID"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  Do not place this inside:
+  - workout controls
+  - camera UI
+  - bottom navigation
+  - tool runner
+  - dead-end screens
+*/
+
+/* Prevent accidental camera continuation */
+window.addEventListener("beforeunload",()=>{
+  if(cameraRunning)stopCamera();
 });
 
-/* =========================================================
-   PWA-LIKE INSTALL-FRIENDLY META BEHAVIOR
-========================================================= */
-let deferredPrompt=null;
-
-window.addEventListener("beforeinstallprompt",e=>{
-  e.preventDefault();
-  deferredPrompt=e;
-});
-
-/* =========================================================
-   IMAGE FILE HANDLING CLEANUP
-========================================================= */
-document.addEventListener("click",e=>{
-  if(e.target.matches('a[download="shaheen-image.jpg"]')){
-    setTimeout(()=>{
-      try{URL.revokeObjectURL(e.target.href)}catch(_){}
-    },5000);
-  }
-});
 </script>
 
 </body>
